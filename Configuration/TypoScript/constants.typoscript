@@ -1,0 +1,60 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/constants.typoscript">
+
+
+############
+### PAGE ###
+############
+page {
+    logo {
+        file = EXT:liszt_portal/Resources/Public/Images/logo.svg
+        fileInverted = EXT:liszt_portal/Resources/Public/Images/logo-inverted.svg
+        height = 52
+        width = 192
+        alt = Liszt-Portal
+        linktitle = Liszt-Portal
+    }
+    favicon {
+        file = EXT:liszt_portal/Resources/Public/Icons/favicon.ico
+    }
+    fluidtemplate {
+        layoutRootPath = EXT:liszt_portal/Resources/Private/Layouts/Page/
+        partialRootPath = EXT:liszt_portal/Resources/Private/Partials/Page/
+        templateRootPath = EXT:liszt_portal/Resources/Private/Templates/Page/
+    }
+}
+
+
+##################
+### EXTENSIONS ###
+##################
+plugin.bootstrap_package {
+    view {
+        layoutRootPath = EXT:liszt_portal/Resources/Private/Layouts/
+        partialRootPath = EXT:liszt_portal/Resources/Private/Partials/
+        templateRootPath = EXT:liszt_portal/Resources/Private/Templates/
+    }
+}
+
+
+########################
+### CONTENT ELEMENTS ###
+########################
+plugin.bootstrap_package_contentelements {
+    view {
+        layoutRootPath = EXT:liszt_portal/Resources/Private/Layouts/ContentElements/
+        partialRootPath = EXT:liszt_portal/Resources/Private/Partials/ContentElements/
+        templateRootPath = EXT:liszt_portal/Resources/Private/Templates/ContentElements/
+    }
+}
+
+
+################################
+### BOOTSTRAP SCSS CONSTANTS ###
+################################
+plugin.bootstrap_package.settings.scss {
+    primary = #eb3e4a
+    secondary = #013859
+}

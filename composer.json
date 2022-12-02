@@ -1,0 +1,21 @@
+{
+    "name": "slub/liszt-portal",
+    "type": "typo3-cms-extension",
+    "description": "Sitepackage for liszt-portal.de",
+    "homepage": "https://liszt-portal.de",
+    "license": ["GPL-2.0-or-later"],
+    "keywords": ["TYPO3 CMS"],
+    "require": {
+        "bk2k/bootstrap-package": "^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Slub\\LisztPortal\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "liszt_portal"
+        }
+    }
+}
