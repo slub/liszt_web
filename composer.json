@@ -7,8 +7,12 @@
     "keywords": ["TYPO3 CMS"],
     "require": {
         "bk2k/bootstrap-package": "^12.0",
+        "typo3/cms-core": "^11.0",
+        "typo3/cms-fluid-styled-content": "^11.0",
         "georgringer/news": "^10.0",
-        "slub/slub-be-users": "^11.5"
+        "slub/slub-be-users": "11.5",
+        "slub/liszt-bibliography": "dev-main",
+        "slub/liszt-catalograisonne": "dev-main"
     },
     "autoload": {
         "psr-4": {
