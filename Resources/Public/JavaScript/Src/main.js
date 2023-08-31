@@ -1,7 +1,7 @@
-const DEFAULT_ITEM_CLASS = 'timeline-item';
-const DEFAULT_SHOW_COUNT = 5;
-const DEFAULT_TRIGGER_POSITION = 200;
-const DEFAULT_NONE_FILTER_KEYWORD = 'all';
+const LISZT_SITEPK_DEFAULT_ITEM_CLASS = 'timeline-item';
+const LISZT_SITEPK_DEFAULT_SHOW_COUNT = 5;
+const LISZT_SITEPK_DEFAULT_TRIGGER_POSITION = 200;
+const LISZT_SITEPK_DEFAULT_NONE_FILTER_KEYWORD = 'all';
 
 class CategorizedTimeline {
 
@@ -12,10 +12,10 @@ class CategorizedTimeline {
         this.timeline = $(`#${setup.timeline} .timeline`);
         if (this.timeline.length == 0) throw `error: content element with id ${setup.timeline} not found`;
 
-        this.itemClass = setup.itemClass ?? DEFAULT_ITEM_CLASS;
-        this.showCount = setup.showCount ?? DEFAULT_SHOW_COUNT;
-        this.triggerPosition = setup.triggerPosition ?? DEFAULT_TRIGGER_POSITION;
-        this.noneFilterKeyword = setup.noneFilterKeyword ?? DEFAULT_NONE_FILTER_KEYWORD;
+        this.itemClass = setup.itemClass ?? LISZT_SITEPK_DEFAULT_ITEM_CLASS;
+        this.showCount = setup.showCount ?? LISZT_SITEPK_DEFAULT_SHOW_COUNT;
+        this.triggerPosition = setup.triggerPosition ?? LISZT_SITEPK_DEFAULT_TRIGGER_POSITION;
+        this.noneFilterKeyword = setup.noneFilterKeyword ?? LISZT_SITEPK_DEFAULT_NONE_FILTER_KEYWORD;
 
         this.init();
     }
