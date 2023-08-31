@@ -1,0 +1,18 @@
+####################################
+#### NEW CONTENT ELEMENT WIZARD ####
+####################################
+@import 'EXT:liszt_bibliography/Configuration/TsConfig/Page/Mod/Wizards/Listing.tsconfig'
+
+mod.wizards.newContentElement.wizardItems.plugins {
+    elements {
+        lisztportalweb_categorizedtimeline {
+            iconIdentifier = content-bootstrappackage-timeline
+            title = LLL:EXT:lisztportal-web/Resources/Private/Language/Backend.xlf:content_element.categorized_timeline
+            description = LLL:EXT:lisztportal-web/Resources/Private/Language/Backend.xlf:content_element.categorized_timeline.description
+            tt_content_defValues {
+                CType = categorized_timeline
+            }
+        }
+    }
+    show := addToList(categorized_timeline)
+}
