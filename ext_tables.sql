@@ -5,7 +5,7 @@
 --
 -- Table structure for table 'tx_bootstrappackage_timeline_item'
 --
-CREATE TABLE tx_lisztportalweb_categorizedtimeline_item (
+CREATE TABLE tx_lisztweb_categorizedtimeline_item (
     uid int(11) unsigned NOT NULL auto_increment,
     pid int(11) DEFAULT '0' NOT NULL,
 
@@ -52,5 +52,5 @@ CREATE TABLE tx_lisztportalweb_categorizedtimeline_item (
 -- Table structure for table 'tt_content'
 --
 CREATE TABLE tt_content (
-    tx_lisztportalweb_categorizedtimeline_item int(11) unsigned DEFAULT '0',
+    tx_lisztweb_categorizedtimeline_item int(11) unsigned DEFAULT '0',
 );

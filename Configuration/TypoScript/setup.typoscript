@@ -11,7 +11,7 @@
 ##############
 page {
     includeCSS {
-        theme = EXT:liszt_portal/Resources/Public/Scss/Theme/theme.scss
+        theme = EXT:liszt-web/Resources/Public/Scss/Theme/theme.scss
     }
 
     includeJSLibs {
@@ -27,6 +27,6 @@ page {
     }
 
     includeJSFooter {
-        liszt_portal_scripts = EXT:liszt_portal/Resources/Public/JavaScript/Dist/scripts.js
+        liszt-web = EXT:liszt-web/Resources/Public/JavaScript/Dist/scripts.js
     }
 }

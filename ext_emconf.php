@@ -4,7 +4,7 @@
  * Extension Manager/Repository config file for ext "liszt_portal".
  */
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'lisztportal-web',
+    'title' => 'liszt-web',
     'description' => 'Sitepackage for liszt-portal.de',
     'category' => 'templates',
     'constraints' => [
@@ -16,7 +16,7 @@ $EM_CONF[$_EXTKEY] = [
     ],
     'autoload' => [
         'psr-4' => [
-            'Slub\\LisztPortal\\' => 'Classes',
+            'Slub\\LisztWeb\\' => 'Classes',
         ],
     ],
     'state' => 'stable',

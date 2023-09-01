@@ -1,8 +1,8 @@
 #
 # PageTS for Liszt-Portal
 #
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:liszt_portal/Configuration/TsConfig/Page/RTE.tsconfig">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:liszt_portal/Configuration/TsConfig/Page/TCEFORM.tsconfig">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:liszt_portal/Configuration/TsConfig/Page/TCEMAIN.tsconfig">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:liszt_portal/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:liszt_portal/Configuration/TsConfig/Page/Mod/page.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:liszt-web/Configuration/TsConfig/Page/RTE.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:liszt-web/Configuration/TsConfig/Page/TCEFORM.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:liszt-web/Configuration/TsConfig/Page/TCEMAIN.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:liszt-web/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:liszt-web/Configuration/TsConfig/Page/Mod/page.tsconfig">
