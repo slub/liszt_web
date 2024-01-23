@@ -3,6 +3,6 @@
 #############
 RTE {
     default {
-        preset = liszt_portal
+        preset = liszt-web
     }
 }

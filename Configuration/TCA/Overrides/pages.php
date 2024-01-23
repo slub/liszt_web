@@ -5,7 +5,7 @@ call_user_func(function()
     /**
      * Temporary variables
      */
-    $extensionKey = 'liszt_portal';
+    $extensionKey = 'liszt_web';
 
     /**
      * Default PageTS for LisztPortal
@@ -13,6 +13,6 @@ call_user_func(function()
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
         $extensionKey,
         'Configuration/TsConfig/Page/All.tsconfig',
-        'Liszt-Portal'
+        'Liszt-Web'
     );
 });

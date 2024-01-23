@@ -1,5 +1,5 @@
 {
-    "name": "slub/lisztportal-web",
+    "name": "slub/liszt-web",
     "type": "typo3-cms-extension",
     "description": "Sitepackage for liszt-portal.de",
     "homepage": "https://liszt-portal.de",
@@ -15,12 +15,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Slub\\LisztPortal\\": "Classes/"
+            "Slub\\LisztWeb\\": "Classes/"
         }
     },
     "extra": {
         "typo3/cms": {
-            "extension-key": "lisztportal-web"
+            "extension-key": "liszt_web"
         }
     }
 }
