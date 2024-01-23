@@ -28,10 +28,10 @@ if (!is_array($GLOBALS['TCA']['tt_content']['types']['categorized_timeline'] ?? 
     'tt_content',
     'CType',
     [
-        'LLL:EXT:lisztportal-web/Resources/Private/Language/Backend.xlf:content_element.categorized_timeline',
+        'LLL:EXT:liszt-web/Resources/Private/Language/Backend.xlf:content_element.categorized_timeline',
         'categorized_timeline',
         'content-bootstrappackage-timeline',
-        'lisztportal-web'
+        'liszt-web'
     ],
     'textteaser',
     'after'
@@ -48,7 +48,7 @@ $GLOBALS['TCA']['tt_content']['types']['categorized_timeline'] = array_replace_r
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,
-                tx_lisztportalweb_categorizedtimeline_item,
+                tx_lisztweb_categorizedtimeline_item,
             --div--;LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:timeline.options,
                 pi_flexform;LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:advanced,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
@@ -72,11 +72,11 @@ $GLOBALS['TCA']['tt_content']['types']['categorized_timeline'] = array_replace_r
 $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
     $GLOBALS['TCA']['tt_content']['columns'],
     [
-        'tx_lisztportalweb_categorizedtimeline_item' => [
-            'label' => 'LLL:EXT:lisztportal-web/Resources/Private/Language/Backend.xlf:categorized_timeline_item',
+        'tx_lisztweb_categorizedtimeline_item' => [
+            'label' => 'LLL:EXT:liszt-web/Resources/Private/Language/Backend.xlf:categorized_timeline_item',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_lisztportalweb_categorizedtimeline_item',
+                'foreign_table' => 'tx_lisztweb_categorizedtimeline_item',
                 'foreign_field' => 'tt_content',
                 'appearance' => [
                     'useSortable' => true,
@@ -95,7 +95,7 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
         ]
     ]
 );
-$GLOBALS['TCA']['tx_lisztportalweb_categorizedtimeline_item']['columns']['categories'] = [
+$GLOBALS['TCA']['tx_lisztweb_categorizedtimeline_item']['columns']['categories'] = [
     'config' => [
         'type' => 'category'
     ]

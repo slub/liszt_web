@@ -5,7 +5,7 @@ call_user_func(function()
     /**
      * Temporary variables
      */
-    $extensionKey = 'liszt_portal';
+    $extensionKey = 'liszt-web';
 
     /**
      * Default TypoScript for LisztPortal
@@ -13,6 +13,6 @@ call_user_func(function()
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
         $extensionKey,
         'Configuration/TypoScript',
-        'Liszt-Portal'
+        'Liszt-Web'
     );
 });

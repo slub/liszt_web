@@ -5,13 +5,12 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:liszt_bibliography/Configuration/TypoScript/setup.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:liszt_catalograisonne/Configuration/TypoScript/setup.typoscript">
 
-
 ##############
 #### PAGE ####
 ##############
 page {
     includeCSS {
-        theme = EXT:liszt_portal/Resources/Public/Scss/Theme/theme.scss
+        theme = EXT:liszt_web/Resources/Public/Scss/Theme/theme.scss
     }
 
     includeJSLibs {
@@ -27,6 +26,6 @@ page {
     }
 
     includeJSFooter {
-        liszt_portal_scripts = EXT:liszt_portal/Resources/Public/JavaScript/Dist/scripts.js
+        liszt-web = EXT:liszt_web/Resources/Public/JavaScript/Dist/scripts.js
     }
 }
