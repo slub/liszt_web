@@ -5,7 +5,7 @@ call_user_func(function()
     /**
      * Temporary variables
      */
-    $extensionKey = 'liszt-web';
+    $extensionKey = 'liszt_web';
 
     /**
      * Default TypoScript for LisztPortal
