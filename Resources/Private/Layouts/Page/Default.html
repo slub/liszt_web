@@ -1,8 +1,9 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:variable name="selectedFrontendLayout" value="{f:cObject(typoscriptObjectPath:'lib.selectedFrontendLayout')}" />
 <f:spaceless>
 <div id="top"></div>
 <div class="body-bg{f:if(condition:theme.navigation.type, then:' body-bg-{theme.navigation.type}')}">
-
+    <f:debug>{_all}</f:debug>
     <f:render partial="DropIn/Page/PageBefore" arguments="{_all}" />
     <f:render partial="Structure/CookieConsent" arguments="{_all}" />
     <a class="visually-hidden-focusable" href="#page-content">
@@ -12,9 +13,13 @@
     <f:render section="Border" optional="true" />
     <f:render partial="Navigation/Breadcrumb" arguments="{_all}" />
 
+    <f:comment><!-- Don't show Searchbar if Frontend Layout 4 is selected--></f:comment>
+    <f:else if="{selectedFrontendLayout} == '4'">
+    <f:render partial="SearchBar/SearchBar" arguments="{_all}" />
+    </f:else>
+
     <div id="page-content" class="bp-page-content main-section">
-        <!--TYPO3SEARCH_begin-->
- {searchBar -> f:format.raw()}
+    <!--TYPO3SEARCH_begin-->
         <f:render section="Main" />
         <!--TYPO3SEARCH_end-->
     </div>
