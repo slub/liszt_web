@@ -2,13 +2,4 @@
 # TCEFORM
 #
 
-# Add layout for editors to hide SearchBar in backend page setup if needed
-TCEFORM {
-    pages {
-        layout {
-            addItems {
-                4 = Layout ohne Searchbar
-            }
-        }
-    }
-}
+
