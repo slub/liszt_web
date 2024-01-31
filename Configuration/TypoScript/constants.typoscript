@@ -9,20 +9,20 @@
 ############
 page {
     logo {
-        file = EXT:liszt-web/Resources/Public/Images/logo.svg
-        fileInverted = EXT:liszt-web/Resources/Public/Images/logo-inverted.svg
+        file = EXT:liszt_web/Resources/Public/Images/logo.svg
+        fileInverted = EXT:liszt_web/Resources/Public/Images/logo-inverted.svg
         height = 52
         width = 192
         alt = Liszt-Web
         linktitle = Liszt-Web
     }
     favicon {
-        file = EXT:liszt-web/Resources/Public/Icons/favicon.ico
+        file = EXT:liszt_web/Resources/Public/Icons/favicon.ico
     }
     fluidtemplate {
-        layoutRootPath = EXT:liszt-web/Resources/Private/Layouts/Page/
-        partialRootPath = EXT:liszt-web/Resources/Private/Partials/Page/
-        templateRootPath = EXT:liszt-web/Resources/Private/Templates/Page/
+        layoutRootPath = EXT:liszt_web/Resources/Private/Layouts/Page/
+        partialRootPath = EXT:liszt_web/Resources/Private/Partials/Page/
+        templateRootPath = EXT:liszt_web/Resources/Private/Templates/Page/
     }
 }
 
@@ -32,9 +32,9 @@ page {
 ##################
 plugin.bootstrap_package {
     view {
-        layoutRootPath = EXT:liszt-web/Resources/Private/Layouts/
-        partialRootPath = EXT:liszt-web/Resources/Private/Partials/
-        templateRootPath = EXT:liszt-web/Resources/Private/Templates/
+        layoutRootPath = EXT:liszt_web/Resources/Private/Layouts/
+        partialRootPath = EXT:liszt_web/Resources/Private/Partials/
+        templateRootPath = EXT:liszt_web/Resources/Private/Templates/
     }
 }
 
@@ -44,9 +44,9 @@ plugin.bootstrap_package {
 ########################
 plugin.bootstrap_package_contentelements {
     view {
-        layoutRootPath = EXT:liszt-web/Resources/Private/Layouts/ContentElements/
-        partialRootPath = EXT:liszt-web/Resources/Private/Partials/ContentElements/
-        templateRootPath = EXT:liszt-web/Resources/Private/Templates/ContentElements/
+        layoutRootPath = EXT:liszt_web/Resources/Private/Layouts/ContentElements/
+        partialRootPath = EXT:liszt_web/Resources/Private/Partials/ContentElements/
+        templateRootPath = EXT:liszt_web/Resources/Private/Templates/ContentElements/
     }
 }
 

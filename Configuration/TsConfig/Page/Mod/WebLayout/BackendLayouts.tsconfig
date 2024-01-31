@@ -1,4 +1,4 @@
 #
 # BACKENDLAYOUTS
 #
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:liszt-web/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts" extensions="tsconfig">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:liszt_web/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts" extensions="tsconfig">

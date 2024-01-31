@@ -28,7 +28,7 @@ if (!is_array($GLOBALS['TCA']['tt_content']['types']['categorized_timeline'] ?? 
     'tt_content',
     'CType',
     [
-        'LLL:EXT:liszt-web/Resources/Private/Language/Backend.xlf:content_element.categorized_timeline',
+        'LLL:EXT:liszt_web/Resources/Private/Language/Backend.xlf:content_element.categorized_timeline',
         'categorized_timeline',
         'content-bootstrappackage-timeline',
         'liszt-web'
@@ -73,7 +73,7 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
     $GLOBALS['TCA']['tt_content']['columns'],
     [
         'tx_lisztweb_categorizedtimeline_item' => [
-            'label' => 'LLL:EXT:liszt-web/Resources/Private/Language/Backend.xlf:categorized_timeline_item',
+            'label' => 'LLL:EXT:liszt_web/Resources/Private/Language/Backend.xlf:categorized_timeline_item',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_lisztweb_categorizedtimeline_item',
