@@ -10,8 +10,8 @@
         "typo3/cms-core": "^11.0",
         "typo3/cms-fluid-styled-content": "^11.0",
         "georgringer/news": "^10.0",
-        "slub/liszt-bibliography": "dev-main",
-        "slub/liszt-catalograisonne": "dev-main"
+        "slub/liszt-bibliography": "dev-11-update-to-typo3-v12",
+        "slub/liszt-catalograisonne": "dev-12-update-to-typo3-v12"
     },
     "autoload": {
         "psr-4": {
