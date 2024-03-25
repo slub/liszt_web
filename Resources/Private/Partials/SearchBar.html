@@ -1,18 +1,8 @@
 <section id="searchbar" class="searchbar">
     <div class="container-xl">
-        <div class="input-group mb-3">
-            <button class="btn btn-outline-dark dropdown-toggle" type="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">Katalogsuche
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">alles</a></li>
-                <li><a class="dropdown-item" href="#">Quellen- und Werkverzeichnis</a></li>
-                <li><a class="dropdown-item" href="#">Aufführungen</a></li>
-            </ul>
-            <input type="text" class="form-control no-shadow" aria-label="Text input with dropdown button"
-                   placeholder="">
-            <button class="btn btn-outline-dark" type="button" id="button-addon2">Suchen
-            </button>
-        </div>
+
+        {searchBar -> f:format.raw()}
+
+
     </div>
 </section>
