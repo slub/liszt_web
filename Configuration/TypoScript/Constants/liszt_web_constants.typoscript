@@ -1,0 +1,10 @@
+# customcategory=liszt_web=Liszt Web Extension
+liszt_web {
+  #cat=liszt_web/links; type=int+; label=Meta-UID: UID des Ordners für Meta Navigation im Footer
+  metaUid = 20
+
+  #cat=liszt_web/misc; type=string; label=Copyright-Zeile: im Footer (Jahreszahl wird automatisch ergänzt)
+  copyrightText = &copy; LISZT PORTAL
+
+}
+

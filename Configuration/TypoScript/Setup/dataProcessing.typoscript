@@ -1,0 +1,20 @@
+page.10.dataProcessing {
+  // Configure main menu
+  // since Typo3 12 full qualified class name (TYPO3\CMS\Frontend\DataProcessing\MenuProcessor) can replaced by menu
+  10 = menu
+  10 {
+    as = mainNavigation
+    expandAll = 1
+    levels = 2
+    includeSpacer = 1
+    titleField = subtitle // nav_title // title
+  }
+  20 = menu
+  20 {
+    as = metaMenu
+    titleField = subtitle // nav_title // title
+    levels = 1
+    special = directory
+    special.value = {$liszt_web.metaUid}
+  }
+}

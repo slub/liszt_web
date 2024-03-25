@@ -1,0 +1,44 @@
+
+.footer {
+padding-top: 3rem;
+  @include media-breakpoint-up(md) {
+    padding-top: 5rem;
+  }
+  @include media-breakpoint-up(lg) {
+    padding-top: 8rem;
+  }
+
+  h3, h4 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: $font-size-sm;
+    margin-bottom: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover, :focus {
+text-decoration: underline;
+    }
+  }
+
+  &-col {
+    padding-bottom: 2rem;
+  }
+
+
+  ul {
+    font-size: $font-size-sm;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+
+}
+

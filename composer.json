@@ -1,24 +1,16 @@
 {
-    "name": "slub/liszt-web",
-    "type": "typo3-cms-extension",
-    "description": "Sitepackage for liszt-portal.de",
-    "homepage": "https://liszt-portal.de",
-    "license": ["GPL-2.0-or-later"],
-    "keywords": ["TYPO3 CMS"],
-    "require": {
-        "typo3/cms-core": "^13.0",
-        "typo3/cms-fluid-styled-content": "^13.0",
-        "slub/liszt-bibliography": "dev-16-upgrade-to-typo3-v13",
-        "slub/liszt-catalograisonne": "dev-15-update-to-typo3-v13"
-    },
-    "autoload": {
-        "psr-4": {
-            "Slub\\LisztWeb\\": "Classes/"
-        }
-    },
-    "extra": {
-        "typo3/cms": {
-            "extension-key": "liszt_web"
-        }
+  "name": "slub/liszt-web",
+  "type": "typo3-cms-extension",
+  "description": "Sitepackage for liszt-portal.de",
+	"homepage": "https://liszt-portal.de",
+	"license": "GPL-2.0-or-later",
+  "autoload": {
+    "psr-4": {
+      "Slub\\LisztWeb\\": "Classes/"    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "liszt_web"
     }
+  }
 }

@@ -9,7 +9,7 @@ $EM_CONF[$_EXTKEY] = [
     'category' => 'templates',
     'constraints' => [
         'depends' => [
-            'bootstrap_package' => '12.0.0-12.9.99',
+            'vite-asset-collector' => '1.9.0-1.9.9',
         ],
         'conflicts' => [
         ],

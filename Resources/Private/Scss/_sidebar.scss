@@ -1,0 +1,47 @@
+.sidebar {
+
+  &-box {
+    border: 1px solid $mockup-border-gray;
+    padding: 1rem;
+   // border-radius: $border-radius;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: $small-font-size;
+
+    a {
+      text-decoration: none;
+      color: var(--bs-body-color);
+
+    }
+
+  }
+
+  .tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    justify-content: center;
+    column-gap: 0.75rem;
+    row-gap: 1rem;
+    // margin-bottom: 1rem;
+
+    li {
+      align-items: center;
+      display: inline-flex;
+    }
+
+    a {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      max-width: 250px;
+      white-space: nowrap;
+      border-radius: 9999px;
+      padding: 0.3rem 0.8rem;
+      font-size: $small-font-size;
+
+      border: 1px solid var(--bs-primary);
+    }
+  }
+
+}

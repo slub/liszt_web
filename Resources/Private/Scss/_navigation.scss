@@ -1,0 +1,44 @@
+.mainnav {
+
+  .navbar-nav {
+    --bs-nav-link-hover-color: #fff;
+  }
+
+  // all text in uppercase
+    text-transform: uppercase;
+
+    // find last child of li in ul navbar-nav and set padding.right inside a tag 0
+    .navbar-nav > li:last-child > a {
+      padding-right: 0;
+    }
+
+  .offcanvas-body {
+    justify-content: flex-end;
+  }
+
+  &.show {
+    .dropdown-menu {
+      box-shadow: none;
+      border: none;
+      margin-top: 0;
+      display: block;
+    }
+  }
+
+  .nav-link {
+    &-text {
+     padding: 0.25em 0.4rem;
+    }
+
+    &:hover, &:focus, &:active {
+      .nav-link-text {
+        background-color: var(--bs-body-color);
+        color: var(--bs-nav-link-hover-color);
+      }
+      &::after {
+        color: black;
+      }
+    }
+  }
+
+}

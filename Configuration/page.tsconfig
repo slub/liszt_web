@@ -1,0 +1,122 @@
+# Use this file to set global page TSconfig, e.g. adding new backend layouts with "mod.web_layout.BackendLayouts.<BackendLayoutKey>"
+# Typo3 v13 loads this file by default if it exists
+
+# test for add frameclass to appearance->frame_class
+TCEFORM {
+  tt_content {
+    frame_class {
+      addItems {
+        doubled_border = Liszt Inhaltselement
+      }
+      removeItems = indent-left,indent-right
+    }
+    header_layout {
+      altLabels {
+        0 = h2 Section Überschrift
+        1 = Seitenüberschrift
+        2 = Überschrift 2
+        3 = Überschrift 3
+        4 = Überschrift 4
+        5 = Überschrift 5
+      }
+      removeItems = 2
+    }
+  }
+}
+
+TCAdefaults {
+  tt_content {
+    frame_class = doubled_border
+  }
+}
+
+## set standard permissions for group "Seitenrechte" to delete pages from other group members
+TCEMAIN.permissions {
+  groupid = 1
+  group = show, editcontent, edit, new, delete
+}
+
+## own layouts for fluid style elements, for example text + image
+TCEFORM.tt_content.layout.types.textpic.addItems {
+  100 = eigenes Layout Textpic
+}
+
+## hide some fields in content elements, for example colPos and header_position
+#TCEFORM.tt_content {
+#  colPos.disabled = 1
+#  header_position.disabled = 1
+#}
+
+## Remove or Keep Content Elements, list = Plugin Elements
+## TCEFORM.tt_content.CType.keepItems = textmedia, list, header, text, image, bullets
+
+
+## set default values for content element for example textmedia image element
+mod.wizards.newContentElement.wizardItems.common.elements {
+  textmedia.tt_content_defValues {
+    imageorient = 26
+    imagecols = 1
+    header_layout = 3
+  }
+}
+
+mod.web_layout.BackendLayouts {
+  default {
+    title = Liszt Inhalt Layout
+    ## icon = EXT:liszt_web/Resources/Public/Images/BackendLayouts/default.gif
+    config {
+      backend_layout {
+        colCount = 1
+        rowCount = 2
+        rows {
+          1 {
+            columns {
+              1 {
+                name = Header
+                colPos = 1
+              }
+            }
+          }
+          2 {
+            columns {
+              1 {
+                name = Hauptinhalt
+                colPos = 0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  home {
+    title = Liszt Startseite Layout
+    ## icon = EXT:liszt_web/Resources/Public/Images/BackendLayouts/default.gif
+    config {
+      backend_layout {
+        colCount = 1
+        rowCount = 2
+        rows {
+          1 {
+            columns {
+              1 {
+                name = Header
+                colPos = 1
+              }
+            }
+          }
+          2 {
+            columns {
+              1 {
+                name = Hauptinhalt
+                colPos = 0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

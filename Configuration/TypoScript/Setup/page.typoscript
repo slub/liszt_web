@@ -1,0 +1,90 @@
+
+
+// Configure Page of typeNum=0 (default)
+page = PAGE
+page {
+  meta {
+    viewport = width=device-width, initial-scale=1
+  }
+
+  // here includeCSS or includeJS can be used to include the css and js files from EXT:liszt_web/Resources/Public if not comes from vite
+
+// shortcutIcon = EXT:liszt_web/Resources/Public/Image/Icon/typo3.svg
+  #  Include inline labels to be used in JavaScript files:
+  inlineLanguageLabelFiles {
+    siteDistribution = EXT:liszt_web/Resources/Private/Language/locallang.xlf
+    siteDistribution.selectionPrefix = inline-labels
+    siteDistribution.stripFromSelectionName = inline-labels.
+  }
+
+  bodyTagCObject = COA
+  bodyTagCObject {
+    10 = TEXT
+    10.data = TSFE:id
+    10.noTrimWrap = | id="p|"|
+    20 =< lib.page.class
+    20.stdWrap.noTrimWrap = | class="|"|
+    wrap = <body|>
+  }
+
+  10 = FLUIDTEMPLATE
+  10 {
+    templateName = TEXT
+    templateName.data = pagelayout
+    templateName.stdWrap.replacement {
+      10.search = pagets__
+      10.replace =
+    }
+
+    1 = TEXT
+    1.value = EXT:liszt_web/Resources/Private/Templates/Home.html
+
+    # Create a new backend layout in page.tsconfig
+    # and use <BackendLayoutKey> as template name to
+    # have it automatically resolved.
+
+    // Define template paths
+    templateRootPaths {
+      10 = EXT:liszt_web/Resources/Private/Templates/
+    }
+
+    // Define partial paths
+    partialRootPaths {
+      10 = EXT:liszt_web/Resources/Private/Partials/
+    }
+
+    // Define layout paths
+    layoutRootPaths {
+      10 = EXT:liszt_web/Resources/Private/Layouts/
+    }
+
+    // Variables to be used in the fluid template
+    variables {
+      // Adds current page id
+      pageId = TEXT
+      pageId.data = leveluid:0
+      pageTitle = TEXT
+      pageTitle.data = page:title
+      siteTitle = TEXT
+      siteTitle.data = siteLanguage:websiteTitle//site:websiteTitle//site:identifier
+      rootPage = TEXT
+      rootPage.data = leveluid:0
+
+      // title for meta navigation in footer from article with uid in constant metaNav
+      metanavtitle = TEXT
+      metanavtitle.data = DB:pages:{$liszt_web.metaUid}:title
+      // Adds backend layout name
+      layout = TEXT
+      layout.data = pagelayout
+      layout.stdWrap.replacement {
+        10.search = pagets__
+        10.replace =
+      }
+    }
+
+    settings {
+  //    testconstant = {$liszt_web.testconstant}
+
+    }
+  }
+}

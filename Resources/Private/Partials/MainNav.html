@@ -1,0 +1,45 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<header id="page-header" class="navbar navbar-expand-lg pb-4 pb-lg-5 pb-xl- pt-sm-4">
+    <div class="container-xl">
+        <f:link.page pageUid="{rootPage}" class="navbar-brand navbar-brand-image" title="{f:translate(key: 'inline-labels.liszt_web.toHome', extensionName: 'liszt_web')}">
+            <div class="bg-primary text-white p-2 p-lg-4">LOGO</div>
+        </f:link.page>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainnavigation" aria-controls="mainnavigation" aria-label="{f:translate(key: 'switchNavigation', extensionName: 'liszt_web')}">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <nav id="mainnavigation" class="mainnav offcanvas offcanvas-end" tabindex="-1" aria-labelledby="offcanvasNavbar2Label">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbar2Label">{f:translate(key: 'mainMenuLabel', extensionName: 'liszt_web')}</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="{f:translate(key: 'inline-labels.liszt_web.close', extensionName: 'liszt_web')}"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav">
+                    <f:for as="item" each="{mainNavigation}">
+                        <f:if condition="{item.children}">
+                            <f:then>
+                                <li class="nav-item{f:if(condition: item.active, then:' active')}{f:if(condition: item.children, then:' dropdown dropdown-hover')}">
+                                    <a href="#" data-bs-toggle="dropdown" id="{item.data.uid}" class="nav-link dropdown-toggle" title="{item.title}" aria-haspopup="true" aria-expanded="false"><span class="nav-link-text">{item.title}</span></a>
+                                    <ul class="dropdown-menu" aria-labelledby="{item.data.uid}">
+                                        <f:for each="{item.children}" as="item">
+                                            <li>
+                                            <f:link.typolink parameter="{item.data.uid}" class="dropdown-item{f:if(condition: item.active, then:' active')}" title="{item.title }">
+                                                <span class="dropdown-text">{item.title}<f:if condition="{child.current}"> <span class="visually-hidden">(current)</span></f:if></span>
+                                            </f:link.typolink>
+                                            </li>
+                                        </f:for>
+                                    </ul>
+                                </li>
+                            </f:then>
+                            <f:else>
+                                <li class="nav-item">
+                                    <f:link.typolink parameter="{item.data.uid}" class="nav-link{f:if(condition: item.current, then: ' nav-current')}" title="{item.title}"><span class="nav-link-text">{item.title}</span></f:link.typolink>
+                                </li>
+                            </f:else>
+                        </f:if>
+                    </f:for>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>

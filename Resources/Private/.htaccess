@@ -1,2 +1,6 @@
+# This .htaccess file has been created as a security precaution.
+# It would be used to prevent access to the private directory
+# in case something goes wrong with the server configuration.
+
 Order deny,allow
 Deny from all

@@ -1,60 +1,8 @@
-######################
-#### DEPENDENCIES ####
-######################
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/constants.typoscript">
+@import 'EXT:seo/Configuration/TypoScript/XmlSitemap/constants.typoscript'
 
+// Constants from this extension and overwrites for other extensions
+@import 'EXT:liszt_web/Configuration/TypoScript/Constants/*.typoscript'
 
-############
-### PAGE ###
-############
-page {
-    logo {
-        file = EXT:liszt_web/Resources/Public/Images/logo.svg
-        fileInverted = EXT:liszt_web/Resources/Public/Images/logo-inverted.svg
-        height = 52
-        width = 192
-        alt = Liszt-Web
-        linktitle = Liszt-Web
-    }
-    favicon {
-        file = EXT:liszt_web/Resources/Public/Icons/favicon.ico
-    }
-    fluidtemplate {
-        layoutRootPath = EXT:liszt_web/Resources/Private/Layouts/Page/
-        partialRootPath = EXT:liszt_web/Resources/Private/Partials/Page/
-        templateRootPath = EXT:liszt_web/Resources/Private/Templates/Page/
-    }
-}
-
-
-##################
-### EXTENSIONS ###
-##################
-plugin.bootstrap_package {
-    view {
-        layoutRootPath = EXT:liszt_web/Resources/Private/Layouts/
-        partialRootPath = EXT:liszt_web/Resources/Private/Partials/
-        templateRootPath = EXT:liszt_web/Resources/Private/Templates/
-    }
-}
-
-
-########################
-### CONTENT ELEMENTS ###
-########################
-plugin.bootstrap_package_contentelements {
-    view {
-        layoutRootPath = EXT:liszt_web/Resources/Private/Layouts/ContentElements/
-        partialRootPath = EXT:liszt_web/Resources/Private/Partials/ContentElements/
-        templateRootPath = EXT:liszt_web/Resources/Private/Templates/ContentElements/
-    }
-}
-
-
-################################
-### BOOTSTRAP SCSS CONSTANTS ###
-################################
-plugin.bootstrap_package.settings.scss {
-    primary = #eb3e4a
-    secondary = #013859
-}
+// Override paths for EXT:fluid_styled_content
+styles.templates.templateRootPath = EXT:liszt_web/Resources/Private/Templates/
+styles.templates.partialRootPath = EXT:liszt_web/Resources/Private/Partials/

@@ -1,0 +1,37 @@
+:root {
+  --bs-primary-bg-subtle: #ddd;
+  --bs-primary-text-emphasis: #000;
+  --bs-accordion-btn-focus-border-color: #000;
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(20, 20, 20, 0.25);
+}
+
+
+main {
+  margin-top: 2rem;
+  @include media-breakpoint-up(md) {
+    margin-top: 4rem;
+  }
+  @include media-breakpoint-up(lg) {
+    margin-top: 5rem;
+  }
+}
+
+.container-xl {
+  @include media-breakpoint-up(sm) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.text-collapse {
+  display: -webkit-box;
+  -webkit-line-clamp: 12;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.show-more {
+  display: none;
+  margin-top: -1em;
+}
+

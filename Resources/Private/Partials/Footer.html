@@ -1,0 +1,38 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<footer class="footer">
+    <div class="container-xl">
+        <div class="row">
+            <div class="footer-col col-12 col-sm-8 col-md-4">
+                <h3 class="footer-title">Kontakt</h3>
+                <p>
+                    Sächsische Landesbibliothek<br />
+                    Staats- und Universitätsbibliothek Dresden SLUB<br />
+                    Abteilung Informationstechnologie<br />
+                    Referat Digitale Präsentation<br />
+                    Zellescher Weg 18<br />
+                    01054 Dresden<br />
+                </p>
+            </div>
+            <div class="footer-col col-12 col-sm-4 col-md-3">
+                <h3 class="footer-title">{metanavtitle}</h3>
+                <ul>
+                    <f:for each="{metaMenu}" as="item" iteration="counter">
+                        <li>
+                        <f:link.typolink parameter="{item.data.uid}" target="{item.target}" ></f:link.typolink>
+                        </li>
+                    </f:for>
+                </ul>
+            </div>
+            <div class="footer-col col-12 col-md-5">
+                <h3 class="footer-title"><f:cObject typoscriptObjectPath="lib.copyright" /></h3>
+                <p>
+                    Das LISZT PORTAL ist ein Blindtext. Ximillit officil intis ad que dolum exped ut laut
+                    occabo. Nequam quibus nos et rerunt et quosant ionecae nis estiones quam quid
+                    eum qui te sinti te solenient laut mi, voluptas estis dolupti con ressit labo. Bus isquia
+                    doluptate eos eost digeniet excerias aut eatur.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>

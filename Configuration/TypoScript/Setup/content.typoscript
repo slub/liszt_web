@@ -1,0 +1,74 @@
+# Returns number of content elements for a given colPos
+# Usage: {f:cObject(typoscriptObjectPath: 'lib.hasContent', data: '{colPos: 0}')}
+lib.hasContent = TEXT
+lib.hasContent.numRows {
+  table = tt_content
+  select.where = colPos = {field:colPos}
+  select.where.insertData = 1
+}
+
+# Adds content elements for a given colPos
+# Usage: {f:cObject(typoscriptObjectPath: 'lib.dynamicContent', data: '{colPos: 0, slide: "-1", max: '1'}')}
+lib.dynamicContent = CONTENT
+lib.dynamicContent {
+  table = tt_content
+  select {
+    orderBy = sorting
+    where = colPos = {field:colPos}
+    where.insertData = 1
+   // max.field = max
+  }
+  slide.field = slide
+}
+
+
+// Copyright text in footer
+lib.copyright = COA
+lib.copyright {
+  10 = TEXT
+  10.value = {$liszt_web.copyrightText}&nbsp;
+  20 = TEXT
+  20.data = date:Y
+}
+
+
+// css classes with lang and template name for body tag
+lib.page.class = COA
+lib.page.class {
+  // Page alias or id as fallback
+  10 = TEXT
+  10 {
+    field = alias // uid
+    noTrimWrap = |page-||
+  }
+  // Current level of the page within the tree structure
+  20 = TEXT
+  20 {
+    data = level:1
+    noTrimWrap = | pagelevel-||
+  }
+  // Language
+  30 = TEXT
+  30 {
+    data = siteLanguage:languageId
+    noTrimWrap = | language-||
+  }
+  // Backend layout
+  40 = TEXT
+  40 {
+    data = pagelayout
+    replacement.10 {
+      search = pagets__
+      replace =
+    }
+    ifEmpty = default
+    noTrimWrap = | backendlayout-||
+  }
+  // Layout
+  50 = TEXT
+  50 {
+    field = layout
+    noTrimWrap = | layout-||
+    ifEmpty = default
+  }
+}

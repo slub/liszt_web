@@ -1,0 +1,37 @@
+@font-face {
+  font-family: InterVariable;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../Font/InterVariable.woff2") format("woff2");
+}
+
+h1, h2 {
+  font-weight: 400;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+h4, h5 {
+  font-weight: 600;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.max-textblock-width {
+  max-width: 50rem;
+ // hyphens: auto;
+}
+
+
+
+
+.flex-between
+{
+  display: flex;
+  justify-content: space-between;
+}

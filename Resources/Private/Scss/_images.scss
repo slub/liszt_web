@@ -1,0 +1,108 @@
+.bd-placeholder {
+  max-width: 200px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  a {
+    text-decoration: none;
+    color: $placeholder-color;
+  }
+  &-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    height: auto;
+
+    border-color: $placeholder-color;
+
+    rect {
+      fill: $placeholder-color;
+    }
+
+  }
+  .label {
+    display: block;
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+}
+
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5em;
+  margin-right: 0.5em;
+  background-color: var(--bs-primary);
+  color: white;
+  font-weight: 600;
+
+  @include media-breakpoint-up(xl) {
+    margin-left: -2em;
+  }
+}
+
+
+.image-content {
+  max-width: 400px;
+    width: 100%;
+    height: auto;
+  border: 1px solid $mockup-border-gray;
+  }
+
+.sources-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+
+  &-item {
+    border: 1px solid $placeholder-color;
+    padding:0 1rem 1rem 1rem;
+    font-size: 0.75rem;
+
+    a {
+      text-decoration: none;
+      color: $body-color;
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+      padding: 0 2rem 0 2rem;
+      rect {
+        fill: $placeholder-color;
+      }
+    }
+
+    .icon {
+      margin-left: -1rem;
+      margin-top: 0;
+      display: block;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      padding: 0 2rem 0 2rem;
+    }
+
+    &-label {
+      padding-top: 1rem;
+      text-align: center;
+    }
+
+  }
+}
+

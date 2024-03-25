@@ -1,11 +1,30 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2022-12-02UTC10:46:300">
-        <header>
-            <authorName>Matthias Richter</authorName>
-            <authorEmail>matthias.richter@slub-dresden.de</authorEmail>
-        </header>
-        <body>
-        </body>
-    </file>
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="de" datatype="plaintext" original="EXT:liszt_web/Resources/Private/Language/locallang.xlf" date="2023-05-16:00:00Z" product-name="liszt_web">
+		<header/>
+		<body>
+			<trans-unit id="inline-labels.liszt_web.welcome" resname="liszt_web.welcome">
+				<source>Welcome to TYPO3</source>
+			</trans-unit>
+			<trans-unit id="inline-labels.liszt_web.made-with" resname="liszt_web.made-with">
+				<source>Made with</source>
+			</trans-unit>
+
+			<trans-unit id="inline-labels.liszt_web.close" resname="liszt_web.close">
+				<source>schließen</source>
+			</trans-unit>
+
+			<trans-unit id="inline-labels.liszt_web.toHome" resname="liszt_web.toHome">
+				<source>zur Startseite</source>
+			</trans-unit>
+
+			<trans-unit id="mainMenuLabel">
+				<source>Hauptmenü</source>
+			</trans-unit>
+			<trans-unit id="switchNavigation">
+				<source>Hauptmenü einblenden</source>
+			</trans-unit>
+
+		</body>
+	</file>
 </xliff>

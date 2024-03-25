@@ -1,11 +1,11 @@
 <?php
-defined('TYPO3') or die('Access denied.');
-/***************
- * Add default RTE configuration
- */
-$GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['liszt-web'] = 'EXT:liszt_web/Configuration/RTE/Default.yaml';
 
-/***************
- * PageTS
- */
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:liszt_web/Configuration/TsConfig/Page/All.tsconfig">');
+declare(strict_types=1);
+
+defined('TYPO3') or die();
+
+// Include vite generated manifest file (global)
+$GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['vite_asset_collector']['defaultManifest'] = 'EXT:liszt_web/Resources/Public/Vite/.vite/manifest.json';
+
+// Include custom RTE config
+$GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:liszt_web/Configuration/RTE/RteDefaultPreset.yaml';

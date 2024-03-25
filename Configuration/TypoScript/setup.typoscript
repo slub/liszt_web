@@ -1,33 +1,11 @@
-######################
-#### DEPENDENCIES ####
-######################
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/setup.typoscript">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:liszt_bibliography/Configuration/TypoScript/setup.typoscript">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:liszt_catalograisonne/Configuration/TypoScript/setup.typoscript">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:liszt_common/Configuration/TypoScript/setup.typoscript">
+// Extensions default config
+@import 'EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:seo/Configuration/TypoScript/XmlSitemap/setup.typoscript'
 
-##############
-#### PAGE ####
-##############
-page {
-    includeCSS {
-        theme = EXT:liszt_web/Resources/Public/Scss/Theme/theme.scss
-    }
 
-    includeJSLibs {
 
-    }
+// Page configuration // alternative variant is import *.typoscript for all files in Folder "Setup"
+@import 'EXT:liszt_web/Configuration/TypoScript/Setup/*.typoscript'
 
-    includeJS {
-
-    }
-
-    includeJSFooterlibs {
-
-    }
-
-    includeJSFooter {
-        liszt-web = EXT:liszt_web/Resources/Public/JavaScript/Dist/scripts.js
-    }
-}
-
+// enable admin panel on frontend pages for debug
+// config.admPanel = 1
