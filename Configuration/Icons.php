@@ -1,5 +1,4 @@
 <?php
-// ToDo: seems to not run, icons not appearing in manifest.json
 
 return [
     'site-logo' => [

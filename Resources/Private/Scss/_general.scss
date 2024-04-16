@@ -1,19 +1,16 @@
 :root {
-  --bs-primary-bg-subtle: #ddd;
-  --bs-primary-text-emphasis: #000;
   --bs-accordion-btn-focus-border-color: #000;
   --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(20, 20, 20, 0.25);
+  --lz-font-color-inverse: #fff;
 }
 
 
 main {
   margin-top: 2rem;
   @include media-breakpoint-up(md) {
-    margin-top: 4rem;
+    margin-top: 3rem;
   }
-  @include media-breakpoint-up(lg) {
-    margin-top: 5rem;
-  }
+
 }
 
 .container-xl {
@@ -35,3 +32,61 @@ main {
   margin-top: -1em;
 }
 
+.icon-left {
+  position: relative;
+  width: 100%;
+  @include media-breakpoint-up(xl) {
+    display: inline-flex;
+    align-items: center;
+  }
+
+}
+
+.icon {
+  display: flex;
+  margin-bottom: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+  text-decoration: none;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.24rem;
+  background-color: var(--bs-primary);
+  color: white;
+  font-weight: 400;
+  font-family: "Make Way", serif;
+
+  @include media-breakpoint-up(xl) {
+    display: flex;
+    position: absolute;
+    left: -3.5rem;
+    margin-bottom: 0;
+  }
+
+
+  // hero with not class parent
+
+  .hero:not(.child) & {
+    background-color: var(--lz-font-color-inverse);
+    color: var(--bs-primary);
+  }
+
+  .hero.child & {
+    background-color: var(--bs-primary);
+    color: var(--lz-font-color-inverse);
+  }
+
+
+
+
+  &.black {
+    background-color: var(--bs-body-color);
+
+    &:hover {
+      background-color: var(--bs-primary);
+    }
+
+  }
+
+}

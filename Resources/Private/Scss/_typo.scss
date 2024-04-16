@@ -1,25 +1,58 @@
 @font-face {
-  font-family: InterVariable;
+  font-family: Beausite Classic;
   font-style: normal;
-  font-weight: 100 900;
+  font-weight: 300;
   font-display: swap;
-  src: url("../Font/InterVariable.woff2") format("woff2");
+  src: url("../Fonts/BeausiteClassicWebTrial-Clear.woff2") format("woff2");
 }
+
+@font-face {
+  font-family: Beausite Classic;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../Fonts/BeausiteClassicWebTrial-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Beausite Classic;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../Fonts/BeausiteClassicWebTrial-Semibold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Make Way;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../Fonts/MakeWayTrial-Regular.woff2") format("woff2");
+}
+
+body {
+  --bs-body-font-size: 18px;
+  --bs-body-line-height: 1.45;
+  // letter-spacing: 0.01em;
+}
+
 
 h1, h2 {
   font-weight: 400;
+  font-family: "Make Way", serif;
 }
 
 h3 {
-  font-weight: 500;
+  font-weight: 400;
+  font-family: "Make Way", serif;
 }
 
 h4, h5 {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 strong {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .max-textblock-width {
@@ -29,9 +62,13 @@ strong {
 
 
 
-
 .flex-between
 {
   display: flex;
   justify-content: space-between;
+}
+
+
+.small-fontsize {
+  font-size: 0.85rem;
 }

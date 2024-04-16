@@ -1,0 +1,19 @@
+.digitalisat {
+  display: flex;
+  gap: 2rem;
+
+  margin-bottom: 2rem;
+
+  &-image {
+    span {
+      font-size: 0.85rem;
+    }
+    a {
+      text-decoration: none;
+      color: var(--bs-body-color);
+        &:hover {
+            color: var(--bs-primary);
+        }
+    }
+  }
+  }

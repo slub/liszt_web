@@ -31,20 +31,6 @@
 }
 
 
-.icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.5em;
-  margin-right: 0.5em;
-  background-color: var(--bs-primary);
-  color: white;
-  font-weight: 600;
-
-  @include media-breakpoint-up(xl) {
-    margin-left: -2em;
-  }
-}
 
 
 .image-content {
@@ -54,13 +40,25 @@
   border: 1px solid $mockup-border-gray;
   }
 
-.sources-grid {
+
+.q-grid {
   margin-top: 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1rem;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
+
+  &-icon {
+    margin-left: -0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 
   &-item {
     border: 1px solid $placeholder-color;
@@ -72,10 +70,13 @@
       color: $body-color;
       &:hover {
         color: $primary;
+        svg {
+          fill: $primary;
+        }
       }
     }
 
-    svg {
+    svg.placeholdersvg {
       width: 100%;
       height: auto;
       padding: 0 2rem 0 2rem;
@@ -84,13 +85,6 @@
       }
     }
 
-    .icon {
-      margin-left: -1rem;
-      margin-top: 0;
-      display: block;
-      text-align: center;
-      font-size: 1rem;
-    }
 
     img {
       width: 100%;
@@ -106,3 +100,14 @@
   }
 }
 
+.navbar-brand-image {
+  width: 140px;
+  @include media-breakpoint-up(md) {
+    width: 170px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
