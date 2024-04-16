@@ -1,32 +1,36 @@
 {
-  "_@popperjs-WhmJkuoZ.js": {
-    "file": "assets/@popperjs-WhmJkuoZ.js"
+  "_@popperjs-DcOdiReC.js": {
+    "file": "assets/@popperjs-DcOdiReC.js"
   },
-  "_bootstrap-BdlpLzpZ.js": {
-    "file": "assets/bootstrap-BdlpLzpZ.js",
+  "_bootstrap-BWvFz-hb.js": {
+    "file": "assets/bootstrap-BWvFz-hb.js",
     "imports": [
-      "_@popperjs-WhmJkuoZ.js"
+      "_@popperjs-DcOdiReC.js"
     ]
   },
   "packages/liszt_web/Resources/Private/Font/InterVariable.woff2": {
     "file": "assets/InterVariable-CWi-zmRD.woff2",
     "src": "packages/liszt_web/Resources/Private/Font/InterVariable.woff2"
   },
+  "packages/liszt_web/Resources/Private/Image/Icon/LogoLisztPortal.svg": {
+    "file": "assets/LogoLisztPortal-BnoogySi.svg",
+    "src": "packages/liszt_web/Resources/Private/Image/Icon/LogoLisztPortal.svg"
+  },
   "packages/liszt_web/Resources/Private/Scss/rte.scss": {
-    "file": "assets/rte-C643Bcxq.css",
+    "file": "assets/rte-DXgfgxZY.css",
     "src": "packages/liszt_web/Resources/Private/Scss/rte.scss",
     "isEntry": true
   },
   "packages/liszt_web/Resources/Private/app.js": {
-    "file": "assets/app-BmXRQh3L.js",
+    "file": "assets/app-C50X5kQw.js",
     "src": "packages/liszt_web/Resources/Private/app.js",
     "isEntry": true,
     "imports": [
-      "_bootstrap-BdlpLzpZ.js",
-      "_@popperjs-WhmJkuoZ.js"
+      "_bootstrap-BWvFz-hb.js",
+      "_@popperjs-DcOdiReC.js"
     ],
     "css": [
-      "assets/app-BmUKo1MQ.css"
+      "assets/app-DNuCM8MO.css"
     ],
     "assets": [
       "assets/InterVariable-CWi-zmRD.woff2"

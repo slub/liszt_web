@@ -22,6 +22,15 @@ TCEFORM {
       removeItems = 2
     }
   }
+  pages {
+    layout {
+      removeItems = 2,3,4,5,6
+      altLabels {
+        0 = Standard
+        1 = Variante 1
+      }
+      }
+  }
 }
 
 TCAdefaults {
