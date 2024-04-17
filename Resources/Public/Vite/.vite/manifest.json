@@ -8,21 +8,33 @@
       "_@popperjs-DcOdiReC.js"
     ]
   },
-  "packages/liszt_web/Resources/Private/Font/InterVariable.woff2": {
-    "file": "assets/InterVariable-CWi-zmRD.woff2",
-    "src": "packages/liszt_web/Resources/Private/Font/InterVariable.woff2"
+  "packages/liszt_web/Resources/Private/Fonts/BeausiteClassicWebTrial-Clear.woff2": {
+    "file": "assets/BeausiteClassicWebTrial-Clear-p_Pg092U.woff2",
+    "src": "packages/liszt_web/Resources/Private/Fonts/BeausiteClassicWebTrial-Clear.woff2"
+  },
+  "packages/liszt_web/Resources/Private/Fonts/BeausiteClassicWebTrial-Regular.woff2": {
+    "file": "assets/BeausiteClassicWebTrial-Regular-B8QyfrRl.woff2",
+    "src": "packages/liszt_web/Resources/Private/Fonts/BeausiteClassicWebTrial-Regular.woff2"
+  },
+  "packages/liszt_web/Resources/Private/Fonts/BeausiteClassicWebTrial-Semibold.woff2": {
+    "file": "assets/BeausiteClassicWebTrial-Semibold-D62sg8kR.woff2",
+    "src": "packages/liszt_web/Resources/Private/Fonts/BeausiteClassicWebTrial-Semibold.woff2"
+  },
+  "packages/liszt_web/Resources/Private/Fonts/MakeWayTrial-Regular.woff2": {
+    "file": "assets/MakeWayTrial-Regular-CnRhtap7.woff2",
+    "src": "packages/liszt_web/Resources/Private/Fonts/MakeWayTrial-Regular.woff2"
   },
   "packages/liszt_web/Resources/Private/Image/Icon/LogoLisztPortal.svg": {
     "file": "assets/LogoLisztPortal-BnoogySi.svg",
     "src": "packages/liszt_web/Resources/Private/Image/Icon/LogoLisztPortal.svg"
   },
   "packages/liszt_web/Resources/Private/Scss/rte.scss": {
-    "file": "assets/rte-DXgfgxZY.css",
+    "file": "assets/rte-l0sNRNKZ.js",
     "src": "packages/liszt_web/Resources/Private/Scss/rte.scss",
     "isEntry": true
   },
   "packages/liszt_web/Resources/Private/app.js": {
-    "file": "assets/app-C50X5kQw.js",
+    "file": "assets/app-Cb9kdFra.js",
     "src": "packages/liszt_web/Resources/Private/app.js",
     "isEntry": true,
     "imports": [
@@ -30,10 +42,13 @@
       "_@popperjs-DcOdiReC.js"
     ],
     "css": [
-      "assets/app-DNuCM8MO.css"
+      "assets/app-DNcy2BwE.css"
     ],
     "assets": [
-      "assets/InterVariable-CWi-zmRD.woff2"
+      "assets/BeausiteClassicWebTrial-Clear-p_Pg092U.woff2",
+      "assets/BeausiteClassicWebTrial-Regular-B8QyfrRl.woff2",
+      "assets/BeausiteClassicWebTrial-Semibold-D62sg8kR.woff2",
+      "assets/MakeWayTrial-Regular-CnRhtap7.woff2"
     ]
   }
 }
