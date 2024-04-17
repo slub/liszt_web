@@ -8,7 +8,8 @@
 	],
 	"require": {
 		"typo3/cms-core": "^13.0",
-		"slub/liszt-common": "dev-main"
+		"slub/liszt-common": "dev-main",
+		"quellenform/t3x-iconpack": "^1.0"
 	},
 
   "autoload": {
