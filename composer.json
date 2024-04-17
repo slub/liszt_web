@@ -2,8 +2,15 @@
   "name": "slub/liszt-web",
   "type": "typo3-cms-extension",
   "description": "Sitepackage for liszt-portal.de",
-	"homepage": "https://liszt-portal.de",
-	"license": "GPL-2.0-or-later",
+  "homepage": "https://liszt-portal.de",
+	"license": [
+		"GPL-2.0-or-later"
+	],
+	"require": {
+		"typo3/cms-core": "^13.0",
+		"slub/liszt-common": "dev-main"
+	},
+
   "autoload": {
     "psr-4": {
       "Slub\\LisztWeb\\": "Classes/"    }
