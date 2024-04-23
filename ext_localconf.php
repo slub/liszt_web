@@ -9,3 +9,12 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['vite_asset_collector']['defaultManife
 
 // Include custom RTE config
 $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:liszt_web/Configuration/RTE/RteDefaultPreset.yaml';
+
+
+if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('iconpack')) {
+    \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+        \Quellenform\Iconpack\IconpackRegistry::class
+    )->registerIconpack(
+        'EXT:liszt_web/Configuration/Iconpack/LisztIconpack.yaml'
+    );
+}
