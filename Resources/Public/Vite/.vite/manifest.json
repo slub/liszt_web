@@ -34,7 +34,7 @@
     "isEntry": true
   },
   "packages/liszt_web/Resources/Private/app.js": {
-    "file": "assets/app-Cb9kdFra.js",
+    "file": "assets/app-DXPhjiwV.js",
     "src": "packages/liszt_web/Resources/Private/app.js",
     "isEntry": true,
     "imports": [
@@ -42,7 +42,7 @@
       "_@popperjs-DcOdiReC.js"
     ],
     "css": [
-      "assets/app-DNcy2BwE.css"
+      "assets/app-Dnj5TI-2.css"
     ],
     "assets": [
       "assets/BeausiteClassicWebTrial-Clear-p_Pg092U.woff2",

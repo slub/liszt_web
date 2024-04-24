@@ -5,8 +5,8 @@
         <f:link.page pageUid="{rootPage}" class="navbar-brand navbar-brand-image" title="{f:translate(key: 'inline-labels.liszt_web.toHome', extensionName: 'liszt_web')}">
             <f:image src="EXT:liszt_web/Resources/Public/Icons/LogoLisztPortal.svg" alt="Logo Liszt Portal" />
         </f:link.page>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainnavigation" aria-controls="mainnavigation" aria-label="{f:translate(key: 'switchNavigation', extensionName: 'liszt_web')}">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" aria-expanded="false" aria-haspopup="menu" data-bs-target="#mainnavigation" aria-controls="mainnavigation" aria-label="{f:translate(key: 'switchNavigation', extensionName: 'liszt_web')}">
+            <span class="navbar-toggler-icon" aria-hidden="true"></span>
         </button>
         <nav id="mainnavigation" class="mainnav offcanvas offcanvas-end" tabindex="-1" aria-labelledby="offcanvasNavbar2Label">
             <div class="offcanvas-header">
@@ -18,22 +18,22 @@
                     <f:for as="item" each="{mainNavigation}">
                         <f:if condition="{item.children}">
                             <f:then>
-                                <li class="nav-item{f:if(condition: item.active, then:' active')}{f:if(condition: item.children, then:' dropdown dropdown-hover')}">
-                                    <a href="#" data-bs-toggle="dropdown" id="{item.data.uid}" class="nav-link dropdown-toggle" title="{item.title}" aria-haspopup="true" aria-expanded="false"><span class="nav-link-text">{item.title}</span></a>
-                                    <ul class="dropdown-menu" aria-labelledby="{item.data.uid}">
+                                <li class="root-level nav-item{f:if(condition: item.active, then:' active')}{f:if(condition: item.children, then:' dropdown dropdown-hover')}">
+                                    <a href="#" type="button" data-bs-toggle="dropdown" id="dropdown-btn-{item.data.uid}" class="nav-link dropdown-toggle" title="{item.title}" aria-controls="dropdown-{item.data.uid}" aria-haspopup="true" aria-expanded="false"><span class="nav-link-text">{item.title}</span></a>
+                                    <ul class="lev2 dropdown-menu" id="dropdown-{item.data.uid}" aria-labelledby="dropdown-btn-{item.data.uid}">
                                         <f:for each="{item.children}" as="item">
                                             <li>
-                                            <f:link.typolink parameter="{item.data.uid}" class="dropdown-item{f:if(condition: item.active, then:' active')}" title="{item.title }">
-                                                <span class="dropdown-text">{item.title}<f:if condition="{child.current}"> <span class="visually-hidden">(current)</span></f:if></span>
-                                            </f:link.typolink>
+                                                <f:link.typolink parameter="{item.data.uid}" class="dropdown-item{f:if(condition: item.active, then:' active')}" title="{item.title }">
+                                                    <span class="dropdown-text">{item.title}<f:if condition="{item.current}"> <span class="visually-hidden">(current)</span></f:if></span>
+                                                </f:link.typolink>
                                             </li>
                                         </f:for>
                                     </ul>
                                 </li>
                             </f:then>
                             <f:else>
-                                <li class="nav-item">
-                                    <f:link.typolink parameter="{item.data.uid}" class="nav-link{f:if(condition: item.current, then: ' nav-current')}" title="{item.title}"><span class="nav-link-text">{item.title}</span></f:link.typolink>
+                                <li class="root-level nav-item">
+                                    <f:link.typolink parameter="{item.data.uid}" class="nav-link{f:if(condition: item.current, then: ' nav-current')}" title="{item.title}"><span class="nav-link-text">{item.title}<f:if condition="{item.current}"> <span class="visually-hidden">(current)</span></f:if></span></f:link.typolink>
                                 </li>
                             </f:else>
                         </f:if>

@@ -1,84 +1,140 @@
+.navbar {
+    --bs-navbar-toggler-focus-width: 1px;
+
+}
+
 .mainnav {
-  font-size: 1rem;
 
-  .navbar-nav {
-    --bs-nav-link-hover-color: #fff;
-    font-weight: 400;
-  }
+    font-size: 1rem;
 
-  // all text in uppercase
+    .navbar-nav {
+        --bs-nav-link-hover-color: #fff;
+        font-weight: 400;
+    }
+
     text-transform: uppercase;
 
     // find last child of li in ul navbar-nav and set padding.right inside a tag 0
     .navbar-nav > li:last-child > a {
-      padding-right: 0;
+        padding-right: 0;
     }
 
-  .offcanvas-body {
-    justify-content: flex-end;
-  }
+    .nav-link {
+        &-text {
+            padding: 0.25em 0.4rem;
+        }
 
-  &.show {
-    .dropdown-menu {
-      box-shadow: none;
-      border: none;
-      margin-top: 0;
-      display: block;
-    }
-  }
+        &:hover, &:focus, &:active {
+            .nav-link-text {
+                background-color: var(--bs-primary);
+                color: var(--lz-font-color-inverse);
+            }
 
-  .nav-link {
-    &-text {
-     padding: 0.25em 0.4rem;
+            &::after {
+                color: black;
+            }
+        }
+
+        &.nav-current {
+            cursor: default;
+
+            .nav-link-text {
+                background-color: var(--bs-body-color);
+                color: var(--lz-font-color-inverse);
+            }
+        }
     }
 
-    &:hover, &:focus, &:active {
-      .nav-link-text {
-        background-color: var(--bs-primary);
-        color: var(--lz-font-color-inverse);
-      }
-      &::after {
-        color: black;
-      }
+    // active parent root level only black if not offcanvas
+    &:not(.show, .showing){
+        .root-level {
+            &.active {
+                .nav-link-text {
+                    background-color: var(--bs-body-color);
+                    color: var(--lz-font-color-inverse);
+                    cursor: default;
+                }
+            }
+        }
     }
-  }
+
+    // only open offcanavs menu
+    &.show, &.showing {
+        line-height: 1.25;
+        li.root-level > a {
+            font-size: var(--bs-body-font-size);
+        }
+        .dropdown-menu {
+            padding: 0;
+            box-shadow: none;
+            border: none;
+            margin-top: 0;
+            display: block;
+        }
+        .dropdown-item {
+            text-transform: none;
+        }
+
+            .dropdown-item.active {
+            background-color: var(--bs-body-color);
+            color: var(--lz-font-color-inverse);
+        }
+        .dropdown-toggle::after {
+            display: none;
+        }
+
+    }
+
+    .offcanvas-header {
+    --bs-offcanvas-padding-y: 1.5rem;
+    }
+
+    .offcanvas-body {
+        justify-content: flex-end;
+        padding-top: 0;
+    }
+
+
+
 }
 
 
 // ToDo: on mobile place this menu at bottomlinke ios, on desktop sticky?
 .sidemenu {
-  display: none;
-  position: fixed;
-  right: 0;
-  top: 500px;
-  z-index: 1000;
-  background-color: var(--bs-body-bg);
-  border: 1px solid var(--bs-border-color);
-  border-right: none;
-  padding: 15px 0 15px 0;
-  width: 68px;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  @include media-breakpoint-up(lg) {
-    display: flex;
-  }
-
-  &-item {
-    display: block;
-    &:hover, &:focus, &:active {
-      color: var(--bs-primary);
-      svg {
-        fill: var(--bs-primary);
-        color: var(--bs-body-primary);
-
-      }
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 500px;
+    z-index: 1000;
+    background-color: var(--bs-body-bg);
+    border: 1px solid var(--bs-border-color);
+    border-right: none;
+    padding: 15px 0 15px 0;
+    width: 68px;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    @include media-breakpoint-up(lg) {
+        display: flex;
     }
 
-    svg {
-      width: 25px;
-      height: 25px;
-      color: var(--bs-body-color);
+    &-item {
+        display: block;
+
+        &:hover, &:focus, &:active {
+            color: var(--bs-primary);
+
+            svg {
+                fill: var(--bs-primary);
+                color: var(--bs-body-primary);
+
+            }
+        }
+
+        svg {
+            width: 25px;
+            height: 25px;
+            color: var(--bs-body-color);
+        }
     }
-  }
 }
