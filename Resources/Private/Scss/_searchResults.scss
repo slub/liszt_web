@@ -89,12 +89,13 @@
 
   &-item {
    // background-color: $placeholder-color;
-    height: 100px;
-    text-align: center;
+   // height: 100px;
+      margin-left: 1rem;
+      border-bottom: 1px solid $border-color;
 
     h3 {
       font-size: 1.25rem;
-      padding: 2rem;
+     // padding: 2rem;
     }
   }
 }
