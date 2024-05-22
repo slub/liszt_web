@@ -6,8 +6,8 @@
 
 <f:render partial="MainNav" arguments="{_all}" />
 
-<f:comment><!-- Don't show Searchbar if Frontend Layout 4 is selected--></f:comment>
-<f:if condition="{selectedFrontendLayout} != '4'">
+<f:comment><!-- Show Searchbar if Frontend Layout 4 is selected, changed from != to == --></f:comment>
+<f:if condition="{selectedFrontendLayout} == '4'">
     <f:render partial="SearchBar" arguments="{_all}" />
 </f:if>
 

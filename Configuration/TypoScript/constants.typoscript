@@ -3,6 +3,9 @@
 // Constants from this extension and overwrites for other extensions
 @import 'EXT:liszt_web/Configuration/TypoScript/Constants/*.typoscript'
 
+
+// ToDo: is this needed? only for overwriting original fluid templates, see ExtensionOverrides in Ressources/prrivate
 // Override paths for EXT:fluid_styled_content
-styles.templates.templateRootPath = EXT:liszt_web/Resources/Private/Templates/
-styles.templates.partialRootPath = EXT:liszt_web/Resources/Private/Partials/
+//styles.templates.templateRootPath = EXT:liszt_web/Resources/Private/Templates/
+//styles.templates.partialRootPath = EXT:liszt_web/Resources/Private/Partials/
+//styles.templates.layoutRootPath = EXT:liszt_web/Resources/Private/Layouts/
