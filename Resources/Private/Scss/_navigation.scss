@@ -1,12 +1,9 @@
 .navbar {
     --bs-navbar-toggler-focus-width: 1px;
-
 }
 
 .mainnav {
-
     font-size: 1rem;
-
     .navbar-nav {
         --bs-nav-link-hover-color: #fff;
         font-weight: 400;
@@ -14,7 +11,7 @@
 
     text-transform: uppercase;
 
-    // find last child of li in ul navbar-nav and set padding.right inside a tag 0
+    // last child of li in ul navbar-nav padding.right inside a tag = 0
     .navbar-nav > li:last-child > a {
         padding-right: 0;
     }
@@ -26,7 +23,7 @@
 
         &:hover, &:focus, &:active {
             .nav-link-text {
-                background-color: var(--bs-primary);
+                background-color: var(--bs-body-color);
                 color: var(--lz-font-color-inverse);
             }
 
@@ -37,7 +34,6 @@
 
         &.nav-current {
             cursor: default;
-
             .nav-link-text {
                 background-color: var(--bs-body-color);
                 color: var(--lz-font-color-inverse);
@@ -45,18 +41,28 @@
         }
     }
 
+    .dropdown-menu {
+        --bs-dropdown-link-hover-bg: var(--bs-body-color);
+        --bs-dropdown-link-hover-color: var(--lz-font-color-inverse);
+
+        .dropdown-item {
+            text-transform: none;
+        }
+
+    }
+
     // active parent root level only black if not offcanvas
-    &:not(.show, .showing){
+ /*   &:not(.show, .showing){
         .root-level {
             &.active {
                 .nav-link-text {
-                    background-color: var(--bs-body-color);
+                    background-color: var(--bs-primary);
                     color: var(--lz-font-color-inverse);
                     cursor: default;
                 }
             }
         }
-    }
+    }*/
 
     // only open offcanavs menu
     &.show, &.showing {
@@ -76,11 +82,16 @@
         }
 
             .dropdown-item.active {
-            background-color: var(--bs-body-color);
-            color: var(--lz-font-color-inverse);
+         //   background-color: var(--bs-body-color);
+         //   color: var(--lz-font-color-inverse);
         }
         .dropdown-toggle::after {
             display: none;
+        }
+
+        .nav-link-text {
+            display: block;
+            width: 100% ;
         }
 
     }
