@@ -32,6 +32,13 @@
             }
         }
 
+        // remove caret on dropdown
+        &.dropdown-toggle {
+            &::after {
+                display: none;
+            }
+        }
+
         &.nav-current {
             cursor: default;
             .nav-link-text {
@@ -61,7 +68,12 @@
                     cursor: default;
                 }
             }
+            // show dropdown on mouseover
+            &:hover.dropdown .dropdown-menu {
+                display: block;
+            }
         }
+
     }
 
     // only open offcanavs menu
