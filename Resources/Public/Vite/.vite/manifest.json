@@ -1,11 +1,13 @@
 {
-  "_@popperjs-DcOdiReC.js": {
-    "file": "assets/@popperjs-DcOdiReC.js"
+  "_@popperjs-WhmJkuoZ.js": {
+    "file": "assets/@popperjs-WhmJkuoZ.js",
+    "name": "@popperjs"
   },
-  "_bootstrap-BWvFz-hb.js": {
-    "file": "assets/bootstrap-BWvFz-hb.js",
+  "_bootstrap-BdlpLzpZ.js": {
+    "file": "assets/bootstrap-BdlpLzpZ.js",
+    "name": "bootstrap",
     "imports": [
-      "_@popperjs-DcOdiReC.js"
+      "_@popperjs-WhmJkuoZ.js"
     ]
   },
   "packages/liszt_web/Resources/Private/Fonts/BeausiteClassicWebTrial-Clear.woff2": {
@@ -30,19 +32,21 @@
   },
   "packages/liszt_web/Resources/Private/Scss/rte.scss": {
     "file": "assets/rte-l0sNRNKZ.js",
+    "name": "rte",
     "src": "packages/liszt_web/Resources/Private/Scss/rte.scss",
     "isEntry": true
   },
   "packages/liszt_web/Resources/Private/app.js": {
-    "file": "assets/app-DXPhjiwV.js",
+    "file": "assets/app-lI9JWOL8.js",
+    "name": "app",
     "src": "packages/liszt_web/Resources/Private/app.js",
     "isEntry": true,
     "imports": [
-      "_bootstrap-BWvFz-hb.js",
-      "_@popperjs-DcOdiReC.js"
+      "_bootstrap-BdlpLzpZ.js",
+      "_@popperjs-WhmJkuoZ.js"
     ],
     "css": [
-      "assets/app-Dnj5TI-2.css"
+      "assets/app-C3ZRSWXy.css"
     ],
     "assets": [
       "assets/BeausiteClassicWebTrial-Clear-p_Pg092U.woff2",

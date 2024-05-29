@@ -22,7 +22,7 @@
         }
 
         &:hover, &:focus, &:active {
-            .nav-link-text {
+            .nav-link-text, .active & {
                 background-color: var(--bs-body-color);
                 color: var(--lz-font-color-inverse);
             }
@@ -35,7 +35,7 @@
         &.nav-current {
             cursor: default;
             .nav-link-text {
-                background-color: var(--bs-body-color);
+                background-color: var(--bs-primary);
                 color: var(--lz-font-color-inverse);
             }
         }
@@ -52,7 +52,7 @@
     }
 
     // active parent root level only black if not offcanvas
- /*   &:not(.show, .showing){
+    &:not(.show, .showing){
         .root-level {
             &.active {
                 .nav-link-text {
@@ -62,7 +62,7 @@
                 }
             }
         }
-    }*/
+    }
 
     // only open offcanavs menu
     &.show, &.showing {
