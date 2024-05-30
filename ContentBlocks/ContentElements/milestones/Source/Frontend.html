@@ -1,0 +1,10 @@
+
+
+    <div class="milestone">
+        <f:for each="{data.milestones}" as="milestone">
+            <div class="milestone-item">
+                <div class="milestone-item__number">{milestone.date}</div>
+                <div class="milestone-item__text">{milestone.text -> f:format.html()}</div>
+            </div>
+        </f:for>
+    </div>
