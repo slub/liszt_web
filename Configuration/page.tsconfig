@@ -69,6 +69,15 @@ mod.wizards.newContentElement.wizardItems.common.elements {
   }
 }
 
+# create own content element group for liszt content blocks
+# Attention: this changes in Typo v13: https://docs.typo3.org/p/contentblocks/content-blocks/main/en-us/Guides/AddingNewGroups/Index.html
+mod.wizards.newContentElement.wizardItems {
+  liszt_portal {
+    header = Liszt Portal
+    before = forms
+  }
+}
+
 mod.web_layout.BackendLayouts {
   default {
     title = Liszt Inhalt Layout

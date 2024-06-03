@@ -1,6 +1,6 @@
 name: slub/milestones
 typeName: slub_milestones
-group: common
+group: liszt_portal
 prefixFields: true
 prefixType: full
 basics:
