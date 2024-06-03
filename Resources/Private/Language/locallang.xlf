@@ -18,7 +18,7 @@
 				<source>Hauptmenü einblenden</source>
 			</trans-unit>
 			<trans-unit id="liszt_web.image" resname="liszt_web.image">
-				<source>Image</source>
+				<source>Bild</source>
 			</trans-unit>
 
 		</body>
