@@ -1,0 +1,37 @@
+name: slub/output
+typeName: slub_output
+group: liszt_portal
+prefixFields: true
+prefixType: full
+basics:
+  - TYPO3/Links
+  - TYPO3/Appearance
+
+fields:
+  - identifier: header
+    useExistingField: true
+    label: 'Überschrift'
+  - identifier: activities
+    type: Collection
+    labelField: title
+    fields:
+      - identifier: persons
+        type: Text
+        label: 'Personen'
+      - identifier: title
+        type: Text
+        label: 'Titel'
+      - identifier: footer
+        type: Palette
+        label: 'Footer'
+        fields:
+          - identifier: date
+            type: DateTime
+            label: 'Datum'
+            format: date
+          - identifier: event
+            type: Text
+            label: 'Veranstaltung'
+          - identifier: location
+            type: Text
+            label: 'Ort'
