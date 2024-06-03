@@ -3,13 +3,6 @@
 	<file source-language="de" datatype="plaintext" original="EXT:liszt_web/Resources/Private/Language/locallang.xlf" date="2023-05-16:00:00Z" product-name="liszt_web">
 		<header/>
 		<body>
-			<trans-unit id="inline-labels.liszt_web.welcome" resname="liszt_web.welcome">
-				<source>Welcome to TYPO3</source>
-			</trans-unit>
-			<trans-unit id="inline-labels.liszt_web.made-with" resname="liszt_web.made-with">
-				<source>Made with</source>
-			</trans-unit>
-
 			<trans-unit id="inline-labels.liszt_web.close" resname="liszt_web.close">
 				<source>schließen</source>
 			</trans-unit>
@@ -23,6 +16,9 @@
 			</trans-unit>
 			<trans-unit id="switchNavigation">
 				<source>Hauptmenü einblenden</source>
+			</trans-unit>
+			<trans-unit id="liszt_web.image" resname="liszt_web.image">
+				<source>Image</source>
 			</trans-unit>
 
 		</body>

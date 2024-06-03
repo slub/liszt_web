@@ -17,4 +17,11 @@ page.10.dataProcessing {
     special = directory
     special.value = {$liszt_web.metaUid}
   }
+  30 = files
+  30 {
+    as = image
+    references {
+      fieldName = image
+    }
+  }
 }
