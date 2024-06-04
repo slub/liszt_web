@@ -9,6 +9,7 @@ page.10.dataProcessing {
     includeSpacer = 1
     titleField = subtitle // nav_title // title
   }
+  // Meta Menu in Footer
   20 = menu
   20 {
     as = metaMenu
@@ -16,6 +17,13 @@ page.10.dataProcessing {
     levels = 1
     special = directory
     special.value = {$liszt_web.metaUid}
+  }
+  40 = menu
+  40 {
+    as = breadcrumb
+    special = rootline
+    special.range = 0|-1
+    includeNotInMenu = 0
   }
   30 = files
   30 {

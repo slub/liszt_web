@@ -80,22 +80,14 @@ mod.wizards.newContentElement.wizardItems {
 
 mod.web_layout.BackendLayouts {
   default {
-    title = Liszt Inhalt Layout
+    title = Liszt Default Einspaltig
     ## icon = EXT:liszt_web/Resources/Public/Images/BackendLayouts/default.gif
     config {
       backend_layout {
         colCount = 1
-        rowCount = 2
+        rowCount = 1
         rows {
           1 {
-            columns {
-              1 {
-                name = Header
-                colPos = 1
-              }
-            }
-          }
-          2 {
             columns {
               1 {
                 name = Hauptinhalt
@@ -109,7 +101,7 @@ mod.web_layout.BackendLayouts {
   }
 
   home {
-    title = Liszt Startseite Layout
+    title = Liszt Home
     ## icon = EXT:liszt_web/Resources/Public/Images/BackendLayouts/default.gif
     config {
       backend_layout {
@@ -119,14 +111,39 @@ mod.web_layout.BackendLayouts {
           1 {
             columns {
               1 {
-                name = Header
-                colPos = 1
+                name = Hauptinhalt
+                colPos = 0
               }
             }
           }
           2 {
             columns {
               1 {
+                name = Slider
+                colPos = 1
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  sidebarLeft {
+    title = Liszt Sidebar Left
+    ## icon = EXT:liszt_web/Resources/Public/Images/BackendLayouts/default.gif
+    config {
+      backend_layout {
+        colCount = 2
+        rowCount = 1
+        rows {
+          1 {
+            columns {
+              1 {
+                name = Sidebar
+                colPos = 1
+              }
+              2 {
                 name = Hauptinhalt
                 colPos = 0
               }
@@ -136,4 +153,5 @@ mod.web_layout.BackendLayouts {
       }
     }
   }
+
 }

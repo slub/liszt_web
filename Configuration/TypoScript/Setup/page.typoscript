@@ -62,7 +62,7 @@ page {
     variables {
       // Adds current page id
       pageId = TEXT
-      pageId.data = leveluid:0
+      pageId.data = page:uid
       pageTitle = TEXT
       pageTitle.data = page:title
       siteTitle = TEXT
