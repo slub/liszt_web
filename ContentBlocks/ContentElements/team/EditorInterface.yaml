@@ -1,0 +1,40 @@
+name: slub/team
+typeName: slub_team
+group: liszt_portal
+prefixFields: true
+prefixType: full
+basics:
+  - TYPO3/Links
+  - TYPO3/Appearance
+
+fields:
+  - identifier: header
+    useExistingField: true
+    label: 'Überschrift'
+  - identifier: groups
+    type: Collection
+    labelField: groupname
+    fields:
+      - identifier: groupname
+        type: Text
+        label: 'Gruppenname'
+      - identifier: members
+        type: Collection
+        labelField: name
+        label: 'Mitglieder'
+        table: 'slub_team_members'
+        fields:
+          - identifier: name
+            type: Text
+            label: 'Name'
+          - identifier: role
+            type: Text
+            label: 'Rolle'
+          - identifier: image
+            type: File
+            label: 'Bild'
+            allowed: 'common-image-types'
+            maxitems: 1
+          - identifier: biography
+            type: Text
+            label: 'Biographie'

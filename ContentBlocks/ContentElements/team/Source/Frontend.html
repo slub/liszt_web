@@ -1,0 +1,34 @@
+<f:layout name="Default" /><!--diese drei Sections optional wenn man alle fluid funktionen dabei haben will-->
+<f:section name="Header" /> <!--Header nur leer ausgegeben siehe Video weil sonst meckert-->
+<f:section name="Main">
+
+    <div class="team">
+        <f:for each="{data.groups}" as="group" iteration="group-iterator">
+            <div class="group">
+                <h3> {group.groupname} </h3>
+                <div class="members">
+                    <f:for each="{group.members}" as="member">
+                        <div class="member">
+                            <f:if condition="{member.image}">
+                                <f:image image="{member.image.0}" />
+                            </f:if>
+                            <div class="member-name">
+                                {member.name}
+                            </div>
+                            <div class="member-role">
+                                {member.role}
+                            </div>
+                            <div class="member-biography">
+                                {member.biography}
+                            </div>
+                        </div>
+                    </f:for>
+                </div>
+            </div>
+            <f:if condition="!{group-iterator.isLast}">
+                <hr>
+            </f:if>
+        </f:for>
+    </div>
+
+</f:section>
