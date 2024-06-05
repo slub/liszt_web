@@ -11,13 +11,46 @@ fields:
   - identifier: header
     useExistingField: true
     label: 'Überschrift'
-  - identifier: activities
+  - identifier: publications
     type: Collection
     labelField: title
+    label: 'Publikationen'
     fields:
       - identifier: persons
-        type: Text
+        type: Relation
+        allowed: 'slub_staff'
         label: 'Personen'
+        minitems: 1
+      - identifier: title
+        type: Text
+        label: 'Titel'
+      - identifier: footer
+        type: Palette
+        label: 'Footer'
+        fields:
+          - identifier: date
+            type: DateTime
+            label: 'Datum'
+            format: date
+          - identifier: editor
+            type: Text
+            label: 'Herausgeber'
+          - identifier: publication
+            type: Text
+            label: 'Publikation'
+          - identifier: pages
+            type: Text
+            label: 'Pages'
+  - identifier: presentations
+    type: Collection
+    labelField: title
+    label: 'Präsentationen'
+    fields:
+      - identifier: persons
+        type: Relation
+        allowed: 'slub_staff'
+        label: 'Personen'
+        minitems: 1
       - identifier: title
         type: Text
         label: 'Titel'

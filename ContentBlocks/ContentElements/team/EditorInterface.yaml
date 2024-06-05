@@ -14,27 +14,24 @@ fields:
   - identifier: groups
     type: Collection
     labelField: groupname
+    label: 'Gruppen'
     fields:
       - identifier: groupname
         type: Text
         label: 'Gruppenname'
-      - identifier: members
-        type: Collection
-        labelField: name
-        label: 'Mitglieder'
-        table: 'slub_team_members'
-        fields:
-          - identifier: name
-            type: Text
-            label: 'Name'
-          - identifier: role
-            type: Text
-            label: 'Rolle'
-          - identifier: image
-            type: File
-            label: 'Bild'
-            allowed: 'common-image-types'
-            maxitems: 1
-          - identifier: biography
-            type: Text
-            label: 'Biographie'
+      - identifier: persons
+        type: Relation
+        allowed: 'slub_staff'
+        label: 'Personen'
+        minitems: 1
+  - identifier: board
+    type: Collection
+    labelField: name
+    label: 'Beirat'
+    fields:
+      - identifier: name
+        type: Text
+        label: 'Name'
+      - identifier: institution
+        type: Text
+        label: 'Institution'

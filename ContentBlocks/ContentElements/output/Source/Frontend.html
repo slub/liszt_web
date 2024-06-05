@@ -3,20 +3,46 @@
 <f:section name="Main">
 
     <div class="activity">
-        <f:for each="{data.activities}" as="activity">
+        <h3> Publikationen </h3>
+        <f:for each="{data.publications}" as="publication">
             <div class="output-item">
                 <div class="output-item-header">
-                    {activity.persons}
+                    <f:for each="{publication.persons}" as="person" iteration="person_iterator" >
+                        {person.name}<f:if condition="!{person_iterator.isLast}">,</f:if>
+                    </f:for>
                 </div>
                 <div class="output-item-body">
-                    {activity.title}
+                    {publication.title}
+                </div>
+                <div class="output-item-footer">
+                    <f:format.date format="Y">
+                        {publication.date}
+                    </f:format.date> |
+                    <f:if condition="publication.editor">
+                        {publication.editor}:
+                    </f:if>
+                    {publication.publication}
+                    <f:replace value="{publication.pages}" search="-" replace="–" />
+                </div>
+            </div>
+        </f:for>
+        <h3> Präsentationen </h3>
+        <f:for each="{data.presentations}" as="presentation">
+            <div class="output-item">
+                <div class="output-item-header">
+                    <f:for each="{presentation.persons}" as="person" iteration="person_iterator" >
+                        {person.name}<f:if condition="!{person_iterator.isLast}">,</f:if>
+                    </f:for>
+                </div>
+                <div class="output-item-body">
+                    {presentation.title}
                 </div>
                 <div class="output-item-footer">
                     <f:format.date>
-                        {activity.date}
+                        {presentation.date}
                     </f:format.date>
-                    | {activity.location}
-                    | {activity.event}
+                    | {presentation.location}
+                    | {presentation.event}
                 </div>
             </div>
         </f:for>

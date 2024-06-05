@@ -1,0 +1,18 @@
+name: slub/staff
+table: slub_staff
+labelField: name
+fields:
+  - identifier: name
+    type: Text
+    label: 'Name'
+  - identifier: role
+    type: Text
+    label: 'Rolle'
+  - identifier: image
+    type: File
+    label: 'Bild'
+    allowed: 'common-image-types'
+    maxitems: 1
+  - identifier: biography
+    type: Text
+    label: 'Biographie'

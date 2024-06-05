@@ -7,7 +7,7 @@
             <div class="group">
                 <h3> {group.groupname} </h3>
                 <div class="members">
-                    <f:for each="{group.members}" as="member">
+                    <f:for each="{group.persons}" as="member">
                         <div class="member">
                             <f:if condition="{member.image}">
                                 <f:image image="{member.image.0}" />
