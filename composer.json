@@ -8,7 +8,9 @@
 	],
 	"require": {
 		"typo3/cms-core": "^12.0",
-		"quellenform/t3x-iconpack": "^1.0"
+		"quellenform/t3x-iconpack": "^1.0",
+		"contentblocks/content-blocks": "^0.7.14",
+		"praetorius/vite-asset-collector": "^1.9"
 	},
 
   "autoload": {

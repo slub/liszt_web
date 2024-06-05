@@ -40,10 +40,10 @@ TCAdefaults {
 }
 
 ## set standard permissions for group "Seitenrechte" to delete pages from other group members
-TCEMAIN.permissions {
-  groupid = 1
-  group = show, editcontent, edit, new, delete
-}
+#TCEMAIN.permissions {
+#  groupid = 1
+#  group = show, editcontent, edit, new, delete
+#}
 
 ## own layouts for fluid style elements, for example text + image
 TCEFORM.tt_content.layout.types.textpic.addItems {
@@ -85,13 +85,21 @@ mod.web_layout.BackendLayouts {
     config {
       backend_layout {
         colCount = 1
-        rowCount = 1
+        rowCount = 2
         rows {
           1 {
             columns {
               1 {
                 name = Hauptinhalt
                 colPos = 0
+              }
+            }
+          }
+          2 {
+            columns {
+              1 {
+                name = Über Footer (News Teaser)
+                colPos = 2
               }
             }
           }
@@ -135,7 +143,7 @@ mod.web_layout.BackendLayouts {
     config {
       backend_layout {
         colCount = 2
-        rowCount = 1
+        rowCount = 2
         rows {
           1 {
             columns {
@@ -146,6 +154,15 @@ mod.web_layout.BackendLayouts {
               2 {
                 name = Hauptinhalt
                 colPos = 0
+              }
+            }
+          }
+          2 {
+            columns {
+              1 {
+                name = Über Footer (News Teaser)
+                colspan = 2
+                colPos = 2
               }
             }
           }

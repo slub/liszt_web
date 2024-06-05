@@ -8,14 +8,18 @@
 
 <f:section name="Main">
 
-    <aside class="sidebar left">
-        {f:cObject(typoscriptObjectPath: 'lib.dynamicContent', data: '{colPos: 1, slide: -1, max: 1}')}
-    </aside>
 
     <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.hasContent', data: '{colPos: 0}')}">
         <main role="main" id="#page-content">
             <div class="container-xl bd-gutter">
-            {f:cObject(typoscriptObjectPath: 'lib.dynamicContent', data: '{colPos: 0, slide: -1, max: 1}')}
+                <div class="row">
+                <aside class="sidebar left col-md-3">
+                    {f:cObject(typoscriptObjectPath: 'lib.dynamicContent', data: '{colPos: 1, slide: -1, max: 1}')}
+                </aside>
+                <article class="content col-md-9">
+                    {f:cObject(typoscriptObjectPath: 'lib.dynamicContent', data: '{colPos: 0, slide: -1, max: 1}')}
+                </article>
+                </div>
             </div>
         </main>
     </f:if>
