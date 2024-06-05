@@ -8,7 +8,7 @@
             <div class="output-item">
                 <div class="output-item-header">
                     <f:for each="{publication.persons}" as="person" iteration="person_iterator" >
-                        {person.name}<f:if condition="!{person_iterator.isLast}">,</f:if>
+                        {person.firstname} {person.lastname}<f:if condition="!{person_iterator.isLast}">,</f:if>
                     </f:for>
                 </div>
                 <div class="output-item-body">
@@ -31,7 +31,7 @@
             <div class="output-item">
                 <div class="output-item-header">
                     <f:for each="{presentation.persons}" as="person" iteration="person_iterator" >
-                        {person.name}<f:if condition="!{person_iterator.isLast}">,</f:if>
+                        {person.firstname} {person.lastname}<f:if condition="!{person_iterator.isLast}">,</f:if>
                     </f:for>
                 </div>
                 <div class="output-item-body">

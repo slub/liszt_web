@@ -1,10 +1,43 @@
 name: slub/staff
 table: slub_staff
-labelField: name
+labelField: lastname
 fields:
   - identifier: name
-    type: Text
+    type: Palette
     label: 'Name'
+    fields:
+    - identifier: preposeddegree
+      type: Select
+      renderType: selectSingle
+      label: 'Grad'
+      items:
+        - label: ''
+          value: ''
+        - label: 'Prof. Dr.'
+          value: 'Prof. Dr.'
+        - label: 'PD Dr.'
+          value: 'PD Dr.'
+        - label: 'Dr.'
+          value: 'Dr.'
+        - label: 'Dipl.-Ing.'
+          value: 'Dipl.-Ing..'
+    - identifier: firstname
+      type: Text
+      label: 'Vorname'
+    - identifier: lastname
+      type: Text
+      label: 'Nachname'
+    - identifier: postposeddegree
+      type: Select
+      renderType: selectSingle
+      label: 'Grad'
+      items:
+        - label: ''
+          value: ''
+        - label: 'M.A.'
+          value: ', M.A.'
+        - label: 'M.Ed.'
+          value: ', M.Ed.'
   - identifier: role
     type: Text
     label: 'Rolle'
