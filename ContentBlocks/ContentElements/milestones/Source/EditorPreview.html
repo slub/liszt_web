@@ -1,8 +1,18 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:cb="http://typo3.org/ns/TYPO3/CMS/ContentBlocks/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
 <cb:asset.css identifier="content-block-slub-slub/milestones-be" file="EditorPreview.css"/>
 
-
-<f:for each="{data.milestones}" as="milestone" iteration="i">
-    {milestone.date}<br>
-    {milestone.text}<br>
-
-</f:for>
+    <div class="row">
+        <f:for each="{data.milestones}" as="milestone" iteration="i">
+            <div class="col-3">
+                {milestone.date}
+            </div>
+            <div class="col-9">
+                <f:transform.html>{milestone.text}</f:transform.html>
+            </div>
+        </f:for>
+    </div>
