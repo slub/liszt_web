@@ -30,10 +30,15 @@
   src: url("../Fonts/MakeWayTrial-Regular.woff2") format("woff2");
 }
 
+html {
+    font-size: $font-size-root;
+}
+
+
 body {
-  --bs-body-font-size: 18px;
-  --bs-body-line-height: 1.45;
-  // letter-spacing: 0.01em;
+    font-family: $font-family-base;
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
 }
 
 

@@ -1,11 +1,9 @@
 .navbar {
-    --bs-navbar-toggler-focus-width: 1px;
 }
 
 .mainnav {
     font-size: 1rem;
     .navbar-nav {
-        --bs-nav-link-hover-color: #fff;
         font-weight: 400;
     }
 
@@ -23,7 +21,7 @@
 
         &:hover, &:focus, &:active {
             .nav-link-text, .active & {
-                background-color: var(--bs-body-color);
+                background-color: var(--lz-font-color);
                 color: var(--lz-font-color-inverse);
             }
 
@@ -42,15 +40,15 @@
         &.nav-current {
             cursor: default;
             .nav-link-text {
-                background-color: var(--bs-primary);
+                background-color: var(--lz-primary);
                 color: var(--lz-font-color-inverse);
             }
         }
     }
 
     .dropdown-menu {
-        --bs-dropdown-link-hover-bg: var(--bs-body-color);
-        --bs-dropdown-link-hover-color: var(--lz-font-color-inverse);
+        // --bs-dropdown-link-hover-bg: var(--lz-font-color);
+       //  --bs-dropdown-link-hover-color: var(--lz-font-color-inverse);
 
         .dropdown-item {
             text-transform: none;
@@ -63,7 +61,7 @@
         .root-level {
             &.active {
                 .nav-link-text {
-                    background-color: var(--bs-primary);
+                    background-color: var(--lz-primary);
                     color: var(--lz-font-color-inverse);
                     cursor: default;
                 }
@@ -80,7 +78,7 @@
     &.show, &.showing {
         line-height: 1.25;
         li.root-level > a {
-            font-size: var(--bs-body-font-size);
+           // font-size: var(--bs-body-font-size);
         }
         .dropdown-menu {
             padding: 0;
@@ -94,8 +92,7 @@
         }
 
             .dropdown-item.active {
-         //   background-color: var(--bs-body-color);
-         //   color: var(--lz-font-color-inverse);
+         //   background-color: var(--lz-font-color);
         }
         .dropdown-toggle::after {
             display: none;
@@ -109,7 +106,7 @@
     }
 
     .offcanvas-header {
-    --bs-offcanvas-padding-y: 1.5rem;
+   // --bs-offcanvas-padding-y: 1.5rem;
     }
 
     .offcanvas-body {
@@ -129,8 +126,8 @@
     right: 0;
     top: 500px;
     z-index: 1000;
-    background-color: var(--bs-body-bg);
-    border: 1px solid var(--bs-border-color);
+ //   background-color: var(--bs-body-bg);
+ //   border: 1px solid var(--bs-border-color);
     border-right: none;
     padding: 15px 0 15px 0;
     width: 68px;
@@ -145,11 +142,11 @@
         display: block;
 
         &:hover, &:focus, &:active {
-            color: var(--bs-primary);
+            color: var(--lz-primary);
 
             svg {
-                fill: var(--bs-primary);
-                color: var(--bs-body-primary);
+                fill: var(--lz-primary);
+            //    color: var(--bs-body-primary);
 
             }
         }
@@ -157,7 +154,7 @@
         svg {
             width: 25px;
             height: 25px;
-            color: var(--bs-body-color);
+            color: var(--lz-font-color);
         }
     }
 }
@@ -180,12 +177,12 @@
             }
 
             a {
-                color: var(--bs-body-color);
+                color: var(--lz-font-color);
                 text-decoration: none;
                 transition: color 0.2s;
 
                 &:hover {
-                    color: var(--bs-primary);
+                    color: var(--lz-primary);
                 }
             }
         }

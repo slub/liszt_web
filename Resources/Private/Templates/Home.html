@@ -8,12 +8,12 @@
 
 
 <f:section name="Main">
-    <div class="container-xl bd-gutter">Das ist das Backend-Layout "Liszt Startseite home"</div>
+    <div class="container-xl">Das ist das Backend-Layout "Liszt Startseite home"</div>
 
 
     <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.hasContent', data: '{colPos: 0}')}">
         <main role="main" id="#page-content">
-            <div class="container-xl bd-gutter">
+            <div class="container-xl">
             {f:cObject(typoscriptObjectPath: 'lib.dynamicContent', data: '{colPos: 0, slide: -1, max: 1}')}
             </div>
         </main>

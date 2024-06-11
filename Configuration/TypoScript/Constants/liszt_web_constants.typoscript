@@ -4,7 +4,7 @@ liszt_web {
   metaUid = 20
 
   #cat=liszt_web/misc; type=string; label=Copyright-Zeile: im Footer (Jahreszahl wird automatisch ergänzt)
-  copyrightText = &copy; LISZT PORTAL
+  copyrightText = &copy;
 
 }
 

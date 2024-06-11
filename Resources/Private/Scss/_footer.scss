@@ -1,66 +1,64 @@
 
 .footer {
-padding-top: 2rem;
-  @include media-breakpoint-up(md) {
-    padding-top: 3rem;
-  }
-/*  @include media-breakpoint-up(lg) {
-    padding-top: 4rem;
-  }*/
-
-  h3, h4 {
-    font-size: 1rem;
-    font-weight: 500;
-    font-family: $font-family-base;
-  }
-
-  p {
-    font-size: $font-size-sm;
-    margin-bottom: 0;
-  }
+    font-size: 0.7777777rem;
+    font-weight: 300;
 
   a {
     text-decoration: none;
     color: inherit;
 
     &:hover, :focus {
-text-decoration: underline;
+    text-decoration: underline;
     }
-  }
-
-  &-col {
-    padding-bottom: 2rem;
   }
 
 
   ul {
-    font-size: $font-size-sm;
+    font-size: 0.7777777rem;
     list-style: none;
     padding-left: 0;
     margin-bottom: 0;
   }
 
+
+ &-main {
+     margin-top: $standard-design-space;
+     font-size: 0.7777777rem;
+     line-height: 1.36;
+     font-weight: 300;
+
+
+     h3, h4 {
+         font-size: 0.7777777rem;
+         font-weight: 500;
+         font-family: $font-family-base;
+     }
+ }
+
   &-cta {
-    margin-top: 2rem;
-    background-color: var(--bs-primary);
+    margin-top: $standard-design-space;
+    padding-top: $standard-design-space;
+    padding-bottom: $standard-design-space;
+    background-color: var(--lz-primary);
 
     @include media-breakpoint-up(md) {
-      margin-top: 4rem;
+        margin-top: $standard-design-space;
     }
 
-    .container-xl {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-    }
     &-title {
       font-size: $font-size-base;
-      font-weight: 300;
+      font-weight: 400;
+        margin-top: 0;
+        font-family: $font-family-base;
     }
+
+
     a {
       color: white;
-      font-weight: 500;
+      font-weight: 400;
       text-decoration: none;
-      font-size: 1.5rem;
+      font-size: 1.333rem;
+      line-height: 1.2;
     }
 
     .img-arrow {
@@ -70,6 +68,30 @@ text-decoration: underline;
       vertical-align: middle;
     }
   }
+
+    &-meta {
+        background-color: $lightgray;
+        margin-top: $standard-design-space;
+
+        &-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &-nav {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            ul {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0;
+                margin: 0;
+                gap: 1rem;
+            }
+        }
+    }
 
 
 }
