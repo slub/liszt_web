@@ -4,7 +4,7 @@
 <a class="visually-hidden-focusable" href="#page-content"><span>Zum Hauptinhalt springen</span></a>
 
 
-<f:render partial="MainNav" arguments="{_all}" />
+<f:render partial="Header" arguments="{_all}" />
 
 <f:comment><!-- Show Searchbar if Frontend Layout 4 is selected, changed from != to == -->
 <f:if condition="{selectedFrontendLayout} == '4'">
@@ -12,7 +12,6 @@
 </f:if>
 </f:comment>
 
-<f:render section="Header" optional="true" />
 
 <f:if condition="{pageId} != '1'">
 <f:render partial="Breadcrumb" arguments="{_all}" />

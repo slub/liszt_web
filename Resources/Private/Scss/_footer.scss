@@ -35,6 +35,39 @@
      }
  }
 
+    &-founding-logos {
+        display: flex;
+        flex-direction: column;
+        gap: $standard-design-space;
+        align-items: flex-start;
+         .cols {
+             display: flex;
+             flex-wrap: wrap;
+             gap: $standard-design-space;
+             flex-direction: column;
+             @include media-breakpoint-up(md) {
+                flex-direction: row;
+             }
+         }
+        .logo {
+            height: 50px;
+            width: auto;
+            &.heidelberg {
+                height: 73px;
+            }
+            &.weimar {
+                height: 65px;
+            }
+            &.slub {
+                height: 48px;
+            }
+            &.dfg {
+                height: 58px;
+                margin-left: 3px;
+            }
+        }
+    }
+
   &-cta {
     margin-top: $standard-design-space;
     padding-top: $standard-design-space;
@@ -59,13 +92,14 @@
       text-decoration: none;
       font-size: 1.333rem;
       line-height: 1.2;
+        &:hover, :focus {
+            text-decoration: underline;
+        }
     }
 
-    .img-arrow {
-      height: 0.7rem;
-      margin-left: 8px;
-      width: auto;
-      vertical-align: middle;
+    svg {
+        height: 0.5em;
+        vertical-align: middle;
     }
   }
 

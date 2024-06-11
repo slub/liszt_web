@@ -1,0 +1,18 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<header id="page-header" class="page-header navbar navbar-expand-lg ">
+    <f:if condition="{image.0}" >
+        <f:image image="{image.0}" />
+    </f:if>
+    <div class="container-xl">
+        <f:link.page pageUid="{rootPage}" class="page-header-logo" title="{f:translate(key: 'inline-labels.liszt_web.toHome', extensionName: 'liszt_web')}">
+            <f:image src="EXT:liszt_web/Resources/Public/Icons/LogoLisztPortal.svg" alt="Logo Liszt Portal" />
+        </f:link.page>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" aria-expanded="false" aria-haspopup="menu" data-bs-target="#mainnavigation" aria-controls="mainnavigation" aria-label="{f:translate(key: 'switchNavigation', extensionName: 'liszt_web')}">
+            <span class="navbar-toggler-icon" aria-hidden="true"></span>
+        </button>
+
+        <f:render partial="MainNav" arguments="{_all}" />
+
+    </div>
+</header>

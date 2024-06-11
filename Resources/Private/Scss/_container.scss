@@ -6,6 +6,13 @@
     padding-left: $container-padding-x;
 }
 
+.container-xl {
+    @include media-breakpoint-up(xl) {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
 
 // Responsive containers that are 100% wide until a breakpoint
 @each $breakpoint, $container-max-width in $container-max-widths {
@@ -49,4 +56,6 @@
 .grid-colspan-2 {
     grid-column: span 2;
 }
+
+
 

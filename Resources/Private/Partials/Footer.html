@@ -1,16 +1,15 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:i="http://typo3.org/ns/Quellenform/Iconpack/ViewHelpers" data-namespace-typo3-fluid="true">
 
 <section class="footer-cta">
     <div class="container-xl">
                 <h3 class="footer-cta-title">Ich möchte:</h3>
 
         <div class="footer-cta-actions grid-3col">
-                <a href="#" class="">Mehr über das Projekt erfahren&nbsp;<f:image src="EXT:liszt_web/Resources/Public/Icons/Pfeil.svg" alt="Pfeil nach rechts" />
+                <a href="#" class="">Mehr über das Projekt erfahren&nbsp;<i:icon iconfig="lzicon,arrow-right" preferredRenderTypes="svgSprite" additionalAttributes="{aria-hidden:'true'}" />
                 </a>
-                <a href="#" class="">Das Projekt-Team kennenlernen&nbsp;<f:image src="EXT:liszt_web/Resources/Public/Icons/Pfeil.svg" alt="Pfeil nach rechts" />
+                <a href="#" class="">Das Projekt-Team kennenlernen&nbsp;<i:icon iconfig="lzicon,arrow-right" preferredRenderTypes="svgSprite" additionalAttributes="{aria-hidden:'true'}" />
                 </a>
-
-                <a href="#"  class="">Einen Titel in der Franz Liszt Bibliographie suchen&nbsp;<f:image src="EXT:liszt_web/Resources/Public/Icons/Pfeil.svg" alt="Pfeil nach rechts" />
+                <a href="#"  class="">Einen Titel in der Franz Liszt Bibliographie suchen&nbsp;<i:icon iconfig="lzicon,arrow-right" preferredRenderTypes="svgSprite" additionalAttributes="{aria-hidden:'true'}" />
                 </a>
         </div>
     </div>
@@ -33,9 +32,13 @@
                 </p>
             </div>
             <div class="footer-founding-logos grid-colspan-2">
-                <p>
-                   LOGOS hier
-                </p>
+                <div class="cols">
+                    <f:image class="logo heidelberg" src="EXT:liszt_web/Resources/Public/Icons/Logo-Heidelberg.svg" alt="Logo: Universtität Heidelberg" />
+                    <f:image class="logo weimar" src="EXT:liszt_web/Resources/Public/Icons/Logo-Weimar.svg" alt="Logo: Klassik Stiftung Weimar" />
+                    <f:image class="logo slub" src="EXT:liszt_web/Resources/Public/Icons/Logo-SLUB.svg" alt="Logo: SLUB" />
+                </div>
+                <f:image class="logo dfg" src="EXT:liszt_web/Resources/Public/Icons/Logo-DFG.svg" alt="Logo: Gefördert durch die Deutsche Forschungsgemeinschaft DFG" />
+
             </div>
     </div>
 

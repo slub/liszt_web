@@ -1,17 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-<header id="page-header" class="navbar navbar-expand-lg pb-4 pb-lg-5 pb-xl- pt-sm-4">
-    <f:if condition="{image.0}" >
-        <f:image image="{image.0}" />
-    </f:if>
-    <div class="container-xl">
-        <f:link.page pageUid="{rootPage}" class="navbar-brand navbar-brand-image" title="{f:translate(key: 'inline-labels.liszt_web.toHome', extensionName: 'liszt_web')}">
-            <f:image src="EXT:liszt_web/Resources/Public/Icons/LogoLisztPortal.svg" alt="Logo Liszt Portal" />
-        </f:link.page>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" aria-expanded="false" aria-haspopup="menu" data-bs-target="#mainnavigation" aria-controls="mainnavigation" aria-label="{f:translate(key: 'switchNavigation', extensionName: 'liszt_web')}">
-            <span class="navbar-toggler-icon" aria-hidden="true"></span>
-        </button>
-        <nav id="mainnavigation" class="mainnav offcanvas offcanvas-end" tabindex="-1" aria-labelledby="offcanvasNavbar2Label">
+        <nav id="mainnavigation" class="main-nav offcanvas offcanvas-end" tabindex="-1" aria-labelledby="offcanvasNavbar2Label">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasNavbar2Label">{f:translate(key: 'mainMenuLabel', extensionName: 'liszt_web')}</h5>
                 <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="{f:translate(key: 'inline-labels.liszt_web.close', extensionName: 'liszt_web')}"></button>
@@ -44,5 +33,3 @@
                 </ul>
             </div>
         </nav>
-    </div>
-</header>

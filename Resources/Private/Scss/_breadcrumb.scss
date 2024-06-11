@@ -1,0 +1,36 @@
+// Breadcrumb Navigation
+.breadcrumb {
+    font-size: $font-size-sm;
+
+        ol {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+
+            li {
+                display: inline-block;
+
+                &:last-child {
+                    margin-right: 0;
+            }
+
+                a {
+                    color: var(--lz-font-color);
+                    text-decoration: none;
+                    transition: color 0.2s;
+
+                    &:hover {
+                        color: var(--lz-primary);
+                }
+            }
+        }
+    }
+        &-item {
+            &::after {
+                content: ">";
+                display: inline-block;
+                padding-right: .3rem;
+                padding-left: .3rem;
+        }
+    }
+}

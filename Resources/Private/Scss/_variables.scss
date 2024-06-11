@@ -29,15 +29,15 @@ $grid-breakpoints:(
     sm: 576px,
     md: 768px,
     lg: 992px,
-    xl: 1200px,
-    xxl: 1400px
+    xl: 1300px,
+    xxl: 1500px
 );
 
 $container-max-widths: (
     sm: 540px,
     md: 732px,
     lg: 960px,
-    xl: 1140px,
+    xl: 1260px, // content width from designers InDesign files
  //   xxl: 1320px
 );
 
@@ -49,7 +49,9 @@ $container-max-widths: (
     xxl: 1320px
 );*/
 
+$navbar-expand: lg;
+
 $container-padding-x: 1rem;
 
 // this is the space the designer uses for margins and paddings on desktop screen = size of the portal logo
-$standard-design-space: 52px;
+$standard-design-space: 46px;

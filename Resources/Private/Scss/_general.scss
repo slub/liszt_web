@@ -18,11 +18,5 @@ main {
 
 }
 
-.container-xl {
-  @include media-breakpoint-up(sm) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
 
 
