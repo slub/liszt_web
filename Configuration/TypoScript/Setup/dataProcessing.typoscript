@@ -25,11 +25,4 @@ page.10.dataProcessing {
     special.range = 0|-1
     includeNotInMenu = 0
   }
-  30 = files
-  30 {
-    as = image
-    references {
-      fieldName = image
-    }
-  }
 }
