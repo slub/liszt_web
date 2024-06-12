@@ -5,3 +5,4 @@ fields:
     type: File
     allowed: common-image-types
     maxitems: 1
+    label: 'Seitenbild'

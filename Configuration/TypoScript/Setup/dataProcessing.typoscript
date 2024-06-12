@@ -18,6 +18,8 @@ page.10.dataProcessing {
     special = directory
     special.value = {$liszt_web.metaUid}
   }
+  // Content Block data processing
+  30 = content-blocks
   40 = menu
   40 {
     as = breadcrumb
