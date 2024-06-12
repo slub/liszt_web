@@ -1,10 +1,10 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-<header id="page-header" class="page-header navbar navbar-expand-lg ">
+<header id="page-header" class="page-header navbar">
     <f:if condition="{image.0}" >
         <f:image image="{image.0}" />
     </f:if>
-    <div class="container-xl">
+    <div class="container-xl page-header-container">
         <f:link.page pageUid="{rootPage}" class="page-header-logo" title="{f:translate(key: 'inline-labels.liszt_web.toHome', extensionName: 'liszt_web')}">
             <f:image src="EXT:liszt_web/Resources/Public/Icons/LogoLisztPortal.svg" alt="Logo Liszt Portal" />
         </f:link.page>

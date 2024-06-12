@@ -1,5 +1,18 @@
 .page-header {
     margin-top: $standard-design-space;
+
+    &-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media-breakpoint-up(#{$navbar-expand}) {
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+        }
+    }
+
     &-logo {
         display: block;
         width: 140px;
@@ -13,3 +26,5 @@
         }
     }
 }
+
+

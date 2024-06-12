@@ -1,5 +1,295 @@
 .main-nav {
+    --lz-navlink-padding-x: 0.5rem;
+
+
+    font-size: 1rem;
+    display: flex;
+
+    &.offcanvas {
+        flex-direction: column;
+        visibility: hidden;
+        background-color: var(--lz-offcanvas-bg);
+        background-clip: padding-box;
+        outline: 0;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        top: 0;
+        right: 0;
+        width: 350px;
+        border-left: 1px solid var(--lz-gray);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        position: fixed;
+        bottom: 0;
+        z-index: 100;
+        max-width: 100%;
+
+        @include media-breakpoint-up(#{$navbar-expand}) {
+            position: static;
+            z-index: auto;
+            flex-grow: 1;
+            width: auto;
+            height: auto;
+            visibility: visible;
+            background-color: transparent;
+            border: 0;
+            transform: none;
+            box-shadow: none;
+            transition: none;
+        }
+
+        &.showing,
+        &.show:not(.hiding) {
+            transform: none;
+        }
+
+        &.showing,
+        &.hiding,
+        &.show {
+            visibility: visible;
+        }
+    }
+
+    .offcanvas-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+        @include media-breakpoint-up(#{$navbar-expand}) {
+            display: none;
+        }
+    }
+
+    .offcanvas-body {
+        flex-grow: 1;
+        padding: 1rem;
+        overflow-y: auto;
+        justify-content: flex-end;
+        @include media-breakpoint-up(#{$navbar-expand}) {
+            display: flex;
+            flex-grow: 0;
+            padding: 0;
+            overflow-y: visible;
+            background-color: transparent;
+        }
+    }
+
+    .offcanvas-title {
+        margin-bottom: 0;
+        line-height: 1.5;
+        text-transform: uppercase;
+    }
+
+    .btn-close {
+        width: 1rem;
+        height: 1rem;
+        border: 0;
+        cursor: pointer;
+
+    }
+
+    .navbar-nav {
+        font-weight: 400;
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+
+        @include media-breakpoint-up(#{$navbar-expand}) {
+            flex-direction: row;
+            margin-right: calc(var(--lz-navlink-padding-x) * -1);
+        }
+
+        .root-level {
+            .nav-link {
+                text-transform: uppercase;
+            }
+
+        }
+
+        .nav-link {
+            display: block;
+            padding: 0;
+            font-size: 1rem;
+            color: var(--lz-font-color);
+            text-decoration: none;
+            background: none;
+            border: none;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+
+            @include media-breakpoint-up(#{$navbar-expand}) {
+                padding: 0.5em var(--lz-navlink-padding-x) 0.5em var(--lz-navlink-padding-x); // padding on desktop
+            }
+
+            &.dropdown-toggle {
+                cursor: default;
+            }
+
+            // hover for root links without dropdown on mobile an desktop
+            &:not(.dropdown-toggle) {
+                &:hover, &:focus, &:active {
+                    .nav-link-text {
+                        color: var(--lz-primary);
+                        @include media-breakpoint-up(#{$navbar-expand}) {
+                            color: var(--lz-font-color-inverse);
+                        }
+                    }
+                }
+                &.nav-current {
+                    .nav-link-text {
+                        color: var(--lz-primary);
+                        @include media-breakpoint-up(#{$navbar-expand}) {
+                            color: var(--lz-font-color-inverse);
+                        }
+                    }
+                }
+            }
+
+
+          &:hover, &:focus, &:active {
+                    .nav-link-text {
+                        @include media-breakpoint-up(#{$navbar-expand}) {
+                            background-color: var(--lz-font-color);
+                            color: var(--lz-font-color-inverse);
+                        }
+                    }
+                }
+
+
+            &.nav-current {
+                .nav-link-text {
+                    @include media-breakpoint-up(#{$navbar-expand}) {
+                        background-color: var(--lz-primary);
+                        color: var(--lz-font-color-inverse);
+                    }
+                }
+            }
+        }
+
+        .nav-link-text {
+            padding: 0.2rem 0.2rem;
+        }
+
+        .dropdown {
+            position: relative;
+            &.active {
+                .nav-link-text {
+                    cursor: default;
+                    @include media-breakpoint-up(#{$navbar-expand}) {
+                        background-color: var(--lz-primary);
+                        color: var(--lz-font-color-inverse);
+                    }
+                }
+            }
+
+            // show dropdown on mouse over an highlight the parent root item
+            // ToDo: no aria expanded toggles?
+            &:hover {
+                .dropdown-menu {
+                    display: block;
+                }
+
+                .nav-link-text {
+       //             @include media-breakpoint-up(#{$navbar-expand}) {
+      //                  background-color: var(--lz-font-color);
+       //                 color: var(--lz-font-color-inverse);
+       //             }
+                }
+            }
+        }
+
+        .dropdown-toggle {
+            white-space: nowrap;
+        }
+
+        .dropdown-menu {
+            position: static;
+            min-width: 9rem;
+            padding: 0.5rem 0;
+            margin: 0;
+            text-align: left;
+            list-style: none;
+            background-color: white;
+            background-clip: padding-box;
+            @include media-breakpoint-up(#{$navbar-expand}) {
+                position: absolute;
+                display: none;
+                z-index: 80;
+                // display: none;
+                //    border: var(--lz-font-color) solid 1px;
+                box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.3);
+            }
+
+            &.show {
+                display: block;
+            }
+
+            .show & {
+                box-shadow: none;
+                border: none;
+                margin-top: 0;
+                display: block;
+            }
+        }
+
+        .dropdown-item {
+            display: block;
+            width: 100%;
+            padding: 0.25rem 1rem;
+            clear: both;
+            color: var(--lz-font-color);
+            text-align: inherit;
+            text-decoration: none;
+            white-space: nowrap;
+            background-color: transparent;
+            border: 0;
+
+            &:hover, &:focus, &:active {
+                //   background-color: var(--lz-font-color);
+                color: var(--lz-primary);;
+            }
+
+            &.active {
+                //    background-color: var(--lz-primary);
+                color: var(--lz-primary);;
+            }
+        }
+    }
+
 
 }
 
+.offcanvas-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 80;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
 
+    &.fade {
+        opacity: 0;
+        transition: opacity 0.15s linear;
+    }
+
+    &.show {
+        opacity: 0.5;
+    }
+}
+
+
+.navbar-toggler {
+    cursor: pointer;
+    @include media-breakpoint-up(#{$navbar-expand}) {
+        display: none;
+    }
+
+    &-icon {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        vertical-align: middle;
+    }
+
+}

@@ -1,9 +1,18 @@
 
-$coralrot: #ff4208;
-$lightgray: #f6f8f7;
+$coralrot: #ff4208; // primary
+$lightgray: #f6f8f7; // header background and very light gray backgrounds
+$gray: #c7c9c4; // lines
+
+// tertiary colors
+$tertiary-bg: #f9fcfd; // very light blue
+$tertiary-light-blue: #dae8ef; // light blue
+$tertiary-middle-blue: #baced3; // middle blue
+$tertiary-dark-blue: #5a6b75; // dark blue
+
 
 $primary: $coralrot;
 
+$offcanvas-bg: white;
 
 $font-family-base: Beausite Classic, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
 $font-family-headlines: "Make Way",  serif;
