@@ -1,5 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-
+<f:if condition="{data.image.0}" >
+    <f:image image="{data.image.0}" />
+</f:if>
         <nav id="mainnavigation" class="main-nav offcanvas offcanvas-end" tabindex="-1" aria-labelledby="offcanvasNavbar2Label">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasNavbar2Label">{f:translate(key: 'mainMenuLabel', extensionName: 'liszt_web')}</h5>

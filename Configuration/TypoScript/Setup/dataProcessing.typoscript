@@ -18,18 +18,13 @@ page.10.dataProcessing {
     special = directory
     special.value = {$liszt_web.metaUid}
   }
+  // Content Block data processing
+  30 = content-blocks
   40 = menu
   40 {
     as = breadcrumb
     special = rootline
     special.range = 0|-1
     includeNotInMenu = 0
-  }
-  30 = files
-  30 {
-    as = image
-    references {
-      fieldName = image
-    }
   }
 }

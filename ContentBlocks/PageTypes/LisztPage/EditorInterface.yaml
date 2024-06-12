@@ -1,0 +1,8 @@
+name: slub/lisztpage
+typeName: 100
+fields:
+  - identifier: image
+    type: File
+    allowed: common-image-types
+    maxitems: 1
+    label: 'Seitenbild'
