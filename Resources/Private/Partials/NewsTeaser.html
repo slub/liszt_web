@@ -3,7 +3,7 @@
 
 <div id="news-teaser">
     <f:for each="{lw:chunk(array:newsMenu,length:3)}" as="newsRow" iteration="newsRowsIteration">
-        <div class="news-row {f:if(condition:newsIteration.isFirst,'first-row','hidden-row')}">
+        <div class="news-row {f:if(condition:newsRowsIteration.isFirst,then:'first-row',else:'hidden-row')}">
             <f:for each="{newsRow}" as="newsEntry">
                 <div class="news-entry">
                     <f:if condition="{newsEntry.data.image.0}">
@@ -14,6 +14,9 @@
                 </div>
             </f:for>
         </div>
+        <f:if condition="newsRowsIteration.isFirst">
+            mehr laden
+        </f:if>
     </f:for>
 </div>
 
