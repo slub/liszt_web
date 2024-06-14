@@ -11,15 +11,13 @@
 
     <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.hasContent', data: '{colPos: 0}')}">
         <main role="main" id="#page-content">
-            <div class="container-xl">
-                <div class="row">
-                <aside class="sidebar left col-md-3">
+            <div class="container-xl grid-3col">
+                <aside class="sidebar">
                     {f:cObject(typoscriptObjectPath: 'lib.dynamicContent', data: '{colPos: 1, slide: -1, max: 1}')}
                 </aside>
-                <article class="content col-md-9">
+                <article class="content grid-colspan-md-2">
                     {f:cObject(typoscriptObjectPath: 'lib.dynamicContent', data: '{colPos: 0, slide: -1, max: 1}')}
                 </article>
-                </div>
             </div>
         </main>
     </f:if>
