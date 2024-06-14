@@ -2,32 +2,36 @@
   font-family: Beausite Classic;
   font-style: normal;
   font-weight: 300;
-  font-display: swap;
-  src: url("../Fonts/BeausiteClassicWebTrial-Clear.woff2") format("woff2");
+ // font-display: swap;
+  src: url("../Fonts/BeausiteClassicWeb-Clear.woff2") format("woff2");
+  src: url("../Fonts/BeausiteClassicWeb-Clear.woff") format("woff");
 }
 
 @font-face {
   font-family: Beausite Classic;
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
-  src: url("../Fonts/BeausiteClassicWebTrial-Regular.woff2") format("woff2");
+//  font-display: swap;
+  src: url("../Fonts/BeausiteClassicWeb-Regular.woff2") format("woff2");
+  src: url("../Fonts/BeausiteClassicWeb-Regular.woff") format("woff");
 }
 
 @font-face {
   font-family: Beausite Classic;
   font-style: normal;
   font-weight: 500;
-  font-display: swap;
-  src: url("../Fonts/BeausiteClassicWebTrial-Semibold.woff2") format("woff2");
+//  font-display: swap;
+  src: url("../Fonts/BeausiteClassicWeb-Semibold.woff2") format("woff2");
+  src: url("../Fonts/BeausiteClassicWeb-Semibold.woff") format("woff");
 }
 
 @font-face {
   font-family: Make Way;
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
-  src: url("../Fonts/MakeWayTrial-Regular.woff2") format("woff2");
+//  font-display: swap;
+  src: url("../Fonts/MakeWayWeb-Regular.woff2") format("woff2");
+  src: url("../Fonts/MakeWayWeb-Regular.woff") format("woff");
 }
 
 html {

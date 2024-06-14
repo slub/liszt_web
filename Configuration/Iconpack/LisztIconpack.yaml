@@ -7,20 +7,20 @@ iconpack:
   renderTypes:
     svg:
       # Source folder of the SVG files, which are rendered as <img> tag:
-      source: "EXT:liszt_web/Resources/Public/Icons/"
+      source: "EXT:liszt_web/Resources/Public/Icons/IconPack/"
       attributes:
         class: "lzicon"
 
     svgInline:
       # Source folder of the SVG files that are rendered as <svg> tag (inline SVG):
-      source: "EXT:liszt_web/Resources/Public/Icons/"
+      source: "EXT:liszt_web/Resources/Public/Icons/IconPack/"
       attributes:
         class: "lzicon-inline"
         fill: "currentColor"
 
 
     svgSprite:
-      source: "EXT:liszt_web/Resources/Public/Icons/IconSprites.svg"
+      source: "EXT:liszt_web/Resources/Public/Icons/IconPack/IconSprites.svg"
       attributes:
         class: "lzicon-sprite"
         fill: "currentColor"
@@ -28,8 +28,9 @@ iconpack:
   # Define here which icons are provided by this iconpack
   # In this case, the values here correspond to the file names (without file name extension)
   icons:
-    - pdf
-    - printer
-    - xml
     - share
+    - printer
+    - xmlicon
+    - pdf
     - arrow-right
+    - close

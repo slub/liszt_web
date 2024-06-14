@@ -1,5 +1,9 @@
 // Breadcrumb Navigation
 .breadcrumb {
+    margin-top: $mobile-design-space;
+    @include media-breakpoint-up(md) {
+        margin-top: $desktop-design-space;
+    }
     font-size: $font-size-sm;
 
         ol {

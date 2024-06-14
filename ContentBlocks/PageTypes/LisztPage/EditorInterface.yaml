@@ -6,3 +6,6 @@ fields:
     allowed: common-image-types
     maxitems: 1
     label: 'Seitenbild'
+  - identifier: headline
+    type: Text
+    label: 'Alternative h1 Überschrift'

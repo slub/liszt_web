@@ -7,7 +7,12 @@
 }
 
 .container-xl {
-    @include media-breakpoint-up(xl) {
+    @include media-breakpoint-between(lg, xl) {
+        padding-right: calc($container-padding-x * 2);
+        padding-left: calc($container-padding-x * 2);
+    }
+
+        @include media-breakpoint-up(xl) {
         padding-right: 0;
         padding-left: 0;
     }
@@ -49,12 +54,14 @@
     gap: 1rem;
     @include media-breakpoint-up(md) {
         grid-template-columns: repeat(3, 1fr);
-        gap: $standard-design-space;
+        gap: $desktop-design-space;
     }
 }
 
-.grid-colspan-2 {
-    grid-column: span 2;
+.grid-colspan-md-2 {
+    @include media-breakpoint-up(md) {
+        grid-column: span 2;
+    }
 }
 
 

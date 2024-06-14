@@ -22,7 +22,7 @@
 
 
  &-main {
-     margin-top: $standard-design-space;
+     margin-top: $desktop-design-space;
      font-size: 0.7777777rem;
      line-height: 1.36;
      font-weight: 300;
@@ -38,12 +38,12 @@
     &-founding-logos {
         display: flex;
         flex-direction: column;
-        gap: $standard-design-space;
+        gap: $desktop-design-space;
         align-items: flex-start;
          .cols {
              display: flex;
              flex-wrap: wrap;
-             gap: $standard-design-space;
+             gap: $desktop-design-space;
              flex-direction: column;
              @include media-breakpoint-up(md) {
                 flex-direction: row;
@@ -69,13 +69,13 @@
     }
 
   &-cta {
-    margin-top: $standard-design-space;
-    padding-top: $standard-design-space;
-    padding-bottom: $standard-design-space;
+    margin-top: $desktop-design-space;
+    padding-top: $desktop-design-space;
+    padding-bottom: $desktop-design-space;
     background-color: var(--lz-primary);
 
     @include media-breakpoint-up(md) {
-        margin-top: $standard-design-space;
+        margin-top: $desktop-design-space;
     }
 
     &-title {
@@ -105,12 +105,13 @@
 
     &-meta {
         background-color: $lightgray;
-        margin-top: $standard-design-space;
+        margin-top: $desktop-design-space;
 
         &-wrapper {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         &-nav {

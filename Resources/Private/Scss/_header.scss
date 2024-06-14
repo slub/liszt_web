@@ -1,21 +1,38 @@
 .page-header {
-    margin-top: $standard-design-space;
+    padding-top: $desktop-design-space;
+    background-color: var(--lz-light-gray);
 
     &-container {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: min-content auto min-content;
+        grid-template-areas:
+            "logo . hamburger"
+            "image title title";
+
 
         @include media-breakpoint-up(#{$navbar-expand}) {
-            flex-wrap: nowrap;
-            justify-content: flex-start;
+            height: 300px;
+            grid-template-columns: min-content auto 1fr;
+            grid-template-areas:
+            "logo image mainnav"
+            ". image title";
         }
-    }
+
+        @include media-breakpoint-up(xl) {
+            height: 400px;
+        }
+        @include media-breakpoint-up(xxl) {
+            height: 500px;
+        }
+
+        }
 
     &-logo {
+        grid-area: logo;
         display: block;
         width: 140px;
+        line-height: 1;
         @include media-breakpoint-up(md) {
             width: 170px;
         }
@@ -25,6 +42,68 @@
             height: auto;
         }
     }
+
+    &-image {
+        grid-area: image;
+        display: flex;
+        align-items: end;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        max-width: 170px; // max width like liszt logo
+
+
+        img {
+            height: 100%;
+            width: 100%;
+            margin-top: 30px;
+            object-fit: contain;
+            object-position: bottom;
+        }
+
+        @include media-breakpoint-up(#{$navbar-expand}) {
+            max-width: none;
+
+            img {
+                margin-top: 0;
+            }
+
+        }
+
+    }
+
+    &-title {
+        grid-area: title;
+        display: flex;
+        align-items: center;
+        padding-left: 1rem;
+        justify-self: center;
+
+        h1 {
+            line-height: 1.18;
+            margin-bottom: 0;
+            font-size: 1.8rem;
+            color: var(--lz-primary);
+            //  hyphens: auto;
+        }
+
+        @include media-breakpoint-up(#{$navbar-expand}) {
+            align-items: start;
+            justify-self: start;
+        }
+
+        @include media-breakpoint-up(md) {
+            padding-left: 10%;
+            h1 {
+                font-size: 2.6666666667rem;
+                line-height: 1.18;
+                // hyphens: none;
+            }
+
+        }
+    }
 }
+
+
 
 

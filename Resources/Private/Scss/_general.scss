@@ -2,27 +2,46 @@
     --lz-primary: #{$coralrot};
     --lz-font-color: black;
     --lz-font-color-inverse: white;
-    --lz-light-gray:#{$lightgray};
-    --lz-gray:#{$gray};
-    --lz-tertiary-bg:#{$tertiary-bg};
-    --lz-tertiary-light-blue:#{$tertiary-light-blue};
-    --lz-tertiary-middle-blue:#{$tertiary-middle-blue};
-    --lz-tertiary-dark-blue:#{$tertiary-dark-blue};
+    --lz-light-gray: #{$lightgray};
+    --lz-gray: #{$gray};
+    --lz-tertiary-bg: #{$tertiary-bg};
+    --lz-tertiary-light-blue: #{$tertiary-light-blue};
+    --lz-tertiary-middle-blue: #{$tertiary-middle-blue};
+    --lz-tertiary-dark-blue: #{$tertiary-dark-blue};
     --lz-offcanvas-bg: #{$offcanvas-bg};
 }
 
 
 .visually-hidden,
 .visually-hidden-focusable:not(:focus):not(:focus-within) {
-  @include visually-hidden;
+    @include visually-hidden;
 }
 
 main {
-  margin-top: 2rem;
-  @include media-breakpoint-up(md) {
-    margin-top: 3rem;
-  }
+    margin-top: $mobile-design-space;
+    @include media-breakpoint-up(md) {
+        margin-top: $desktop-design-space;
+    }
+}
 
+
+// change color on svg icons via url is only possible with mask, maybe a iconfont is better for this or inline svg in html
+// also word breaks can happen between last word and icon
+.arrow-right {
+    &-after {
+        &::after {
+            background-color: currentColor;
+            content: "";
+            mask-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8"%3F><svg id="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.38 23.69" fill="currentColor"><g><polygon class="cls-1" points="41.64 0 39.1 2.73 46.91 9.98 0 9.98 0 13.71 46.91 13.71 39.1 20.96 41.64 23.69 54.38 11.85 41.64 0"/></g></svg>');
+            mask-repeat: no-repeat;
+            mask-position: center;
+            display: inline-block;
+            margin-left: .3rem;
+            width: 1em;
+            height: 0.6em;
+
+        }
+    }
 }
 
 

@@ -1,10 +1,10 @@
 .main-nav {
     --lz-navlink-padding-x: 0.5rem;
-
-
     font-size: 1rem;
     display: flex;
+    grid-area: mainnav;
 
+    // ToDo: maybe remove this extra .offcanvas later and move it in the main.scss
     &.offcanvas {
         flex-direction: column;
         visibility: hidden;
@@ -53,7 +53,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0.5rem 1rem;
+        padding: 1.5rem 1rem 1rem 1rem;
         @include media-breakpoint-up(#{$navbar-expand}) {
             display: none;
         }
@@ -61,7 +61,7 @@
 
     .offcanvas-body {
         flex-grow: 1;
-        padding: 1rem;
+        padding: 0 1rem 1rem 1rem;
         overflow-y: auto;
         justify-content: flex-end;
         @include media-breakpoint-up(#{$navbar-expand}) {
@@ -75,20 +75,12 @@
 
     .offcanvas-title {
         margin-bottom: 0;
-        line-height: 1.5;
         text-transform: uppercase;
-    }
-
-    .btn-close {
-        width: 1rem;
-        height: 1rem;
-        border: 0;
-        cursor: pointer;
-
     }
 
     .navbar-nav {
         font-weight: 400;
+        font-size: 0.888888888rem;
         display: flex;
         flex-direction: column;
         padding-left: 0;
@@ -97,6 +89,7 @@
 
         @include media-breakpoint-up(#{$navbar-expand}) {
             flex-direction: row;
+            margin: 0;
             margin-right: calc(var(--lz-navlink-padding-x) * -1);
         }
 
@@ -110,7 +103,7 @@
         .nav-link {
             display: block;
             padding: 0;
-            font-size: 1rem;
+          //  font-size: 1rem;
             color: var(--lz-font-color);
             text-decoration: none;
             background: none;
@@ -168,6 +161,7 @@
 
         .nav-link-text {
             padding: 0.2rem 0.2rem;
+            letter-spacing: 0.06em;
         }
 
         .dropdown {
@@ -188,13 +182,6 @@
                 .dropdown-menu {
                     display: block;
                 }
-
-                .nav-link-text {
-       //             @include media-breakpoint-up(#{$navbar-expand}) {
-      //                  background-color: var(--lz-font-color);
-       //                 color: var(--lz-font-color-inverse);
-       //             }
-                }
             }
         }
 
@@ -205,7 +192,7 @@
         .dropdown-menu {
             position: static;
             min-width: 9rem;
-            padding: 0.5rem 0;
+            padding: 0.2rem 0 1rem 0;
             margin: 0;
             text-align: left;
             list-style: none;
@@ -214,6 +201,7 @@
             @include media-breakpoint-up(#{$navbar-expand}) {
                 position: absolute;
                 display: none;
+                padding: 0.5rem 0;
                 z-index: 80;
                 // display: none;
                 //    border: var(--lz-font-color) solid 1px;
@@ -255,9 +243,8 @@
             }
         }
     }
-
-
 }
+
 
 .offcanvas-backdrop {
     position: fixed;
@@ -279,17 +266,68 @@
 }
 
 
+
 .navbar-toggler {
+    grid-area: hamburger;
+    justify-self: end;
+    align-self: start;
     cursor: pointer;
+    border: 1px solid var(--lz-font-color);
+    padding: 0.5rem 0.6rem;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    line-height: 1;
+    background-color: transparent;
+    color: var(--lz-font-color);
+    @include media-breakpoint-up(md) {
+
+    }
+
+    &:hover, &:focus, &:active {
+     //   border-color: var(--lz-primary);
+        .navbar-toggler-icon-bar {
+                background-color: var(--lz-primary);
+            }
+    }
     @include media-breakpoint-up(#{$navbar-expand}) {
         display: none;
     }
 
     &-icon {
         display: inline-block;
-        width: 1.5em;
-        height: 1.5em;
-        vertical-align: middle;
+
+        &-bar {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: var(--lz-font-color);
+            transition: .15s cubic-bezier(0.75, -0.55, 0.25, 1.55);
+
+            &:not(:first-child) {
+                margin-top: 6px;
+            }
+        }
+    }
+}
+
+.btn-close {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    border: 1px solid var(--lz-font-color);
+    color: var(--lz-font-color);
+    padding: 0;
+    margin-right: 0.5rem;
+    width: 25px;
+    height: 25px;
+    &:hover, &:focus, &:active {
+        color: var(--lz-primary);
     }
 
+    svg {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
 }
