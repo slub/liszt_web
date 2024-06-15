@@ -30,18 +30,35 @@ page {
   10 = FLUIDTEMPLATE
   10 {
     templateName = TEXT
-    templateName.data = pagelayout
+/*    templateName.data = pagelayout
     templateName.stdWrap.replacement {
       10.search = pagets__
       10.replace =
     }
 
     1 = TEXT
-    1.value = EXT:liszt_web/Resources/Private/Templates/Home.html
+    1.value = EXT:liszt_web/Resources/Private/Templates/Home.html*/
 
     # Create a new backend layout in page.tsconfig
     # and use <BackendLayoutKey> as template name to
     # have it automatically resolved.
+
+    // new frontend template handling like https://docs.typo3.org/p/contentblocks/content-blocks/main/en-us/Guides/PageTypes/Index.html
+    templateName {
+        cObject = CASE
+          cObject {
+            key.field = doktype
+
+            default = TEXT
+            default.value = Default
+
+            100 = TEXT
+            100.value = SidebarLeft
+
+            110 = TEXT
+            110.value = Home
+          }
+      }
 
     // Define template paths
     templateRootPaths {

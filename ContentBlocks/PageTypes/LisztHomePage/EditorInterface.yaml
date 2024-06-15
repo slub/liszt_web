@@ -1,6 +1,6 @@
-name: slub/lisztpage
-title: 'Liszt Standard Seite'
-typeName: 100
+name: slub/liszthomepage
+title: 'Liszt Startseite'
+typeName: 110
 fields:
   - identifier: image
     type: File
