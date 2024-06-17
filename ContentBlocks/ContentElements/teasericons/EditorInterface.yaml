@@ -1,0 +1,31 @@
+name: slub/teasericons
+typeName: slub_teasericons
+group: liszt_portal
+prefixFields: true
+prefixType: full
+basics:
+  - TYPO3/Links
+  - TYPO3/Appearance
+
+fields:
+  -
+    identifier: teasericons
+    type: Collection
+    label: 'Teaser Icons'
+    labelField: icon
+    fields:
+      - identifier: icon
+        type: Text
+        label: 'Icon'
+      - identifier: title
+        type: Text
+        label: 'Überschrift'
+      - identifier: text
+        label: 'Text'
+        type: Textarea
+        enableRichtext: true
+        rows: 5
+      - identifier: link
+        type: Link
+        label: 'Link'
+

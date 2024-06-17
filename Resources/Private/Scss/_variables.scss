@@ -24,13 +24,13 @@ $font-size-sm: 0.875rem;
 $font-size-base: 1rem;
 
 $h1-font-size:                $font-size-base * 2.75;
-$h2-font-size:                $font-size-base * 1.625;
+$h2-font-size:                $font-size-base * 2;
 $h3-font-size:                $font-size-base * 1.625;
 $h4-font-size:                $font-size-base * 1.25;
 $h5-font-size:                $font-size-base * 1.25;
 $h6-font-size:                $font-size-base;
 
-$line-height-base:            1.45;
+$line-height-base:            1.4444444444;
 
 
 $grid-breakpoints:(
@@ -64,4 +64,4 @@ $container-padding-x: 1rem;
 
 // this is the space the designer uses for margins and paddings on desktop screen = size of the portal logo
 $desktop-design-space: 46px;
-$mobile-design-space: 1rem;
+$mobile-design-space: 2rem;

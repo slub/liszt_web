@@ -17,9 +17,18 @@
 }
 
 @font-face {
+    font-family: Beausite Classic;
+    font-style: normal;
+    font-weight: 500;
+    //  font-display: swap;
+    src: url("../Fonts/BeausiteClassicWeb-Medium.woff2") format("woff2");
+    src: url("../Fonts/BeausiteClassicWeb-Medium.woff") format("woff");
+}
+
+@font-face {
   font-family: Beausite Classic;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
 //  font-display: swap;
   src: url("../Fonts/BeausiteClassicWeb-Semibold.woff2") format("woff2");
   src: url("../Fonts/BeausiteClassicWeb-Semibold.woff") format("woff");
@@ -71,8 +80,12 @@ h6 {
     font-size: $font-size-base;
 }
 
+p {
+    margin-top: 0;
+}
+
 strong {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .max-textblock-width {

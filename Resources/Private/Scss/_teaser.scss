@@ -1,0 +1,50 @@
+.teaser {
+
+    margin-top: $mobile-design-space;
+    margin-bottom: $mobile-design-space;
+
+    @include media-breakpoint-up(md) {
+        margin-top: $desktop-design-space;
+        margin-bottom: $desktop-design-space;
+    }
+    @include media-breakpoint-up(xl) {
+        margin-top: calc($desktop-design-space * 2);
+        margin-bottom: calc($desktop-design-space * 2);
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+
+
+    &-icon {
+        color: var(--lz-primary);
+        padding-top: 7px;
+
+        svg {
+            width: auto;
+            height: 64px;
+        }
+    }
+
+    &-title {
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+    }
+
+    &-text {
+        font-weight: 400;
+        font-size: 0.7777777778rem;
+        line-height: 1.2142857;
+    }
+
+    &-col {
+        display: flex;
+        gap: 1rem;
+
+    }
+
+}

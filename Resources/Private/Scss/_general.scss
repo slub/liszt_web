@@ -22,6 +22,9 @@ main {
     @include media-breakpoint-up(md) {
         margin-top: $desktop-design-space;
     }
+    @include media-breakpoint-up(xl) {
+        margin-top: calc($desktop-design-space * 2);
+    }
 }
 
 

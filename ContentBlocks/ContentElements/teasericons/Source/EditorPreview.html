@@ -1,0 +1,29 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:cb="http://typo3.org/ns/TYPO3/CMS/ContentBlocks/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+    xmlns:i="http://typo3.org/ns/Quellenform/Iconpack/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+    <div class="row">
+        <f:for each="{data.teasericons}" as="teasericon" iteration="i">
+            <div class="col">
+                <div class="row">
+                    <div class="col-3 text-center">
+                        <i:icon iconfig="lzicon,{teasericon.icon}" preferredRenderTypes="svgSprite" additionalAttributes="{aria-hidden:'true', style:'width: 80%; color: #ff4208;'}" />
+                    </div>
+                    <div class="col-9">
+                <div class="teaser-title text-uppercase fw-bold">{teasericon.title}</div>
+                <f:transform.html>{teasericon.text}</f:transform.html>
+                        Link: {teasericon.link}
+                    </div>
+                </div>
+            </div>
+        </f:for>
+    </div>
+
+
+
+
+
