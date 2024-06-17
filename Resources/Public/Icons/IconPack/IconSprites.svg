@@ -110,4 +110,34 @@
             d="m12 12 5.243 5.243m-10.485 0L12 12.001l-5.242 5.242ZM17.243 6.758 12 12l5.243-5.243ZM12 12 6.758 6.758 12 12Z"/>
     </symbol>
 
+    <svg id="external-link" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 35.11 35.19">
+        <defs>
+            <style>
+                .cls-1-link {
+                clip-path: url(#clippath);
+                }
+                .cls-2-link {
+                stroke-width: 0px;
+                }
+                .cls-2-link, .cls-3-link {
+                fill: none;
+                }
+                .cls-3-link {
+                stroke: currentColor;
+                stroke-width: 4.21px;
+                }
+            </style>
+            <clipPath id="clippath">
+                <rect class="cls-2-link" width="35.11" height="35.19"/>
+            </clipPath>
+        </defs>
+        <g>
+            <g class="cls-1-link">
+                <polyline class="cls-3-link" points="10.78 5.93 2.11 5.93 2.11 33.08 28.99 33.08 28.99 24.5"/>
+                <polyline class="cls-3-link" points="21.89 2.11 33 2.11 33 13.4"/>
+                <line class="cls-3-link" x1="33.16" y1="1.95" x2="15.71" y2="19.39"/>
+            </g>
+        </g>
+    </svg>
+
 </svg>

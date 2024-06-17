@@ -6,20 +6,25 @@ TCEFORM {
   tt_content {
     frame_class {
       addItems {
-        doubled_border = Liszt Inhaltselement
+        doubled_border = Liszt Test
       }
       removeItems = indent-left,indent-right
     }
     header_layout {
       altLabels {
-        0 = h2 Section Überschrift
-        1 = Seitenüberschrift
-        2 = Überschrift 2
-        3 = Überschrift 3
-        4 = Überschrift 4
-        5 = Überschrift 5
+        0 = h2 Standard Überschrift
+        1 = h1 Seitenüberschrift
+        2 = h2 Überschrift
+        3 = h3 Überschrift
+        4 = h4 Überschrift
+        5 = h5 Überschrift
       }
-      removeItems = 2
+      removeItems = 1
+    }
+    layout {
+      altLabels {
+        0 = Liszt Standard
+      }
     }
   }
   pages {
@@ -29,15 +34,15 @@ TCEFORM {
         0 = Standard
         1 = Variante 1
       }
-      }
+    }
   }
 }
 
-TCAdefaults {
-  tt_content {
-    frame_class = doubled_border
-  }
-}
+#TCAdefaults {
+#  tt_content {
+#    frame_class = doubled_border
+#  }
+#}
 
 ## set standard permissions for group "Seitenrechte" to delete pages from other group members
 #TCEMAIN.permissions {
@@ -49,6 +54,7 @@ TCAdefaults {
 TCEFORM.tt_content.layout.types.textpic.addItems {
   100 = eigenes Layout Textpic
 }
+
 
 ## hide some fields in content elements, for example colPos and header_position
 #TCEFORM.tt_content {
