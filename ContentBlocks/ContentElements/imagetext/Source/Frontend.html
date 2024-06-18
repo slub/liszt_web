@@ -1,0 +1,26 @@
+<html
+    data-namespace-typo3-fluid="true"
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:i="http://typo3.org/ns/Quellenform/Iconpack/ViewHelpers"
+>
+
+<f:layout name="Default" /><!--diese drei Sections optional wenn man alle fluid funktionen dabei haben will-->
+<f:section name="Header" /> <!--Header nur leer ausgegeben siehe Video weil sonst meckert-->
+<f:section name="Main">
+
+
+    <div class="cb-imagetext-container">
+        <div class="cb-imagetext">
+
+            <div class="cb-imagetext-image">
+                <f:image image="{data.image.0}" alt="{data.image.0.alternative}" title="{data.image.0.title}" width="800" loading="lazy"/>
+            </div>
+
+            <div class="cb-imagetext-text">
+               {data.text -> f:format.html()}
+            </div>
+
+        </div>
+    </div>
+
+</f:section>

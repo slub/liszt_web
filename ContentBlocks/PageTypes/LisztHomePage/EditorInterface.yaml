@@ -1,5 +1,5 @@
 name: slub/liszthomepage
-title: 'Liszt Startseite'
+title: 'Liszt Homepage'
 typeName: 110
 fields:
   - identifier: image

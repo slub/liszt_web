@@ -1,0 +1,21 @@
+name: slub/imagetext
+typeName: slub_imagetext
+group: liszt_portal
+prefixFields: true
+prefixType: full
+basics:
+  - TYPO3/Links
+  - TYPO3/Appearance
+
+fields:
+  - identifier: image
+    type: File
+    maxitems: 1
+    allowed: common-image-types
+    label: 'Bild'
+  - identifier: text
+    label: 'Text'
+    type: Textarea
+    enableRichtext: true
+    rows: 6
+

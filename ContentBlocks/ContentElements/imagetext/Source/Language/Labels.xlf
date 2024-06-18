@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file datatype="plaintext" original="Labels.xlf" source-language="en" date="2024-04-21T13:19:18+00:00" product-name="slub/teasericons">
+	<file datatype="plaintext" original="Labels.xlf" source-language="en" date="2024-04-21T13:19:18+00:00" product-name="slub/imagetext">
 		<header/>
 		<body>
 			<trans-unit id="title" resname="title">
-				<source>Teaser Icons</source>
+				<source>Bild + Text</source>
 			</trans-unit>
 			<trans-unit id="description" resname="description">
-				<source>Teaser Icon Leiste (z.b. auf Startseite)</source>
+				<source>Bild links + Text rechts</source>
 			</trans-unit>
 		</body>
 	</file>

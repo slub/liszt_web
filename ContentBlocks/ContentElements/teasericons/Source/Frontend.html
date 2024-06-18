@@ -8,16 +8,16 @@
 <f:section name="Header" /> <!--Header nur leer ausgegeben siehe Video weil sonst meckert-->
 <f:section name="Main">
 
-    <div class="teaser container-xl">
+    <div class="cb-teasericons container-xl">
         <div class="grid grid grid-{data.teasericons -> f:count()}col">
         <f:for each="{data.teasericons}" as="teasericon">
-                        <f:link.page pageUid="6" class="teaser-col">
-                            <div class="teaser-icon">
+                        <f:link.page pageUid="6" class="cb-teasericons-col">
+                            <div class="cb-teasericons-icon">
                                 <i:icon iconfig="lzicon,{teasericon.icon}" preferredRenderTypes="svgSprite" additionalAttributes="{aria-hidden:'true'}" />
                             </div>
-                            <div class="teaser-description">
-                                <div class="teaser-title">{teasericon.title}</div>
-                                <div class="teaser-text">{teasericon.text -> f:format.html()}</div>
+                            <div class="cb-teasericons-description">
+                                <div class="cb-teasericons-title">{teasericon.title}</div>
+                                <div class="cb-teasericons-text">{teasericon.text -> f:format.html()}</div>
                             </div>
                         </f:link.page>
         </f:for>

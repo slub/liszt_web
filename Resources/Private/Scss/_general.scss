@@ -26,9 +26,11 @@ main {
         margin-top: calc($desktop-design-space * 2);
     }
 
+    // Lists in main content
     ul {
         padding-left: 1em;
         margin-top: 0;
+        margin-bottom: 1rem;
     }
 }
 

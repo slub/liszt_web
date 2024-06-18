@@ -119,6 +119,7 @@ mod.web_layout.BackendLayouts {
     ## icon = EXT:liszt_web/Resources/Public/Images/BackendLayouts/default.gif
     config {
       backend_layout {
+        doktype = 110
         colCount = 1
         rowCount = 2
         rows {
@@ -148,6 +149,7 @@ mod.web_layout.BackendLayouts {
     ## icon = EXT:liszt_web/Resources/Public/Images/BackendLayouts/default.gif
     config {
       backend_layout {
+        doktype = 100
         colCount = 2
         rowCount = 2
         rows {
