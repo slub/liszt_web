@@ -9,8 +9,7 @@
 <f:section name="Main">
 
     <div class="teaser container-xl">
-        <div class="grid-3col">
-
+        <div class="grid grid grid-{data.teasericons -> f:count()}col">
         <f:for each="{data.teasericons}" as="teasericon">
                         <f:link.page pageUid="6" class="teaser-col">
                             <div class="teaser-icon">

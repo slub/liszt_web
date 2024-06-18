@@ -49,12 +49,26 @@
 }
 
 
-.grid-3col {
+.grid {
     display: grid;
     gap: 1rem;
-    @include media-breakpoint-up(md) {
-        grid-template-columns: repeat(3, 1fr);
-        gap: $desktop-design-space;
+    &-2col {
+        @include media-breakpoint-up(md) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: $desktop-design-space;
+        }
+    }
+    &-3col {
+        @include media-breakpoint-up(md) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: $desktop-design-space;
+        }
+    }
+    &-4col {
+        @include media-breakpoint-up(md) {
+            grid-template-columns: repeat(4, 1fr);
+            gap: $desktop-design-space;
+        }
     }
 }
 

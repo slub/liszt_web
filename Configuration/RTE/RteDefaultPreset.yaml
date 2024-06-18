@@ -1,3 +1,5 @@
+#  look at vendor/typo3/cms-rte-ckeditor/Configuration/RTE/Default.yaml
+
 # Import basic configuration
 imports:
   - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
@@ -11,7 +13,7 @@ editor:
     # Include custom CSS
     contentsCss: "%vite('packages/liszt_web/Resources/Private/Scss/rte.scss')%"
     toolbarGroups:
-      - { name: basicstyles, groups: [ basicstyles, align ] }
+      - { name: basicstyles, groups: [ basicstyles, align, bulletedList, numberedList ] }
       - { name: links }
       - { name: insert }
       - { name: clipboard, groups: [clipboard, cleanup, undo] }

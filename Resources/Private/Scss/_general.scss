@@ -25,6 +25,11 @@ main {
     @include media-breakpoint-up(xl) {
         margin-top: calc($desktop-design-space * 2);
     }
+
+    ul {
+        padding-left: 1em;
+        margin-top: 0;
+    }
 }
 
 
@@ -32,6 +37,8 @@ main {
 // also word breaks can happen between last word and icon
 .arrow-right {
     &-after {
+        // no warp words
+        white-space: nowrap;
         &::after {
             background-color: currentColor;
             content: "";

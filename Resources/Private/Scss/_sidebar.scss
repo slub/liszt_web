@@ -1,5 +1,35 @@
 .sidebar {
 
- 
+
+ // Todo: mark active link in sidebar via JS and als if scroll position is in section ( Intersection_Observer_API ?)
+    // insert the js script only if the sidebar menu ist used
+
+    .frame-type-menu_section {
+        position: sticky;
+        top : 1rem;
+        h2, h3, h4 {
+            font-family: $font-family-base;
+            margin-bottom: 0.5em;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 0;
+            li {
+                margin-bottom: 0.3rem;
+                font-size: 0.888888889rem;
+                font-weight: 400;
+                a {
+                    color: var(--lz-font-color);
+                    text-decoration: none;
+                    &:hover, &:focus, &:active {
+                        color: var(--lz-primary);
+                    }
+                }
+            }
+        }
+    }
 
 }

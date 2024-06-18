@@ -4,7 +4,8 @@
     @include media-breakpoint-up(md) {
         margin-top: $desktop-design-space;
     }
-    font-size: $font-size-sm;
+    font-size: 0.777777777778rem;
+    font-weight: 400;
 
         ol {
             padding: 0;
