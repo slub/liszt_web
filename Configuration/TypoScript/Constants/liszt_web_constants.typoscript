@@ -6,5 +6,7 @@ liszt_web {
   #cat=liszt_web/misc; type=string; label=Copyright-Zeile: im Footer (Jahreszahl wird automatisch ergänzt)
   copyrightText = &copy;
 
+  #cat=liszt_web/misc; type=int+; label=News-UID: UID des Ordners, der die News-Seiten enthält
+  newsUid = 24
 }
 
