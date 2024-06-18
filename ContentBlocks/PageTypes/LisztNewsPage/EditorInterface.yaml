@@ -2,6 +2,8 @@ name: slub/lisztnewspage
 title: 'Liszt News Seite'
 typeName: 120
 fields:
+  - identifier: TYPO3/Categories
+    type: Category
   - identifier: image
     type: File
     allowed: common-image-types
