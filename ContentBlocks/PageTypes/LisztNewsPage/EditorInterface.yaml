@@ -1,0 +1,22 @@
+name: slub/lisztnewspage
+title: 'Liszt News Seite'
+typeName: 120
+fields:
+  - identifier: image
+    type: File
+    allowed: common-image-types
+    maxitems: 1
+    label: 'Seitenbild'
+  - identifier: headline
+    type: Text
+    label: 'Alternative h1 Überschrift'
+  - identifier: teaserImage
+    type: File
+    allowed: common-image-types
+    maxitems: 1
+    label: 'Teaserbild'
+  - identifier: teaserText
+    label: 'Teasertext'
+    type: Textarea
+    enableRichtext: true
+    rows: 7

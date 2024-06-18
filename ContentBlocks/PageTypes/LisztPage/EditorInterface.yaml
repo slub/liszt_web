@@ -10,6 +10,3 @@ fields:
   - identifier: headline
     type: Text
     label: 'Alternative h1 Überschrift'
-  - identifier: teaserText
-    type: Text
-    label: 'Teasertext'

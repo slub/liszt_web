@@ -58,6 +58,9 @@ page {
 
             110 = TEXT
             110.value = Home
+
+            120 = TEXT
+            120.value = News
           }
       }
 
