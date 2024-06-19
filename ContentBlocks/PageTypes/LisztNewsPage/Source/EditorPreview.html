@@ -44,6 +44,9 @@
                     </f:if>
                 </div>
                 <div class="col-9">
+                    <f:if condition="{data.newsdate}">
+                        <span class="badge"><f:format.date format="d.m.Y">{data.newsdate}</f:format.date></span>
+                    </f:if>
                     <f:if condition="{data.teaserText}" >
                         <f:then>
                             <p>

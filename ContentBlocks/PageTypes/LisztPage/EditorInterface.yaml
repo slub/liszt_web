@@ -2,6 +2,8 @@ name: slub/lisztpage
 title: 'Liszt Standard Seite'
 typeName: 100
 fields:
+  - identifier: TYPO3/Categories
+    type: Basic
   - identifier: image
     type: File
     allowed: common-image-types
