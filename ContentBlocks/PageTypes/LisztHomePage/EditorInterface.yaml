@@ -10,3 +10,8 @@ fields:
   - identifier: headline
     type: Text
     label: 'Alternative h1 Überschrift'
+  - identifier: showNewsTeaser
+    type: Checkbox
+    label: 'News Teaser anzeigen'
+    items:
+      - label: 'Ja'
