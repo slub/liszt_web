@@ -26,3 +26,9 @@ The sitepackage defines the markup and stylings for the portal.
 # How to use the sitepackage
 
 A development environment may be setup using [ddev](https://ddev.com) by using [the ddev container](https://github.com/dikastes/ddev-liszt-portal).
+
+# Maintainers
+
+If you have any questions or encounter any problems, please do not hesitate to contact us.
+- [Matthias Richter](https://github.com/dikastes)
+- [Thomas Schefter](https://github.com/thomas-sc)
