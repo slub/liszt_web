@@ -16,12 +16,30 @@
 
     &-teaser {
         background-color: var(--lz-light-gray);
+        padding-top: $desktop-design-space;
+        padding-bottom: $desktop-design-space;
 
         &-title {
             font-weight: 600;
             font-size: 1rem;
             font-family: $font-family-base;
 
+        }
+    }
+
+    &-entry {
+        &-header {
+            margin-bottom: $headlines-margin-bottom;
+        }
+        &-title {
+            font-weight: 400;
+            font-size: 1.777777778rem;
+            font-family:$font-family-headlines;
+            margin-bottom: 0;
+        }
+        &-date {
+            font-weight: 500;
+            font-size: 0.77777777rem;
         }
     }
 }

@@ -8,11 +8,13 @@
             <div class="news-row  grid grid-3col {f:if(condition:newsRowsIteration.isFirst,then:'first-row',else:'hidden-row')}">
                 <f:for each="{newsRow}" as="newsEntry">
                     <div class="news-entry">
-                        <f:if condition="{newsEntry.data.image.0}">
-                            <f:image image="{newsEntry.data.image.0}"/>
-                        </f:if>
-                        <h3> {newsEntry.data.title} </h3>
-                        <p> {newsEntry.data.teaserText} </p>
+                        <div class="news-entry-header">
+                            <h4 class="news-entry-title">{f:if(condition: newsEntry.data.headline, then: newsEntry.data.headline, else: newsEntry.data.title )}</h4>
+                            <f:if condition="{newsEntry.data.newsdate}">
+                                <span class="news-entry-date"><f:format.date format="d.m.Y">{newsEntry.data.newsdate}</f:format.date></span>
+                            </f:if>
+                        </div>
+                       {newsEntry.data.teaserText -> f:format.html()}
                     </div>
                 </f:for>
             </div>
