@@ -2,6 +2,9 @@ name: slub/lisztpage
 title: 'Liszt Standard Seite'
 typeName: 100
 fields:
+  - identifier: TYPO3/Categories
+    label: 'Kategorien'
+    type: Category
   - identifier: image
     type: File
     allowed: common-image-types
@@ -15,5 +18,3 @@ fields:
     label: 'News Teaser anzeigen'
     items:
       - label: 'Ja'
-  - identifier: TYPO3/Categories
-    type: Basic

@@ -3,6 +3,7 @@ title: 'Liszt News Seite'
 typeName: 120
 fields:
   - identifier: TYPO3/Categories
+    label: 'Kategorien'
     type: Category
   - identifier: image
     type: File

@@ -69,13 +69,13 @@
     }
 
   &-cta {
-    margin-top: $desktop-design-space;
+  //  margin-top: $desktop-design-space;
     padding-top: $desktop-design-space;
     padding-bottom: $desktop-design-space;
     background-color: var(--lz-primary);
 
     @include media-breakpoint-up(md) {
-        margin-top: $desktop-design-space;
+   //     margin-top: $desktop-design-space;
     }
 
     &-title {
