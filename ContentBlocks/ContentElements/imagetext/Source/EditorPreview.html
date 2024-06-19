@@ -6,7 +6,13 @@
     data-namespace-typo3-fluid="true"
 >
 
-    <div class="cb">
+    <div class="row">
+        <div class="col-3">
+            <f:image image="{data.image.0}" width="800" loading="lazy"/>
+        </div>
+        <div class="col-9">
+            <f:transform.html>{data.text}</f:transform.html>
+        </div>
 
     </div>
 
