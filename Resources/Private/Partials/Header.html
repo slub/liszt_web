@@ -10,7 +10,7 @@
         <f:if condition="{data.image.0}" >
             <f:then>
             <div class="page-header-image">
-                <f:image image="{data.image.0}" />
+                <f:image image="{data.image.0}" alt="{data.image.0.alternative}" title="{data.image.0.title}" />
             </div>
             </f:then>
             <f:else>
@@ -20,9 +20,16 @@
             </f:else>
         </f:if>
 
-
         <div class="page-header-title">
-            <h1 class="page-header-title-text">{f:if(condition: data.headline, then: data.headline, else: data.title )}</h1>
+            <f:comment>Wenn es eine News Page ist, dann andere Headline in Header (eigentliche Headline steht dann im Content)</f:comment>
+            <f:if condition="{data.doktype} == 120">
+                <f:then>
+                    <h1 class="page-header-title-text">News (?)</h1>
+                </f:then>
+                <f:else>
+                    <h1 class="page-header-title-text">{f:if(condition: data.headline, then: data.headline, else: data.title )}</h1>
+                </f:else>
+            </f:if>
         </div>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainnavigation" aria-controls="mainnavigation" aria-label="{f:translate(key: 'switchNavigation', extensionName: 'liszt_web')}">

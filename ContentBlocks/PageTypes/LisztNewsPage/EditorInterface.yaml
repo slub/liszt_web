@@ -17,6 +17,10 @@ fields:
     allowed: common-image-types
     maxitems: 1
     label: 'Teaserbild'
+  - identifier: newsdate
+    type: DateTime
+    format: date
+    label: 'News Datum'
   - identifier: teaserText
     label: 'Teasertext'
     type: Textarea

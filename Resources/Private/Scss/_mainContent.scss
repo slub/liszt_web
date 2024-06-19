@@ -1,0 +1,26 @@
+main {
+    margin-top: $mobile-design-space;
+    @include media-breakpoint-up(md) {
+        margin-top: $desktop-design-space;
+    }
+    @include media-breakpoint-up(xl) {
+        margin-top: calc($desktop-design-space * 2);
+    }
+
+    // Lists in main content
+    ul {
+        padding-left: 1em;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    // margins between content elements in main
+    .frame {
+        margin-bottom: $mobile-design-space;
+        @include media-breakpoint-up(md) {
+            margin-bottom: $desktop-design-space;
+        }
+    }
+    
+
+}

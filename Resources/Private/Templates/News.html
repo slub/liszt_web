@@ -13,9 +13,16 @@
         <main role="main" id="#page-content">
             <div class="container-xl grid grid-3col">
                 <aside class="sidebar">
+                    Link zur News Übersicht
                     {f:cObject(typoscriptObjectPath: 'lib.dynamicContent', data: '{colPos: 1, slide: -1, max: 1}')}
                 </aside>
                 <article class="content grid-colspan-md-2">
+                    <header class="news-header">
+                    <h2>{f:if(condition: data.headline, then: data.headline, else: data.title )}</h2>
+                    <f:if condition="{data.newsdate}">
+                       <span class="news-date"><f:format.date format="d.m.Y">{data.newsdate}</f:format.date></span>
+                    </f:if>
+                    </header>
                     {f:cObject(typoscriptObjectPath: 'lib.dynamicContent', data: '{colPos: 0, slide: -1, max: 1}')}
                 </article>
             </div>
