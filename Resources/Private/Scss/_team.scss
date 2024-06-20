@@ -1,0 +1,70 @@
+.team {
+
+    &-group {
+        padding-bottom: $desktop-design-space;
+        border-bottom: 1px solid var(--lz-gray);
+        margin-bottom: $desktop-design-space;
+
+        &.no-border {
+            border-bottom: none;
+        }
+    }
+
+
+    &-members {
+        display: grid;
+        gap: $desktop-design-space;
+        @include media-breakpoint-up(md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+    }
+
+    &-member {
+        &-name {
+            font-size: 1.33333rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        &-role {
+            font-size: 1rem;
+            line-height: 1.2;
+            font-weight: 600;
+            letter-spacing: 0.02rem;
+            margin-bottom: 2rem;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        &-biography {
+            font-weight: 400;
+            p {
+                margin-bottom: 0;
+            }
+        }
+
+        &-email {
+            a {
+                font-weight: 500;
+                text-decoration: none;
+                color: var(--lz-font-color);
+
+                &:hover {
+                    color: var(--lz-primary);
+                }
+            }
+        }
+    }
+}
+
+.board {
+    &-member {
+        font-weight: 400;
+        display: block;
+    }
+
+}

@@ -1,34 +1,55 @@
+<html
+    data-namespace-typo3-fluid="true"
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+>
+
 <f:layout name="Default" /><!--diese drei Sections optional wenn man alle fluid funktionen dabei haben will-->
 <f:section name="Header" /> <!--Header nur leer ausgegeben siehe Video weil sonst meckert-->
 <f:section name="Main">
 
-    <div class="team">
+    <section class="team">
         <f:for each="{data.groups}" as="group" iteration="group-iterator">
-            <div class="group">
-                <h3> {group.groupname} </h3>
-                <div class="members">
+            <div class="team-group grid grid-3col-lg">
+                <h3>{group.groupname}</h3>
+                <div class="team-members grid-colspan-md-2">
                     <f:for each="{group.persons}" as="member">
-                        <div class="member">
+                        <div class="team-member">
                             <f:if condition="{member.image}">
                                 <f:image image="{member.image.0}" />
                             </f:if>
-                            <div class="member-name">
+                            <div class="team-member-name">
                                 {member.preposeddegree} {member.firstname} {member.lastname} {member.postposeddegree}
                             </div>
-                            <div class="member-role">
+                            <div class="team-member-role">
                                 {member.role}
                             </div>
-                            <div class="member-biography">
-                                {member.biography}
+                            <f:if condition="{member.biography}">
+                            <div class="team-member-biography">
+                              {member.biography -> f:format.html()}
                             </div>
+                            </f:if>
+                            <f:if condition="{member.email}">
+                                <f:comment>Todo: E-Mail Obfuscation???</f:comment>
+                            <div class="team-member-email">
+                                    <a href="mailto:{member.email}">{member.email}</a>
+                            </div>
+                            </f:if>
                         </div>
                     </f:for>
                 </div>
             </div>
-            <f:if condition="!{group-iterator.isLast}">
-                <hr>
-            </f:if>
         </f:for>
-    </div>
+
+        <div class="team-group no-border grid grid-3col-lg">
+            <f:comment>ToDo: translate oder include board title in team content block?</f:comment>
+            <h3>Wissenschaftlicher Beirat</h3>
+            <div class="board-members grid-colspan-md-2">
+                <f:for each="{data.board}" as="boardmember" iteration="board-iterator">
+                    <span class="board-member">{boardmember.name}, {boardmember.institution}</span>
+                </f:for>
+            </div>
+        </div>
+
+    </section>
 
 </f:section>

@@ -9,6 +9,9 @@
 			<trans-unit id="description" resname="description">
 				<source>Hier wird das Team vorgestellt.</source>
 			</trans-unit>
+			<trans-unit id="boardtitle" resname="boardtitle">
+				<source>Wissenschaftlicher Beirat</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

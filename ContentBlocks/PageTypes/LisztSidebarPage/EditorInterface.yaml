@@ -1,8 +1,8 @@
 name: slub/lisztpage
-title: 'Liszt Standard Seite'
+title: 'Liszt Sidebar links'
 typeName: 100
 fields:
-  - identifier: TYPO3/Categories
+  - identifier: category
     label: 'Kategorien'
     type: Category
   - identifier: image

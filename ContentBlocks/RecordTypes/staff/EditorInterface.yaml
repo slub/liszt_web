@@ -47,5 +47,10 @@ fields:
     allowed: 'common-image-types'
     maxitems: 1
   - identifier: biography
-    type: Text
+    type: Textarea
+    enableRichtext: true
+    rows: 10
     label: 'Biographie'
+  - identifier: email
+    type: Email
+    label: 'E-Mail'
