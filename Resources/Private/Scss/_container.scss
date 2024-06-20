@@ -48,26 +48,50 @@
     }
 }
 
-
+// Todo: create a mixin for this
 .grid {
     display: grid;
     gap: 1rem;
     &-2col {
-        @include media-breakpoint-up(md) {
-            grid-template-columns: repeat(2, 1fr);
-            gap: $desktop-design-space;
+        &-md {
+            @include media-breakpoint-up(md) {
+                grid-template-columns: repeat(2, 1fr);
+                gap: $desktop-design-space;
+            }
+        }
+        &-lg {
+            @include media-breakpoint-up(lg) {
+                grid-template-columns: repeat(2, 1fr);
+                gap: $desktop-design-space;
+            }
         }
     }
     &-3col {
-        @include media-breakpoint-up(md) {
-            grid-template-columns: repeat(3, 1fr);
-            gap: $desktop-design-space;
+        &-md {
+            @include media-breakpoint-up(md) {
+                grid-template-columns: repeat(3, 1fr);
+                gap: $desktop-design-space;
+            }
+        }
+        &-lg {
+            @include media-breakpoint-up(lg) {
+                grid-template-columns: repeat(3, 1fr);
+                gap: $desktop-design-space;
+            }
         }
     }
     &-4col {
-        @include media-breakpoint-up(md) {
-            grid-template-columns: repeat(4, 1fr);
-            gap: $desktop-design-space;
+        &-md {
+            @include media-breakpoint-up(md) {
+                grid-template-columns: repeat(4, 1fr);
+                gap: $desktop-design-space;
+            }
+        }
+        &-lg {
+            @include media-breakpoint-up(lg) {
+                grid-template-columns: repeat(4, 1fr);
+                gap: $desktop-design-space;
+            }
         }
     }
 }

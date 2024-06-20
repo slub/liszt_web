@@ -5,7 +5,8 @@
     <div class="container-xl">
         <h3 class="news-teaser-title">Aktuelle News</h3>
         <f:for each="{lw:chunk(array:newsMenu,length:3)}" as="newsRow" iteration="newsRowsIteration">
-            <div class="news-row  grid grid-3col {f:if(condition:newsRowsIteration.isFirst,then:'first-row',else:'hidden-row')}">
+            <f:comment>ToDO: refactor the if conditions in an view helper and style the case of 1 column with image and 2 cols?</f:comment>
+            <div class="news-row  grid {f:if(condition: '{newsMenu -> f:count()} > 2', then:'grid-3col-md')} {f:if(condition: '{newsMenu -> f:count()} === 2', then:'grid-2col-md')} {f:if(condition:newsRowsIteration.isFirst,then:'first-row',else:'hidden-row')}">
                 <f:for each="{newsRow}" as="newsEntry">
                     <div class="news-entry">
                         <div class="news-entry-header">
