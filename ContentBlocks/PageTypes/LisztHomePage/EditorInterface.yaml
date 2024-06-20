@@ -2,7 +2,7 @@ name: slub/liszthomepage
 title: 'Liszt ohne Sidebar'
 typeName: 110
 fields:
-  - identifier: category
+  - identifier: categories
     label: 'Kategorien'
     type: Category
   - identifier: image

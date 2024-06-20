@@ -2,7 +2,7 @@ name: slub/lisztnewspage
 title: 'Liszt News Seite'
 typeName: 120
 fields:
-  - identifier: category
+  - identifier: categories
     label: 'Kategorien'
     type: Category
   - identifier: image

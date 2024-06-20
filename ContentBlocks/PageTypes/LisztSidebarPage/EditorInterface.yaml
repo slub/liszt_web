@@ -2,7 +2,7 @@ name: slub/lisztpage
 title: 'Liszt Sidebar links'
 typeName: 100
 fields:
-  - identifier: category
+  - identifier: categories
     label: 'Kategorien'
     type: Category
   - identifier: image

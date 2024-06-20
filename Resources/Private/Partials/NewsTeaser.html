@@ -1,28 +1,40 @@
 {namespace lw=Slub\LisztWeb\ViewHelpers}
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-<section id="news-teaser" class="news-teaser">
-    <div class="container-xl">
-        <h3 class="news-teaser-title">Aktuelle News</h3>
-        <f:for each="{lw:chunk(array:newsMenu,length:3)}" as="newsRow" iteration="newsRowsIteration">
-            <f:comment>ToDO: refactor the if conditions in an view helper and style the case of 1 column with image and 2 cols?</f:comment>
-            <div class="news-row  grid {f:if(condition: '{newsMenu -> f:count()} > 2', then:'grid-3col-md')} {f:if(condition: '{newsMenu -> f:count()} === 2', then:'grid-2col-md')} {f:if(condition:newsRowsIteration.isFirst,then:'first-row',else:'hidden-row')}">
-                <f:for each="{newsRow}" as="newsEntry">
-                    <div class="news-entry">
-                        <div class="news-entry-header">
-                            <h4 class="news-entry-title">{f:if(condition: newsEntry.data.headline, then: newsEntry.data.headline, else: newsEntry.data.title )}</h4>
-                            <f:if condition="{newsEntry.data.newsdate}">
-                                <span class="news-entry-date"><f:format.date format="d.m.Y">{newsEntry.data.newsdate}</f:format.date></span>
-                            </f:if>
-                        </div>
-                       {newsEntry.data.teaserText -> f:format.html()}
-                    </div>
-                </f:for>
-            </div>
-            <f:if condition="newsRowsIteration.isFirst">
-                mehr laden
-            </f:if>
-        </f:for>
-    </div>
-</section>
+<div id="news-teaser">
+
+    <f:if condition="{data.categories -> f:count()}==0">
+        <h3> Neuigkeiten </h3>
+    </f:if>
+    <f:if condition="{data.categories -> f:count()}==1">
+        <h3> Mehr aus dem Bereich {data.categories.0.title} </h3>
+    </f:if>
+    <f:if condition="{data.categories -> f:count()}>1">
+        <h3>
+            Mehr aus den Bereichen <lw:listCategories list="{data.categories}" />
+        </h3>
+    </f:if>
+
+    <f:for each="{lw:teaser(newsPages:newsMenu,rowLength:3,caller:data)}" as="newsRow" iteration="newsRowsIteration">
+        <div class="news-row {f:if(condition:newsRowsIteration.isFirst,then:'first-row',else:'hidden-row')}">
+            <f:for each="{newsRow}" as="newsEntry">
+                <div class="news-entry">
+                    <f:if condition="{newsEntry.image.0}">
+                        <f:image image="{newsEntry.image.0}" />
+                    </f:if>
+                    <h3> {newsEntry.title} </h3>
+                    <p> {newsEntry.teaserText} </p>
+                    <f:link.page pageUid="{newsEntry.uid}">
+                        weiter lesen
+                    </f:link.page>
+                </div>
+            </f:for>
+        </div>
+        <f:if condition="newsRowsIteration.isFirst">
+            mehr laden
+        </f:if>
+    </f:for>
+
+</div>
+
 </html>
