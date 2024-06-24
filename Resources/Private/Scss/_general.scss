@@ -39,5 +39,30 @@
     }
 }
 
+.read-more {
+        // no warp words
+        white-space: nowrap;
+        text-decoration: none;
+        color: inherit;
+        font-weight: 500;
+
+        &:hover{
+            color: var(--lz-primary);
+        }
+
+        &:before {
+            background-color: currentColor;
+            content: "";
+            mask-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8"%3F><svg id="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.38 23.69" fill="currentColor"><g><polygon class="cls-1" points="41.64 0 39.1 2.73 46.91 9.98 0 9.98 0 13.71 46.91 13.71 39.1 20.96 41.64 23.69 54.38 11.85 41.64 0"/></g></svg>');
+            mask-repeat: no-repeat;
+            mask-position: center;
+            display: inline-block;
+            margin-right: .3rem;
+            width: 1em;
+            height: 0.6em;
+
+        }
+}
+
 
 

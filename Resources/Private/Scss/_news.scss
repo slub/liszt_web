@@ -23,8 +23,12 @@
             font-weight: 600;
             font-size: 1rem;
             font-family: $font-family-base;
-
         }
+
+        p {
+            margin-bottom: 0;
+        }
+
     }
 
     &-entry {
