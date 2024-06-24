@@ -11,7 +11,7 @@ imports:
 editor:
   config:
     # Include custom CSS
-    contentsCss: "%vite('packages/liszt_web/Resources/Private/Scss/rte.scss')%"
+    contentsCss: "%vite('EXT:liszt_web/Resources/Private/Scss/rte.scss')%"
     toolbarGroups:
       - { name: basicstyles, groups: [ basicstyles, align, bulletedList, numberedList ] }
       - { name: links }
