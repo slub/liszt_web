@@ -40,10 +40,12 @@ final class TeaserViewHelper extends AbstractViewHelper
     }
 
     private static function filterCategories(ContentBlockData $page, ContentBlockData $caller) {
+        if (property_exists($caller, 'categories') && is_array($caller->categories)) {
         if (count($caller->categories)) {
             return Collection::wrap($page->categories)->
                 filter( function($category) use ($caller) { return self::filterCategory($category, $caller); } )->
                 count();
+        }
         }
         // disable filter if caller is not categorized
         return true;

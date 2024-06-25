@@ -3,41 +3,49 @@
 
 <section id="news-teaser" class="news-teaser">
     <div class="container-xl">
-    <f:if condition="{data.categories -> f:count()}==0">
-        <h3 class="news-teaser-title"> Neuigkeiten </h3>
-    </f:if>
-    <f:if condition="{data.categories -> f:count()}==1">
-        <h3 class="news-teaser-title"> Mehr aus dem Bereich {data.categories.0.title} </h3>
-    </f:if>
-    <f:if condition="{data.categories -> f:count()}>1">
-        <h3 class="news-teaser-title">
-            Mehr aus den Bereichen <lw:listCategories list="{data.categories}" />
-        </h3>
-    </f:if>
-
-
-    <f:for each="{lw:teaser(newsPages:newsMenu,rowLength:3,caller:data)}" as="newsRow" iteration="newsRowsIteration">
-        <f:comment>ToDO: refactor the if conditions in an view helper</f:comment>
-        <div class="news-row  grid {f:if(condition: '{newsRowsIteration.total} > 2', then:'grid-3col-md')} {f:if(condition: '{newsRowsIteration.total} <== 2', then:'grid-2col-md')} {f:if(condition:newsRowsIteration.isFirst,then:'first-row',else:'hidden-row')}">
-            <f:for each="{newsRow}" as="newsEntry">
-                <div class="news-entry">
-                    <div class="news-entry-header">
-                        <h4 class="news-entry-title">{f:if(condition: newsEntry.headline, then: newsEntry.headline, else: newsEntry.title )}</h4>
-                        <f:if condition="{newsEntry.newsdate}">
-                            <span class="news-entry-date"><f:format.date format="d.m.Y">{newsEntry.newsdate}</f:format.date></span>
-                        </f:if>
-                    </div>
-                    {newsEntry.teaserText -> f:format.html()}
-                    <f:link.page class="read-more" pageUid="{newsEntry.uid}">
-                        Mehr
-                    </f:link.page>
-                </div>
-            </f:for>
-        </div>
-        <f:if condition="newsRowsIteration.isFirst">
-            <f:comment>ToDo: hier -mehr laden- Link</f:comment>
+<f:debug>{_all}</f:debug>
+        <f:if condition="{data.categories}">
+            <f:if condition="{data.categories -> f:count()}==0">
+                <h3 class="news-teaser-title"> Neuigkeiten </h3>
+            </f:if>
+            <f:if condition="{data.categories -> f:count()}==1">
+                <h3 class="news-teaser-title"> Mehr aus dem Bereich {data.categories.0.title} </h3>
+            </f:if>
+            <f:if condition="{data.categories -> f:count()}>1">
+                <h3 class="news-teaser-title">
+                    Mehr aus den Bereichen
+                    <lw:listCategories list="{data.categories}"/>
+                </h3>
+            </f:if>
         </f:if>
-    </f:for>
+
+
+        <f:for each="{lw:teaser(newsPages:newsMenu,rowLength:3,caller:data)}" as="newsRow"
+               iteration="newsRowsIteration">
+            <f:comment>ToDO: refactor the if conditions in an view helper</f:comment>
+            <div
+                class="news-row  grid {f:if(condition: '{newsRowsIteration.total} > 2', then:'grid-3col-md')} {f:if(condition: '{newsRowsIteration.total} <== 2', then:'grid-2col-md')} {f:if(condition:newsRowsIteration.isFirst,then:'first-row',else:'hidden-row')}">
+                <f:for each="{newsRow}" as="newsEntry">
+                    <div class="news-entry">
+                        <div class="news-entry-header">
+                            <h4 class="news-entry-title">{f:if(condition: newsEntry.headline, then: newsEntry.headline,
+                                else: newsEntry.title )}</h4>
+                            <f:if condition="{newsEntry.newsdate}">
+                                <span class="news-entry-date"><f:format.date
+                                    format="d.m.Y">{newsEntry.newsdate}</f:format.date></span>
+                            </f:if>
+                        </div>
+                        {newsEntry.teaserText -> f:format.html()}
+                        <f:link.page class="read-more" pageUid="{newsEntry.uid}">
+                            Mehr
+                        </f:link.page>
+                    </div>
+                </f:for>
+            </div>
+            <f:if condition="newsRowsIteration.isFirst">
+                <f:comment>ToDo: hier -mehr laden- Link</f:comment>
+            </f:if>
+        </f:for>
 
 </section>
 
