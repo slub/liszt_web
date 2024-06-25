@@ -3,29 +3,14 @@
 
 <section id="news-teaser" class="news-teaser">
     <div class="container-xl">
-<f:debug>{_all}</f:debug>
-        <f:if condition="{data.categories}">
-            <f:if condition="{data.categories -> f:count()}==0">
-                <h3 class="news-teaser-title"> Neuigkeiten </h3>
-            </f:if>
-            <f:if condition="{data.categories -> f:count()}==1">
-                <h3 class="news-teaser-title"> Mehr aus dem Bereich {data.categories.0.title} </h3>
-            </f:if>
-            <f:if condition="{data.categories -> f:count()}>1">
-                <h3 class="news-teaser-title">
-                    Mehr aus den Bereichen
-                    <lw:listCategories list="{data.categories}"/>
-                </h3>
-            </f:if>
-        </f:if>
 
+        <lw:listCategoriesHeadline list="{data.categories}"/>
 
-        <f:for each="{lw:teaser(newsPages:newsMenu,rowLength:3,caller:data)}" as="newsRow"
-               iteration="newsRowsIteration">
+        <f:for each="{lw:teaser(newsPages:newsMenu,rowLength:3,caller:data)}" as="newsRow" iteration="newsRowsIteration">
             <f:comment>ToDO: refactor the if conditions in an view helper</f:comment>
-            <div
-                class="news-row  grid {f:if(condition: '{newsRowsIteration.total} > 2', then:'grid-3col-md')} {f:if(condition: '{newsRowsIteration.total} <== 2', then:'grid-2col-md')} {f:if(condition:newsRowsIteration.isFirst,then:'first-row',else:'hidden-row')}">
-                <f:for each="{newsRow}" as="newsEntry">
+            <f:debug>{newsRowsIteration}</f:debug>
+            <div class="news-row  grid {f:if(condition: '{newsRowsIteration.total} > 2', then:'grid-3col-md')} {f:if(condition: '{newsRowsIteration.total} <== 2', then:'grid-2col-md')} {f:if(condition:newsRowsIteration.isFirst,then:'first-row',else:'hidden-row')}">
+                <f:for each="{newsRow}" as="newsEntry" iteration="newsEntryIteration">
                     <div class="news-entry">
                         <div class="news-entry-header">
                             <h4 class="news-entry-title">{f:if(condition: newsEntry.headline, then: newsEntry.headline,
@@ -46,7 +31,7 @@
                 <f:comment>ToDo: hier -mehr laden- Link</f:comment>
             </f:if>
         </f:for>
-
+    </div>
 </section>
 
 </html>
