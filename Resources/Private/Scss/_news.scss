@@ -14,6 +14,10 @@
         letter-spacing: 0.03em;
     }
 
+    &-row {
+        margin-bottom: $desktop-design-space;
+    }
+
     &-teaser {
         background-color: var(--lz-light-gray);
         padding-top: $desktop-design-space;
@@ -29,7 +33,20 @@
             margin-bottom: 0;
         }
 
+        &-show {
+            display: none;
+            margin: 0 auto 2rem auto;
+            border: none;
+            background: transparent;
+
+            &.collapsed {
+                display: block;
+            }
+        }
+
     }
+
+
 
     &-entry {
         &-header {
