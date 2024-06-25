@@ -10,7 +10,7 @@
         <f:variable name="caller"><f:if condition="{data._raw}"><f:then>{data._raw}</f:then><f:else>{data}</f:else></f:if></f:variable>
 
         <f:for each="{lw:teaser(newsPages:newsMenu,rowLength:3,caller:caller)}" as="newsRow" iteration="newsRowsIteration">
-            <div class="news-row  grid {f:if(condition: '{newsRow->f:count()} > 2', then:'grid-3col-md')} {f:if(condition: '{newsRow->f:count()} <== 2', then:'grid-2col-md')} {f:if(condition:newsRowsIteration.isFirst,then:'first-row',else:'collapse hidden-row')}" id="news-{newsRowsIteration.index}-row" >
+            <div class="news-row  grid {f:if(condition: '{newsRow->f:count()} > 2', then:'grid-3col-lg')} {f:if(condition: '{newsRow->f:count()} <= 2', then:'grid-2col-md')} {f:if(condition:newsRowsIteration.isFirst,then:'first-row',else:'collapse hidden-row')}" id="news-{newsRowsIteration.index}-row" >
                 <f:for each="{newsRow}" as="newsEntry" iteration="newsEntryIteration">
                     <div class="news-entry">
                         <div class="news-entry-header">

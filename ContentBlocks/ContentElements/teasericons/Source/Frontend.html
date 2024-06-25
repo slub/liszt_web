@@ -8,8 +8,8 @@
 <f:section name="Header" /> <!--Header nur leer ausgegeben siehe Video weil sonst meckert-->
 <f:section name="Main">
 
-    <div class="cb-teasericons container-xl">
-        <div class="grid grid grid-{data.teasericons -> f:count()}col-md">
+    <div class="cb-teasericons">
+        <div class="grid grid {f:if(condition: '{data.teasericons -> f:count()} == 3', then:'grid-3col-md')} {f:if(condition: '{data.teasericons -> f:count()} > 3', then:'grid-2col-md grid-4col-lg')}">
         <f:for each="{data.teasericons}" as="teasericon">
                         <f:link.page pageUid="6" class="cb-teasericons-col">
                             <div class="cb-teasericons-icon">
