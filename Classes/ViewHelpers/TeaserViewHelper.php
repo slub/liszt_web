@@ -18,7 +18,7 @@ final class TeaserViewHelper extends AbstractViewHelper
     {
         $this->registerArgument('newsPages', 'array', 'The news pages which should be displayed', true);
         $this->registerArgument('rowLength', 'integer', 'The count of the news pages which should be displayed per row', true);
-        $this->registerArgument('caller', ContentBlockData::class, 'The page which calls the view helper');
+        $this->registerArgument('caller', 'array', 'The page which calls the view helper');
     }
 
     public static function renderStatic(
@@ -35,23 +35,21 @@ final class TeaserViewHelper extends AbstractViewHelper
             toArray();
     }
 
-    private static function excludeCaller(ContentBlockData $page, ContentBlockData $caller) {
-        return $page->uid != $caller->uid;
+    private static function excludeCaller(ContentBlockData $page, array $caller) {
+        return $page->uid != $caller['uid'];
     }
 
-    private static function filterCategories(ContentBlockData $page, ContentBlockData $caller) {
-        if (property_exists($caller, 'categories') && is_array($caller->categories)) {
-        if (count($caller->categories)) {
+    private static function filterCategories(ContentBlockData $page, array $caller) {
+        if (isset($caller['categories']) && is_array($caller['categories']) && count($caller['categories'])) {
             return Collection::wrap($page->categories)->
                 filter( function($category) use ($caller) { return self::filterCategory($category, $caller); } )->
                 count();
-        }
         }
         // disable filter if caller is not categorized
         return true;
     }
 
-    private static function filterCategory(ContentBlockData $category, ContentBlockData $caller) {
-        return in_array($category, $caller->categories);
+    private static function filterCategory(ContentBlockData $category, array $caller) {
+        return in_array($category, $caller['categories']);
     }
 }

@@ -6,9 +6,11 @@
 
         <lw:listCategoriesHeadline list="{data.categories}"/>
 
-        <f:for each="{lw:teaser(newsPages:newsMenu,rowLength:3,caller:data)}" as="newsRow" iteration="newsRowsIteration">
+        <f:comment><!-- The Teaser ViewHelper only accepts arrays. If the calling page is a ContentBlocks PageType, ContentBlocks data are converted. --></f:comment>
+        <f:variable name="caller"><f:if condition="{data._raw}"><f:then>{data._raw}</f:then><f:else>{data}</f:else></f:if></f:variable>
+
+        <f:for each="{lw:teaser(newsPages:newsMenu,rowLength:3,caller:caller)}" as="newsRow" iteration="newsRowsIteration">
             <f:comment>ToDO: refactor the if conditions in an view helper</f:comment>
-            <f:debug>{newsRowsIteration}</f:debug>
             <div class="news-row  grid {f:if(condition: '{newsRowsIteration.total} > 2', then:'grid-3col-md')} {f:if(condition: '{newsRowsIteration.total} <== 2', then:'grid-2col-md')} {f:if(condition:newsRowsIteration.isFirst,then:'first-row',else:'hidden-row')}">
                 <f:for each="{newsRow}" as="newsEntry" iteration="newsEntryIteration">
                     <div class="news-entry">
