@@ -1,0 +1,11 @@
+# the z in filename is because this has to be processed after ext.fluid_styled_content.typoscript !!!
+
+lib.contentBlock {
+  partialRootPaths.0 < lib.contentElement.partialRootPaths.0
+  partialRootPaths.100 < lib.contentElement.partialRootPaths.100
+
+  layoutRootPaths.0 < lib.contentElement.layoutRootPaths.0
+  layoutRootPaths.100 < lib.contentElement.layoutRootPaths.100
+
+  settings < lib.contentElement.settings
+}

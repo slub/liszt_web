@@ -8,10 +8,26 @@
 <f:section name="Header" /> <!--Header nur leer ausgegeben siehe Video weil sonst meckert-->
 <f:section name="Main">
 
-    <f:debug>{_all}</f:debug>
-    <div class="cb-pageteaser">
-{data.pageteaseruid}
-        Test
+    <div class="cb-pageteaser grid grid-3col-md">
+        <div class="cb-pageteaser-image">
+            <f:if condition="{pageTeaser.0.data.teaserImage.0}">
+                <f:image image="{pageTeaser.0.data.teaserImage.0}" alt="{pageTeaser.0.data.teaserImage.0.alternative}" title="{pageTeaser.0.data.teaserImage.0.title}" width="800" loading="lazy"/>
+            </f:if>
+        </div>
+        <div class="grid-colspan-md-2">
+            <div class="cb-pageteaser-header">
+                <h3 class="cb-pageteaser-title">
+                    {f:if(condition: pageTeaser.0.data.headline, then: pageTeaser.0.data.headline, else: pageTeaser.0.data.title )}
+                </h3>
+                <f:if condition="{pageTeaser.0.data.newsdate}">
+                    <span class="cb-pageteaser-date"><f:format.date format="d.m.Y">{pageTeaser.0.data.newsdate}</f:format.date></span>
+                </f:if>
+            </div>
+            {pageTeaser.0.data.teaserText -> f:format.html()}
+            <f:link.page class="read-more" pageUid="{pageTeaser.0.data.uid}">
+                Mehr
+            </f:link.page>
+        </div>
     </div>
 
 </f:section>

@@ -5,7 +5,11 @@ lib.contentElement {
   partialRootPaths {
     100 = EXT:liszt_web/Resources/Private/ExtensionOverrides/fluid_styled_content/Partials/
   }
-#  layoutRootPaths {
-#    100 = EXT:liszt_web/Resources/Private/ExtensionOverrides/fluid_styled_content/Layouts/
-#  }
+  layoutRootPaths {
+    100 = EXT:liszt_web/Resources/Private/ExtensionOverrides/fluid_styled_content/Layouts/
+  }
+  settings {
+
+  }
+
 }
