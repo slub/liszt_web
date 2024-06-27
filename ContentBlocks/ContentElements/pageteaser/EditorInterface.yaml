@@ -1,0 +1,19 @@
+name: slub/pageteaser
+typeName: slub_pageteaser
+group: liszt_portal
+prefixFields: true
+prefixType: full
+basics:
+  - TYPO3/Links
+  - TYPO3/Appearance
+
+fields:
+  - identifier: pageteaseruid
+    type: Number
+    format: integer
+    label: 'ID der Seite'
+    required: true
+    description: Hier die ID der Zielseite eingeben
+
+
+

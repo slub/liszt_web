@@ -18,3 +18,17 @@ fields:
     label: 'News Teaser anzeigen'
     items:
       - label: 'Ja'
+  - identifier: teaserImage
+    type: File
+    allowed: common-image-types
+    maxitems: 1
+    label: 'Teaserbild'
+  - identifier: newsdate
+    type: DateTime
+    format: date
+    label: 'News Datum'
+  - identifier: teaserText
+    label: 'Teasertext'
+    type: Textarea
+    enableRichtext: true
+    rows: 7

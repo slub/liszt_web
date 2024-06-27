@@ -33,9 +33,25 @@ page.10.dataProcessing {
     titleField = subtitle
     levels = 1
     special = directory
+    maxItems = 12
     special.value = {$liszt_web.newsUid}
     dataProcessing {
       10 = content-blocks
+    }
+  }
+}
+
+# Dataprocessor only for pageTeaser, get one Page
+tt_content.slub_pageteaser {
+  dataProcessing {
+    20 = menu
+    20 {
+      as = pageTeaser
+      special = list
+      special.value.field = slub_pageteaser_pageteaseruid
+      dataProcessing {
+        10 = content-blocks
+      }
     }
   }
 }
