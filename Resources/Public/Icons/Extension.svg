@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Ebene_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-    <defs>
-        <style>
-            .cls-1{fill:#ff4208;stroke-width:0px;}.cls-2,.cls-3{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:1px;}.cls-3{stroke-linecap:round;}
-        </style>
-    </defs>
-    <rect class="cls-1" width="64" height="64"/>
-    <path class="cls-3"
-          d="M46.06,28.27h-.86v24.19h-3.62v-19.07s-4.29-1.75-9.54-1.75h-.2c-5.26,0-9.54,1.75-9.54,1.75v19.07h-3.62v-24.19h-.86l-.97-3.26v-3.49h2.14l12.98-9.98,12.91,9.98h2.28v3.48l-1.1,3.29h0Z"/>
-    <polyline class="cls-2" points="19.43 25.23 31.98 15.63 44.54 25.14"/>
-    <polyline class="cls-3" points="24.86 32.58 24.86 51.2 22.29 51.2"/>
-    <polyline class="cls-3" points="38.99 32.58 38.99 51.2 41.56 51.2"/>
-    <line class="cls-2" x1="16.96" y1="25.17" x2="47.24" y2="25.17"/>
-    <line class="cls-3" x1="18.61" y1="28.27" x2="45.31" y2="28.27"/>
+<svg id="Liszt-Portal-Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <g id="Ebene_1-2" >
+        <rect fill="#ff4208" stroke-width="0px" width="32" height="32"/>
+        <path fill="#fff" stroke-width="0px" d="M24.14,9.5l-8.14-5.09-8.14,5.09h-1.35v2.61l1,2v13.38h3.99v-10.19c.54-.25,2.03-.81,4.5-.81s3.96.56,4.5.81v10.19h3.99v-13.38l1-2v-2.61h-1.35ZM8.14,10.5l7.86-4.91,7.86,4.91h.65v1.01H7.5v-1.01h.65ZM8.31,13.5l-.5-1.01h16.39l-.5,1.01h-15.39ZM23.5,26.5h-2.01v-9.78l-.23-.15c-.07-.04-1.77-1.07-5.26-1.07s-5.19,1.03-5.26,1.07l-.23.15v9.78h-2.01v-12.01h15.01v12.01Z"/>
+    </g>
 </svg>

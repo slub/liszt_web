@@ -1,0 +1,55 @@
+# ToDo: maybe later we can use dynamic site name
+# "name":"{siteLanguage:websiteTitle // site:websiteTitle}",
+# "short_name":"{siteLanguage:websiteTitle // site:websiteTitle}",
+
+
+site\.webmanifest = PAGE
+site\.webmanifest {
+  typeNum = 3478304621
+  config {
+    disableAllHeaderCode = 1
+    additionalHeaders.10.header = Content-type:application/json
+    admPanel = 0
+    debug = 0
+  }
+
+  10 = COA
+  10 {
+    stdWrap.wrap = {|}
+
+    10 = TEXT
+    10 {
+      dataWrap (
+"name":"Digitales Liszt Quellen- und Werkverzeichnis",
+"short_name":"LisztQWV",
+"icons":[|],
+"theme_color":"#ff4208",
+"background_color":"#ffffff",
+"display":"standalone"
+      )
+
+      value = 32x32, 64x64, 192x192, 512x512
+      split {
+        token = ,
+        wrap = {|},|*|{|},|*|{|}
+        cObjNum = 1
+        1.cObject = COA
+        1.cObject {
+          10 = TEXT
+          10 {
+            current = 1
+            trim = 1
+            dataWrap = "src":"{path:EXT:liszt_web/Resources/Public/Icons/Favicons/favicon-|.png}",
+          }
+
+          20 = TEXT
+          20 {
+            current = 1
+            trim = 1
+            wrap = "sizes":"|","type":"image/png"
+          }
+        }
+      }
+    }
+  }
+}

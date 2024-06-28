@@ -10,7 +10,8 @@ page {
 
   // here includeCSS or includeJS can be used to include the css and js files from EXT:liszt_web/Resources/Public if not comes from vite
 
-// shortcutIcon = EXT:liszt_web/Resources/Public/Image/Icon/typo3.svg
+ // shortcutIcon = EXT:liszt_web/Resources/Public/Icons/Favicons/favicon.ico
+
   #  Include inline labels to be used in JavaScript files:
   inlineLanguageLabelFiles {
     siteDistribution = EXT:liszt_web/Resources/Private/Language/locallang.xlf
@@ -108,4 +109,18 @@ page {
 
     }
   }
+
+headerData.20 = TEXT
+headerData.20.value (
+<link rel="icon" href="{path : EXT:liszt_web/Resources/Public/Icons/Favicons/favicon.ico}" sizes="any">
+<link rel="icon" href="{path : EXT:liszt_web/Resources/Public/Icons/Favicons/favicon.svg}" type="image/svg+xml">
+<link rel="apple-touch-icon" sizes="180x180" href="{path : EXT:liszt_web/Resources/Public/Icons/Favicons/apple-touch-icon.png}">
+<link rel="icon" type="image/png" sizes="64x64" href="{path : EXT:liszt_web/Resources/Public/Icons/Favicons/favicon-64x64.png}">
+<link rel="icon" type="image/png" sizes="32x32" href="{path : EXT:liszt_web/Resources/Public/Icons/Favicons/favicon-32x32.png}">
+<link rel="icon" type="image/png" sizes="16x16" href="{path : EXT:liszt_web/Resources/Public/Icons/Favicons/favicon-16x16.png}">
+<link rel="mask-icon" href="{path : EXT:liszt_web/Resources/Public/Icons/Favicons/safari-pinned-tab.svg}" color="#ff4208">
+<link rel="manifest" href="/site.webmanifest">
+
+)
+headerData.20.insertData = 1
 }
