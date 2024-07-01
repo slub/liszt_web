@@ -17,8 +17,11 @@
 
     &-text {
         width: 100%;
-
         padding: 2rem 0 2rem 0;
+
+        .container-xl.grid & {
+            padding-right: 2rem;
+        }
 
         p:last-of-type {
             margin-bottom: 0;

@@ -1,64 +1,58 @@
-.container {
-  width: 100%;
-  margin-right: auto;
-    margin-left: auto;
+.container-paddings {
     padding-right: $container-padding-x;
     padding-left: $container-padding-x;
-}
 
-.container-xl {
     @include media-breakpoint-between(md, xl) {
         padding-right: calc($container-padding-x * 2);
         padding-left: calc($container-padding-x * 2);
     }
 
-        @include media-breakpoint-up(xl) {
+    @include media-breakpoint-up(xl) {
         padding-right: 0;
         padding-left: 0;
     }
 }
 
 
-// Responsive containers that are 100% wide until a breakpoint
-@each $breakpoint, $container-max-width in $container-max-widths {
-    .container-#{$breakpoint} {
-        @extend .container;
-    }
-
-    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
-        %responsive-container-#{$breakpoint} {
-            max-width: $container-max-width;
-        }
-
-        // Extend each breakpoint which is smaller or equal to the current breakpoint
-        $extend-breakpoint: true;
-
-        @each $name, $width in $grid-breakpoints {
-            @if ($extend-breakpoint) {
-                .container#{breakpoint-infix($name, $grid-breakpoints)} {
-                    @extend %responsive-container-#{$breakpoint};
-                }
-
-                // Once the current breakpoint is reached, stop extending
-                @if ($breakpoint == $name) {
-                    $extend-breakpoint: false;
-                }
-            }
-        }
-    }
+.container-xl {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    @extend .container-paddings;
+    max-width: map-get($container-max-widths, 'xl');
 }
 
-// Todo: create a mixin for this
+
+// Todo: refactor frame paddings and create a mixins for col styles
 .grid {
     display: grid;
     gap: 1rem;
+
+    // frames in the 2 col Layout (with sidebar) have their own paddings because of full size grey background
+    &.container-xl {
+        main & {
+            padding-left: 0;
+            padding-right: 0;
+            .frame {
+                @extend .container-paddings;
+            }
+        }
+    }
+
     &-2col {
         &-md {
             @include media-breakpoint-up(md) {
                 grid-template-columns: repeat(2, 1fr);
                 gap: $desktop-design-space;
+
+                .frame {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+
             }
         }
+
         &-lg {
             @include media-breakpoint-up(lg) {
                 grid-template-columns: repeat(2, 1fr);
@@ -66,6 +60,7 @@
             }
         }
     }
+
     &-3col {
         &-md {
             @include media-breakpoint-up(md) {
@@ -73,6 +68,7 @@
                 gap: $desktop-design-space;
             }
         }
+
         &-lg {
             @include media-breakpoint-up(lg) {
                 grid-template-columns: repeat(3, 1fr);
@@ -80,6 +76,7 @@
             }
         }
     }
+
     &-4col {
         &-md {
             @include media-breakpoint-up(md) {
@@ -87,6 +84,7 @@
                 gap: $desktop-design-space;
             }
         }
+
         &-lg {
             @include media-breakpoint-up(lg) {
                 grid-template-columns: repeat(4, 1fr);
@@ -102,6 +100,7 @@
             grid-column: span 2;
         }
     }
+
     &-lg-2 {
         @include media-breakpoint-up(lg) {
             grid-column: span 2;
@@ -115,4 +114,14 @@
 }
 
 
+/*main .container-xl.grid {
+    padding-left: 0;
+    padding-right: 0;
 
+    .frame {
+    }
+
+
+
+
+}*/
