@@ -8,14 +8,37 @@ basics:
   - TYPO3/Appearance
 
 fields:
+  - identifier: header
+    useExistingField: true
+    label: 'Überschrift (optional)'
   - identifier: image
     type: File
     maxitems: 1
     allowed: common-image-types
     label: 'Bild'
+  - identifier: imagesize
+    type: Select
+    renderType: selectSingle
+    label: 'Bildbreite'
+    default: 50
+    items:
+      - label: '50%'
+        value: 50
+      - label: '66%'
+        value: 66
+      - label: '33%'
+        value: 33
   - identifier: text
     label: 'Text'
     type: Textarea
     enableRichtext: true
     rows: 6
+  - identifier: link
+    type: Link
+    label: 'Link (optional)'
+  - identifier: grayBackground
+    type: Checkbox
+    label: 'Grauer Hintergrund'
+    items:
+      - label: 'Ja'
 

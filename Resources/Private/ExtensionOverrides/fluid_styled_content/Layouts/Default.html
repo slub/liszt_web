@@ -1,7 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
 
-
+<f:debug>{_all}</f:debug>
 <f:comment>
     Switch between Container with max width (container-xl) and without because of multiple cols in Backend Template
     ToDo: It would be better if you could set a variable in the templates (Default, Home,News, SidebarLeft) that would be passed through to here
@@ -9,7 +9,7 @@
 </f:comment>
     <f:if condition="{f:cObject(typoscriptObjectPath: 'page.10.variables.layout')} == sidebarLeft">
         <f:then>
-            <div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+            <div id="c{data.uid}" class="frame {f:if(condition: '{data.grayBackground}==1', then: ' frame-gray-background ')} frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
                     <f:if condition="{data._LOCALIZED_UID}">
                         <a id="c{data._LOCALIZED_UID}"></a>
                     </f:if>
@@ -29,7 +29,7 @@
                </div>
         </f:then>
         <f:else>
-            <div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+            <div id="c{data.uid}" class="frame {f:if(condition: '{data.grayBackground}==1', then: ' frame-gray-background ')} frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
                 <div class="container-xl">
                     <f:if condition="{data._LOCALIZED_UID}">
                         <a id="c{data._LOCALIZED_UID}"></a>

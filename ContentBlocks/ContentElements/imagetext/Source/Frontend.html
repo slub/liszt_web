@@ -9,18 +9,24 @@
 <f:section name="Main">
 
 
-    <div class="cb-imagetext-container">
-        <div class="cb-imagetext">
+        <div class="cb-imagetext grid grid-2col-md {f:if(condition: '{data.imagesize}==33 OR {data.imagesize}==66', then: ' grid-3col-lg')} ">
 
-            <div class="cb-imagetext-image">
+            <div class="cb-imagetext-image {f:if(condition: '{data.imagesize}==66', then: ' grid-colspan-lg-2')}">
                 <f:image image="{data.image.0}" alt="{data.image.0.alternative}" title="{data.image.0.title}" width="800" loading="lazy"/>
             </div>
 
-            <div class="cb-imagetext-text">
-               {data.text -> f:format.html()}
+            <div class="cb-imagetext-text {f:if(condition: '{data.imagesize}==33', then: ' grid-colspan-lg-2')}">
+                <f:if condition="{data.header}">
+                    <h4 class="cb-imagetext-title">{data.header}</h4>
+                </f:if>
+                {data.text -> f:format.html()}
+                <f:if condition="{data.link}">
+                    <f:link.typolink class="read-more" parameter="{data.link}">
+                        Mehr
+                    </f:link.typolink>
+                </f:if>
             </div>
 
         </div>
-    </div>
 
 </f:section>
