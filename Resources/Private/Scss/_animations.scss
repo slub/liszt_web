@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .collapse {
     &:not(.show) {
         display: none;
@@ -15,3 +19,5 @@
         transition: height .35s ease;
     }
 }
+
+

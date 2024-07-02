@@ -1,6 +1,6 @@
 
 .footer {
-    font-size: 0.7777777rem;
+    font-size: $font-size-sm;
     font-weight: 300;
 
   a {
@@ -14,7 +14,7 @@
 
 
   ul {
-    font-size: 0.7777777rem;
+    font-size: $font-size-sm;
     list-style: none;
     padding-left: 0;
     margin-bottom: 0;
@@ -23,13 +23,13 @@
 
  &-main {
      margin-top: $desktop-design-space;
-     font-size: 0.7777777rem;
+     font-size: $font-size-sm;
      line-height: 1.36;
      font-weight: 300;
 
 
      h3, h4 {
-         font-size: 0.7777777rem;
+         font-size: $font-size-sm;
          font-weight: 500;
          font-family: $font-family-base;
      }

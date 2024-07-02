@@ -17,10 +17,16 @@ main {
     // margins between content elements in main
     .frame {
         margin-bottom: $mobile-design-space;
+        &-extra-mb {
+            margin-bottom: calc($mobile-design-space * 2);
+        }
         @include media-breakpoint-up(md) {
             margin-bottom: $desktop-design-space;
+            &-extra-mb {
+                margin-bottom: calc($desktop-design-space * 2);
+            }
         }
     }
-    
+
 
 }

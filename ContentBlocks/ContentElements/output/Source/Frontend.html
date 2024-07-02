@@ -1,51 +1,94 @@
-<f:layout name="Default" /><!--diese drei Sections optional wenn man alle fluid funktionen dabei haben will-->
-<f:section name="Header" /> <!--Header nur leer ausgegeben siehe Video weil sonst meckert-->
+{namespace lw=Slub\LisztWeb\ViewHelpers}
+<html
+    data-namespace-typo3-fluid="true"
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:i="http://typo3.org/ns/Quellenform/Iconpack/ViewHelpers"
+>
+<f:layout name="NoFrameWrapper" />
+<f:section name="Header" />
 <f:section name="Main">
 
-    <div class="activity">
-        <h3> Publikationen </h3>
-        <f:for each="{data.publications}" as="publication">
-            <div class="output-item">
-                <div class="output-item-header">
-                    <f:for each="{publication.persons}" as="person" iteration="person_iterator" >
-                        {person.firstname} {person.lastname}<f:if condition="!{person_iterator.isLast}">,</f:if>
-                    </f:for>
-                </div>
-                <div class="output-item-body">
-                    {publication.title}
-                </div>
-                <div class="output-item-footer">
-                    <f:format.date format="Y">
-                        {publication.date}
-                    </f:format.date> |
-                    <f:if condition="publication.editor">
-                        {publication.editor}:
-                    </f:if>
-                    {publication.publication}
-                    <f:replace value="{publication.pages}" search="-" replace="–" />
-                </div>
+
+<f:comment>ToDo: schema.org for scientific work ?</f:comment>
+<f:debug>{_all}</f:debug>
+
+    <div class="container-xl sidebar-left grid grid-3col-lg">
+
+        <aside class="sidebar">
+            <div id="c10" class="frame  frame-doubled_border frame-type-menu_section frame-layout-0">
+                <header>
+                    <h3 class="">Inhaltsverzeichnis</h3>
+                </header>
+                <ul>
+                    <li>
+                        <a href="#publications" title="">Publikationen</a>
+                    </li>
+                    <li>
+                        <a href="#presentations" title="">Präsentationen</a>
+                    </li>
+                </ul>
             </div>
-        </f:for>
-        <h3> Präsentationen </h3>
-        <f:for each="{data.presentations}" as="presentation">
-            <div class="output-item">
-                <div class="output-item-header">
-                    <f:for each="{presentation.persons}" as="person" iteration="person_iterator" >
-                        {person.firstname} {person.lastname}<f:if condition="!{person_iterator.isLast}">,</f:if>
-                    </f:for>
-                </div>
-                <div class="output-item-body">
-                    {presentation.title}
-                </div>
-                <div class="output-item-footer">
-                    <f:format.date>
-                        {presentation.date}
-                    </f:format.date>
-                    | {presentation.location}
-                    | {presentation.event}
-                </div>
+        </aside>
+
+        <article class="cb-output content grid-colspan-lg-2">
+            <div class="frame frame-extra-mb">
+                <h2 id="publications"> Publikationen </h2>
+                <f:for each="{lw:sortBy(data:data.publications,field:'date',order:'asc' )}" as="publication">
+                    <div class="cb-output-item">
+                        <div class="cb-output-item-header">
+                            <f:for each="{publication.persons}" as="person" iteration="person_iterator" >
+                                {person.firstname} {person.lastname}<f:if condition="!{person_iterator.isLast}">,</f:if>
+                            </f:for>
+                        </div>
+                        <div class="cb-output-item-body">
+                            <f:if condition="{publication.link}">
+                                <f:then>
+                                <f:link.typolink class="" parameter="{publication.link}">
+                                    {publication.title} <i:icon iconfig="lzicon,externallink" preferredRenderTypes="svgSprite" additionalAttributes="{aria-hidden:'true'}" />
+                                </f:link.typolink>
+                                </f:then>
+                                <f:else>
+                                    {publication.title}
+                                </f:else>
+                            </f:if>
+                        </div>
+                        <div class="cb-output-item-footer">
+                            <f:format.date format="d.m.Y">
+                                {publication.date}
+                            </f:format.date> |
+                            <f:if condition="publication.editor">
+                                {publication.editor}:
+                            </f:if>
+                            {publication.publication}
+                            <f:replace value="{publication.pages}" search="-" replace="–" />
+                        </div>
+                    </div>
+                </f:for>
             </div>
-        </f:for>
+            <div class="frame">
+                <h2 id="presentations"> Präsentationen </h2>
+                <f:for each="{data.presentations}" as="presentation">
+                    <div class="cb-output-item">
+                        <div class="cb-output-item-header">
+                            <f:for each="{presentation.persons}" as="person" iteration="person_iterator" >
+                                {person.firstname} {person.lastname}<f:if condition="!{person_iterator.isLast}">,</f:if>
+                            </f:for>
+                        </div>
+                        <div class="cb-output-item-body">
+                            {presentation.title}
+                        </div>
+                        <div class="cb-output-item-footer">
+                            <f:format.date>
+                                {presentation.date}
+                            </f:format.date>
+                            | {presentation.location}
+                            | {presentation.event}
+                        </div>
+                    </div>
+                </f:for>
+            </div>
+        </article>
+
     </div>
 
 </f:section>
