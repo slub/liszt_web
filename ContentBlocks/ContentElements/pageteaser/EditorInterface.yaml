@@ -9,8 +9,9 @@ basics:
 
 fields:
   - identifier: pageteaseruid
-    type: Number
-    format: integer
+    type: Relation
+    allowed: 'pages'
+    maxitems: 1
     label: 'ID der Seite'
     required: true
     description: Hier die ID der Zielseite eingeben
