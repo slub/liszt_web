@@ -55,3 +55,21 @@ tt_content.slub_pageteaser {
     }
   }
 }
+
+# Dataprocessor for news listing
+tt_content.slub_newslist {
+  dataProcessing {
+    10 = menu
+    10 {
+      as = newsMenu
+      titleField = subtitle
+      levels = 1
+      special = directory
+      maxItems = 12
+      special.value = {$liszt_web.newsUid}
+      dataProcessing {
+        10 = content-blocks
+      }
+    }
+  }
+}

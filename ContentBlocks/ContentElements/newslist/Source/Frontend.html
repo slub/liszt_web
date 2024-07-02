@@ -1,0 +1,47 @@
+{namespace lw=Slub\LisztWeb\ViewHelpers}
+<html
+    data-namespace-typo3-fluid="true"
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:i="http://typo3.org/ns/Quellenform/Iconpack/ViewHelpers"
+>
+
+<f:layout name="Default" /><!--diese drei Sections optional wenn man alle fluid funktionen dabei haben will-->
+<f:section name="Header" /> <!--Header nur leer ausgegeben siehe Video weil sonst meckert-->
+<f:section name="Main">
+
+    <div class="cb-newslist">
+        <f:variable name="currentPage"><lw:getCurrentPage /></f:variable>
+        <f:variable name="paginator"><lw:newsPaginator newsPages="{newsMenu}" currentPage="{currentPage}" /></f:variable>
+        <f:variable name="pagination"><lw:newsPagination paginator="{paginator}" /></f:variable>
+
+        <f:render partial="pagination" arguments="{pagination:pagination,currentPage:currentPage}" />
+
+        <f:for each="{paginator.paginatedItems}" as="newsItem">
+            <div class="news-item grid grid-3col-md">
+                <div class="news-item-image">
+                    <f:if condition="{newsItem.data.image.0}">
+                        <f:image image="{newsItem.data.image.0}" />
+                    </f:if>
+                </div>
+                <div class="grid-colspan-md-2">
+                    <div class="news-item-header">
+                        <h3 class="news-item-title">
+                            {newsItem.data.title}
+                        </h3>
+                    </div>
+                    <div class="news-item-body">
+                        <p class="news-item-teaser-text">
+                            {newsItem.data.teaserText}
+                        </p>
+                        <f:link.page pageUid="{newsItem.data.uid}" class="cb-teasericons-col">
+                            Mehr
+                        </f:link.page>
+                    </div>
+                </div>
+            </div>
+        </f:for>
+
+        <f:render partial="pagination" arguments="{pagination:pagination}" />
+    </div>
+
+</f:section>

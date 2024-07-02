@@ -1,0 +1,11 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<ul class="pagination">
+    <f:for each="{pagination.allPageNumbers}" as="page">
+        <li class="page-item">
+            <f:link.page additionalParams="{page:page}" class="page-link {f:if(condition:'{currentPage}=={page}',then:'active')}">
+                {page}
+            </f:link.page>
+        </li>
+    </f:for>
+</ul>
