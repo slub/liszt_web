@@ -74,7 +74,16 @@
                             </f:for>
                         </div>
                         <div class="cb-output-item-body">
-                            {presentation.title}
+                            <f:if condition="{presentation.link}">
+                                <f:then>
+                                    <f:link.typolink class="" parameter="{presentation.link}">
+                                        {presentation.title} <i:icon iconfig="lzicon,externallink" preferredRenderTypes="svgSprite" additionalAttributes="{aria-hidden:'true'}" />
+                                    </f:link.typolink>
+                                </f:then>
+                                <f:else>
+                                    {presentation.title}
+                                </f:else>
+                            </f:if>
                         </div>
                         <div class="cb-output-item-footer">
                             <f:format.date>

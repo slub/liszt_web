@@ -57,6 +57,9 @@ fields:
       - identifier: title
         type: Text
         label: 'Titel'
+      - identifier: link
+        type: Link
+        label: 'Link (optional)'
       - identifier: footer
         type: Palette
         label: 'Footer'
