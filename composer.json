@@ -11,7 +11,8 @@
 		"quellenform/t3x-iconpack": "^1.0",
 		"contentblocks/content-blocks": "^0.7.14",
 		"praetorius/vite-asset-collector": "^1.9",
-		"illuminate/collections": "^11"
+		"illuminate/collections": "^11",
+		"b13/doktypemapper": "^1.1"
 	},
 
   "autoload": {
