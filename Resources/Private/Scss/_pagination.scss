@@ -1,0 +1,22 @@
+.pagination {
+
+    list-style-type: none;
+    display: flex;
+    margin: 2rem 0 0 0;
+    padding: 0;
+    gap: 1rem;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        border: 1px solid var(--lz-font-color);
+        padding: 0.1em 0.5em;
+
+        &:hover {
+            color: var(--lz-primary);
+        }
+
+    }
+
+
+}

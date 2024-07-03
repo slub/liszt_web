@@ -5,8 +5,8 @@
     xmlns:i="http://typo3.org/ns/Quellenform/Iconpack/ViewHelpers"
 >
 
-<f:layout name="Default" /><!--diese drei Sections optional wenn man alle fluid funktionen dabei haben will-->
-<f:section name="Header" /> <!--Header nur leer ausgegeben siehe Video weil sonst meckert-->
+<f:layout name="Default" />
+<f:section name="Header" />
 <f:section name="Main">
 
     <div class="cb-newslist">
@@ -14,26 +14,28 @@
         <f:variable name="paginator"><lw:newsPaginator newsPages="{newsMenu}" currentPage="{currentPage}" /></f:variable>
         <f:variable name="pagination"><lw:newsPagination paginator="{paginator}" /></f:variable>
 
-        <f:render partial="pagination" arguments="{pagination:pagination,currentPage:currentPage}" />
 
         <f:for each="{paginator.paginatedItems}" as="newsItem">
-            <div class="news-item grid grid-3col-md">
-                <div class="news-item-image">
-                    <f:if condition="{newsItem.data.image.0}">
-                        <f:image image="{newsItem.data.image.0}" />
+            <div class="cb-pageteaser grid grid-3col-md">
+                <div class="cb-pageteaser-image">
+                    <f:if condition="{newsItem.data.teaserImage.0}">
+                        <f:image image="{newsItem.data.teaserImage.0}" width="800" loading="lazy" />
                     </f:if>
                 </div>
                 <div class="grid-colspan-md-2">
-                    <div class="news-item-header">
-                        <h3 class="news-item-title">
-                            {newsItem.data.title}
+                    <div class="cb-pageteaser-header">
+                        <h3 class="cb-pageteaser-title">
+                            {f:if(condition: newsItem.data.headline, then: newsItem.data.headline, else: newsItem.data.title )}
                         </h3>
+                        <f:if condition="{newsItem.data.newsdate}">
+                                <span class="cb-pageteaser-date"><f:format.date format="d.m.Y">{newsItem.data.newsdate}</f:format.date></span>
+                        </f:if>
                     </div>
                     <div class="news-item-body">
                         <p class="news-item-teaser-text">
-                            {newsItem.data.teaserText}
+                            {newsItem.data.teaserText -> f:format.html()}
                         </p>
-                        <f:link.page pageUid="{newsItem.data.uid}" class="cb-teasericons-col">
+                        <f:link.page class="read-more" pageUid="{newsItem.data.uid}">
                             Mehr
                         </f:link.page>
                     </div>
@@ -41,7 +43,7 @@
             </div>
         </f:for>
 
-        <f:render partial="pagination" arguments="{pagination:pagination}" />
+        <f:render partial="pagination" arguments="{pagination:pagination}" /> <span>(ToDo: Pager noch in Arbeit)</span>
     </div>
 
 </f:section>
