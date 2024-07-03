@@ -16,18 +16,27 @@ fields:
     maxitems: 1
     allowed: common-image-types
     label: 'Bild'
-  - identifier: imagesize
-    type: Select
-    renderType: selectSingle
-    label: 'Bildbreite'
-    default: 50
-    items:
-      - label: '50%'
-        value: 50
-      - label: '66%'
-        value: 66
-      - label: '33%'
-        value: 33
+  - identifier: footer
+    type: Palette
+    label: 'Bildeigenschaften'
+    fields:
+      - identifier: imagesize
+        type: Select
+        renderType: selectSingle
+        label: 'Bildbreite'
+        default: 50
+        items:
+          - label: '50%'
+            value: 50
+          - label: '66%'
+            value: 66
+          - label: '33%'
+            value: 33
+      - identifier: lightbox
+        type: Checkbox
+        label: 'Bild vergrößerbar? (Lightbox)'
+        items:
+          - label: 'Ja'
   - identifier: text
     label: 'Text'
     type: Textarea

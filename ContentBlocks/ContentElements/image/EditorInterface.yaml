@@ -1,0 +1,22 @@
+name: slub/image
+typeName: slub_image
+group: liszt_portal
+prefixFields: true
+prefixType: full
+basics:
+  - TYPO3/Links
+  - TYPO3/Appearance
+
+fields:
+  - identifier: image
+    type: File
+    allowed: common-image-types
+    label: 'Bild'
+    required: true
+  - identifier: caption
+    type: Text
+    label: 'Bildunterschrift (optional)'
+  - identifier: link
+    type: Link
+    label: 'Link (optional)'
+

@@ -8,12 +8,23 @@
 <f:section name="Header" /> <!--Header nur leer ausgegeben siehe Video weil sonst meckert-->
 <f:section name="Main">
 
-
         <div class="cb-imagetext grid grid-2col-md {f:if(condition: '{data.imagesize}==33 OR {data.imagesize}==66', then: ' grid-3col-lg')} ">
 
+
             <div class="cb-imagetext-image {f:if(condition: '{data.imagesize}==66', then: ' grid-colspan-lg-2')}">
-                <f:image image="{data.image.0}" alt="{data.image.0.alternative}" title="{data.image.0.title}" width="800" loading="lazy"/>
+                <f:if condition="{data.lightbox}">
+                    <f:then>
+                        <a href="{f:uri.image(image: data.image.0)}" class="lightbox">
+                            <f:render partial="Image" arguments="{image: data.image.0}" />
+                        </a>
+                    </f:then>
+                    <f:else>
+                        <f:render partial="Image" arguments="{image: data.image.0}" />
+                    </f:else>
+                </f:if>
+
             </div>
+
 
             <div class="cb-imagetext-text {f:if(condition: '{data.imagesize}==33', then: ' grid-colspan-lg-2')}">
                 <f:if condition="{data.header}">

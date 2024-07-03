@@ -1,0 +1,28 @@
+<html
+    data-namespace-typo3-fluid="true"
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:i="http://typo3.org/ns/Quellenform/Iconpack/ViewHelpers"
+>
+
+<f:layout name="Default"/>
+<f:section name="Header"/>
+<f:section name="Main">
+
+    <div class="cb-image">
+        <a href="{f:uri.image(image: data.image.0)}" class="lightbox">
+            <figure>
+
+                <picture>
+                    <source media="(min-width: 800px)" srcset="{f:uri.image(image: data.image.0, maxWidth: 1200)}" />
+                    <source srcset="{f:uri.image(image: data.image.0, maxWidth: 768)}" />
+                    <img src="{f:uri.image(image: data.image.0, maxWidth: 768)}"  loading="lazy"  title="{data.image.0.title}" alt="{data.image.0.alternative}" />
+                </picture>
+
+                <f:if condition="{data.caption}">
+                    <figcaption class="figure-caption">{data.caption}</figcaption>
+                </f:if>
+            </figure>
+        </a>
+    </div>
+
+</f:section>

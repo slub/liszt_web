@@ -1,0 +1,14 @@
+<html
+    data-namespace-typo3-fluid="true"
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:i="http://typo3.org/ns/Quellenform/Iconpack/ViewHelpers"
+>
+
+<f:comment>ToDo: check best responsive Image sizes, or leave one Version of Image with 800px?</f:comment>
+
+
+<picture>
+    <source media="(min-width: 800px)" srcset="{f:uri.image(image: image, maxWidth: 1200)}" />
+    <source srcset="{f:uri.image(image: image, maxWidth: 768)}" />
+    <img src="{f:uri.image(image: image, maxWidth: 768)}"  loading="lazy"  title="{image.title}" alt="{image.alternative}" />
+</picture>

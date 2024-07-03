@@ -4,6 +4,7 @@
 @import "mixins";
 
 
+
 // Custom styles
 @import "general";
 @import "container";
@@ -21,3 +22,7 @@
 @import "news";
 @import "team";
 @import "animations";
+@import "cb-image";
+
+// Parvus Lightbox Styles
+@import "parvus";
