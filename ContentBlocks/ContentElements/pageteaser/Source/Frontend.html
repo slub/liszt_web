@@ -11,7 +11,9 @@
     <div class="cb-pageteaser grid grid-3col-md">
         <div class="cb-pageteaser-image">
             <f:if condition="{pageTeaser.0.data.teaserImage.0}">
-                <f:image image="{pageTeaser.0.data.teaserImage.0}" alt="{pageTeaser.0.data.teaserImage.0.alternative}" title="{pageTeaser.0.data.teaserImage.0.title}" width="800" loading="lazy"/>
+                <f:link.page  pageUid="{pageTeaser.0.data.uid}">
+                    <f:image image="{pageTeaser.0.data.teaserImage.0}" alt="{pageTeaser.0.data.teaserImage.0.alternative}" title="{pageTeaser.0.data.teaserImage.0.title}" width="800" loading="lazy"/>
+                </f:link.page>
             </f:if>
         </div>
         <div class="grid-colspan-md-2">

@@ -4,40 +4,48 @@
     xmlns:i="http://typo3.org/ns/Quellenform/Iconpack/ViewHelpers"
 >
 
-<f:layout name="Default" /><!--diese drei Sections optional wenn man alle fluid funktionen dabei haben will-->
-<f:section name="Header" /> <!--Header nur leer ausgegeben siehe Video weil sonst meckert-->
+<f:layout name="Default"/><!--diese drei Sections optional wenn man alle fluid funktionen dabei haben will-->
+<f:section name="Header"/> <!--Header nur leer ausgegeben siehe Video weil sonst meckert-->
 <f:section name="Main">
 
-        <div class="cb-imagetext grid grid-2col-md {f:if(condition: '{data.imagesize}==33 OR {data.imagesize}==66', then: ' grid-3col-lg')} ">
+    <div
+        class="cb-imagetext grid grid-2col-md {f:if(condition: '{data.imagesize}==33 OR {data.imagesize}==66', then: ' grid-3col-lg')} ">
 
-
-            <div class="cb-imagetext-image {f:if(condition: '{data.imagesize}==66', then: ' grid-colspan-lg-2')}">
-                <f:if condition="{data.lightbox}">
-                    <f:then>
-                        <a href="{f:uri.image(image: data.image.0)}" class="lightbox">
-                            <f:render partial="Image" arguments="{image: data.image.0}" />
-                        </a>
-                    </f:then>
-                    <f:else>
-                        <f:render partial="Image" arguments="{image: data.image.0}" />
-                    </f:else>
-                </f:if>
-
-            </div>
-
-
-            <div class="cb-imagetext-text {f:if(condition: '{data.imagesize}==33', then: ' grid-colspan-lg-2')}">
-                <f:if condition="{data.header}">
-                    <h4 class="cb-imagetext-title">{data.header}</h4>
-                </f:if>
-                {data.text -> f:format.html()}
-                <f:if condition="{data.link}">
-                    <f:link.typolink class="read-more" parameter="{data.link}">
-                        Mehr
+        <div class="cb-imagetext-image {f:if(condition: '{data.imagesize}==66', then: ' grid-colspan-lg-2')}">
+            <f:if condition="{data.lightbox} == 1 && {data.link} == '' && {data.image.0}">
+                <f:then>
+                    <a href="{f:uri.image(image: data.image.0)}" class="lightbox">
+                        <f:render partial="Image" arguments="{image: data.image.0}"/>
+                    </a>
+                </f:then>
+                <f:else if="{data.link} != '' && {data.image.0}">
+                    <f:link.typolink parameter="{data.link}">
+                        <f:render partial="Image" arguments="{image: data.image.0}"/>
                     </f:link.typolink>
-                </f:if>
-            </div>
+                </f:else>
+                <f:else if="{data.lightbox} != 1 && {data.link} == '' && {data.image.0}">
+                    <f:render partial="Image" arguments="{image: data.image.0}"/>
+                </f:else>
+                <f:else>
+                    Kein Bild ausgewählt
+                </f:else>
+            </f:if>
 
         </div>
+
+
+        <div class="cb-imagetext-text {f:if(condition: '{data.imagesize}==33', then: ' grid-colspan-lg-2')}">
+            <f:if condition="{data.header}">
+                <h4 class="cb-imagetext-title">{data.header}</h4>
+            </f:if>
+            {data.text -> f:format.html()}
+            <f:if condition="{data.link}">
+                <f:link.typolink class="read-more" parameter="{data.link}">
+                    Mehr
+                </f:link.typolink>
+            </f:if>
+        </div>
+
+    </div>
 
 </f:section>

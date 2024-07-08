@@ -19,7 +19,9 @@
             <div class="cb-pageteaser grid grid-3col-md">
                 <div class="cb-pageteaser-image">
                     <f:if condition="{newsItem.data.teaserImage.0}">
-                        <f:image image="{newsItem.data.teaserImage.0}" width="800" loading="lazy" />
+                        <f:link.page pageUid="{newsItem.data.uid}">
+                            <f:image image="{newsItem.data.teaserImage.0}" width="800" loading="lazy" />
+                        </f:link.page>
                     </f:if>
                 </div>
                 <div class="grid-colspan-md-2">
