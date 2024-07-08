@@ -27,10 +27,10 @@
 
     <f:if condition="{page.content}">
         <ul>
-            <f:for each="{page.content}" as="element">
+            <f:for each="{page.content}" as="element" iteration="iteration">
                 <f:if condition="{element.data.header}">
                     <li>
-                        <a href="{page.link}#c{element.data.uid}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{element.data.subheader}">{element.data.header}</a>
+                        <a data-target-id="c{element.data.uid}" class="{f:if(condition: '{iteration.isFirst}', then: 'active')}" href="{page.link}#c{element.data.uid}" {f:if(condition: page.target, then: ' target="{page.target}"')} title="{element.data.subheader}">{element.data.header}</a>
                     </li>
                 </f:if>
             </f:for>
