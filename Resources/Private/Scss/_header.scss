@@ -36,8 +36,12 @@
         @include media-breakpoint-up(md) {
             width: 170px;
         }
+        @include media-breakpoint-up(#{$navbar-expand}) {
+            z-index: 10;
+            margin-right: -35px;
+        }
 
-        img {
+            img {
             width: 100%;
             height: auto;
         }
