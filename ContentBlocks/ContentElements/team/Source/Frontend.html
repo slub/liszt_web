@@ -40,12 +40,21 @@
             </div>
         </f:for>
 
-        <div class="team-group no-border grid grid-3col-lg">
+        <div class="team-group grid grid-3col-lg">
             <f:comment>ToDo: translate oder include board title in team content block?</f:comment>
             <h3>Wissenschaftlicher Beirat</h3>
             <div class="board-members grid-colspan-md-2">
                 <f:for each="{data.board}" as="boardmember" iteration="board-iterator">
                     <span class="board-member">{boardmember.name}, {boardmember.institution}</span>
+                </f:for>
+            </div>
+        </div>
+
+        <div class="team-group no-border grid grid-3col-lg">
+            <h3>Wissenschaftliche Hilfskräfte</h3>
+            <div class="board-members grid-colspan-md-2">
+                <f:for each="{data.assistants}" as="assistant" iteration="board-iterator">
+                    <span class="board-member">{assistant.name}, {assistant.institution}, {assistant.period}</span>
                 </f:for>
             </div>
         </div>

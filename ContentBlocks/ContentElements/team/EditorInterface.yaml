@@ -35,3 +35,17 @@ fields:
       - identifier: institution
         type: Text
         label: 'Institution'
+  - identifier: assistants
+    type: Collection
+    labelField: name
+    label: 'Hilfskräfte'
+    fields:
+      - identifier: name
+        type: Text
+        label: 'Name'
+      - identifier: institution
+        type: Text
+        label: 'Institution'
+      - identifier: period
+        type: Text
+        label: 'Zeitraum'
