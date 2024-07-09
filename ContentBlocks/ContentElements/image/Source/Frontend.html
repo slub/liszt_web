@@ -7,28 +7,25 @@
 <f:layout name="Default"/>
 <f:section name="Header"/>
 <f:section name="Main">
-
     <div class="cb-image">
-        <a href="{f:uri.image(image: data.image.0)}" class="lightbox">
-            <figure>
-
-                <f:if condition="{data.image.0.originalFile.properties.extension} == svg">
-                    <f:then>
-                         <f:image image="{data.image.0}"  loading="lazy"  title="{data.image.0.title}" alt="{data.image.0.alternative}" />
-                    </f:then>
-                    <f:else>
-                        <picture>
-                            <source media="(min-width: 800px)" srcset="{f:uri.image(image: data.image.0, maxWidth: 1200)}" />
-                            <source srcset="{f:uri.image(image: data.image.0, maxWidth: 768)}" />
-                            <img src="{f:uri.image(image: data.image.0, maxWidth: 768)}"  loading="lazy"  title="{data.image.0.title}" alt="{data.image.0.alternative}" />
-                        </picture>
-                    </f:else>
-                </f:if>
-                <f:if condition="{data.caption}">
-                    <figcaption class="figure-caption">{data.caption}</figcaption>
-                </f:if>
-            </figure>
-        </a>
+        <f:if condition="{data.lightbox} == 1 && {data.link} == '' && {data.image.0}">
+            <f:then>
+                <a href="{f:uri.image(image: data.image.0)}" class="lightbox">
+                    <f:render partial="Image" arguments="{_all}"/>
+                </a>
+            </f:then>
+            <f:else if="{data.link} != '' && {data.image.0}">
+                <f:link.typolink parameter="{data.link}">
+                    <f:render partial="Image" arguments="{_all}"/>
+                </f:link.typolink>
+            </f:else>
+            <f:else if="{data.lightbox} != 1 && {data.link} == '' && {data.image.0}">
+                <f:render partial="Image" arguments="{_all}"/>
+            </f:else>
+            <f:else>
+                Kein Bild ausgewählt!
+            </f:else>
+        </f:if>
     </div>
 
 </f:section>

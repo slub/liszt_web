@@ -18,5 +18,10 @@ fields:
     label: 'Bildunterschrift (optional)'
   - identifier: link
     type: Link
-    label: 'Link (optional)'
+    label: 'Link (optional, dann keine Lightbox)'
+  - identifier: lightbox
+    type: Checkbox
+    label: 'Bild vergrößerbar? (Lightbox)'
+    items:
+      - label: 'Ja'
 

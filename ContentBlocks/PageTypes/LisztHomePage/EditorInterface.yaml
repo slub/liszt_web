@@ -11,8 +11,10 @@ fields:
     maxitems: 1
     label: 'Seitenbild'
   - identifier: headline
-    type: Text
-    label: 'Alternative h1 Überschrift'
+    type: Textarea
+    rows: 2
+    cols: 10
+    label: 'Rote Überschrift (zweizeilig!)'
   - identifier: showNewsTeaser
     type: Checkbox
     label: 'News Teaser anzeigen'

@@ -19,8 +19,9 @@
 
 <f:render section="Main"/>
 
-
+<f:if condition="{data.showNewsTeaser} == '1'">
 <f:render partial="NewsTeaser" arguments="{_all}" />
+</f:if>
 
 
 <f:render partial="Footer" arguments="{_all}" />

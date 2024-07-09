@@ -44,7 +44,7 @@ fields:
     rows: 6
   - identifier: link
     type: Link
-    label: 'Link (optional)'
+    label: 'Link (optional, dann keine Lightbox)'
   - identifier: grayBackground
     type: Checkbox
     label: 'Grauer Hintergrund'
