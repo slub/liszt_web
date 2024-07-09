@@ -91,13 +91,19 @@
             //  hyphens: auto;
         }
 
+        @include media-breakpoint-up(sm) {
+            justify-self: start;
+            margin-left: 3em;
+
+        }
+
         @include media-breakpoint-up(#{$navbar-expand}) {
             align-items: start;
-            justify-self: start;
+
         }
 
         @include media-breakpoint-up(md) {
-            padding-left: 10%;
+
             h1 {
                 font-size: 2.6666666667rem;
                 line-height: 1.18;
