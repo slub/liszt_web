@@ -28,10 +28,6 @@ iconpack:
   # Define here which icons are provided by this iconpack
   # In this case, the values here correspond to the file names (without file name extension)
   icons:
-    - share
-    - printer
-    - xmlicon
-    - pdf
     - arrow-right
     - close
     - externallink
@@ -39,3 +35,7 @@ iconpack:
     - liszt
     - projekt
     - werkverzeichnis
+    - chevron-down
+    - chevron-up
+    - chevron-right
+    - chevron-left

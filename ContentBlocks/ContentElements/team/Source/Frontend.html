@@ -12,7 +12,7 @@
             <div class="team-group grid grid-3col-lg">
                 <h3>{group.groupname}</h3>
                 <div class="team-members grid-colspan-md-2">
-                    <f:for each="{group.persons}" as="member">
+                    <f:for each="{group.persons}" as="member" iteration="member-iterator">
                         <div class="team-member">
                             <f:if condition="{member.image}">
                                 <f:image image="{member.image.0}" />
@@ -24,16 +24,21 @@
                                 {member.role}
                             </div>
                             <f:if condition="{member.biography}">
-                            <div class="team-member-biography">
+                            <div class="team-member-biography collapse" id="member-biography-{group-iterator.cycle}-{member-iterator.cycle}">
                               {member.biography -> f:format.html()}
+
+                                <f:if condition="{member.email}">
+                                    <f:comment>Todo: E-Mail Obfuscation???</f:comment>
+                                    <div class="team-member-email">
+                                     <a href="mailto:{member.email}">{member.email}</a>
+                                    </div>
+                                </f:if>
+
                             </div>
+                            <button class="team-member-biography-button collapsed" data-bs-toggle="collapse" data-bs-target="#member-biography-{group-iterator.cycle}-{member-iterator.cycle}" aria-expanded="false" aria-controls="member-biography-{group-iterator.cycle}-{member-iterator.cycle}">
+                            </button>
                             </f:if>
-                            <f:if condition="{member.email}">
-                                <f:comment>Todo: E-Mail Obfuscation???</f:comment>
-                            <div class="team-member-email">
-                                    <a href="mailto:{member.email}">{member.email}</a>
-                            </div>
-                            </f:if>
+
                         </div>
                     </f:for>
                 </div>

@@ -1,0 +1,131 @@
+.team {
+
+    &-group {
+        padding-bottom: $desktop-design-space;
+        border-bottom: 1px solid var(--lz-gray);
+        margin-bottom: $desktop-design-space;
+
+        &.no-border {
+            border-bottom: none;
+        }
+    }
+
+
+    &-members {
+        display: grid;
+        gap: $desktop-design-space;
+        @include media-breakpoint-up(md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+    }
+
+    &-member {
+        &-name {
+            font-size: 1.33333rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        &-role {
+            font-size: 1rem;
+            line-height: 1.2;
+            font-weight: 600;
+            letter-spacing: 0.02rem;
+            margin-bottom: 2rem;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        &-biography {
+            font-weight: 400;
+
+            p {
+                margin-bottom: 0;
+            }
+
+            &.collapse:not(.show) {
+            height: 3rem;
+            overflow: hidden;
+            display: -webkit-box;
+            line-clamp: 2;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            }
+
+            &.collapsing {
+            height: 3rem;
+              transition: height 0.3s ease;
+            }
+
+
+            &-button {
+                border: none;
+                background: none;
+                color: var(--lz-font-color);
+                cursor: pointer;
+                padding: 0;
+                margin-top: 1em;
+
+                &:hover {
+                    color: var(--lz-primary);
+                }
+
+                &.collapsed:before {
+                    content: 'Mehr';
+                }
+
+                &.collapsed:after  {
+                content: '';
+                background-color: currentColor;
+                mask-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8"%3F><svg id="chevron-down" stroke-width="3px" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.71 16.5"><polyline points=".35 .36 15.78 15.8 31.35 .36" /></svg>');
+                mask-repeat: no-repeat;
+                mask-position: center;
+                display: inline-block;
+                margin-left: .5rem;
+                width: 1em;
+                height: 0.5em;
+                }
+
+                &:not(.collapsed):before {
+                content: 'Weniger';
+                }
+
+                &:not(.collapsed):after  {
+                content: '';
+                background-color: currentColor;
+                mask-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8"%3F><svg id="chevron-up" stroke-width="3px" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.71 16.5"><polyline points="31.35 16.15 15.93 .71 .35 16.15" /></svg>');
+                mask-repeat: no-repeat;
+                mask-position: center;
+                display: inline-block;
+                margin-left: .5rem;
+                width: 1em;
+                height: 0.6em;
+                }
+            }
+        }
+
+        &-email {
+            a {
+                font-weight: 500;
+                text-decoration: none;
+                color: var(--lz-font-color);
+
+                &:hover {
+                    color: var(--lz-primary);
+                }
+            }
+        }
+    }
+}
+
+.board {
+    &-member {
+        font-weight: 400;
+        display: block;
+    }
+
+}

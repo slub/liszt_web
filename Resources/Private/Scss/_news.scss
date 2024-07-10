@@ -38,6 +38,16 @@
             margin: 0 auto 2rem auto;
             border: none;
             background: transparent;
+            cursor: pointer;
+
+            &:hover {
+                color: var(--lz-primary);
+            }
+
+            span {
+                display: block;
+                margin-top: 0.5rem;
+            }
 
             &.collapsed {
                 display: block;
