@@ -59,7 +59,11 @@
             <h3>Wissenschaftliche Hilfskräfte</h3>
             <div class="board-members grid-colspan-md-2">
                 <f:for each="{data.assistants}" as="assistant" iteration="board-iterator">
-                    <span class="board-member">{assistant.name}, {assistant.institution}, {assistant.period}</span>
+                    <span class="board-member">
+                        {assistant.name}, {assistant.institution.0},
+                        {f:if(condition:assistant.to.0,then:'',else:'seit')}
+                        {assistant.from.0}{f:if(condition:assistant.to.0,then:'–{assistant.to.0}')}
+                    </span>
                 </f:for>
             </div>
         </div>
