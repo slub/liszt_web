@@ -52,9 +52,7 @@
                             </f:if>
                         </div>
                         <div class="cb-output-item-footer">
-                            <f:format.date format="d.m.Y">
-                                {publication.date}
-                            </f:format.date> |
+                            {publication.date.0} |
                             <f:if condition="publication.editor">
                                 {publication.editor}:
                             </f:if>
@@ -86,7 +84,7 @@
                             </f:if>
                         </div>
                         <div class="cb-output-item-footer">
-                            <f:format.date>
+                            <f:format.date format="d.m.Y">
                                 {presentation.date}
                             </f:format.date>
                             | {presentation.location}
