@@ -9,3 +9,9 @@
 
 // enable admin panel on frontend pages for debug
 // config.admPanel = 1
+
+
+// Test to allow q (quote) Tag in RTE
+//lib.parseFunc_RTE.allowTags := addToList(q)
+//lib.parseFunc_RTE.allowTagsOutside := addToList(q)
+

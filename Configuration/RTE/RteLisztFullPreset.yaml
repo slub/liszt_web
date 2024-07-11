@@ -1,0 +1,98 @@
+#  look at vendor/typo3/cms-rte-ckeditor/Configuration/RTE/Default.yaml
+
+# Import basic configuration
+imports:
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+# Add configuration for the editor
+# For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
+editor:
+  config:
+    toolbar:
+      items:
+        - removeFormat
+        - undo
+        - redo
+        # grouping separator
+        - '|'
+        - findAndReplace
+        - link
+        - '|'
+        - insertTable
+        - tableColumn
+        - tableRow
+        - mergeTableCells
+        - TableProperties
+        - TableCellProperties
+        - '|'
+        - selectAll
+        - '|'
+        - sourceEditing
+        - showBlocks
+        # line break
+        - '-'
+        - bold
+        - italic
+        - underline
+        - strikethrough
+        - subscript
+        - superscript
+        - softhyphen
+        - '|'
+        - bulletedList
+        - numberedList
+        - blockQuote
+        - indent
+        - outdent
+        - alignment
+        - '|'
+        - specialCharacters
+        - '-'
+        - style
+        - heading
+
+    style:
+      definitions:
+        # block level styles
+        - { name: 'Text rot', element: 'p', classes: [ 'text-red' ] }
+        # Inline styles
+        - { name: "Text klein", element: 'span', classes: ['text-sm'] }
+        - { name: 'Yellow marker', element: 'span', classes: [ ], styles: { background-color: 'yellow' } }
+
+    heading:
+      options:
+        - { model: 'paragraph', title: 'Paragraph' }
+        - { model: 'heading2', view: 'h2', title: 'Heading 2' }
+        - { model: 'heading3', view: 'h3', title: 'Heading 3' }
+        - { model: 'heading4', view: 'h4', title: 'Heading 4' }
+        - { model: 'quote', view: 'q', title: 'Quote' }
+
+
+    alignment:
+      options:
+        - { name: 'left', className: 'text-start' }
+        - { name: 'center', className: 'text-center' }
+        - { name: 'right', className: 'text-end' }
+        - { name: 'justify', className: 'text-justify' }
+
+    table:
+      defaultHeadings: { rows: 1 }
+      contentToolbar:
+        - tableColumn
+        - tableRow
+        - mergeTableCells
+        - tableProperties
+        - tableCellProperties
+        - toggleTableCaption
+
+    htmlSupport:
+      allow:
+        - { name: 'q', attributes: true, classes: true, styles: true }
+
+    importModules:
+      - { 'module': '@ckeditor/ckeditor5-show-blocks', 'exports': ['ShowBlocks'] }
+      - { 'module': '@ckeditor/ckeditor5-word-count', 'exports': ['WordCount'] }
+
+
