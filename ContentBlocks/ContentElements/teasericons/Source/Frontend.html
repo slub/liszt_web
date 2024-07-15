@@ -11,7 +11,7 @@
     <div class="cb-teasericons">
         <div class="grid grid {f:if(condition: '{data.teasericons -> f:count()} == 3', then:'grid-3col-md')} {f:if(condition: '{data.teasericons -> f:count()} > 3', then:'grid-2col-md grid-4col-lg')}">
         <f:for each="{data.teasericons}" as="teasericon">
-                        <f:link.page pageUid="6" class="cb-teasericons-col">
+            <f:link.typolink parameter="{teasericon.link}" class="cb-teasericons-col">
                             <div class="cb-teasericons-icon">
                                 <i:icon iconfig="lzicon,{teasericon.icon}" preferredRenderTypes="svgSprite" additionalAttributes="{aria-hidden:'true'}" />
                             </div>
@@ -19,7 +19,7 @@
                                 <div class="cb-teasericons-title">{teasericon.title}</div>
                                 <div class="cb-teasericons-text">{teasericon.text -> f:format.html()}</div>
                             </div>
-                        </f:link.page>
+            </f:link.typolink>
         </f:for>
        </div>
     </div>
