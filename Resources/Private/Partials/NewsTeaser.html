@@ -3,7 +3,7 @@
           xmlns:i="http://typo3.org/ns/Quellenform/Iconpack/ViewHelpers"
 data-namespace-typo3-fluid="true">
 
-<section id="news-teaser" class="news-teaser">
+<section id="news-teaser" class="news-teaser {f:if(condition: '{pageId} != 1', then: ' section-gray-background')}">
     <div class="container-xl">
 
         <lw:listCategoriesHeadline list="{data.categories}"/>

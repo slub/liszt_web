@@ -23,11 +23,17 @@
 
 
         &-header {
-            font-size: 1.333333rem;
+            font-size: $h4-mobile-font-size;
+            @include media-breakpoint-up(md) {
+                font-size: $h4-font-size;
+            }
         }
 
         &-body {
-            font-size: 1.77777777rem;
+            font-size: $h3-mobile-font-size;
+            @include media-breakpoint-up(md) {
+                font-size: $h3-font-size;
+            }
             font-weight: 400;
             font-family: $font-family-headlines;
             line-height: 1.1875;

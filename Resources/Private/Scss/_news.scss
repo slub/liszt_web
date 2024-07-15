@@ -19,7 +19,6 @@
     }
 
     &-teaser {
-        background-color: var(--lz-light-gray);
         padding-top: $desktop-design-space;
         padding-bottom: $desktop-design-space;
 
@@ -64,8 +63,10 @@
         }
         &-title {
             font-weight: 400;
-            font-size: 1.777777778rem;
-            font-family:$font-family-headlines;
+            font-size: $h3-mobile-font-size;
+            @include media-breakpoint-up(md) {
+                font-size: $h3-font-size;
+            }            font-family: $font-family-headlines;
             margin-bottom: 0;
         }
         &-date {

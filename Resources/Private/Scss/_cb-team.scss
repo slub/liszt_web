@@ -22,7 +22,10 @@
 
     &-member {
         &-name {
-            font-size: 1.33333rem;
+            font-size: $h4-mobile-font-size;
+            @include media-breakpoint-up(md) {
+                font-size: $h4-font-size;
+            }
             line-height: 1.2;
             margin-bottom: 1rem;
         }

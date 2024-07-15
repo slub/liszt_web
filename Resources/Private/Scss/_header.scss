@@ -7,7 +7,7 @@
         grid-template-rows: auto;
         grid-template-columns: min-content auto min-content;
         grid-template-areas:
-            "logo . hamburger"
+            "logo logo hamburger"
             "image title title";
 
 
@@ -63,6 +63,7 @@
             margin-top: 30px;
             object-fit: contain;
             object-position: bottom;
+            min-width: 100px;
         }
 
         @include media-breakpoint-up(#{$navbar-expand}) {
@@ -86,7 +87,7 @@
         h1 {
             line-height: 1.18;
             margin-bottom: 0;
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             color: var(--lz-primary);
             //  hyphens: auto;
         }
@@ -94,23 +95,24 @@
         @include media-breakpoint-up(sm) {
             justify-self: start;
             margin-left: 3em;
+            h1 {
+                font-size: 1.8rem;
+            }
 
         }
 
         @include media-breakpoint-up(#{$navbar-expand}) {
             align-items: start;
-
         }
 
         @include media-breakpoint-up(md) {
-
             h1 {
                 font-size: 2.6666666667rem;
                 line-height: 1.18;
                 // hyphens: none;
             }
-
         }
+
     }
 }
 
