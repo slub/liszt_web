@@ -55,16 +55,16 @@
             </g>
         </g>
     </symbol>
-    <symbol id="chevron-down" stroke-width="1px" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.71 16.5">
+    <symbol id="chevron-down" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.71 16.5">
         <polyline points=".35 .36 15.78 15.8 31.35 .36" />
     </symbol>
-    <symbol id="chevron-right" stroke-width="1px" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.5 31.71">
+    <symbol id="chevron-right" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.5 31.71">
         <polyline points=".36 31.35 15.8 15.93 .36 .35" />
     </symbol>
-    <symbol id="chevron-up" stroke-width="1px" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.71 16.5">
+    <symbol id="chevron-up" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.71 16.5">
         <polyline points="31.35 16.15 15.93 .71 .35 16.15" />
     </symbol>
-    <symbol id="chevron-left" stroke-width="1px" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.5 31.71">
+    <symbol id="chevron-left" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.5 31.71">
         <polyline points="16.15 .35 .71 15.78 16.15 31.35" />
     </symbol>
 

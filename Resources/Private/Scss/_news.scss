@@ -39,6 +39,12 @@
             background: transparent;
             cursor: pointer;
 
+            svg {
+                stroke-width: 1px;
+                margin: 0;
+                vertical-align: auto;
+            }
+
             &:hover {
                 color: var(--lz-primary);
             }

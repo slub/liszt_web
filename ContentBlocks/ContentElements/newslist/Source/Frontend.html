@@ -14,7 +14,6 @@
         <f:variable name="paginator"><lw:newsPaginator newsPages="{newsMenu}" currentPage="{currentPage}" /></f:variable>
         <f:variable name="pagination"><lw:newsPagination paginator="{paginator}" /></f:variable>
 
-
         <f:for each="{paginator.paginatedItems}" as="newsItem">
             <div class="cb-pageteaser grid grid-3col-md">
                 <div class="cb-pageteaser-image">
@@ -44,8 +43,7 @@
                 </div>
             </div>
         </f:for>
-
-        <f:render partial="pagination" arguments="{pagination:pagination}" /> <span>(ToDo: Pager noch in Arbeit)</span>
+        <f:render partial="pagination" arguments="{pagination:pagination, currentPage:currentPage}" />
     </div>
 
 </f:section>

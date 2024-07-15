@@ -19,7 +19,7 @@ final class NewsPaginatorViewHelper extends AbstractViewHelper
     public function initializeArguments(): void
     {
         $this->registerArgument('newsPages', 'array', 'The news pages which should be displayed', true);
-        $this->registerArgument('currentPage', 'integer', 'The curret page', true);
+        $this->registerArgument('currentPage', 'integer', 'The current page', true);
     }
 
     public static function renderStatic(
