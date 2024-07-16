@@ -67,7 +67,7 @@
 // external and internal links in textblocks
 
 main {
-    p {
+    p, li {
         a {
             color: var(--lz-font-color);
             text-decoration: none;
