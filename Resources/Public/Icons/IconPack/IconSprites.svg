@@ -13,18 +13,10 @@
             d="m12 12 5.243 5.243m-10.485 0L12 12.001l-5.242 5.242ZM17.243 6.758 12 12l5.243-5.243ZM12 12 6.758 6.758 12 12Z"/>
     </symbol>
 
-    <symbol id="externallink" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 35.11 35.19">
-        <defs>
-            <clipPath id="clippath">
-                <rect class="cls-2-link" stroke-width="0px" fill="none" width="35.11" height="35.19"/>
-            </clipPath>
-        </defs>
-        <g id="Ebene_1-2">
-            <g class="cls-1-link" clip-path="url(#clippath)">
-                <polyline class="cls-3-link" fill="none" stroke="currentColor" stroke-width="4.21px" points="10.78 5.93 2.11 5.93 2.11 33.08 28.99 33.08 28.99 24.5"/>
-                <polyline class="cls-3-link" fill="none" stroke="currentColor" stroke-width="4.21px" points="21.89 2.11 33 2.11 33 13.4"/>
-                <line class="cls-3-link" stroke="currentColor" fill="none" stroke-width="4.21px" x1="33.16" y1="1.95" x2="15.71" y2="19.39"/>
-            </g>
+    <symbol id="externallink" stroke-width="0px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 35.11 35.19">
+        <g>
+            <polygon points="26.88 24.5 26.88 30.97 4.21 30.97 4.21 8.04 10.78 8.04 10.78 3.83 0 3.83 0 35.19 31.1 35.19 31.1 24.5 26.88 24.5" />
+            <polygon points="21.89 0 21.89 4.21 27.92 4.21 14.22 17.9 17.2 20.88 30.89 7.19 30.89 13.4 35.11 13.4 35.11 0 21.89 0" />
         </g>
     </symbol>
 
