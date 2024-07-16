@@ -26,9 +26,11 @@ lib.dynamicContent {
 lib.copyright = COA
 lib.copyright {
   10 = TEXT
-  10.value = {$liszt_web.copyrightText}&nbsp;
+  10.value = &copy;&nbsp;
   20 = TEXT
   20.data = date:Y
+  30 = TEXT
+  30.value = {$liszt_web.copyrightText}
 }
 
 
