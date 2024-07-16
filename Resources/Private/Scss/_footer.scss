@@ -69,14 +69,19 @@
     }
 
   &-cta {
-  //  margin-top: $desktop-design-space;
+//    margin-top: calc($desktop-design-space * 2); // not possible because of gray background
     padding-top: $desktop-design-space;
     padding-bottom: $desktop-design-space;
     background-color: var(--lz-primary);
 
-    @include media-breakpoint-up(md) {
-   //     margin-top: $desktop-design-space;
-    }
+      &.no-newsteaser {
+          margin-top: calc($mobile-design-space * 2);
+          @include media-breakpoint-up(md) {
+          margin-top: calc($mobile-design-space * 2);
+         }
+      }
+
+
 
     &-title {
       font-size: $font-size-base;

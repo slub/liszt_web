@@ -31,7 +31,7 @@
     &-logo {
         grid-area: logo;
         display: block;
-        width: 140px;
+        width: 125px;
         line-height: 1;
         @include media-breakpoint-up(md) {
             width: 170px;
@@ -54,16 +54,22 @@
         overflow: hidden;
         height: 100%;
         width: 100%;
-        max-width: 170px; // max width like liszt logo
+    //    max-width: 170px; // max width like liszt logo
 
 
         img {
             height: 100%;
             width: 100%;
-            margin-top: 30px;
+            margin-top: 16px;
             object-fit: contain;
             object-position: bottom;
             min-width: 100px;
+        }
+
+        @include media-breakpoint-up(sm) {
+         img {
+             min-width: 155px;
+         }
         }
 
         @include media-breakpoint-up(#{$navbar-expand}) {
@@ -81,7 +87,7 @@
         grid-area: title;
         display: flex;
         align-items: center;
-        padding-left: 1rem;
+     //   padding-left: 1rem;
         justify-self: center;
 
         h1 {
@@ -94,7 +100,7 @@
 
         @include media-breakpoint-up(sm) {
             justify-self: start;
-            margin-left: 3em;
+            margin-left: 4em;
             h1 {
                 font-size: 1.8rem;
             }
