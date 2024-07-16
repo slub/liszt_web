@@ -19,7 +19,7 @@
         <div class="grid-colspan-md-2">
             <div class="cb-pageteaser-header">
                 <h3 class="cb-pageteaser-title">
-                    {f:if(condition: pageTeaser.0.data.headline, then: pageTeaser.0.data.headline, else: pageTeaser.0.data.title )}
+                    {pageTeaser.0.data.title}
                 </h3>
                 <f:if condition="{pageTeaser.0.data.newsdate}">
                     <span class="cb-pageteaser-date"><f:format.date format="d.m.Y">{pageTeaser.0.data.newsdate}</f:format.date></span>
