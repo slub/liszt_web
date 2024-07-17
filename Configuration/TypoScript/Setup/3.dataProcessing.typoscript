@@ -8,6 +8,7 @@ page.10.dataProcessing {
     levels = 2
     includeSpacer = 1
     titleField = subtitle // nav_title // title
+    excludeDoktypes = 120
   }
   // Meta Menu in Footer
   20 = menu
