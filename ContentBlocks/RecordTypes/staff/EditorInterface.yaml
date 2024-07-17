@@ -20,7 +20,7 @@ fields:
         - label: 'Dr.'
           value: 'Dr.'
         - label: 'Dipl.-Ing.'
-          value: 'Dipl.-Ing..'
+          value: 'Dipl.-Ing.'
     - identifier: firstname
       type: Text
       label: 'Vorname'
