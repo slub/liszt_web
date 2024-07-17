@@ -38,6 +38,8 @@ fields:
           value: ', M.A.'
         - label: 'M.Ed.'
           value: ', M.Ed.'
+        - label: 'lic. phil'
+          value: ', lic. phil.'
   - identifier: role
     type: Text
     label: 'Rolle'
