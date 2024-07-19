@@ -56,8 +56,15 @@
                             <f:if condition="{publication.editor}">
                                 {publication.editor}:
                             </f:if>
-                            {publication.publication}
-                            <f:replace value="{publication.pages}" search="-" replace="–" />
+                            <f:if cndition="{publication.pages}">
+                                <f:then>
+                                    {publication.publication},
+                                    <f:replace value="{publication.pages}" search="-" replace="–" />
+                                </f:then>
+                                <f:else>
+                                    {publication.publication}
+                                </f:else>
+                            </f:if>
                         </div>
                     </div>
                 </f:for>
