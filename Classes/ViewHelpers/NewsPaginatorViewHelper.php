@@ -14,7 +14,7 @@ use TYPO3\CMS\Core\Pagination\ArrayPaginator;
 final class NewsPaginatorViewHelper extends AbstractViewHelper
 {
     use CompileWithRenderStatic;
-    const ITEMS_PER_PAGE = 2;
+    const ITEMS_PER_PAGE = 10;
 
     public function initializeArguments(): void
     {
