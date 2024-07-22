@@ -29,6 +29,7 @@ iconpack:
   # In this case, the values here correspond to the file names (without file name extension)
   icons:
     - arrow-right
+    - arrow-left
     - close
     - externallink
     - bibliografie

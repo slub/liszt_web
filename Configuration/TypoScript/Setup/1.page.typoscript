@@ -91,6 +91,8 @@ page {
       siteTitle.data = siteLanguage:websiteTitle//site:websiteTitle//site:identifier
       rootPage = TEXT
       rootPage.data = leveluid:0
+      newsPageUID = TEXT
+      newsPageUID.value = {$liszt_web.newsUid}
 
       // title for meta navigation in footer from article with uid in constant metaNav
       metanavtitle = TEXT

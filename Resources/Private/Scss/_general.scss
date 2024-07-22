@@ -39,7 +39,7 @@
     }
 }
 
-.read-more {
+.read-more, .go-back {
         // no warp words
         white-space: nowrap;
         text-decoration: none;
@@ -62,6 +62,10 @@
             height: 0.6em;
 
         }
+}
+
+.go-back:before {
+    mask-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8"%3F><svg id="arrow-left" fill="%23000" stroke-width="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.38 23.69"><g id="arrow-left"><polygon points="12.74 23.69 15.28 20.96 7.47 13.71 54.38 13.71 54.38 9.98 7.47 9.98 15.28 2.73 12.74 0 0 11.84 12.74 23.69" /></g></svg>');
 }
 
 // external and internal links in textblocks
