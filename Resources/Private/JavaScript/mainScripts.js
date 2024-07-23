@@ -27,8 +27,8 @@ const targetLinks = document.querySelectorAll(('[data-target-id]'));
 if (targetLinks.length > 0) {
 
   const options = {
-    rootMargin: `0px 0px -80% 0px`,
-    threshold: 0.5
+    rootMargin: `0px 0px -85% 0px`,
+    threshold: 0.1
   }
 
   const targetIds = Array.from(targetLinks).map(element => element.getAttribute('data-target-id'));
