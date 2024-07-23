@@ -23,6 +23,9 @@
 
  &-main {
      margin-top: $desktop-design-space;
+     @include media-breakpoint-up(md) {
+         margin-top: calc($desktop-design-space + 25px);
+     }
      font-size: $font-size-sm;
      line-height: 1.36;
      font-weight: 300;
@@ -111,12 +114,21 @@
     &-meta {
         background-color: $lightgray;
         margin-top: $desktop-design-space;
+        @include media-breakpoint-up(md) {
+            margin-top: calc($desktop-design-space + 25px);
+        }
 
         &-wrapper {
             display: flex;
+            gap: 0.5em;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+         //   padding-top: 1em;
+         //   padding-bottom: 1em;
+            @include media-breakpoint-up(md) {
+               // padding: 0;
+            }
         }
 
         &-nav {

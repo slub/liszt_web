@@ -1,10 +1,15 @@
 main {
     margin-top: $mobile-design-space;
+
+    margin-bottom: $mobile-design-space;
+
     @include media-breakpoint-up(md) {
         margin-top: $desktop-design-space;
+        margin-bottom: $desktop-design-space;
     }
     @include media-breakpoint-up(xl) {
         margin-top: calc($desktop-design-space * 2);
+        margin-bottom: calc($desktop-design-space + 10px);
     }
 
     // Lists in main content

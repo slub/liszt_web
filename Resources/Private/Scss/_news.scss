@@ -16,6 +16,7 @@
 
     &-row {
         margin-bottom: $desktop-design-space;
+        gap: $desktop-design-space;
     }
 
     &-teaser {
@@ -65,7 +66,10 @@
 
     &-entry {
         &-header {
-            margin-bottom: $headlines-margin-bottom;
+            margin-bottom: 0.3rem;
+            @include media-breakpoint-up(lg) {
+                margin-bottom: $headlines-margin-bottom;
+            }
         }
         &-title {
             font-weight: 400;

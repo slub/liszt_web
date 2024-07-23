@@ -1,4 +1,13 @@
 @font-face {
+    font-family: Beausite Classic;
+    font-style: normal;
+    font-weight: 200;
+    // font-display: swap;
+    src: url("../Fonts/BeausiteClassicWeb-Light.woff2") format("woff2");
+    src: url("../Fonts/BeausiteClassicWeb-Light.woff") format("woff");
+}
+
+@font-face {
   font-family: Beausite Classic;
   font-style: normal;
   font-weight: 300;
@@ -133,4 +142,12 @@ strong {
 
 .small-fontsize {
   font-size: 0.85rem;
+}
+
+main #c89 p {
+    font-weight: 200;
+}
+
+main #c91 p {
+    letter-spacing: 0.01em;
 }
