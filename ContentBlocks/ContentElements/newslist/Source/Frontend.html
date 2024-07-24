@@ -25,12 +25,14 @@
                 </div>
                 <div class="grid-colspan-md-2">
                     <div class="cb-pageteaser-header">
+                        <f:link.page pageUid="{newsItem.data.uid}">
                         <h3 class="cb-pageteaser-title">
                             {f:if(condition: newsItem.data.headline, then: newsItem.data.headline, else: newsItem.data.title )}
                         </h3>
                         <f:if condition="{newsItem.data.newsdate}">
                                 <span class="cb-pageteaser-date"><f:format.date format="d.m.Y">{newsItem.data.newsdate}</f:format.date></span>
                         </f:if>
+                        </f:link.page>
                     </div>
                     <div class="news-item-body">
                         <p class="news-item-teaser-text">

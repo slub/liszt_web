@@ -38,6 +38,14 @@
 
     &-header {
         margin-bottom: $headlines-margin-bottom;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            &:hover, &:focus {
+                color: var(--lz-primary);
+            }
+        }
     }
 
     &-title {
