@@ -52,9 +52,9 @@ call_user_func(function() {
                 'square' => [
                     'title' => 'Liszt Teamfoto',
                     'allowedAspectRatios' => [
-                        '168:100' => [
+                        '100:60' => [
                             'title' => 'Liszt Teamfoto',
-                            'value' => 168 / 100
+                            'value' => 100 / 60
                         ],
                     ],
                     'selectedRatio' => '168:100',
