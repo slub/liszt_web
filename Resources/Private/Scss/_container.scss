@@ -26,12 +26,13 @@
 // Todo: refactor frame paddings and create a mixins for col styles
 .grid {
     display: grid;
-  //  gap: 1rem;
+    gap: 1rem;
 
     // frames in the 2 col Layout (with sidebar) have their own paddings because of full size grey background
     &.sidebar-left {
         padding-left: 0;
         padding-right: 0;
+        gap: 0;
 
         .frame {
             @include container-paddings;
@@ -46,6 +47,8 @@
                 gap: $desktop-design-space;
 
                 &.sidebar-left {
+                    gap: $desktop-design-space;
+
                     @include container-paddings;
                     .frame {
                         padding-left: 0;
@@ -62,6 +65,8 @@
                 gap: $desktop-design-space;
 
                 &.sidebar-left {
+                    gap: $desktop-design-space;
+
                     @include container-paddings;
                     .frame {
                         padding-left: 0;
@@ -80,6 +85,8 @@
                 gap: $desktop-design-space;
 
                 &.sidebar-left {
+                    gap: $desktop-design-space;
+
                     @include container-paddings;
                     .frame {
                         padding-left: 0;
@@ -96,6 +103,8 @@
                 gap: $desktop-design-space;
 
                 &.sidebar-left {
+                    gap: $desktop-design-space;
+
                     @include container-paddings;
                     .frame {
                         padding-left: 0;

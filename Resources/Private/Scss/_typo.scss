@@ -1,13 +1,4 @@
 @font-face {
-    font-family: Beausite Classic;
-    font-style: normal;
-    font-weight: 200;
-    // font-display: swap;
-    src: url("../Fonts/BeausiteClassicWeb-Light.woff2") format("woff2");
-    src: url("../Fonts/BeausiteClassicWeb-Light.woff") format("woff");
-}
-
-@font-face {
   font-family: Beausite Classic;
   font-style: normal;
   font-weight: 300;
@@ -120,7 +111,9 @@ h6 {
 
 p {
     margin-top: 0;
+    letter-spacing: 0.01em; // extend letter spacing for text -> a wish from the designer
 }
+
 
 strong {
   font-weight: 600;
@@ -144,10 +137,3 @@ strong {
   font-size: 0.85rem;
 }
 
-main #c89 p {
-    font-weight: 200;
-}
-
-main #c91 p {
-    letter-spacing: 0.01em;
-}
