@@ -16,12 +16,14 @@ data-namespace-typo3-fluid="true">
                 <f:for each="{newsRow}" as="newsEntry" iteration="newsEntryIteration">
                     <div class="news-entry">
                         <div class="news-entry-header">
+                            <f:link.page pageUid="{newsEntry.uid}">
                             <h4 class="news-entry-title">{f:if(condition: newsEntry.headline, then: newsEntry.headline,
                                 else: newsEntry.title )}</h4>
                             <f:if condition="{newsEntry.newsdate}">
                                 <span class="news-entry-date"><f:format.date
                                     format="d.m.Y">{newsEntry.newsdate}</f:format.date></span>
                             </f:if>
+                            </f:link.page>
                         </div>
                         {newsEntry.teaserText -> f:format.html()}
                         <f:link.page class="read-more" pageUid="{newsEntry.uid}">

@@ -70,6 +70,13 @@
             @include media-breakpoint-up(lg) {
                 margin-bottom: $headlines-margin-bottom;
             }
+            a {
+                text-decoration: none;
+                color: inherit;
+                &:hover, &:focus {
+                    color: var(--lz-primary);
+                }
+            }
         }
         &-title {
             font-weight: 400;
