@@ -20,6 +20,9 @@
 			<trans-unit id="liszt_web.image" resname="liszt_web.image">
 				<source>Bild</source>
 			</trans-unit>
+			<trans-unit id="sidebarNavTitle">
+				<source>Inhaltsverzeichnis</source>
+			</trans-unit>
 
 		</body>
 	</file>

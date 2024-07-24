@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:comment>
+    Special Layout for the MenuSection Menu as Menu on Sidebar left on Liszt Postal Pages
+</f:comment>
+    <f:if condition="{f:cObject(typoscriptObjectPath: 'page.10.variables.layout')} == sidebarLeft">
+        <f:then>
+            <div id="c{data.uid}" class="frame {f:if(condition: '{data.grayBackground}==1', then: ' frame-gray-background ')} frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+
+                <nav aria-labelledby="sidebar-nav-title">
+                    <h3 id="sidebar-nav-title">{f:translate(key: 'sidebarNavTitle', extensionName: 'liszt_web')}</h3>
+                    <f:render section="Main" optional="true" />
+                </nav>
+
+            </div>
+        </f:then>
+        <f:else>
+            <div id="c{data.uid}" class="frame {f:if(condition: '{data.grayBackground}==1', then: ' frame-gray-background ')} frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+                <div class="container-xl">
+
+                    <nav aria-labelledby="sidebar-nav-title">
+                        <h3 id="sidebar-nav-title">{f:translate(key: 'sidebarNavTitle', extensionName: 'liszt_web')}</h3>
+                        <f:render section="Main" optional="true" />
+                    </nav>
+
+                </div>
+            </div>
+        </f:else>
+    </f:if>
+</html>
