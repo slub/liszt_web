@@ -28,7 +28,6 @@
                               {member.biography -> f:format.html()}
 
                                 <f:if condition="{member.email}">
-                                    <f:comment>Todo: E-Mail Obfuscation???</f:comment>
                                     <div class="team-member-email">
                                      <a href="mailto:{member.email}">{member.email}</a>
                                     </div>
@@ -46,8 +45,7 @@
         </f:for>
 
         <div class="team-group grid grid-3col-lg">
-            <f:comment>ToDo: translate oder include board title in team content block?</f:comment>
-            <h3>Wissenschaftlicher Beirat</h3>
+            <h3>{f:translate(key: 'teamBoardHeadline', extensionName: 'liszt_web')}</h3>
             <div class="board-members grid-colspan-md-2">
                 <f:for each="{data.board}" as="boardmember" iteration="board-iterator">
                     <span class="board-member">{boardmember.name}, {boardmember.institution}</span>
@@ -56,7 +54,7 @@
         </div>
 
         <div class="team-group no-border grid grid-3col-lg">
-            <h3>Wissenschaftliche Hilfskräfte</h3>
+            <h3>{f:translate(key: 'teamAssistantsHeadline', extensionName: 'liszt_web')}</h3>
             <div class="board-members grid-colspan-md-2">
                 <f:for each="{data.assistants}" as="assistant" iteration="board-iterator">
                     <span class="board-member">

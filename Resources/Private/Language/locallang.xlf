@@ -23,7 +23,21 @@
 			<trans-unit id="sidebarNavTitle">
 				<source>Inhaltsverzeichnis</source>
 			</trans-unit>
-
+			<trans-unit id="teamOutputPublications">
+				<source>Publikationen</source>
+			</trans-unit>
+			<trans-unit id="teamOutputPresentations">
+				<source>Präsentationen</source>
+			</trans-unit>
+			<trans-unit id="teamBoardHeadline">
+				<source>Wissenschaftlicher Beirat</source>
+			</trans-unit>
+			<trans-unit id="teamAssistantsHeadline">
+				<source>Wissenschaftliche Hilfskräfte</source>
+			</trans-unit>
+			<trans-unit id="newsToListButton">
+				<source>zur News-Übersicht</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
