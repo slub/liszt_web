@@ -1,6 +1,9 @@
 // Import only needed Bootstrap components ToDo:  spilt later to separate files an call from used pages?
 
-import { Dropdown, Collapse } from 'bootstrap';
+// import { Dropdown, Collapse } from 'bootstrap';
+import Dropdown from "bootstrap/js/dist/dropdown.js";
+import Collapse from "bootstrap/js/dist/collapse.js";
+import Offcanvas from "bootstrap/js/dist/offcanvas.js";
 import Parvus from 'parvus'
 import de from 'parvus/src/l10n/de'
 
@@ -20,7 +23,6 @@ const prvs = new Parvus({
 
 
 // Intersection Observer for highlighting active items in Sticky Menu
-// ToDo: Bugfix the selection of Elements if there is a long list of Sections with small heights
 const targetLinks = document.querySelectorAll(('[data-target-id]'));
 
 // start only if targetLinks exists
@@ -38,7 +40,7 @@ if (targetLinks.length > 0) {
   const onIntersect = (entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        console.log(entry.target.id, 'is intersecting')
+     //   console.log(entry.target.id, 'is intersecting')
         targetLinks.forEach(link => {
           if(link.getAttribute('data-target-id') === entry.target.id){
             link.classList.add('active'); }
