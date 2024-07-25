@@ -10,6 +10,8 @@ imports:
 # For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
 editor:
   config:
+    contentsLanguage: 'de'
+    language: 'de'
     toolbar:
       items:
         - removeFormat
@@ -52,14 +54,19 @@ editor:
         - '-'
         - style
         - heading
+        - '|'
+        - accessibilityHelp
 
     style:
       definitions:
         # block level styles
-        - { name: 'Text rot', element: 'p', classes: [ 'text-red' ] }
+       # - { name: 'Text rot', element: 'p', classes: [ 'text-red' ] }
         # Inline styles
-        - { name: "Text klein", element: 'span', classes: ['text-sm'] }
-        - { name: 'Yellow marker', element: 'span', classes: [ ], styles: { background-color: 'yellow' } }
+       # - { name: "Auswahl klein", element: 'span', classes: ['text-sm'] }
+        - { name: "Auswahl quote", element: 'q', classes: [ 'text-quote' ] }
+        - { name: "Auswahl cite", element: 'cite', classes: ['text-cite'] }
+
+        # - { name: 'Yellow marker', element: 'span', classes: [ ], styles: { background-color: 'yellow' } }
 
     heading:
       options:
@@ -67,7 +74,6 @@ editor:
         - { model: 'heading2', view: 'h2', title: 'Heading 2' }
         - { model: 'heading3', view: 'h3', title: 'Heading 3' }
         - { model: 'heading4', view: 'h4', title: 'Heading 4' }
-        - { model: 'quote', view: 'q', title: 'Quote' }
 
 
     alignment:
@@ -89,7 +95,7 @@ editor:
 
     htmlSupport:
       allow:
-        - { name: 'q', attributes: true, classes: true, styles: true }
+        - { name: '/^.*$/', attributes: true, classes: true, styles: true }
 
     importModules:
       - { 'module': '@ckeditor/ckeditor5-show-blocks', 'exports': ['ShowBlocks'] }
