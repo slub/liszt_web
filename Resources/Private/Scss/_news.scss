@@ -32,6 +32,8 @@
         p {
             margin-bottom: 0;
             flex-grow: 1;
+            hyphens: auto;
+            text-align: justify;
         }
 
         &-show {

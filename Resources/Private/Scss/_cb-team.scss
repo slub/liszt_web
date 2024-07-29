@@ -48,6 +48,8 @@
 
             p {
                 margin-bottom: 0;
+                text-align: justify;
+                hyphens: auto;
             }
 
             &.collapse:not(.show) {
