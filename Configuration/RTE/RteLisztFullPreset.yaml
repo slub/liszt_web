@@ -10,8 +10,8 @@ imports:
 # For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
 editor:
   config:
-    contentsLanguage: 'de'
-    language: 'de'
+    contentsLanguage: "de"
+    language: "de"
     toolbar:
       items:
         - removeFormat
