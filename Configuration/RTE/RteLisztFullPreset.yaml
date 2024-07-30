@@ -12,6 +12,8 @@ editor:
   config:
     contentsLanguage: "de"
     language: "de"
+    contentsCss:
+      - '%vite("EXT:liszt_web/Resources/Private/Scss/rte.scss")%'
     toolbar:
       items:
         - removeFormat
@@ -65,6 +67,9 @@ editor:
        # - { name: "Auswahl klein", element: 'span', classes: ['text-sm'] }
         - { name: "Auswahl quote", element: 'q', classes: [ 'text-quote' ] }
         - { name: "Auswahl cite", element: 'cite', classes: ['text-cite'] }
+        - { name: "Text klein", element: 'small', classes: ['font-sm'] }
+        - { name: "Text rot", element: 'span', classes: [ 'font-red' ] }
+
 
         # - { name: 'Yellow marker', element: 'span', classes: [ ], styles: { background-color: 'yellow' } }
 

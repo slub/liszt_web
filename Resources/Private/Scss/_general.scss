@@ -70,7 +70,7 @@
 
 // external and internal links in textblocks
 
-main {
+main, .ck-content {
     p, li {
         a {
             color: var(--lz-font-color);

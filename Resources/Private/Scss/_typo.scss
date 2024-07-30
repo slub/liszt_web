@@ -133,7 +133,11 @@ strong {
 }
 
 
-.small-fontsize {
-  font-size: 0.85rem;
+small, .font-sm {
+  font-size: 0.888888889rem;
+}
+
+.font-red {
+    color: var(--lz-primary);
 }
 
