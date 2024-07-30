@@ -21,3 +21,12 @@ html {
 }
 
 
+
+@keyframes flip {
+    from {
+        transform: rotateY(90deg)
+    }
+    to {
+        transform: rotateY(0deg)
+    }
+}

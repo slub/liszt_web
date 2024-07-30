@@ -28,6 +28,8 @@
     &-icon {
         color: var(--lz-primary);
         padding-top: 7px;
+        animation: flip 1200ms ease-out;
+
 
         svg {
             width: auto;
