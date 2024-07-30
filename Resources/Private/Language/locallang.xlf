@@ -20,8 +20,17 @@
 			<trans-unit id="liszt_web.image" resname="liszt_web.image">
 				<source>Bild</source>
 			</trans-unit>
+			<trans-unit id="more">
+				<source>Mehr</source>
+			</trans-unit>
+			<trans-unit id="show-more">
+				<source>Mehr anzeigen</source>
+			</trans-unit>
 			<trans-unit id="sidebarNavTitle">
 				<source>Inhaltsverzeichnis</source>
+			</trans-unit>
+			<trans-unit id="skipNavTitle">
+				<source>Zum Hauptinhalt springen</source>
 			</trans-unit>
 			<trans-unit id="teamOutputPublications">
 				<source>Publikationen</source>
@@ -37,6 +46,9 @@
 			</trans-unit>
 			<trans-unit id="newsToListButton">
 				<source>zur News-Übersicht</source>
+			</trans-unit>
+			<trans-unit id="newsHeadline">
+				<source>Neuigkeiten</source>
 			</trans-unit>
 		</body>
 	</file>

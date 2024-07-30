@@ -24,10 +24,10 @@
             </f:else>
         </f:if>
         <div class="page-header-title">
-            <f:comment>Wenn es eine News Page ist, dann andere Headline in Header (eigentliche Headline steht dann im Content)</f:comment>
+            <f:comment>If it is a news page, then different headline in header (actual headline is then in the content)</f:comment>
             <f:if condition="{data.doktype} == 120">
                 <f:then>
-                    <h1 class="page-header-title-text">Neuigkeiten</h1>
+                    <h1 class="page-header-title-text">{f:translate(key: 'newsHeadline', extensionName: 'liszt_web')}</h1>
                 </f:then>
                 <f:else>
                     <h1 class="page-header-title-text">
