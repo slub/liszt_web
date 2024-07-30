@@ -15,7 +15,7 @@
                     <f:for each="{group.persons}" as="member" iteration="member-iterator">
                         <div class="team-member">
                             <f:if condition="{member.image}">
-                                <f:image image="{member.image.0}" />
+                                <f:image image="{member.image.0}" loading="lazy" />
                             </f:if>
                             <div class="team-member-name">
                                 {member.preposeddegree} {member.firstname} {member.lastname} {member.postposeddegree}
