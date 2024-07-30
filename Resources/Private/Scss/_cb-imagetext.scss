@@ -2,8 +2,6 @@
 
 .cb-imagetext {
 
-
-
     &-image {
         width: 100%;
 
@@ -18,6 +16,9 @@
     &-text {
         width: 100%;
         padding: 2rem 0 2rem 0;
+        font-size: 0.888888889rem;
+        font-weight: 400;
+
 
         .container-xl.grid & {
             padding-right: 2rem;
