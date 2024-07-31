@@ -2,7 +2,7 @@
 <html
     data-namespace-typo3-fluid="true"
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-    xmlns:i="http://typo3.org/ns/Quellenform/Iconpack/ViewHelpers"
+    xmlns:cb="http://typo3.org/ns/TYPO3/CMS/ContentBlocks/ViewHelpers"
 >
 
 <f:layout name="Default" />
@@ -39,7 +39,7 @@
                             {newsItem.data.teaserText -> f:format.html()}
                         </p>
                         <f:link.page class="read-more" pageUid="{newsItem.data.uid}">
-                            Mehr
+                            <cb:translate key="moreLink" />
                         </f:link.page>
                     </div>
                 </div>

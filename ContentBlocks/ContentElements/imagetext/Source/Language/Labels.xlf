@@ -9,6 +9,12 @@
 			<trans-unit id="description" resname="description">
 				<source>Bild links + Text rechts</source>
 			</trans-unit>
+			<trans-unit id="noImageError" resname="noImageError">
+				<source>Kein Bild ausgewählt!</source>
+			</trans-unit>
+			<trans-unit id="moreLink" resname="moreLink">
+				<source>mehr</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

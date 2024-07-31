@@ -9,6 +9,9 @@
 			<trans-unit id="description" resname="description">
 				<source>Bild (später mit Galerie)</source>
 			</trans-unit>
+			<trans-unit id="noImageError" resname="noImageError">
+				<source>Kein Bild ausgewählt!</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

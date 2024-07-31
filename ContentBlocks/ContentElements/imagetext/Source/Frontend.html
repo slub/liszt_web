@@ -1,7 +1,7 @@
 <html
     data-namespace-typo3-fluid="true"
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-    xmlns:i="http://typo3.org/ns/Quellenform/Iconpack/ViewHelpers"
+    xmlns:cb="http://typo3.org/ns/TYPO3/CMS/ContentBlocks/ViewHelpers"
 >
 
 <f:layout name="Default"/><!--diese drei Sections optional wenn man alle fluid funktionen dabei haben will-->
@@ -27,7 +27,7 @@
                     <f:render partial="Image" arguments="{image: data.image.0}"/>
                 </f:else>
                 <f:else>
-                    Kein Bild ausgewählt!
+                    <cb:translate key="noImageError" />
                 </f:else>
             </f:if>
 
@@ -41,7 +41,7 @@
             {data.text -> f:format.html()}
             <f:if condition="{data.link}">
                 <f:link.typolink class="read-more" parameter="{data.link}">
-                    Mehr
+                    <cb:translate key="moreLink" />
                 </f:link.typolink>
             </f:if>
         </div>
