@@ -63,8 +63,13 @@
             margin-top: 16px;
             object-fit: contain;
             object-position: bottom;
+            min-width: 80px;
+        }
+
+        @media (width > 420px) {
             min-width: 100px;
         }
+
 
         @include media-breakpoint-up(sm) {
          img {
