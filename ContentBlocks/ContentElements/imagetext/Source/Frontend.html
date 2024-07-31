@@ -15,16 +15,16 @@
             <f:if condition="{data.lightbox} == 1 && {data.link} == '' && {data.image.0}">
                 <f:then>
                     <a href="{f:uri.image(image: data.image.0)}" class="lightbox">
-                        <f:render partial="Image" arguments="{image: data.image.0}"/>
+                        <f:render partial="Image" arguments="{image: data.image.0, imageCover: data.imageCover }"/>
                     </a>
                 </f:then>
                 <f:else if="{data.link} != '' && {data.image.0}">
                     <f:link.typolink parameter="{data.link}">
-                        <f:render partial="Image" arguments="{image: data.image.0}"/>
+                        <f:render partial="Image" arguments="{image: data.image.0, imageCover: data.imageCover}"/>
                     </f:link.typolink>
                 </f:else>
                 <f:else if="{data.lightbox} != 1 && {data.link} == '' && {data.image.0}">
-                    <f:render partial="Image" arguments="{image: data.image.0}"/>
+                    <f:render partial="Image" arguments="{image: data.image.0, imageCover: data.imageCover}"/>
                 </f:else>
                 <f:else>
                     <cb:translate key="noImageError" />

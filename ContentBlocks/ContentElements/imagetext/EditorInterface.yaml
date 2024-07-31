@@ -37,6 +37,11 @@ fields:
         label: 'Bild vergrößerbar? (Lightbox)'
         items:
           - label: 'Ja'
+      - identifier: imageCover
+        type: Checkbox
+        label: 'ObjectFit cover'
+        items:
+          - label: 'Ja'
   - identifier: text
     label: 'Text'
     type: Textarea
