@@ -27,7 +27,7 @@
                     <f:render partial="Image" arguments="{image: data.image.0, imageCover: data.imageCover}"/>
                 </f:else>
                 <f:else>
-                    <cb:translate key="noImageError" />
+                    <cb:translate key="noImageError" name="slub/imagetext"  />
                 </f:else>
             </f:if>
 
@@ -41,7 +41,7 @@
             {data.text -> f:format.html()}
             <f:if condition="{data.link}">
                 <f:link.typolink class="read-more" parameter="{data.link}">
-                    <cb:translate key="moreLink" />
+                    <cb:translate key="moreLink" name="slub/imagetext" />
                 </f:link.typolink>
             </f:if>
         </div>
