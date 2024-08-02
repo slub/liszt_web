@@ -32,7 +32,7 @@ final class ListCategoriesHeadlineViewHelper extends AbstractViewHelper
     {
 
         if (!is_array($arguments['list'])) {
-            return self::getHTMLTag("Neuigkeiten");
+            return self::getHTMLTag("Aktuelles");
         }
 
 
@@ -44,7 +44,7 @@ final class ListCategoriesHeadlineViewHelper extends AbstractViewHelper
             return self::getHTMLTag('Mehr aus den Bereichen ' . self::getTitleList($arguments['list']));
         }
 
-        return self::getHTMLTag("Neuigkeiten");
+        return self::getHTMLTag("Aktuelles");
 
     }
 
