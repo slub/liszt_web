@@ -4,6 +4,11 @@
     display: flex;
     grid-area: mainnav;
 
+    // remove webkit appearance for buttons (old ios (14) shows Buttons with rounded corners and gradient)
+  [type="button"] {
+    appearance: none;
+  }
+
     // ToDo: maybe remove this extra .offcanvas later and move it in the main.scss
     &.offcanvas {
         flex-direction: column;
@@ -269,6 +274,7 @@
 
 
 .navbar-toggler {
+    appearance: none;
     grid-area: hamburger;
     justify-self: end;
     align-self: start;

@@ -35,7 +35,8 @@
             line-height: 1.2;
             font-weight: 600;
             letter-spacing: 0.02rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+            min-height: 2.5em;
         }
         img {
             width: 100%;
@@ -69,6 +70,7 @@
 
             &-button {
                 border: none;
+                appearance: none;
                 background: none;
                 color: var(--lz-font-color);
                 cursor: pointer;
@@ -114,6 +116,7 @@
         }
 
         &-email {
+            margin-top: 0.5em;
             a {
                 font-weight: 500;
                 text-decoration: none;
