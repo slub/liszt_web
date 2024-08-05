@@ -23,6 +23,16 @@ main {
         hyphens: auto;
     }
 
+
+    // Shorter distances between two consecutive headings (subheading)
+    h2 + h3 {
+    margin-top: -1rem;
+    }
+
+    h3 + h4 {
+        margin-top: -1rem;
+    }
+
     // margins between content elements in main
     .frame {
         margin-bottom: $mobile-design-space;
