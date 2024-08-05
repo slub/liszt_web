@@ -48,7 +48,8 @@
 				<source>zur News-Übersicht</source>
 			</trans-unit>
 			<trans-unit id="newsHeadline">
-				<source>Neuigkeiten</source>
+				<source>Aktuelles
+                        und Marginalia</source>
 			</trans-unit>
 		</body>
 	</file>
