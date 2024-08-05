@@ -18,9 +18,12 @@ main {
         margin-bottom: 1rem;
     }
 
-    //wrap long headlines in main
+    //wrap long headlines in main on small screens
     h2, h3, h4, h5 {
         hyphens: auto;
+        @include media-breakpoint-up(md) {
+            hyphens: manual;
+        }
     }
 
 

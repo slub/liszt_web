@@ -4,6 +4,9 @@
         padding-bottom: $desktop-design-space;
         border-bottom: 1px solid var(--lz-gray);
         margin-bottom: $desktop-design-space;
+        h2, h3, h4 {
+            hyphens: auto;
+        }
 
         &.no-border {
             border-bottom: none;
