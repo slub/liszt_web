@@ -102,6 +102,15 @@
             .nav-link {
                 text-transform: uppercase;
             }
+            // preserve selected status of root item if navigate inside a child dopdown
+            &:focus-within, &:hover {
+                .nav-link-text {
+                    @include media-breakpoint-up(#{$navbar-expand}) {
+                        background-color: var(--lz-font-color);
+                        color: var(--lz-font-color-inverse);
+                    }
+                }
+            }
 
         }
 
