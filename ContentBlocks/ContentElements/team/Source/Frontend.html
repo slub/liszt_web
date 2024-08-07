@@ -1,6 +1,8 @@
 <html
     data-namespace-typo3-fluid="true"
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:cb="http://typo3.org/ns/TYPO3/CMS/ContentBlocks/ViewHelpers"
+
 >
 
 <f:layout name="Default" /><!--diese drei Sections optional wenn man alle fluid funktionen dabei haben will-->
@@ -45,7 +47,7 @@
         </f:for>
 
         <div class="team-group grid grid-3col-lg">
-            <h3>{f:translate(key: 'teamBoardHeadline', extensionName: 'liszt_web')}</h3>
+            <h3><cb:translate key="boardHeadline" name="slub/team" /></h3>
             <div class="board-members grid-colspan-md-2">
                 <f:for each="{data.board}" as="boardmember" iteration="board-iterator">
                     <span class="board-member">{boardmember.name}, {boardmember.institution}</span>
@@ -54,7 +56,7 @@
         </div>
 
         <div class="team-group no-border grid grid-3col-lg">
-            <h3>{f:translate(key: 'teamAssistantsHeadline', extensionName: 'liszt_web')}</h3>
+            <h3><cb:translate key="assistantsHeadline" name="slub/team" /></h3>
             <div class="board-members grid-colspan-md-2">
                 <f:for each="{data.assistants}" as="assistant" iteration="board-iterator">
                     <span class="board-member">

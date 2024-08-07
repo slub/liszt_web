@@ -3,6 +3,7 @@
     data-namespace-typo3-fluid="true"
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
     xmlns:i="http://typo3.org/ns/Quellenform/Iconpack/ViewHelpers"
+    xmlns:cb="http://typo3.org/ns/TYPO3/CMS/ContentBlocks/ViewHelpers"
 >
 <f:layout name="NoFrameWrapper" />
 <f:section name="Header" />
@@ -16,14 +17,14 @@
         <aside class="sidebar">
             <div id="c10" class="frame  frame-doubled_border frame-type-menu_section frame-layout-0">
                 <header>
-                    <h3 class="">{f:translate(key: 'sidebarNavTitle', extensionName: 'liszt_web')}</h3>
+                    <h3 class=""><cb:translate key="sidebarNavTitle" name="slub/output" /></h3>
                 </header>
                 <ul>
                     <li>
-                        <a data-target-id="publications"  href="#publications" title="">{f:translate(key: 'teamOutputPublications', extensionName: 'liszt_web')}</a>
+                        <a data-target-id="publications"  href="#publications" title=""><cb:translate key="teamOutputPublications" name="slub/output" /></a>
                     </li>
                     <li>
-                        <a data-target-id="presentations"  href="#presentations" title="">{f:translate(key: 'teamOutputPresentations', extensionName: 'liszt_web')}</a>
+                        <a data-target-id="presentations"  href="#presentations" title=""><cb:translate key="teamOutputPresentations" name="slub/output" /></a>
                     </li>
                 </ul>
             </div>
@@ -31,7 +32,7 @@
 
         <article class="cb-output content grid-colspan-lg-2">
             <div class="frame frame-extra-mb">
-                <h2 id="publications"> Publikationen </h2>
+                <h2 id="publications"><cb:translate key="teamOutputPublications" name="slub/output" /></h2>
                 <f:for each="{lw:sortBy(data:data.publications,field:'date',order:'desc' )}" as="publication">
                     <div class="cb-output-item">
                         <div class="cb-output-item-header">
@@ -70,7 +71,7 @@
                 </f:for>
             </div>
             <div class="frame">
-                <h2 id="presentations"> Präsentationen </h2>
+                <h2 id="presentations"><cb:translate key="teamOutputPresentations" name="slub/output" /></h2>
                 <f:for each="{data.presentations}" as="presentation">
                     <div class="cb-output-item">
                         <div class="cb-output-item-header">

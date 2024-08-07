@@ -12,6 +12,18 @@
 			<trans-unit id="moreLink" resname="moreLink">
 				<source>mehr</source>
 			</trans-unit>
+			<trans-unit id="ariaPagerLabel" resname="ariaPagerLabel">
+				<source>Pagination, Seiten Navigation</source>
+			</trans-unit>
+			<trans-unit id="previousPage" resname="previousPage">
+				<source>zur vorherigen Seite</source>
+			</trans-unit>
+			<trans-unit id="currentPage" resname="currentPage">
+				<source>Dies ist die aktuelle Seite</source>
+			</trans-unit>
+			<trans-unit id="nextPage" resname="nextPage">
+				<source>zur nächsten Seite</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

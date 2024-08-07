@@ -9,6 +9,9 @@
 			<trans-unit id="description" resname="description">
 				<source>Eine andere Seite anteasern</source>
 			</trans-unit>
+			<trans-unit id="moreLink" resname="moreLink">
+				<source>mehr</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

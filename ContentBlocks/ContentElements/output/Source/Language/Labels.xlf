@@ -9,6 +9,15 @@
 			<trans-unit id="description" resname="description">
 				<source>Hier werden Konferenzteilnahmen und Publikationen dokumentiert.</source>
 			</trans-unit>
+			<trans-unit id="teamOutputPublications" resname="teamOutputPublications">
+				<source>Publikationen</source>
+			</trans-unit>
+			<trans-unit id="teamOutputPresentations" resname="teamOutputPresentations">
+				<source>Präsentationen</source>
+			</trans-unit>
+			<trans-unit id="sidebarNavTitle"  resname="sidebarNavTitle">
+				<source>Inhaltsverzeichnis</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

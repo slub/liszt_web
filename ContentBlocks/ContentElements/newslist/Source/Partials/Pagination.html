@@ -1,10 +1,14 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:i="http://typo3.org/ns/Quellenform/Iconpack/ViewHelpers"
+      xmlns:cb="http://typo3.org/ns/TYPO3/CMS/ContentBlocks/ViewHelpers"
+
+      data-namespace-typo3-fluid="true">
 
 <f:comment>ToDo: eventually use the SlidingWindowPagination</f:comment>
-<ul class="pagination" aria-label="Pagination, Seiten Navigation">
+<ul class="pagination" aria-label="{cb:translate(key: 'ariaPagerLabel', name: 'slub/newslist')}">
         <f:if condition="{currentPage} > 1">
             <li class="page-item">
-                <f:link.page additionalParams="{page: '{currentPage - 1}'}" title="zur vorherigen Seite ({currentPage -1})" class="page-icon">
+                <f:link.page additionalParams="{page: '{currentPage - 1}'}" title="{cb:translate(key: 'previousPage', name: 'slub/newslist')} ({currentPage -1})" class="page-icon no-link-icon">
                     <i:icon iconfig="lzicon,chevron-left" preferredRenderTypes="svgSprite" additionalAttributes="{aria-hidden:'true'}" />
                 </f:link.page>
             </li>
@@ -12,7 +16,7 @@
 
     <f:for each="{pagination.allPageNumbers}" as="page">
         <li class="page-item">
-            <f:link.page additionalParams="{page:page}"  title="{f:if(condition:'{currentPage}=={page}',then: 'Dies ist die aktuelle Seite {page}', else: 'Gehe zu Seite {page}')} " additionalAttributes="{f:if(condition:'{currentPage}=={page}',then:{aria-current:'true'})}" class="page-link {f:if(condition:'{currentPage}=={page}',then:'active')}">
+            <f:link.page additionalParams="{page:page}"  title="{f:if(condition:'{currentPage}=={page}',then: '{cb:translate(key:\'currentPage\', name: \'slub/newslist\')} {page}', else: 'Gehe zu Seite {page}')} " additionalAttributes="{f:if(condition:'{currentPage}=={page}',then:{aria-current:'true'})}" class="page-link no-link-icon {f:if(condition:'{currentPage}=={page}',then:'active')}">
                 {page}
             </f:link.page>
         </li>
@@ -20,7 +24,7 @@
 
     <f:if condition="{currentPage} < {pagination.paginator.numberOfPages}">
         <li class="page-item">
-            <f:link.page additionalParams="{page: '{currentPage + 1}'}" title="zur nächsten Seite ({currentPage + 1})" class="page-icon">
+            <f:link.page additionalParams="{page: '{currentPage + 1}'}" title="{cb:translate(key: 'nextPage', name: 'slub/newslist')} ({currentPage + 1})" class="page-icon no-link-icon">
                 <i:icon iconfig="lzicon,chevron-right" preferredRenderTypes="svgSprite" additionalAttributes="{aria-hidden:'true'}" />
             </f:link.page>
         </li>
