@@ -4,7 +4,7 @@ Sitepackage for the project "Liszt-Portal"
 # Staff record type
 
 Staff records contain basic information on staff members and may be used in the
-[Team](#team-content-element) or [Publication](#publication-content-element) 
+[Team](#team-content-element) or [Publications](#publications-content-element) 
 content elements.  We would advise to store the records in a designated folder.
 
 # Team content element
