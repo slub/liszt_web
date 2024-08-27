@@ -1,3 +1,4 @@
+{namespace lw=Slub\LisztWeb\ViewHelpers}
 <html
     data-namespace-typo3-fluid="true"
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
@@ -14,7 +15,9 @@
         <div class="cb-imagetext-image {f:if(condition: '{data.imagesize}==66', then: ' grid-colspan-lg-2')}">
             <f:if condition="{data.lightbox} == 1 && {data.link} == '' && {data.image.0}">
                 <f:then>
-                    <a href="{f:uri.image(image: data.image.0)}" class="lightbox">
+                    <f:variable name="imageURL">{f:uri.image(image: data.image.0)}</f:variable>
+                    <f:variable name="imageData">{lw:getImageDimensions(imgPath: imageURL)}</f:variable>
+                    <a href="{f:uri.image(image: data.image.0)}" class="lightbox" data-pswp-width="{imageData.width}" data-pswp-height="{imageData.height}" >
                         <f:render partial="Image" arguments="{image: data.image.0, imageCover: data.imageCover }"/>
                     </a>
                 </f:then>
