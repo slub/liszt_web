@@ -26,11 +26,12 @@
     &-member {
         &-name {
             font-size: $h4-mobile-font-size;
+            line-height: 1.2;
+            margin-bottom: 1rem;
             @include media-breakpoint-up(md) {
                 font-size: $h4-font-size;
             }
-            line-height: 1.2;
-            margin-bottom: 1rem;
+
         }
 
         &-role {
