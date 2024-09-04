@@ -6,6 +6,9 @@ namespace Slub\LisztWeb\ViewHelpers;
 
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Type\File\ImageInfo;
+
 
 
 final class GetImageDimensionsViewHelper extends AbstractViewHelper
@@ -20,16 +23,18 @@ final class GetImageDimensionsViewHelper extends AbstractViewHelper
     public static function renderStatic(
         array                     $arguments,
         \Closure                  $renderChildrenClosure,
-        RenderingContextInterface $renderingContext
+        RenderingContextInterface $renderingContext,
     ): array
     {
-        // remove first slash from image path because working directory getcwd() is with last slash
-        $arguments['imgPath'] = ltrim($arguments['imgPath'], '/');
-        $dim = getimagesize($arguments['imgPath']);
+
+        // remove first slash from image path because working directory getcwd() is with last slash and decode url with urldecode for the real filename in path
+        $arguments['imgPath'] = urldecode(ltrim($arguments['imgPath'], '/'));
+
+        $imageInfoObject = GeneralUtility::makeInstance(ImageInfo::class,  $arguments['imgPath'] );
+
         $returnArray = [
-            'width' => $dim[0],
-            'height' => $dim[1],
-            'htmlWidthHeight' => $dim[3]
+            'width' => $imageInfoObject->getWidth(),
+            'height' => $imageInfoObject->getHeight(),
         ];
 
         return $returnArray;

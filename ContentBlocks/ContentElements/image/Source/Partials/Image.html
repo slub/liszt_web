@@ -3,7 +3,12 @@
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 >
 
-<f:comment>ToDo: get the image aspect ratio and set an max with class if image is in portrait format,because of too hight images in tablet view</f:comment>
+<f:variable name="layoutName">{f:cObject(typoscriptObjectPath: 'page.10.variables.layout')}</f:variable>
+
+<f:variable name="colPos">{f:if(condition: data._raw.colPos, then: data._raw.colPos, else: '0')}</f:variable>
+
+
+<f:comment>ToDo: Determine the aspect ratio and set a maximum value with the class if the image is in portrait format, as the images are too high in the tablet view?</f:comment>
 <figure>
     <f:if condition="{data.image.0.originalFile.properties.extension} == svg">
         <f:then>
@@ -11,12 +16,55 @@
                      alt="{data.image.0.alternative}"/>
         </f:then>
         <f:else>
-            <picture>
-                <source media="(min-width: 800px)" srcset="{f:uri.image(image: data.image.0, maxWidth: 1200)}"/>
-                <source srcset="{f:uri.image(image: data.image.0, maxWidth: 768)}"/>
-                <img src="{f:uri.image(image: data.image.0, maxWidth: 768)}" loading="lazy" title="{data.image.0.title}"
-                     alt="{data.image.0.alternative}"/>
-            </picture>
+
+            <f:if condition="{layoutName} == sidebarLeft">
+                <f:then>
+                    <f:comment>SidebarLeft Template with 2 cols</f:comment>
+                    <f:if condition="{colPos} == 1">
+                        <f:comment>rendering image for left Col</f:comment>
+                        <picture>
+                            <source media="(min-width: 1200px)" srcset="{f:uri.image(image: data.image.0, width: '768',  fileExtension: 'webp')}"/>
+                            <source media="(min-width: 1200px)" srcset="{f:uri.image(image: data.image.0, width: '768')}"/>
+                            <source media="(min-width: 768px)" srcset="{f:uri.image(image: data.image.0, width: '500',  fileExtension: 'webp')}"/>
+                            <source media="(min-width: 768px)" srcset="{f:uri.image(image: data.image.0, width: '500')}"/>
+                            <source media="(min-width: 500px)" srcset="{f:uri.image(image: data.image.0, width: '768', fileExtension: 'webp')}"/>
+                            <source media="(min-width: 500px)" srcset="{f:uri.image(image: data.image.0, width: '768')}"/>
+                            <source srcset="{f:uri.image(image: data.image.0, width: '500', fileExtension: 'webp')}"/>
+                            <source srcset="{f:uri.image(image: data.image.0, width: '500')}"/>
+                            <img src="{f:uri.image(image: data.image.0, width: '768')}"  class="cb-image-template-sidebar cb-image-colpos-1" loading="lazy" title="{data.image.0.title}"
+                                 alt="{data.image.0.alternative}"/>
+                        </picture>
+
+                    </f:if>
+                    <f:if condition="{colPos} == 0">
+                        <f:comment>rendering image for right Col</f:comment>
+                        <picture>
+                        <source media="(min-width: 768px)" srcset="{f:uri.image(image: data.image.0, width: '1200',  fileExtension: 'webp')}"/>
+                        <source media="(min-width: 768px)" srcset="{f:uri.image(image: data.image.0, width: '1200')}"/>
+                        <source media="(min-width: 500px)" srcset="{f:uri.image(image: data.image.0, width: '768', fileExtension: 'webp')}"/>
+                        <source media="(min-width: 500px)" srcset="{f:uri.image(image: data.image.0, width: '768')}"/>
+                        <source srcset="{f:uri.image(image: data.image.0, width: '500', fileExtension: 'webp')}"/>
+                        <source srcset="{f:uri.image(image: data.image.0, width: '500')}"/>
+                        <img src="{f:uri.image(image: data.image.0, width: '768')}"  class="cb-image-template-sidebar cb-image-colpos-0"  loading="lazy" title="{data.image.0.title}"
+                             alt="{data.image.0.alternative}"/>
+                    </picture>
+                    </f:if>
+                </f:then>
+                <f:else>
+                    <f:comment>All Other Templates with one 100% col</f:comment>
+                    <picture>
+                        <source media="(min-width: 768px)" srcset="{f:uri.image(image: data.image.0, width: '1200',  fileExtension: 'webp')}"/>
+                        <source media="(min-width: 768px)" srcset="{f:uri.image(image: data.image.0, width: '1200')}"/>
+                        <source media="(min-width: 500px)" srcset="{f:uri.image(image: data.image.0, width: '768', fileExtension: 'webp')}"/>
+                        <source media="(min-width: 500px)" srcset="{f:uri.image(image: data.image.0, width: '768')}"/>
+                        <source srcset="{f:uri.image(image: data.image.0, width: '500', fileExtension: 'webp')}"/>
+                        <source srcset="{f:uri.image(image: data.image.0, width: '500')}"/>
+                        <img src="{f:uri.image(image: data.image.0, width: '768')}"  class="cb-image-template-full cb-image-colpos-0" loading="lazy" title="{data.image.0.title}"
+                             alt="{data.image.0.alternative}"/>
+                    </picture>
+                </f:else>
+             </f:if>
+
         </f:else>
     </f:if>
     <f:if condition="{data.caption}">

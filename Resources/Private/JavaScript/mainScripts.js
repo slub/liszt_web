@@ -37,7 +37,7 @@ lightbox.on('uiRegister', function() {
         const currSlideElement = lightbox.pswp.currSlide.data.element;
         let captionHTML = '';
         if (currSlideElement) {
-          const hiddenCaption = currSlideElement.querySelector('.hidden-caption-content');
+          const hiddenCaption = currSlideElement.querySelector('.figure-caption');
           if (hiddenCaption) {
             // get caption from element with class hidden-caption-content
             captionHTML = hiddenCaption.innerHTML;
