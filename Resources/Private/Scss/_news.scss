@@ -91,9 +91,11 @@
             font-weight: 400;
             font-size: $h3-mobile-font-size;
             margin-bottom: 0;
+            font-family: $font-family-headlines;
             @include media-breakpoint-up(md) {
                 font-size: $h3-font-size;
-            }            font-family: $font-family-headlines;
+            }
+
         }
         &-date {
             font-weight: 500;
