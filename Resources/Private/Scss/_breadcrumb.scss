@@ -1,11 +1,11 @@
 // Breadcrumb Navigation
 .breadcrumb {
     margin-top: $mobile-design-space;
+    font-size: $font-size-sm;
+    font-weight: 400;
     @include media-breakpoint-up(md) {
         margin-top: $desktop-design-space;
     }
-    font-size: $font-size-sm;
-    font-weight: 400;
 
         ol {
             padding: 0;

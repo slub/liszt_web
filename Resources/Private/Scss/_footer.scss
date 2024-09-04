@@ -23,13 +23,12 @@
 
  &-main {
      margin-top: $desktop-design-space;
-     @include media-breakpoint-up(md) {
-         margin-top: calc($desktop-design-space + 25px);
-     }
      font-size: $font-size-sm;
      line-height: 1.36;
      font-weight: 300;
-
+     @include media-breakpoint-up(md) {
+         margin-top: calc($desktop-design-space + 25px);
+     }
 
      h3, h4 {
          font-size: $font-size-sm;
