@@ -31,14 +31,15 @@
 
         &-body {
             font-size: $h3-mobile-font-size;
-            @include media-breakpoint-up(md) {
-                font-size: $h3-font-size;
-            }
             font-weight: 400;
             font-family: $font-family-headlines;
             line-height: 1.1875;
             padding-bottom: 0.6rem;
             padding-top: 0.1rem;
+            @include media-breakpoint-up(md) {
+                font-size: $h3-font-size;
+            }
+
 
             a {
                 text-decoration: none;
