@@ -2,7 +2,7 @@ The Liszt Portal sitepackage
 ============================
 
 [![TYPO3 11](https://img.shields.io/badge/TYPO3-11-orange.svg)](https://get.typo3.org/version/11)
-[![CC-BY](https://img.shields.io/github/license/dikastes/liszt_web)](https://github.com/dikastes/liszt_web/blob/main/LICENSE)
+[![CC-BY](https://img.shields.io/github/license/slub/liszt_web)](https://github.com/slub/liszt_web/blob/main/LICENSE)
 
 The Liszt Portal is the central musicological source for information on the 19th century pianist and composer Franz Liszt.
 It is available under [liszt-portal.de](https://liszt-portal.de).
@@ -13,8 +13,8 @@ The Liszt Portal is developed by the Digital Franz Liszt Catalogue Raisonné pro
 The sitepackage depends on the portal's application modules.
 These include:
 
-- [the catalogue raisonné module](https://github.com/dikastes/liszt_catalograisonne) (not yet implemented)
-- [the bibliography module](https://github.com/dikastes/liszt_bibliography) (not yet implemented)
+- [the catalogue raisonné module](https://github.com/slub/liszt_catalograisonne) (not yet implemented)
+- [the bibliography module](https://github.com/slub/liszt_bibliography) (not yet implemented)
 
 The sitepackage defines the markup and stylings for the portal.
 
