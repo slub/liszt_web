@@ -19,7 +19,13 @@
                 <div class="cb-pageteaser-image">
                     <f:if condition="{newsItem.data.teaserImage.0}">
                         <f:link.page pageUid="{newsItem.data.uid}">
-                            <f:image image="{newsItem.data.teaserImage.0}" width="800" loading="lazy" />
+
+                            <picture>
+                                <source srcset="{f:uri.image(image: newsItem.data.teaserImage.0, width: '768', fileExtension: 'webp')}" type="image/webp" />
+                                <source srcset="{f:uri.image(image: newsItem.data.teaserImage.0, width: '768')}"/>
+                                <f:image image="{newsItem.data.teaserImage.0}" alt="{newsItem.data.teaserImage.0.alternative}" title="{newsItem.data.teaserImage.0.title}" width="768" loading="lazy"/>
+                            </picture>
+
                         </f:link.page>
                     </f:if>
                 </div>
