@@ -1,4 +1,5 @@
 // Extensions default config
+@import 'EXT:liszt_bibliography/Configuration/TypoScript/setup.typoscript'
 @import 'EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript'
 @import 'EXT:seo/Configuration/TypoScript/XmlSitemap/setup.typoscript'
 

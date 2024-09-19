@@ -20,6 +20,11 @@ fields:
     label: 'News Teaser anzeigen'
     items:
       - label: 'Ja'
+  - identifier: showSearchBar
+    type: Checkbox
+    label: 'Suchschlitz anzeigen'
+    items:
+      - label: 'Ja'
   - identifier: teaserImage
     type: File
     allowed: common-image-types
