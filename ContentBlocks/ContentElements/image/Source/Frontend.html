@@ -1,16 +1,18 @@
+{namespace lw=Slub\LisztWeb\ViewHelpers}
 <html
     data-namespace-typo3-fluid="true"
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
     xmlns:cb="http://typo3.org/ns/TYPO3/CMS/ContentBlocks/ViewHelpers"
 >
-
 <f:layout name="Default"/>
 <f:section name="Header"/>
 <f:section name="Main">
     <div class="cb-image">
         <f:if condition="{data.lightbox} == 1 && {data.link} == '' && {data.image.0}">
             <f:then>
-                <a href="{f:uri.image(image: data.image.0)}" class="lightbox">
+                <f:variable name="imageURL">{f:uri.image( image: data.image.0)}</f:variable>
+                <f:variable name="imageData">{lw:getImageDimensions(imgPath: imageURL)}</f:variable>
+                <a href="{f:uri.image(image: data.image.0)}" class="lightbox" title="{cb:translate(key: 'clickToLightbox', name: 'slub/imagetext')}" data-pswp-width="{imageData.width}" data-pswp-height="{imageData.height}" >
                     <f:render partial="Image" arguments="{_all}"/>
                 </a>
             </f:then>

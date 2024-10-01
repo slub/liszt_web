@@ -1,13 +1,16 @@
 <html
     data-namespace-typo3-fluid="true"
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-    xmlns:i="http://typo3.org/ns/Quellenform/Iconpack/ViewHelpers"
 >
 
-<f:comment>ToDo: check best responsive Image sizes, or leave one Version of Image with 800px?</f:comment>
-
 <picture>
-    <source media="(min-width: 800px)" srcset="{f:uri.image(image: image, maxWidth: 1200)}" />
-    <source srcset="{f:uri.image(image: image, maxWidth: 768)}" />
-    <img src="{f:uri.image(image: image, maxWidth: 768)}" class="{f:if(condition: '{imageCover}==1', then: ' image-cover')}" loading="lazy"  title="{image.title}" alt="{image.alternative}" />
+    <f:if condition="{imageSize} == 66">
+        <source media="(min-width: 992px)" srcset="{f:uri.image(image: image, width: '1200', fileExtension: 'webp')}" type="image/webp" />
+        <source media="(min-width: 992px)" srcset="{f:uri.image(image: image, width: '1200')}" />
+    </f:if>
+    <source media="(min-width: 500px)" srcset="{f:uri.image(image: image, width: '768', fileExtension: 'webp')}" type="image/webp" />
+    <source media="(min-width: 500px)" srcset="{f:uri.image(image: image, width: '768')}" />
+    <source srcset="{f:uri.image(image: image, width: '500', fileExtension: 'webp')}" type="image/webp" />
+    <source srcset="{f:uri.image(image: image, width: '500')}" />
+    <img src="{f:uri.image(image: image, width: '768')}" class="{f:if(condition: '{imageCover}==1', then: ' image-cover')}" loading="lazy"  title="{image.title}" alt="{image.alternative}" />
 </picture>

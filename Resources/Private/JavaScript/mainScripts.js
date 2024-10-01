@@ -1,28 +1,75 @@
-// Import only needed Bootstrap components ToDo:  spilt later to separate files an call from used pages?
-
+// Import only needed Bootstrap components
 // import { Dropdown, Collapse } from 'bootstrap';
 import Dropdown from "bootstrap/js/dist/dropdown.js";
 import Collapse from "bootstrap/js/dist/collapse.js";
 import Offcanvas from "bootstrap/js/dist/offcanvas.js";
-import Parvus from 'parvus'
-import de from 'parvus/src/l10n/de'
 
-/*
-// Create an example popover
-document.querySelectorAll('[data-bs-toggle="popover"]')
-  .forEach(popover => {
-    new Popover(popover)
-  })
-*/
+import PhotoSwipeLightbox from 'photoswipe/lightbox';
 
-const prvs = new Parvus({
-  l10n: de,
-//  captionsSelector: '.figure-caption',
- lightboxIndicatorIcon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none"  stroke-width="1.5" stroke="currentColor" focusable="false"> <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" /></svg>',
-})
+let lightboxImages = document.querySelectorAll('.lightbox');
+Array.prototype.forEach.call(lightboxImages, function(el, i) {
+  var zoomIcon = '<span class="zoom-icon" aria-hidden="true"></span>';
+  el.insertAdjacentHTML('beforeend', zoomIcon);
+});
+
+const options = {
+  gallery: 'main',
+  children: '.lightbox',
+  pswpModule: () => import('photoswipe'),
+  // Optional padding for images,
+  paddingFn: (viewportSize) => {
+    return {
+      top: 10, bottom: 80, left: 10, right: 10
+    }
+  },
+};
+
+const lightbox = new PhotoSwipeLightbox(options);
+lightbox.on('uiRegister', function() {
+  lightbox.pswp.ui.registerElement({
+    name: 'custom-caption',
+    order: 9,
+    isButton: false,
+    appendTo: 'root',
+    html: 'Caption text',
+    onInit: (el, pswp) => {
+      lightbox.pswp.on('change', () => {
+        const currSlideElement = lightbox.pswp.currSlide.data.element;
+        let captionHTML = '';
+        if (currSlideElement) {
+          const hiddenCaption = currSlideElement.querySelector('.figure-caption');
+          if (hiddenCaption) {
+            // get caption from element with class hidden-caption-content
+            captionHTML = hiddenCaption.innerHTML;
+          } else {
+            // get caption from alt attribute
+            captionHTML = currSlideElement.querySelector('img').getAttribute('alt');
+          }
+        }
+        el.innerHTML = captionHTML || '';
+      });
+    }
+  });
+});
+lightbox.on('uiRegister', function() {
+  lightbox.pswp.ui.registerElement({
+    name: 'zoom-level-indicator',
+    order: 9,
+    onInit: (el, pswp) => {
+      pswp.on('zoomPanUpdate', (e) => {
+        if (e.slide === pswp.currSlide) {
+          el.innerText = 'Zoom level: ' + Math.round(pswp.currSlide.currZoomLevel * 100) + '%';
+        }
+      });
+    }
+  });
+});
+lightbox.init();
+
 
 
 // Intersection Observer for highlighting active items in Sticky Menu
+
 const targetLinks = document.querySelectorAll(('[data-target-id]'));
 
 // start only if targetLinks exists

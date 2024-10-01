@@ -18,8 +18,8 @@
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    @include container-paddings;
     max-width: map-get($container-max-widths, 'xl');
+    @include container-paddings;
 }
 
 

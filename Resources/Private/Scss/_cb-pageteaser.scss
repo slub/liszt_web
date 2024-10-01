@@ -13,6 +13,8 @@
     .frame-type-slub_pageteaser:last-of-type & {
         border-bottom: 1px solid var(--lz-gray);
         padding-bottom: $mobile-design-space;
+        padding-top: $mobile-design-space;
+        padding-bottom: $mobile-design-space;
 
         @include media-breakpoint-up(md) {
             padding-bottom: $desktop-design-space;
@@ -20,8 +22,7 @@
         }
     }
 
-    padding-top: $mobile-design-space;
-    padding-bottom: $mobile-design-space;
+
     @include media-breakpoint-up(md) {
         padding-top: $desktop-design-space;
         padding-bottom: $desktop-design-space;
@@ -51,11 +52,12 @@
     &-title {
         font-weight: 400;
         font-size: $h3-mobile-font-size;
+        font-family:$font-family-headlines;
+        margin-bottom: 0;
         @include media-breakpoint-up(md) {
             font-size: $h3-font-size;
         }
-        font-family:$font-family-headlines;
-        margin-bottom: 0;
+
     }
 
     &-date {

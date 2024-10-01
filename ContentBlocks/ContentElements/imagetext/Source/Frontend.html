@@ -1,3 +1,4 @@
+{namespace lw=Slub\LisztWeb\ViewHelpers}
 <html
     data-namespace-typo3-fluid="true"
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
@@ -14,17 +15,19 @@
         <div class="cb-imagetext-image {f:if(condition: '{data.imagesize}==66', then: ' grid-colspan-lg-2')}">
             <f:if condition="{data.lightbox} == 1 && {data.link} == '' && {data.image.0}">
                 <f:then>
-                    <a href="{f:uri.image(image: data.image.0)}" class="lightbox">
-                        <f:render partial="Image" arguments="{image: data.image.0, imageCover: data.imageCover }"/>
+                    <f:variable name="imageURL">{f:uri.image(image: data.image.0)}</f:variable>
+                    <f:variable name="imageData">{lw:getImageDimensions(imgPath: imageURL)}</f:variable>
+                    <a href="{f:uri.image(image: data.image.0)}" class="lightbox" title="{cb:translate(key: 'clickToLightbox', name: 'slub/imagetext')}" data-pswp-width="{imageData.width}" data-pswp-height="{imageData.height}" >
+                        <f:render partial="Image" arguments="{image: data.image.0, imageCover: data.imageCover, imageSize: data.imagesize }"/>
                     </a>
                 </f:then>
                 <f:else if="{data.link} != '' && {data.image.0}">
                     <f:link.typolink parameter="{data.link}">
-                        <f:render partial="Image" arguments="{image: data.image.0, imageCover: data.imageCover}"/>
+                        <f:render partial="Image" arguments="{image: data.image.0, imageCover: data.imageCover, imageSize: data.imagesize}"/>
                     </f:link.typolink>
                 </f:else>
                 <f:else if="{data.lightbox} != 1 && {data.link} == '' && {data.image.0}">
-                    <f:render partial="Image" arguments="{image: data.image.0, imageCover: data.imageCover}"/>
+                    <f:render partial="Image" arguments="{image: data.image.0, imageCover: data.imageCover, imageSize: data.imagesize}"/>
                 </f:else>
                 <f:else>
                     <cb:translate key="noImageError" name="slub/imagetext"  />

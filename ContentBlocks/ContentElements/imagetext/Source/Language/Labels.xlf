@@ -15,6 +15,9 @@
 			<trans-unit id="moreLink" resname="moreLink">
 				<source>mehr</source>
 			</trans-unit>
+			<trans-unit id="clickToLightbox" resname="clickToLightbox">
+				<source>klicken um das Bild zu vergrößern</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
