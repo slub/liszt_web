@@ -1,0 +1,9 @@
+.searchResults {
+    &-totalItems {
+        grid-column: 1 / -1; // Default: spans the entire width, regardless of the number of columns
+            }
+
+    .content {
+      //  order: 1;
+    }
+}

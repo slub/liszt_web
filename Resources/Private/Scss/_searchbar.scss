@@ -1,7 +1,8 @@
 .searchbar {
-    background-color: red;
-
-
+    margin-top: calc($mobile-design-space - 1rem);
+    @include media-breakpoint-up(md) {
+        margin-top: calc($desktop-design-space - 1rem);
+    }
 
     input[type="text"] {
         flex: 1 1 auto;

@@ -15,6 +15,11 @@ fields:
     rows: 2
     cols: 10
     label: 'Rote Überschrift (zweizeilig!)'
+  - identifier: hideSearchBar
+    type: Checkbox
+    label: 'SearchBar ausblenden'
+    items:
+      - label: 'Ja'
   - identifier: showNewsTeaser
     type: Checkbox
     label: 'News Teaser anzeigen'

@@ -1,4 +1,10 @@
 form {
+    --lz-form-padding-h: 0.5rem;
+    --lz-form-padding-v: 0.7rem;
+
+
+
+
 
     .input-group {
         width: 100%;
@@ -13,17 +19,24 @@ form {
     }
 
     input {
-        padding-top: 0.6rem;
-        padding-bottom: 0.6rem;
+
+        &::placeholder {
+            color: var(--lz-tertiary-dark-blue);
+            opacity: 1;
+        }
     }
 
     input[type="text"] {
         border: 1px solid var(--lz-font-color);
+        padding: var(--lz-form-padding-h) var(--lz-form-padding-v);
+
     }
 
 
     .btn {
         font-size: 0.88rem;
+        padding: var(--lz-form-padding-h) var(--lz-form-padding-v);
+
         appearance: none;
         background-color: var(--lz-font-color-inverse);
         border: 1px solid var(--lz-font-color);
@@ -31,6 +44,13 @@ form {
         &-primary {
             &:hover, &:focus, &:active, &.active {
                 background-color: var(--lz-primary);
+                color: var(--lz-font-color-inverse);
+            }
+        }
+
+        &-black {
+            &:hover, &:focus, &:active, &.active {
+                background-color: var(--lz-font-color);
                 color: var(--lz-font-color-inverse);
             }
         }
