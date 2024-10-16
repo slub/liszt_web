@@ -1,1 +1,41 @@
+form {
+
+    .input-group {
+        width: 100%;
+        display: flex;
+        align-items: stretch;
+        position: relative;
+
+        &>:not(:first-child):not(.dropdown-menu) {
+            margin-left: -1px;
+        }
+
+    }
+
+    input {
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+    }
+
+    input[type="text"] {
+        border: 1px solid var(--lz-font-color);
+    }
+
+
+    .btn {
+        font-size: 0.88rem;
+        appearance: none;
+        background-color: var(--lz-font-color-inverse);
+        border: 1px solid var(--lz-font-color);
+
+        &-primary {
+            &:hover, &:focus, &:active, &.active {
+                background-color: var(--lz-primary);
+                color: var(--lz-font-color-inverse);
+            }
+        }
+
+    }
+
+}
 

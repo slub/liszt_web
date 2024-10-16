@@ -1,12 +1,12 @@
 .searchbar {
-  input {
-    padding-top: 0.6rem;
-    padding-bottom: 0.6rem;
-  }
+    background-color: red;
 
-  button {
-    font-size: 0.88rem;
-    appearance: none;
-  }
+
+
+    input[type="text"] {
+        flex: 1 1 auto;
+    }
+
+
 
 }
