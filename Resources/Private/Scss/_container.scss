@@ -29,7 +29,7 @@
     gap: 1rem;
 
     // frames in the 2 col Layout (with sidebar) have their own paddings because of full size grey background
-    &.sidebar-left {
+    &.sidebar-left, &.sidebar-right {
         padding-left: 0;
         padding-right: 0;
         gap: 0;
@@ -46,7 +46,7 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: $desktop-design-space;
 
-                &.sidebar-left {
+                &.sidebar-left, &.sidebar-right {
                     gap: $desktop-design-space;
 
                     @include container-paddings;
@@ -54,6 +54,16 @@
                         padding-left: 0;
                         padding-right: 0;
                     }
+                }
+
+                &.sidebar-right {
+                    .sidebar {
+                        order: 2;
+                    }
+                    .content {
+                        order: 1
+                    }
+
                 }
 
             }
@@ -64,7 +74,7 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: $desktop-design-space;
 
-                &.sidebar-left {
+                &.sidebar-left, &.sidebar-right {
                     gap: $desktop-design-space;
 
                     @include container-paddings;
@@ -72,6 +82,16 @@
                         padding-left: 0;
                         padding-right: 0;
                     }
+                }
+
+                &.sidebar-right {
+                    .sidebar {
+                        order: 2;
+                    }
+                    .content {
+                        order: 1
+                    }
+
                 }
 
             }
@@ -84,7 +104,7 @@
                 grid-template-columns: repeat(3, 1fr);
                 gap: $desktop-design-space;
 
-                &.sidebar-left {
+                &.sidebar-left, &.sidebar-right {
                     gap: $desktop-design-space;
 
                     @include container-paddings;
@@ -92,6 +112,16 @@
                         padding-left: 0;
                         padding-right: 0;
                     }
+                }
+
+                &.sidebar-right {
+                    .sidebar {
+                        order: 2;
+                    }
+                    .content {
+                        order: 1
+                    }
+
                 }
 
             }
@@ -102,7 +132,7 @@
                 grid-template-columns: repeat(3, 1fr);
                 gap: $desktop-design-space;
 
-                &.sidebar-left {
+                &.sidebar-left, &.sidebar-right {
                     gap: $desktop-design-space;
 
                     @include container-paddings;
@@ -110,6 +140,15 @@
                         padding-left: 0;
                         padding-right: 0;
                     }
+                }
+                &.sidebar-right {
+                    .sidebar {
+                        order: 2;
+                    }
+                    .content {
+                        order: 1
+                    }
+
                 }
 
 
@@ -124,12 +163,24 @@
                 grid-template-columns: repeat(4, 1fr);
                 gap: $desktop-design-space;
 
-                &.sidebar-left {
+                &.sidebar-left, &.sidebar-right {
+                    gap: $desktop-design-space;
+
                     @include container-paddings;
                     .frame {
                         padding-left: 0;
                         padding-right: 0;
                     }
+                }
+
+                &.sidebar-right {
+                    .sidebar {
+                        order: 2;
+                    }
+                    .content {
+                        order: 1
+                    }
+
                 }
 
             }
@@ -140,7 +191,9 @@
                 grid-template-columns: repeat(4, 1fr);
                 gap: $desktop-design-space;
 
-                &.sidebar-left {
+                &.sidebar-left, &.sidebar-right {
+                    gap: $desktop-design-space;
+
                     @include container-paddings;
                     .frame {
                         padding-left: 0;
@@ -148,21 +201,28 @@
                     }
                 }
 
+                &.sidebar-right {
+                    .sidebar {
+                        order: 2;
+                    }
+                    .content {
+                        order: 1
+                    }
+
+                }
+
             }
         }
     }
 }
 
+// Use the mixin to generate the specific classes for colspan like .grid-colspan-md-2, .grid-colspan-lg-3
 .grid-colspan {
-    &-md-2 {
-        @include media-breakpoint-up(md) {
-            grid-column: span 2;
-        }
-    }
-
-    &-lg-2 {
-        @include media-breakpoint-up(lg) {
-            grid-column: span 2;
+    @each $breakpoint, $columns-list in (md: (2), lg: (2, 3)) {
+        @each $columns in $columns-list {
+            &-#{$breakpoint}-#{$columns} {
+                @include grid-colspan($breakpoint, $columns);
+            }
         }
     }
 }

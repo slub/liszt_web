@@ -1,9 +1,34 @@
 .searchResults {
     &-totalItems {
         grid-column: 1 / -1; // Default: spans the entire width, regardless of the number of columns
-            }
+        font-weight: 600;
+        letter-spacing: 0.01em;
 
-    .content {
-      //  order: 1;
+        &.frame {
+            margin-bottom: 0;
+
+        }
     }
+
+    .filter-block {
+
+        h4 {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        ul {
+            font-size: $font-size-md;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 3px;
+            }
+        }
+    }
+
 }
