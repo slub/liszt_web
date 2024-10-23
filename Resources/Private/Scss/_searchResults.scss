@@ -27,23 +27,34 @@
         }
     }
 
-    .filter-block {
 
-        h4 {
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
+    .filter {
+
+        &-container {
+            position: sticky;
+            top: 1rem;
         }
-        ul {
-            font-size: $font-size-md;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            li {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin-bottom: 3px;
+
+        &-block {
+
+            h4 {
+                font-weight: 600;
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            ul {
+                font-size: $font-size-md;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 3px;
+                }
             }
         }
     }
