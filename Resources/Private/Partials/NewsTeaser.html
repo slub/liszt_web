@@ -26,9 +26,7 @@ data-namespace-typo3-fluid="true">
                             </f:link.page>
                         </div>
                         {newsEntry.teaserText -> f:format.html()}
-                        <f:link.page class="read-more" pageUid="{newsEntry.uid}">
-                            {f:translate(key: 'more', extensionName: 'liszt_web')}
-                        </f:link.page>
+                        <f:link.page class="read-more" pageUid="{newsEntry.uid}">{f:translate(key: 'more', extensionName: 'liszt_web')}</f:link.page>
                     </div>
                 </f:for>
             </div>

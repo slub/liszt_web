@@ -1,21 +1,33 @@
-// most styles of newslist are in cb-pageteaser beacause we use this format at the moment, later we switch to masonry layout here
-
 
 .cb-newslist {
 
-    .cb-pageteaser {
-        border-bottom: 1px solid var(--lz-gray);
+    &-item {
+        margin-bottom: 4rem;
+        break-inside: avoid-column;
+
+        &-body {
+            p {
+                margin-bottom: 0;
+                display: inline;
+            }
+            .read-more {
+
+            }
+        }
     }
 
-    .cb-pageteaser:first-of-type {
-        padding-top: 0;
+    &-image {
+        margin-bottom: 1rem;
+        img {
+            width: 100%;
+            height: auto;
+        }
     }
 
-    .cb-pageteaser:last-of-type {
- //       border-bottom: none;
-
+    .cb-pageteaser-title {
+        padding-bottom: 4px;
     }
-
-
 
 }
+
+

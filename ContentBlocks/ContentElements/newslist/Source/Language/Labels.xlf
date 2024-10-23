@@ -10,7 +10,7 @@
 				<source>Ausgabe aller News in der Übersicht</source>
 			</trans-unit>
 			<trans-unit id="moreLink" resname="moreLink">
-				<source>mehr</source>
+				<source>Mehr</source>
 			</trans-unit>
 			<trans-unit id="ariaPagerLabel" resname="ariaPagerLabel">
 				<source>Pagination, Seiten Navigation</source>

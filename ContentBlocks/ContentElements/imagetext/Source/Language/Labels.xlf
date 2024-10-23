@@ -13,7 +13,7 @@
 				<source>Kein Bild ausgewählt!</source>
 			</trans-unit>
 			<trans-unit id="moreLink" resname="moreLink">
-				<source>mehr</source>
+				<source>Mehr</source>
 			</trans-unit>
 			<trans-unit id="clickToLightbox" resname="clickToLightbox">
 				<source>klicken um das Bild zu vergrößern</source>

@@ -232,4 +232,20 @@
 }
 
 
+// Masonry Layout (News Overview)
+// ToDo: refactor later if browser support ist good, from "fake masonry" to "real masonry" (grid-template-rows: masonry)
+.masonry {
+
+    @include media-breakpoint-up(md) {
+        columns: 2;
+        column-gap: $desktop-design-space;
+    }
+
+    @include media-breakpoint-up(lg) {
+        columns: 3;
+        column-gap: $desktop-design-space;
+    }
+
+
+}
 
