@@ -6,7 +6,17 @@
 
     input[type="text"] {
         flex: 1 1 auto;
+
+        &::placeholder {
+            font-size: $font-size-sm;
+        }
     }
+
+    .btn {
+        font-size: $font-size-sm;
+    }
+
+
 
 
 
