@@ -15,6 +15,6 @@ if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('iconpack')) {
     \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
         \Quellenform\Iconpack\IconpackRegistry::class
     )->registerIconpack(
-        'EXT:liszt_web/Configuration/Iconpack/LisztIconpack.yaml'
+        'EXT:liszt_web/Configuration/Iconpack/LisztIconpack.yaml',
     );
 }

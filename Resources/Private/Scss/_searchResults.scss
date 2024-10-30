@@ -13,6 +13,7 @@
             border-bottom: 1px solid var(--lz-gray);
             margin-bottom: $mobile-design-space;
             padding-bottom: $mobile-design-space;
+            position: relative;
 
             // last item without border bottom
             &:last-child {
@@ -22,6 +23,7 @@
             @include media-breakpoint-up(md) {
                 margin-bottom: $desktop-design-space;
                 padding-bottom: $desktop-design-space;
+                margin-left: $desktop-design-space;
             }
 
 
@@ -34,6 +36,7 @@
         &-title {
             line-height: 1.2;
             margin-bottom: 0.6rem;
+            position: relative;
         }
 
         &-details {
@@ -42,6 +45,26 @@
             letter-spacing: 0.01em;
             line-height: 1.2;
         }
+
+        &-icon {
+            position: absolute;
+            left: calc($desktop-design-space * -1);
+            width: 28px;
+            height: 2rem;
+            top: 0;
+            display: flex;
+            align-items: center;
+
+            svg.iconpack {
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+
+
+            }
+        }
+
+
     }
 
 
