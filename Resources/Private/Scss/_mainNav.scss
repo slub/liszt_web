@@ -9,7 +9,7 @@
     appearance: none;
   }
 
-    // ToDo: maybe remove this extra .offcanvas later and move it in the main.scss
+    // ToDo: maybe extract .offcanvas later as mixin (second use with other breakpoint in filter.scss)
     &.offcanvas {
         flex-direction: column;
         visibility: hidden;
@@ -174,9 +174,10 @@
         }
 
         .nav-link-text {
-            padding: 0.2rem 0.2rem;
+            padding: 0.15rem 0.2rem;
             letter-spacing: 0.06em;
             font-weight: 500;
+            display: block;
         }
 
         .dropdown {

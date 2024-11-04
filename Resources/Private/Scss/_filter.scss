@@ -1,0 +1,114 @@
+
+.filter {
+
+    &-toggler {
+        @include media-breakpoint-up(#{$SearchResultsMultiCol}) {
+            display: none;
+        }
+    }
+
+    &-container {
+        // ToDo: maybe extract .offcanvas later as mixin (second use with other breakpoint in mainNav.scss)
+        &.offcanvas {
+                visibility: hidden;
+                display: flex;
+                flex-direction: column;
+                background-color: var(--lz-offcanvas-bg);
+                background-clip: padding-box;
+                outline: 0;
+                box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+                top: 0;
+                right: 0;
+                width: 350px;
+                border-left: 1px solid var(--lz-gray);
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+                position: fixed;
+                bottom: 0;
+                z-index: 100;
+                max-width: 100%;
+
+                @include media-breakpoint-up(#{$SearchResultsMultiCol}) {
+                    position: sticky;
+                    display: block;
+                    top: 1rem;
+                    z-index: auto;
+                    width: auto;
+                    height: auto;
+                    visibility: visible;
+                    background-color: transparent;
+                    border: 0;
+                    transform: none;
+                    box-shadow: none;
+                    transition: none;
+                }
+
+                &.showing,
+                &.show:not(.hiding) {
+                    transform: none;
+                }
+
+                &.showing,
+                &.hiding,
+                &.show {
+                    visibility: visible;
+                }
+            }
+
+        .offcanvas-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 1rem 1rem 1rem;
+            @include media-breakpoint-up(#{$SearchResultsMultiCol}) {
+                display: none;
+            }
+        }
+
+        .offcanvas-body {
+            flex-grow: 1;
+          //  padding: 0 1rem 1rem 1rem;
+            overflow-y: auto;
+            justify-content: flex-end;
+            @include media-breakpoint-up(#{$SearchResultsMultiCol}) {
+                display: block;
+                flex-grow: 0;
+                padding: 0;
+                overflow-y: visible;
+                background-color: transparent;
+            }
+        }
+
+        .offcanvas-title {
+            margin-bottom: 0;
+            text-transform: uppercase;
+        }
+
+
+    }
+
+    &-block {
+
+        h4 {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.01em;
+        }
+
+        ul {
+            font-size: $font-size-md;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                display: flex;
+                font-weight: 400;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 3px;
+            }
+        }
+    }
+}
