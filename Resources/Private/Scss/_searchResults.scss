@@ -13,11 +13,19 @@
             border-bottom: 1px solid var(--lz-gray);
             margin-bottom: $mobile-design-space;
             padding-bottom: $mobile-design-space;
+            padding-top: $mobile-design-space;
             position: relative;
 
-            // last item without border bottom
+
+
+        // last item without border bottom
             &:last-child {
                 border-bottom: none;
+            }
+
+            @include media-breakpoint-up(sm) {
+                margin-left: $desktop-design-space;
+                padding-top: 0;
             }
 
             @include media-breakpoint-up(md) {
@@ -36,7 +44,9 @@
         &-title {
             line-height: 1.2;
             margin-bottom: 0.6rem;
-            position: relative;
+            @include media-breakpoint-up(sm) {
+                position: relative;
+            }
         }
 
         &-details {
@@ -48,20 +58,34 @@
 
         &-icon {
             position: absolute;
-            left: calc($desktop-design-space * -1);
-            width: 28px;
-            height: 2rem;
             top: 0;
-            display: flex;
-            align-items: center;
+            left: 0;
+            display: block;
+            height: 27px;
+            width: 27px;
 
             svg.iconpack {
-                width: 100%;
-                height: auto;
+                width: auto;
+                height: 100%;
                 margin-right: 0;
-
-
             }
+
+
+            @include media-breakpoint-up(sm) {
+                position: absolute;
+                display: flex;
+                left: calc($desktop-design-space * -1);
+                width: 28px;
+                height: 2rem;
+                align-items: center;
+
+                svg.iconpack {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+
         }
 
 
