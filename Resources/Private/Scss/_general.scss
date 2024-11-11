@@ -17,6 +17,18 @@
     @include visually-hidden;
 }
 
+/*.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+}*/
+
 
 // change color on svg icons via url is only possible with mask, maybe a iconfont is better for this or inline svg in html
 // also word breaks can happen between last word and icon

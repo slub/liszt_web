@@ -2,14 +2,19 @@
 
     &-info {
         grid-column: 1 / -1; // Default: spans the entire width, regardless of the number of columns
-        font-weight: 600;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
 
-        &-total-items {
-            letter-spacing: 0.01em;
+        &-total {
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &-items {
+                letter-spacing: 0.01em;
+            }
+
         }
+
         &.frame {
             margin-bottom: $mobile-design-space;
             @include media-breakpoint-up(#{$SearchResultsMultiCol}) {
@@ -17,6 +22,52 @@
             }
         }
     }
+
+    &-filtertags {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.3rem;
+        margin-top: 1rem;
+
+        &-tag {
+            white-space: nowrap;
+            border: 1px solid var(--lz-font-color);
+            padding: 0.4em 0.3em 0.3em 0.5em;
+            font-size: $font-size-sm;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            line-height: 1;
+          //  text-transform: uppercase;
+
+            a {
+                appearance: none;
+                display: inline-flex;
+                width: 1em;
+                height: 1em;
+                text-decoration: none;
+                vertical-align: middle;
+
+             //   border-radius: 9999px;
+             //   padding: 0.25rem;
+                color: var(--lz-font-color);
+                &:hover {
+                    color: var(--lz-primary);
+                }
+
+                svg {
+                    width: 0.7rem;
+                    height: 0.7rem;
+                    vertical-align: middle;
+                    display: block;
+                }
+            }
+        }
+    }
+
+
+
 
 
     &-item {
@@ -102,5 +153,6 @@
     }
 
 
-
 }
+
+
