@@ -73,6 +73,7 @@ page {
     // Define partial paths
     partialRootPaths {
       10 = EXT:liszt_web/Resources/Private/Partials/
+      20 = EXT:liszt_common/Resources/Private/Partials/
     }
 
     // Define layout paths

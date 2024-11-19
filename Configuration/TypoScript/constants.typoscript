@@ -1,4 +1,5 @@
 @import 'EXT:seo/Configuration/TypoScript/XmlSitemap/constants.typoscript'
+@import 'EXT:liszt_bibliography/Configuration/TypoScript/constants.typoscript'
 
 // Constants from this extension and overwrites for other extensions
 @import 'EXT:liszt_web/Configuration/TypoScript/Constants/*.typoscript'

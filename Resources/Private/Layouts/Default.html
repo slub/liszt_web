@@ -6,11 +6,9 @@
 
 <f:render partial="Header" arguments="{_all}" />
 
-<f:comment><!-- Show Searchbar if Frontend Layout 4 is selected, changed from != to == -->
-<f:if condition="{selectedFrontendLayout} == '4'">
+<f:if condition="{data.showSearchBar} == '1'">
     <f:render partial="SearchBar" arguments="{_all}" />
 </f:if>
-</f:comment>
 
 
 <f:if condition="{pageId} != '1'">
