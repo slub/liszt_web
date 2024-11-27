@@ -1,5 +1,5 @@
-.pagination {
-
+// ToDo: merge news pagination and search results pagination to one uniform pagination style?
+.news-pagination {
     list-style-type: none;
     display: flex;
     margin: 2rem 0 0 0;
@@ -31,6 +31,54 @@
             color: var(--lz-primary);
         }
     }
+}
 
+
+.searchresults-pagination {
+    display: flex;
+    justify-content: center;
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+
+
+        li {
+            display: inline-flex;
+            border: 1px solid var(--lz-font-color);
+            border-left: none;
+            flex-shrink: 0;
+
+            &:first-child {
+                border-left: 1px solid var(--lz-font-color);
+            }
+
+            &.hide-mobile {
+                display: none;
+                @include media-breakpoint-up(lg) {
+                    display: inline-flex;
+                }
+            }
+
+            &.current a {
+                font-weight: 600;
+                color: var(--lz-primary);
+                cursor: default;
+            }
+
+            a, .dots {
+                padding: 0.8em 1em 0.6em 1em;
+                font-size: $font-size-sm;
+                line-height: 1;
+                &:before {
+                    content: none;
+                }
+
+            }
+        }
+    }
 
 }

@@ -5,7 +5,7 @@
       data-namespace-typo3-fluid="true">
 
 <f:comment>ToDo: eventually use the SlidingWindowPagination</f:comment>
-<ul class="pagination" aria-label="{cb:translate(key: 'ariaPagerLabel', name: 'slub/newslist')}">
+<ul class="news-pagination" aria-label="{cb:translate(key: 'ariaPagerLabel', name: 'slub/newslist')}">
         <f:if condition="{currentPage} > 1">
             <li class="page-item">
                 <f:link.page additionalParams="{page: '{currentPage - 1}'}" title="{cb:translate(key: 'previousPage', name: 'slub/newslist')} ({currentPage -1})" class="page-icon no-link-icon">
