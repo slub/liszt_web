@@ -4,8 +4,8 @@
     xmlns:vac="http://typo3.org/ns/Praetorius/ViteAssetCollector/ViewHelpers"
 >
 <f:layout name="Default"/>
-
 <f:section name="Main">
+
     <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.hasContent', data: '{colPos: 0}')}">
         <main role="main" id="page-content">
             <div class="container-xl sidebar-left grid grid-3col-md">
@@ -15,7 +15,7 @@
                     </div>
                     {f:cObject(typoscriptObjectPath: 'lib.dynamicContent', data: '{colPos: 1, slide: -1, max: 1}')}
                 </aside>
-                <article class="content grid-colspan-md-2">
+                <article class="content grid-colspan-md-2" style="view-transition-name: news-item-{pageId};">
                     <header class="news-header frame">
                     <h2>{f:if(condition: data.headline, then: data.headline, else: data.title )}</h2>
                     <f:if condition="{data.newsdate}">

@@ -127,3 +127,27 @@ headerData.20.value (
 )
 headerData.20.insertData = 1
 }
+
+// apply an extra style for news page and all subpages for view transitions
+[{$liszt_web.newsUid} in tree.rootLineIds]
+  page {
+    cssInline {
+      10 = TEXT
+      10.value (
+            @view-transition {
+              navigation: auto;
+            }
+            ::view-transition-new(news-item-*) {
+            animation-duration: 0.5s;
+            }
+            ::view-transition-old(news-item-*) {
+            animation-duration: 0.1s;
+            }
+      )
+    }
+  }
+[end]
+
+
+
+

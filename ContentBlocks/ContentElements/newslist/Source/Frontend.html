@@ -15,7 +15,7 @@
         <f:variable name="pagination"><lw:newsPagination paginator="{paginator}" /></f:variable>
 
         <f:for each="{paginator.paginatedItems}" as="newsItem">
-            <div class="cb-newslist-item">
+            <div class="cb-newslist-item" style="view-transition-name: news-item-{newsItem.data.uid};">
                 <div class="cb-newslist-image">
                     <f:if condition="{newsItem.data.teaserImage.0}">
                         <f:link.page pageUid="{newsItem.data.uid}">
