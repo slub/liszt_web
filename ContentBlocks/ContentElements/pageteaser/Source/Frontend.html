@@ -24,9 +24,11 @@
         </div>
         <div class="grid-colspan-md-2">
             <div class="cb-pageteaser-header">
+                <f:link.page pageUid="{pageTeaser.0.data.uid}">
                 <h3 class="cb-pageteaser-title">
                     {pageTeaser.0.data.title}
                 </h3>
+                </f:link.page>
                 <f:if condition="{pageTeaser.0.data.newsdate}">
                     <span class="cb-pageteaser-date"><f:format.date format="d.m.Y">{pageTeaser.0.data.newsdate}</f:format.date></span>
                 </f:if>
