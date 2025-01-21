@@ -14,7 +14,8 @@
                         </f:then>
                         <f:else>
                             <div class="page-header-image">
-                                <f:image class="img-fluid" src="EXT:liszt_web/Resources/Public/Images/Liszt-Kopf-2.gif" alt="Franz Liszt Porträt Foto" />
+                                <f:variable name="head-image-name" value="{data.lisztHeadImage -> f:if(condition: data.lisztHeadImage, then: data.lisztHeadImage, else: 'Liszt-Kopf-2')}" />
+                                <f:image class="img-fluid" src="EXT:liszt_web/Resources/Public/Images/{head-image-name}.gif" alt="Franz Liszt Porträt Foto" />
                             </div>
                         </f:else>
                     </f:if>

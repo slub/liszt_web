@@ -1,7 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
 <header id="page-header" class="page-header navbar">
-
     <div class="container-xl page-header-container">
         <f:link.page pageUid="{rootPage}" class="page-header-logo" title="{f:translate(key: 'inline-labels.liszt_web.toHome', extensionName: 'liszt_web')}">
             <f:image src="EXT:liszt_web/Resources/Public/Icons/LogoLisztPortal.svg" alt="Logo Liszt Portal" />
@@ -14,10 +13,11 @@
             </div>
             </f:then>
             <f:else>
+                <f:variable name="head-image-name" value="{data.lisztHeadImage -> f:if(condition: data.lisztHeadImage, then: data.lisztHeadImage, else: 'Liszt-Kopf-2')}" />
                 <div class="page-header-image">
-                <img src="{f:uri.resource(path:'EXT:liszt_web/Resources/Public/Images/Liszt-Kopf-2.gif', extensionName: 'liszt_web')}" width="720" height="739" alt="Franz Liszt Porträt Foto, Quelle: Klassik Stiftung Weimar"
-                     srcset="{f:uri.resource(path:'EXT:liszt_web/Resources/Public/Images/Liszt-Kopf-2-sm.gif', extensionName: 'liszt_web')} 300w,
-                              {f:uri.resource(path:'EXT:liszt_web/Resources/Public/Images/Liszt-Kopf-2.gif', extensionName: 'liszt_web')} 720w"
+                <img src="{f:uri.resource(path:'EXT:liszt_web/Resources/Public/Images/{head-image-name}.gif', extensionName: 'liszt_web')}" width="720" height="739" alt="Franz Liszt Porträt Foto, Quelle: Klassik Stiftung Weimar"
+                     srcset="{f:uri.resource(path:'EXT:liszt_web/Resources/Public/Images/{head-image-name}-sm.gif', extensionName: 'liszt_web')} 300w,
+                              {f:uri.resource(path:'EXT:liszt_web/Resources/Public/Images/{head-image-name}.gif', extensionName: 'liszt_web')} 720w"
                     sizes="(max-width: 991px) 20vw, (max-width:2000px) 30vw, 30vw"
                 />
                 </div>
