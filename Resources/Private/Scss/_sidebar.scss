@@ -4,7 +4,7 @@
  // Todo: mark active link in sidebar via JS and als if scroll position is in section ( Intersection_Observer_API ?)
     // insert the js script only if the sidebar menu ist used
 
-    .frame-type-menu_section {
+    .frame-type-menu_section, .frame-type-menu_section_pages  {
         position: sticky;
         top : 1rem;
         h2, h3, h4 {
