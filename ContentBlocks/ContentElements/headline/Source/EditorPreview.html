@@ -1,0 +1,31 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:cb="http://typo3.org/ns/TYPO3/CMS/ContentBlocks/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+    xmlns:i="http://typo3.org/ns/Quellenform/Iconpack/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:if condition="{data.subLink}">
+    <span>Link: {data.subLink}</span>
+</f:if>
+<f:comment>
+    <div class="row">
+        <div class="col">
+            <h2>{data.header}</h2>
+            <f:if condition="{data.subheader}">
+               <span>{data.subheader}</span>
+            </f:if>
+            <f:if condition="{data.subLink}">
+                <span>Link: {data.subLink}</span>
+            </f:if>
+        </div>
+    </div>
+</f:comment>
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+name: slub/headline
+typeName: slub_headline
+group: liszt_portal
+prefixFields: true
+prefixType: full
+basics:
+  - TYPO3/Links
+  - TYPO3/Appearance
+
+fields:
+  - identifier: header
+    useExistingField: true
+    label: 'Überschrift'
+  - identifier: subheader
+    useExistingField: true
+    label: 'Sub'
+  - identifier: header_layout
+    useExistingField: true
+    label: 'Typ'
+  - identifier: subLink
+    type: Link
+    label: 'Link auf Sub (optional)'

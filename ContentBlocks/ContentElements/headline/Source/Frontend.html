@@ -1,0 +1,25 @@
+<html
+    data-namespace-typo3-fluid="true"
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:cb="http://typo3.org/ns/TYPO3/CMS/ContentBlocks/ViewHelpers"
+>
+<f:layout name="Default"/>
+<f:section name="Header"/>
+<f:section name="Main">
+
+    <f:if condition="{data.header}">
+        <f:render partial="Header/Header" arguments="{
+                header: data.header,
+                layout: data.header_layout,
+                positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')} {f:if(condition: data.subheader, then: \' with-sub\')}',
+                link: data.header_link,
+                default: settings.defaultHeaderType}" />
+    </f:if>
+
+    <f:if condition="{data.subheader}">
+    <span class="slub_headline-sub">
+     <f:link.typolink parameter="{data.subLink}">{data.subheader}</f:link.typolink>
+    </span>
+    </f:if>
+
+</f:section>

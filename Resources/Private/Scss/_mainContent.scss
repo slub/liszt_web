@@ -36,6 +36,28 @@ main {
         margin-top: -1rem;
     }
 
+
+    // show sub like date in news
+    h1, h2, h3, h4, h5, h6 {
+        &.with-sub {
+            margin-bottom: 0;
+        }
+    }
+
+    .slub_headline-sub {
+        font-weight: 500;
+        letter-spacing: 0.03em;
+
+        a {
+            color: var(--lz-font-color);
+            text-decoration: none;
+
+            &:hover, &:focus {
+                color: var(--lz-primary);
+            }
+        }
+    }
+
     // margins between content elements in main
     .frame {
         margin-bottom: $mobile-design-space;
