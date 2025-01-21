@@ -15,7 +15,7 @@
                 <h3>{group.groupname}</h3>
                 <div class="team-members grid-colspan-md-2">
                     <f:for each="{group.persons}" as="member" iteration="member-iterator">
-                        <div class="team-member">
+                        <div class="team-member" id="team-member-{member.uid}">
                             <f:if condition="{member.image}">
                                 <f:image image="{member.image.0}" loading="lazy" />
                             </f:if>
