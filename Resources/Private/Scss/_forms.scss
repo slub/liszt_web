@@ -30,28 +30,28 @@ form {
     }
 
 
-    .btn {
-        font-size: 0.88rem;
-        padding: var(--lz-form-padding-h) var(--lz-form-padding-v);
+}
 
-        appearance: none;
-        background-color: var(--lz-font-color-inverse);
-        border: 1px solid var(--lz-font-color);
+.btn {
+    font-size: 0.88rem;
+    padding: var(--lz-form-padding-h) var(--lz-form-padding-v);
 
-        &-primary {
-            &:hover, &:focus, &:active, &.active {
-                background-color: var(--lz-primary);
-                color: var(--lz-font-color-inverse);
-            }
+    appearance: none;
+    background-color: var(--lz-font-color-inverse);
+    border: 1px solid var(--lz-font-color);
+
+    &-primary {
+        &:hover, &:focus, &:active, &.active {
+            background-color: var(--lz-primary);
+            color: var(--lz-font-color-inverse);
         }
+    }
 
-        &-black {
-            &:hover, &:focus, &:active, &.active {
-                background-color: var(--lz-font-color);
-                color: var(--lz-font-color-inverse);
-            }
+    &-black {
+        &:hover, &:focus, &:active, &.active {
+            background-color: var(--lz-font-color);
+            color: var(--lz-font-color-inverse);
         }
-
     }
 
 }

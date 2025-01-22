@@ -105,3 +105,27 @@ if (targetLinks.length > 0) {
 
 }
 
+
+// Toggle Facet Filters
+const filterToggler = document.querySelectorAll('.filter-block-toggler');
+
+filterToggler.forEach((button) => {
+  // event listener for each button
+  button.addEventListener('click', () => {
+    // find ul element next to button
+    const ulElement = button.previousElementSibling;
+
+    ulElement.classList.toggle('showMore');
+
+    const isExpanded = ulElement.classList.contains('showMore');
+    button.setAttribute('aria-expanded', isExpanded);
+
+    // ToDo: translation?
+    button.textContent = isExpanded ? 'Weniger anzeigen' : 'Mehr anzeigen';
+  });
+
+  // Initiales ARIA-Setup: Setze aria-expanded auf "false", wenn es noch nicht existiert
+  if (!button.hasAttribute('aria-expanded')) {
+    button.setAttribute('aria-expanded', 'false');
+  }
+});
