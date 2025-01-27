@@ -122,9 +122,17 @@ filterToggler.forEach((button) => {
 
     // ToDo: translation?
     button.textContent = isExpanded ? 'Weniger anzeigen' : 'Mehr anzeigen';
+
+    // set focus for keyboard navigation to first element
+    const firstNewItem = ulElement.querySelector('.hidden');
+    if (firstNewItem) {
+      firstNewItem.setAttribute('tabindex', '-1'); // prepare focus
+      firstNewItem.focus();
+    }
+
   });
 
-  // Initiales ARIA-Setup: Setze aria-expanded auf "false", wenn es noch nicht existiert
+  // initial ARIA-Setup: set aria-expanded to "false", if not already done
   if (!button.hasAttribute('aria-expanded')) {
     button.setAttribute('aria-expanded', 'false');
   }
