@@ -40,6 +40,7 @@ form {
     appearance: none;
     background-color: var(--lz-font-color-inverse);
     border: 1px solid var(--lz-font-color);
+    cursor: pointer;
 
     &-primary {
         &:hover, &:focus, &:active, &.active {
