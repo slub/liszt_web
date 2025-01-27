@@ -18,6 +18,8 @@ fields:
           value: Liszt-Kopf-1
         - label: 'Kopf2 (am Klavier)'
           value: Liszt-Kopf-2
+        - label: '404 Kopf (Karikatur)'
+          value: Liszt-Kopf-404
     - identifier: headline
       type: Textarea
       rows: 2
