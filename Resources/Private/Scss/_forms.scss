@@ -26,6 +26,7 @@ form {
     input[type="text"] {
         border: 1px solid var(--lz-font-color);
         padding: var(--lz-form-padding-h) var(--lz-form-padding-v);
+        border-radius: 0;
 
     }
 
@@ -35,7 +36,7 @@ form {
 .btn {
     font-size: 0.88rem;
     padding: var(--lz-form-padding-h) var(--lz-form-padding-v);
-
+    color: var(--lz-font-color);
     appearance: none;
     background-color: var(--lz-font-color-inverse);
     border: 1px solid var(--lz-font-color);
