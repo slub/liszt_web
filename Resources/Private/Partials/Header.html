@@ -13,7 +13,7 @@
             </div>
             </f:then>
             <f:else>
-                <f:variable name="head-image-name" value="{data.lisztHeadImage -> f:if(condition: data.lisztHeadImage, then: data.lisztHeadImage, else: 'Liszt-Kopf-2')}" />
+                <f:variable name="head-image-name" value="{data.lisztHeadImage -> f:if(condition: data.lisztHeadImage, then: data.lisztHeadImage, else: 'Liszt-Kopf-1')}" />
                 <div class="page-header-image">
                 <img src="{f:uri.resource(path:'EXT:liszt_web/Resources/Public/Images/{head-image-name}.gif', extensionName: 'liszt_web')}" width="720" height="739" alt="Franz Liszt Porträt Foto, Quelle: Klassik Stiftung Weimar"
                      srcset="{f:uri.resource(path:'EXT:liszt_web/Resources/Public/Images/{head-image-name}-sm.gif', extensionName: 'liszt_web')} 300w,
