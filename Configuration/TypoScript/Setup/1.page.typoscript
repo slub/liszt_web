@@ -1,5 +1,8 @@
-
-
+// spam protect e-mail addresses build in in typo3 since v12
+// https://docs.typo3.org/m/typo3/reference-typoscript/main/en-us/TopLevelObjects/Config.html#confval-config-spamprotectemailaddresses
+config {
+  spamProtectEmailAddresses = -2
+}
 
 // Configure Page of typeNum=0 (default)
 page = PAGE

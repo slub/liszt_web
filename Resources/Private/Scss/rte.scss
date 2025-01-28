@@ -32,6 +32,7 @@ a[href^=http] {
     }
 }
 
+
 a:not([href^="mailto:"]):not([href^=http])::before {
     background-color: currentColor;
     content: "";
