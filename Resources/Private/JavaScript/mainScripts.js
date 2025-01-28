@@ -106,6 +106,20 @@ if (targetLinks.length > 0) {
 }
 
 
+/**
+ * Retrieves the translation from the TYPO3.lang object.
+ * @param {string} key - The key of the translation (e.g., "liszt_web.show-more").
+ * @param {string} fallback - The default value if the key does not exist.
+ * @returns {string} - The translated text or the fallback.
+ */
+function getTranslation(key, fallback = '') {
+  if (TYPO3 && TYPO3.lang && typeof TYPO3.lang[key] !== 'undefined') {
+    return TYPO3.lang[key];
+  }
+  return fallback; // Return value in case the key is missing
+}
+
+
 // Toggle Facet Filters
 const filterToggler = document.querySelectorAll('.filter-block-toggler');
 
@@ -145,8 +159,10 @@ function toggleFilterBlock(button) {
   const isExpanded = ulElement.classList.contains('showMore');
   button.setAttribute('aria-expanded', isExpanded);
 
-  // ToDo: translation?
-  button.textContent = isExpanded ? 'Weniger anzeigen' : 'Mehr anzeigen';
+  // Translation from inlineLanguageLabelFiles in 1.page.typoscript
+  button.textContent = isExpanded
+    ? getTranslation('liszt_web.show-less', 'Wenigerxx anzeigen')
+    : getTranslation('liszt_web.show-more', 'Mehrxx anzeigen');
 
   // set focus for keyboard navigation to first element
   const firstNewItem = ulElement.querySelector('.hidden');

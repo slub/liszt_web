@@ -11,6 +11,14 @@
 				<source>zur Startseite</source>
 			</trans-unit>
 
+			<trans-unit id="inline-labels.liszt_web.show-more">
+				<source>Mehr anzeigen</source>
+			</trans-unit>
+
+			<trans-unit id="inline-labels.liszt_web.show-less">
+				<source>Weniger anzeigen</source>
+			</trans-unit>
+
 			<trans-unit id="mainMenuLabel">
 				<source>Hauptmenü</source>
 			</trans-unit>
@@ -22,9 +30,6 @@
 			</trans-unit>
 			<trans-unit id="more">
 				<source>Mehr</source>
-			</trans-unit>
-			<trans-unit id="show-more">
-				<source>Mehr anzeigen</source>
 			</trans-unit>
 			<trans-unit id="sidebarNavTitle">
 				<source>Inhaltsverzeichnis</source>
