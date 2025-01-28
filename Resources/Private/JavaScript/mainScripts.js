@@ -112,23 +112,19 @@ const filterToggler = document.querySelectorAll('.filter-block-toggler');
 filterToggler.forEach((button) => {
   // event listener for each button
   button.addEventListener('click', () => {
-    // find ul element next to button
-    const ulElement = button.previousElementSibling;
 
-    ulElement.classList.toggle('showMore');
+    // view transition animation
+    // Fallback for browsers that don't support this API:
+  //  if (!document.startViewTransition) {
+      toggleFilterBlock(button);
+ //     return;
+  //  }
 
-    const isExpanded = ulElement.classList.contains('showMore');
-    button.setAttribute('aria-expanded', isExpanded);
-
-    // ToDo: translation?
-    button.textContent = isExpanded ? 'Weniger anzeigen' : 'Mehr anzeigen';
-
-    // set focus for keyboard navigation to first element
-    const firstNewItem = ulElement.querySelector('.hidden');
-    if (firstNewItem) {
-      firstNewItem.setAttribute('tabindex', '-1'); // prepare focus
-      firstNewItem.focus();
-    }
+    // With a View Transition:
+/*    document.startViewTransition(() => {
+      console.log("startViewTransition wird ausgeführt");
+      toggleFilterBlock(button);
+    });*/
 
   });
 
@@ -136,4 +132,28 @@ filterToggler.forEach((button) => {
   if (!button.hasAttribute('aria-expanded')) {
     button.setAttribute('aria-expanded', 'false');
   }
+
 });
+
+function toggleFilterBlock(button) {
+
+  // find ul element next to button
+  const ulElement = button.previousElementSibling;
+
+  ulElement.classList.toggle('showMore');
+
+  const isExpanded = ulElement.classList.contains('showMore');
+  button.setAttribute('aria-expanded', isExpanded);
+
+  // ToDo: translation?
+  button.textContent = isExpanded ? 'Weniger anzeigen' : 'Mehr anzeigen';
+
+  // set focus for keyboard navigation to first element
+  const firstNewItem = ulElement.querySelector('.hidden');
+  if (firstNewItem) {
+    firstNewItem.setAttribute('tabindex', '-1'); // prepare focus
+    firstNewItem.focus();
+  }
+
+
+}

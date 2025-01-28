@@ -1,3 +1,7 @@
+/*html::view-transition-group(.filterblock) {
+    animation-duration: 0.5s;
+  //  animation-timing-function: ease-in-out;
+}*/
 
 .filter {
 
@@ -100,6 +104,7 @@
             list-style: none;
             padding: 0;
             margin: 0;
+      //      view-transition-class: filterblock;
 
             li.hidden {
                 display: none;
@@ -188,6 +193,6 @@
     }
 
 
-
-
 }
+
+
