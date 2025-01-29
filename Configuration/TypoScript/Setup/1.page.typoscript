@@ -132,20 +132,21 @@ headerData.20.insertData = 1
 }
 
 // apply an extra style for news page and all subpages for view transitions
+// set config to write this css inline in page header instead in extra file
+config {
+  inlineStyle2TempFile = 0
+}
+// only for users without reduced motion sickness
 [{$liszt_web.newsUid} in tree.rootLineIds]
   page {
     cssInline {
       10 = TEXT
       10.value (
+      @media screen and (prefers-reduced-motion: no-preference) {
             @view-transition {
               navigation: auto;
             }
-            ::view-transition-new(news-item-*) {
-            animation-duration: 0.5s;
-            }
-            ::view-transition-old(news-item-*) {
-            animation-duration: 0.1s;
-            }
+      }
       )
     }
   }

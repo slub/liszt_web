@@ -15,7 +15,7 @@
         <f:variable name="pagination"><lw:newsPagination paginator="{paginator}" /></f:variable>
 
         <f:for each="{paginator.paginatedItems}" as="newsItem">
-            <div class="cb-newslist-item" style="view-transition-name: news-item-{newsItem.data.uid};">
+            <div class="cb-newslist-item">
                 <div class="cb-newslist-image">
                     <f:if condition="{newsItem.data.teaserImage.0}">
                         <f:link.page pageUid="{newsItem.data.uid}">
@@ -32,15 +32,15 @@
                 <div class="grid-colspan-md-2">
                     <div class="cb-pageteaser-header">
                         <f:link.page pageUid="{newsItem.data.uid}">
-                        <h3 class="cb-pageteaser-title">
+                        <h3 class="cb-pageteaser-title" style="view-transition-name: news-headline-{newsItem.data.uid};">
                             {f:if(condition: newsItem.data.headline, then: newsItem.data.headline, else: newsItem.data.title )}
                         </h3>
                         <f:if condition="{newsItem.data.newsdate}">
-                                <span class="cb-pageteaser-date"><f:format.date format="d.m.Y">{newsItem.data.newsdate}</f:format.date></span>
+                                <span class="cb-pageteaser-date" style="view-transition-name: news-date-{newsItem.data.uid};"><f:format.date format="d.m.Y">{newsItem.data.newsdate}</f:format.date></span>
                         </f:if>
                         </f:link.page>
                     </div>
-                    <div class="cb-newslist-item-body">
+                    <div class="cb-newslist-item-body" style="view-transition-name: news-text-{newsItem.data.uid};">
                             {newsItem.data.teaserText -> f:format.html()}&nbsp;&nbsp;<f:link.page class="read-more" pageUid="{newsItem.data.uid}"><cb:translate key="moreLink" name="slub/newslist" /></f:link.page>
                     </div>
                 </div>

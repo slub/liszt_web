@@ -8,25 +8,35 @@
         grid-template-columns: min-content auto min-content;
         grid-template-areas:
             "logo logo hamburger"
+            "title title title";
+        @include media-breakpoint-up(#{$navbar-expand}) {
+            grid-template-areas:
+            "logo logo mainnav"
+            "title title title";
+        }
+
+            &.with-portrait {
+            grid-template-areas:
+            "logo logo hamburger"
             "image title title";
 
-
-        @include media-breakpoint-up(#{$navbar-expand}) {
-            height: 300px;
-            grid-template-columns: min-content auto 1fr;
-            grid-template-areas:
+            @include media-breakpoint-up(#{$navbar-expand}) {
+                height: 300px;
+                grid-template-columns: min-content auto 1fr;
+                grid-template-areas:
             "logo image mainnav"
             ". image title";
+            }
+
+            @include media-breakpoint-up(xl) {
+                height: 400px;
+            }
+            @include media-breakpoint-up(xxl) {
+                height: 500px;
+            }
         }
 
-        @include media-breakpoint-up(xl) {
-            height: 400px;
-        }
-        @include media-breakpoint-up(xxl) {
-            height: 500px;
-        }
-
-        }
+    }
 
     &-logo {
         grid-area: logo;
@@ -47,7 +57,7 @@
         }
     }
 
-    &-image {
+    &-image-portrait {
         grid-area: image;
         display: flex;
         align-items: end;
@@ -88,41 +98,52 @@
 
     }
 
+
+
     &-title {
         grid-area: title;
         display: flex;
-        align-items: center;
-     //   padding-left: 1rem;
-        justify-self: center;
+        flex-direction: column;
 
-        h1 {
-            line-height: 1.18;
-            margin-bottom: 0;
-            font-size: 1.4rem;
-            color: var(--lz-primary);
-            //  hyphens: auto;
-        }
+        &-portrait {
+            flex-direction: row;
+            align-items: center;
+            //   padding-left: 1rem;
+            justify-self: center;
 
-        @include media-breakpoint-up(sm) {
-            justify-self: start;
-            margin-left: 4em;
             h1 {
-                font-size: 1.8rem;
-            }
-
-        }
-
-        @include media-breakpoint-up(#{$navbar-expand}) {
-            align-items: start;
-        }
-
-        @include media-breakpoint-up(md) {
-            h1 {
-                font-size: 2.6666666667rem;
                 line-height: 1.18;
-                // hyphens: none;
+                margin-bottom: 0;
+                font-size: 1.4rem;
+                color: var(--lz-primary);
+                //  hyphens: auto;
             }
+
+            @include media-breakpoint-up(sm) {
+                justify-self: start;
+                margin-left: 4em;
+                h1 {
+                    font-size: 1.8rem;
+                }
+
+            }
+
+            @include media-breakpoint-up(#{$navbar-expand}) {
+                align-items: start;
+            }
+
+            @include media-breakpoint-up(md) {
+                h1 {
+                    font-size: 2.6666666667rem;
+                    line-height: 1.18;
+                    // hyphens: none;
+                }
+            }
+
         }
+    }
+
+    &-subtitle {
 
     }
 }
