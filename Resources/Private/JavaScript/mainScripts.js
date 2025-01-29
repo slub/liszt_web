@@ -161,8 +161,8 @@ function toggleFilterBlock(button) {
 
   // Translation from inlineLanguageLabelFiles in 1.page.typoscript
   button.textContent = isExpanded
-    ? getTranslation('liszt_web.show-less', 'Wenigerxx anzeigen')
-    : getTranslation('liszt_web.show-more', 'Mehrxx anzeigen');
+    ? getTranslation('liszt_web.show-less', 'Weniger anzeigen')
+    : getTranslation('liszt_web.show-more', 'Mehr anzeigen');
 
   // set focus for keyboard navigation to first element
   const firstNewItem = ulElement.querySelector('.hidden');
