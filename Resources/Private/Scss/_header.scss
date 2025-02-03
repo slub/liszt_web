@@ -1,6 +1,10 @@
 .page-header {
-    padding-top: $desktop-design-space;
+    padding-top: $container-padding-x;
     background-color: var(--lz-light-gray);
+
+    @include media-breakpoint-up(md) {
+        padding-top: $desktop-design-space;
+    }
 
     &-container {
         display: grid;
@@ -19,6 +23,7 @@
             grid-template-areas:
             "logo logo hamburger"
             "image title title";
+            row-gap: 25px;
 
             @include media-breakpoint-up(#{$navbar-expand}) {
                 height: 300px;
@@ -26,6 +31,7 @@
                 grid-template-areas:
             "logo image mainnav"
             ". image title";
+                row-gap: 0;
             }
 
             @include media-breakpoint-up(xl) {
@@ -70,7 +76,7 @@
         img {
             height: 100%;
             width: 100%;
-            margin-top: 16px;
+          //  margin-top: 16px;
             object-fit: contain;
             object-position: bottom;
             min-width: 80px;
@@ -104,6 +110,26 @@
         grid-area: title;
         display: flex;
         flex-direction: column;
+
+        &-detailpage {
+            justify-content: flex-end;
+            padding-bottom: 2rem;
+            padding-top: 2rem;
+
+            @include media-breakpoint-up(#{$navbar-expand}) {
+                min-height: 242px;
+            }
+            @include media-breakpoint-up(xl) {
+                min-height: 344px;
+            }
+/*            @include media-breakpoint-up(xxl) {
+                min-height: 445px;
+            }*/
+
+            h1 {
+             //   font-size:  $font-size-base * 2;
+            }
+        }
 
         &-portrait {
             flex-direction: row;
@@ -144,7 +170,12 @@
     }
 
     &-subtitle {
-
+        margin-bottom: 0.5em;
+        font-size: 1rem;
+        @include media-breakpoint-up(md) {
+            font-size: $h4-font-size;
+            margin-bottom: 0.8em;
+        }
     }
 }
 

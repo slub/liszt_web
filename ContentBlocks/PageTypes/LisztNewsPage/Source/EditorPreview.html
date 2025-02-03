@@ -5,22 +5,18 @@
     <div class="t3-grid-container-inner">
         <div class="px-4 py-4">
             <div class="row">
-                <div class="col-3">
-                    <f:if condition="{data.image.0}" >
+                <div class="col-12">
+                    <f:if condition="{data.subtitle}">
                         <f:then>
-                            <div class="page-header-image">
-                                <f:image class="img-fluid" image="{data.image.0}" />
-                            </div>
+                            <p style="margin-bottom: 0" class="page-header-subtitle" >{data.subtitle}</p>
                         </f:then>
                         <f:else>
-                            <div class="page-header-image">
-                                <f:image class="img-fluid" src="EXT:liszt_web/Resources/Public/Images/Liszt-Kopf-2.gif" alt="Franz Liszt Porträt Foto" />
-                            </div>
+                            <f:if condition="{data.newsdate}">
+                                <p style="margin-bottom: 0"  class="page-header-subtitle"  ><f:format.date format="d.m.Y">{data.newsdate}</f:format.date></p>
+                            </f:if>
                         </f:else>
                     </f:if>
-                </div>
-                <div class="col-9">
-                    <h1 style="color: #ff4208;">{f:if(condition: data.headline, then: data.headline, else: data.title )}</h1>
+                    <h1 style="margin-top: 0;" >{f:if(condition: data.headline, then: data.headline, else: data.title )}</h1>
                 </div>
 
             </div>
