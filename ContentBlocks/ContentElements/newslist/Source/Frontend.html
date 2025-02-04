@@ -18,7 +18,7 @@
             <div class="cb-newslist-item">
                 <div class="cb-newslist-image">
                     <f:if condition="{newsItem.data.teaserImage.0}">
-                        <f:link.page pageUid="{newsItem.data.uid}">
+                        <f:link.page pageUid="{newsItem.data.uid}" class="prefetch-link">
 
                             <picture>
                                 <source srcset="{f:uri.image(image: newsItem.data.teaserImage.0, width: '768', fileExtension: 'webp')}" type="image/webp" />
@@ -31,7 +31,7 @@
                 </div>
                 <div class="grid-colspan-md-2">
                     <div class="cb-pageteaser-header">
-                        <f:link.page pageUid="{newsItem.data.uid}">
+                        <f:link.page pageUid="{newsItem.data.uid}" class="prefetch-link">
                         <h3 class="cb-pageteaser-title" style="view-transition-name: news-headline-{newsItem.data.uid};">
                             {f:if(condition: newsItem.data.headline, then: newsItem.data.headline, else: newsItem.data.title )}
                         </h3>
@@ -41,7 +41,7 @@
                         </f:link.page>
                     </div>
                     <div class="cb-newslist-item-body" style="view-transition-name: news-text-{newsItem.data.uid};">
-                            {newsItem.data.teaserText -> f:format.html()}&nbsp;&nbsp;<f:link.page class="read-more" pageUid="{newsItem.data.uid}"><cb:translate key="moreLink" name="slub/newslist" /></f:link.page>
+                            {newsItem.data.teaserText -> f:format.html()}&nbsp;&nbsp;<f:link.page class="read-more prefetch-link" pageUid="{newsItem.data.uid}"><cb:translate key="moreLink" name="slub/newslist" /></f:link.page>
                     </div>
                 </div>
             </div>

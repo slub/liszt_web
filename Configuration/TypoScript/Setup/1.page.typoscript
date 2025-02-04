@@ -153,5 +153,17 @@ config {
 [end]
 
 
-
-
+// Speculation Rules for preload Links with class .prefetch-link (for faster view transitions on news pages)
+// at the moment supportetd in Firefox ans Safari https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API#browser_compatibility
+// Fallback for not supported browser in mainScrips.js
+page.headerData.30 = TEXT
+page.headerData.30.value (
+  <script type="speculationrules">
+  {
+    "prerender": [{
+      "where": {"selector_matches": ".prefetch-link"},
+      "eagerness": "moderate"
+    }]
+  }
+  </script>
+)
