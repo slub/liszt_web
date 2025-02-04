@@ -2,30 +2,31 @@ name: slub/lisztnewspage
 title: 'Liszt News Seite'
 typeName: 120
 fields:
-  - identifier: categories
-    label: 'Kategorien'
-    type: Category
-  - identifier: image
-    type: File
-    allowed: common-image-types
-    maxitems: 1
-    label: 'Seitenbild'
   - identifier: headline
     type: Textarea
-    rows: 2
-    cols: 10
-    label: 'Rote Überschrift (zweizeilig!)'
+    rows: 3
+    label: 'Überschrift im Header (alt. zum Seitentitel bis zu 3 Zeilen)'
+  - identifier: subtitle
+    type: Palette
+    label: 'Sub'
+    fields:
+    - identifier: newsdate
+      type: DateTime
+      format: date
+      label: 'News Datum'
+    - identifier: subtitle
+      useExistingField: true
+      label: 'alt. Subtitle (Anzeige in Head statt Datum)'
   - identifier: teaserImage
     type: File
     allowed: common-image-types
     maxitems: 1
     label: 'Teaserbild'
-  - identifier: newsdate
-    type: DateTime
-    format: date
-    label: 'News Datum'
   - identifier: teaserText
     label: 'Teasertext'
     type: Textarea
     enableRichtext: true
     rows: 7
+  - identifier: categories
+    label: 'Kategorien'
+    type: Category

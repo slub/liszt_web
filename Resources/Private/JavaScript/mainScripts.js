@@ -7,7 +7,7 @@ import Offcanvas from "bootstrap/js/dist/offcanvas.js";
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
 
 let lightboxImages = document.querySelectorAll('.lightbox');
-Array.prototype.forEach.call(lightboxImages, function(el, i) {
+Array.prototype.forEach.call(lightboxImages, function (el, i) {
   var zoomIcon = '<span class="zoom-icon" aria-hidden="true"></span>';
   el.insertAdjacentHTML('beforeend', zoomIcon);
 });
@@ -25,7 +25,7 @@ const options = {
 };
 
 const lightbox = new PhotoSwipeLightbox(options);
-lightbox.on('uiRegister', function() {
+lightbox.on('uiRegister', function () {
   lightbox.pswp.ui.registerElement({
     name: 'custom-caption',
     order: 9,
@@ -51,7 +51,7 @@ lightbox.on('uiRegister', function() {
     }
   });
 });
-lightbox.on('uiRegister', function() {
+lightbox.on('uiRegister', function () {
   lightbox.pswp.ui.registerElement({
     name: 'zoom-level-indicator',
     order: 9,
@@ -65,7 +65,6 @@ lightbox.on('uiRegister', function() {
   });
 });
 lightbox.init();
-
 
 
 // Intersection Observer for highlighting active items in Sticky Menu
@@ -87,13 +86,14 @@ if (targetLinks.length > 0) {
   const onIntersect = (entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-     //   console.log(entry.target.id, 'is intersecting')
+        //   console.log(entry.target.id, 'is intersecting')
         targetLinks.forEach(link => {
-          if(link.getAttribute('data-target-id') === entry.target.id){
-            link.classList.add('active'); }
-          else {
+          if (link.getAttribute('data-target-id') === entry.target.id) {
+            link.classList.add('active');
+          } else {
             link.classList.remove('active');
-          } });
+          }
+        });
       } else {
         //  console.log("not intersecting", entry);
       }
@@ -129,16 +129,16 @@ filterToggler.forEach((button) => {
 
     // view transition animation
     // Fallback for browsers that don't support this API:
-  //  if (!document.startViewTransition) {
-      toggleFilterBlock(button);
- //     return;
-  //  }
+    //  if (!document.startViewTransition) {
+    toggleFilterBlock(button);
+    //     return;
+    //  }
 
     // With a View Transition:
-/*    document.startViewTransition(() => {
-      console.log("startViewTransition wird ausgeführt");
-      toggleFilterBlock(button);
-    });*/
+    /*    document.startViewTransition(() => {
+          console.log("startViewTransition wird ausgeführt");
+          toggleFilterBlock(button);
+        });*/
 
   });
 
@@ -171,5 +171,41 @@ function toggleFilterBlock(button) {
     firstNewItem.focus();
   }
 
-
 }
+
+// Speculation Rules for preload Links with class .prefetch-link (for faster view transitions on news pages)
+// this is the fallback for firefox, safari. Chrome and Edge support <script type="speculationrules"> from 1.page.typoscript
+// Feature-Detection für Speculation Rules
+const supportsSpeculationRules =
+  HTMLScriptElement.supports?.('speculationrules') ?? false;
+
+if (!supportsSpeculationRules) {
+  // Fallback: Traditionelles Prefetching
+  const links = document.querySelectorAll('.prefetch-link');
+
+  // Feature-Detection für rel=prefetch [3][7]
+  const supportsPrefetch = (() => {
+    try {
+      const link = document.createElement('link');
+      return link.relList?.supports('prefetch');
+    } catch {
+      return false;
+    }
+  })();
+
+  links.forEach(link => {
+    link.addEventListener('mouseover', () => {
+      if (supportsPrefetch) {
+        // Prefetch via <link> [4][7]
+        const prefetchLink = document.createElement('link');
+        prefetchLink.rel = 'prefetch';
+        prefetchLink.href = link.href;
+        document.head.appendChild(prefetchLink);
+      } else {
+        // Letzter Fallback: XHR-Prefetch
+        fetch(link.href, {mode: 'no-cors'});
+      }
+    }, {once: true});
+  });
+}
+

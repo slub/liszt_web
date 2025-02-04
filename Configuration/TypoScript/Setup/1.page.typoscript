@@ -132,25 +132,38 @@ headerData.20.insertData = 1
 }
 
 // apply an extra style for news page and all subpages for view transitions
+// set config to write this css inline in page header instead in extra file
+config {
+  inlineStyle2TempFile = 0
+}
+// only for users without reduced motion sickness
 [{$liszt_web.newsUid} in tree.rootLineIds]
   page {
     cssInline {
       10 = TEXT
       10.value (
+      @media screen and (prefers-reduced-motion: no-preference) {
             @view-transition {
               navigation: auto;
             }
-            ::view-transition-new(news-item-*) {
-            animation-duration: 0.5s;
-            }
-            ::view-transition-old(news-item-*) {
-            animation-duration: 0.1s;
-            }
+      }
       )
     }
   }
 [end]
 
 
-
-
+// Speculation Rules for preload Links with class .prefetch-link (for faster view transitions on news pages)
+// at the moment supportetd in Firefox ans Safari https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API#browser_compatibility
+// Fallback for not supported browser in mainScrips.js
+page.headerData.30 = TEXT
+page.headerData.30.value (
+  <script type="speculationrules">
+  {
+    "prerender": [{
+      "where": {"selector_matches": ".prefetch-link"},
+      "eagerness": "moderate"
+    }]
+  }
+  </script>
+)

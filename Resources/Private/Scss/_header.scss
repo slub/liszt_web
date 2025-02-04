@@ -1,6 +1,10 @@
 .page-header {
-    padding-top: $desktop-design-space;
+    padding-top: $container-padding-x;
     background-color: var(--lz-light-gray);
+
+    @include media-breakpoint-up(md) {
+        padding-top: $desktop-design-space;
+    }
 
     &-container {
         display: grid;
@@ -8,25 +12,37 @@
         grid-template-columns: min-content auto min-content;
         grid-template-areas:
             "logo logo hamburger"
-            "image title title";
-
-
+            "title title title";
         @include media-breakpoint-up(#{$navbar-expand}) {
-            height: 300px;
-            grid-template-columns: min-content auto 1fr;
             grid-template-areas:
+            "logo logo mainnav"
+            "title title title";
+        }
+
+            &.with-portrait {
+            grid-template-areas:
+            "logo logo hamburger"
+            "image title title";
+            row-gap: 25px;
+
+            @include media-breakpoint-up(#{$navbar-expand}) {
+                height: 300px;
+                grid-template-columns: min-content auto 1fr;
+                grid-template-areas:
             "logo image mainnav"
             ". image title";
+                row-gap: 0;
+            }
+
+            @include media-breakpoint-up(xl) {
+                height: 400px;
+            }
+            @include media-breakpoint-up(xxl) {
+                height: 500px;
+            }
         }
 
-        @include media-breakpoint-up(xl) {
-            height: 400px;
-        }
-        @include media-breakpoint-up(xxl) {
-            height: 500px;
-        }
-
-        }
+    }
 
     &-logo {
         grid-area: logo;
@@ -47,7 +63,7 @@
         }
     }
 
-    &-image {
+    &-image-portrait {
         grid-area: image;
         display: flex;
         align-items: end;
@@ -60,7 +76,7 @@
         img {
             height: 100%;
             width: 100%;
-            margin-top: 16px;
+          //  margin-top: 16px;
             object-fit: contain;
             object-position: bottom;
             min-width: 80px;
@@ -88,42 +104,78 @@
 
     }
 
+
+
     &-title {
         grid-area: title;
         display: flex;
-        align-items: center;
-     //   padding-left: 1rem;
-        justify-self: center;
+        flex-direction: column;
 
-        h1 {
-            line-height: 1.18;
-            margin-bottom: 0;
-            font-size: 1.4rem;
-            color: var(--lz-primary);
-            //  hyphens: auto;
-        }
+        &-detailpage {
+            justify-content: flex-end;
+            padding-bottom: 2rem;
+            padding-top: 2rem;
 
-        @include media-breakpoint-up(sm) {
-            justify-self: start;
-            margin-left: 4em;
-            h1 {
-                font-size: 1.8rem;
+            @include media-breakpoint-up(#{$navbar-expand}) {
+                min-height: 242px;
             }
+            @include media-breakpoint-up(xl) {
+                min-height: 344px;
+            }
+/*            @include media-breakpoint-up(xxl) {
+                min-height: 445px;
+            }*/
 
-        }
-
-        @include media-breakpoint-up(#{$navbar-expand}) {
-            align-items: start;
-        }
-
-        @include media-breakpoint-up(md) {
             h1 {
-                font-size: 2.6666666667rem;
+             //   font-size:  $font-size-base * 2;
+            }
+        }
+
+        &-portrait {
+            flex-direction: row;
+            align-items: center;
+            //   padding-left: 1rem;
+            justify-self: center;
+
+            h1 {
                 line-height: 1.18;
-                // hyphens: none;
+                margin-bottom: 0;
+                font-size: 1.4rem;
+                color: var(--lz-primary);
+                //  hyphens: auto;
             }
-        }
 
+            @include media-breakpoint-up(sm) {
+                justify-self: start;
+                margin-left: 4em;
+                h1 {
+                    font-size: 1.8rem;
+                }
+
+            }
+
+            @include media-breakpoint-up(#{$navbar-expand}) {
+                align-items: start;
+            }
+
+            @include media-breakpoint-up(md) {
+                h1 {
+                    font-size: 2.6666666667rem;
+                    line-height: 1.18;
+                    // hyphens: none;
+                }
+            }
+
+        }
+    }
+
+    &-subtitle {
+        margin-bottom: 0.5em;
+        font-size: 1rem;
+        @include media-breakpoint-up(md) {
+            font-size: $h4-font-size;
+            margin-bottom: 0.8em;
+        }
     }
 }
 
