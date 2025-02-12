@@ -2,55 +2,53 @@ name: slub/lisztpage
 title: 'Liszt Sidebar links'
 typeName: 100
 fields:
-  - identifier: categories
-    label: 'Kategorien'
-    type: Category
-  - identifier: liszthead
+  - identifier: lisztHeadImage
+    label: 'Liszt Kopf anzeigen?'
+    type: Select
+    renderType: selectSingle
+    items:
+      - label: 'kein Kopf, Textheader'
+        value: none
+      - label: 'Kopf1'
+        value: Liszt-Kopf-1
+      - label: 'Kopf2 (am Klavier)'
+        value: Liszt-Kopf-2
+      - label: '404 Kopf (Karikatur)'
+        value: Liszt-Kopf-404
+  - identifier: headline
+    type: Textarea
+    rows: 3
+    label: 'Überschrift im Header (alt. zum Seitentitel bis zu 3 Zeilen, wenn Kopf dann kurz!)'
+  - identifier: subtitle
+    useExistingField: true
+    label: 'opt. Subtitle (nur wenn Textheader)'
+  - identifier: checkboxes
     type: Palette
-    label: 'Für Kopf Header'
     fields:
-    - identifier: lisztHeadImage
-      label: 'Liszt Kopf im Header'
-      type: Select
-      renderType: selectSingle
+    - identifier: showNewsTeaser
+      type: Checkbox
+      label: 'News Teaser anzeigen'
       items:
-        - label: 'Kopf1'
-          value: Liszt-Kopf-1
-        - label: 'Kopf2 (am Klavier)'
-          value: Liszt-Kopf-2
-        - label: '404 Kopf (Karikatur)'
-          value: Liszt-Kopf-404
-    - identifier: headline
-      type: Textarea
-      rows: 2
-      cols: 10
-      label: 'Rote Überschrift (zweizeilig!)'
-    - identifier: image
-      type: File
-      allowed: common-image-types
-      maxitems: 1
-      label: 'Seitenbild (anstatt Kopf)'
-  - identifier: showNewsTeaser
-    type: Checkbox
-    label: 'News Teaser anzeigen'
-    items:
-      - label: 'Ja'
-  - identifier: showSearchBar
-    type: Checkbox
-    label: 'Suchschlitz anzeigen'
-    items:
-      - label: 'Ja'
+        - label: 'Ja'
+    - identifier: showSearchBar
+      type: Checkbox
+      label: 'Suchschlitz anzeigen'
+      items:
+        - label: 'Ja'
   - identifier: teaserImage
     type: File
     allowed: common-image-types
     maxitems: 1
     label: 'Teaserbild'
-  - identifier: newsdate
-    type: DateTime
-    format: date
-    label: 'News Datum'
   - identifier: teaserText
     label: 'Teasertext'
     type: Textarea
     enableRichtext: true
     rows: 7
+  - identifier: newsdate
+    type: DateTime
+    format: date
+    label: 'News Datum'
+  - identifier: categories
+    label: 'Kategorien'
+    type: Category

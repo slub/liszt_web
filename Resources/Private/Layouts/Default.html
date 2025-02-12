@@ -7,6 +7,9 @@
     <f:then>
         <f:render partial="NewsHeader" arguments="{_all}"/>
     </f:then>
+    <f:else if="{data.lisztHeadImage} == 'none'" >
+        <f:render partial="NewsHeader" arguments="{_all}"/>
+    </f:else>
     <f:else>
         <f:render partial="Header" arguments="{_all}"/>
     </f:else>
