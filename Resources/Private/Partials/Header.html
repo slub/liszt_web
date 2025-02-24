@@ -2,9 +2,8 @@
 
 <header id="page-header" class="page-header navbar">
     <div class="container-xl page-header-container with-portrait">
-        <f:link.page pageUid="{rootPage}" class="page-header-logo" title="{f:translate(key: 'inline-labels.liszt_web.toHome', extensionName: 'liszt_web')}">
-            <f:image src="EXT:liszt_web/Resources/Public/Icons/LogoLisztPortal.svg" alt="Logo Liszt Portal" />
-        </f:link.page>
+        <f:render partial="Logo" arguments="{rootPage: rootPage}" />
+
 
         <f:if condition="{data.image.0}" >
             <f:then>
@@ -36,13 +35,8 @@
                     </h1>
         </div>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainnavigation" aria-controls="mainnavigation" aria-label="{f:translate(key: 'switchNavigation', extensionName: 'liszt_web')}">
-            <span class="navbar-toggler-icon" aria-hidden="true">
-                <span class="navbar-toggler-icon-bar"></span>
-                <span class="navbar-toggler-icon-bar"></span>
-                <span class="navbar-toggler-icon-bar"></span>
-            </span>
-        </button>
+        <f:render partial="NavbarToggler" />
+
 
         <f:render partial="MainNav" arguments="{_all}" />
 
