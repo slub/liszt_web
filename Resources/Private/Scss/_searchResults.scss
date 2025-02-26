@@ -150,6 +150,16 @@
 
         }
 
+        a {
+            text-decoration: none;
+            color: inherit;
+            &:hover {
+                .searchresults-item-icon {
+                    color: var(--lz-primary);
+                }
+            }
+        }
+
 
     }
 }
