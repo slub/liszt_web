@@ -9,7 +9,7 @@ form {
         align-items: stretch;
         position: relative;
 
-        & > :not(:first-child):not(.dropdown-menu) {
+        & > :not(:first-child):not(.dropdown-menu):not(.no-ml) {
             margin-left: -1px;
         }
 

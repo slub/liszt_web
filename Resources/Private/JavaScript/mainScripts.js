@@ -209,3 +209,35 @@ if (!supportsSpeculationRules) {
   });
 }
 
+
+
+// Button script to clear input in SearchBar
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('searchbar-input');
+  const clearButton = document.getElementById('searchbar-clearButton');
+  // skip if these elements are not available
+  if (!searchInput || !clearButton) {
+    return;
+  }
+
+  // show clearButton if input is not empty on pageload
+  if (searchInput.value.length > 0) {
+    clearButton.classList.add('show');
+  }
+
+  searchInput.addEventListener('input', function() {
+    if (this.value.length > 0) {
+      clearButton.classList.add('show');
+    } else {
+      clearButton.classList.remove('show');
+    }
+  });
+
+  // reset input
+  clearButton.addEventListener('click', function() {
+    searchInput.value = '';
+    clearButton.classList.remove('show');
+    searchInput.focus();
+  });
+});
+

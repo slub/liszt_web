@@ -6,6 +6,7 @@
 
     input[type="text"] {
         flex: 1 1 auto;
+        padding-right: 2rem;
 
         &::placeholder {
             font-size: $font-size-sm;
@@ -14,6 +15,27 @@
 
     .btn {
         font-size: $font-size-sm;
+    }
+
+    &-clearButton {
+        appearance: none;
+        background-color: transparent;
+        border: none;
+        margin-left: calc(-2rem + 1px);
+        padding: 0;
+        width: 2rem;
+        cursor: pointer;
+        display: none;
+
+        &.show {
+            display: block;
+        }
+
+        &:hover {
+            color: var(--lz-primary);
+        }
+
+
     }
 
 
