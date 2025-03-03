@@ -104,6 +104,13 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            max-height: 300px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            padding-right: 5px;
+            margin-right: -5px;
+            scrollbar-color: var(--lz-primary) var(--lz-light-gray);
       //      view-transition-class: filterblock;
 
             li.hidden {
