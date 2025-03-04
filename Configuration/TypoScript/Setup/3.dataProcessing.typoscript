@@ -7,14 +7,14 @@ page.10.dataProcessing {
     expandAll = 1
     levels = 2
     includeSpacer = 1
-    titleField = subtitle // nav_title // title
+    titleField = nav_title // title
     excludeDoktypes = 6, 120, 254
   }
   // Meta Menu in Footer
   20 = menu
   20 {
     as = metaMenu
-    titleField = subtitle // nav_title // title
+    titleField = nav_title // title
     levels = 1
     special = directory
     special.value = {$liszt_web.metaUid}
