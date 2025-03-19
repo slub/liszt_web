@@ -33,7 +33,7 @@
                 max-width: 100%;
 
                 @include media-breakpoint-up(#{$SearchResultsMultiCol}) {
-                    position: sticky;
+                    position: relative;
                     display: block;
                     top: 1rem;
                     z-index: auto;
@@ -270,14 +270,26 @@
             }
         }
 
-        &-submit {
+        &-button {
             font-size: $font-size-md;
             margin-top: 10px;
             width: 100%;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        &-submit {
             display: none;
             &.show {
                 display: block;
             }
+        }
+
+        &-reset {
+           color: var(--lz-tertiary-dark-blue);
+            border-color: var(--lz-tertiary-dark-blue);
+
         }
 
 

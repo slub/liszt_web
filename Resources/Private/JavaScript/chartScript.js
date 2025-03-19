@@ -37,17 +37,28 @@ document.addEventListener('DOMContentLoaded', function() {
   // Create and render chart with current data range
   function createAndRenderChart(chartContainer, facetData, minValue, maxValue) {
     try {
-      const currentYear = new Date().getFullYear(); // this is for year Values as data and should customizes for other int values
-      const paddingStart = 5;
-      const paddingEnd = Math.min(5, currentYear - maxValue);
       const chartData = {
         labels: [],
         series: [[]]
       };
-      for (let value = minValue - paddingStart; value <= maxValue + paddingEnd; value++) {
-        chartData.labels.push(value.toString());
-        chartData.series[0].push(facetData[value] || 0);
-      }
+      const validYears = Object.keys(facetData)
+        .filter(year => {
+          const yearNum = parseInt(year);
+          return yearNum >= minValue && yearNum <= maxValue;
+        })
+        .sort((a, b) => parseInt(a) - parseInt(b));
+
+      // Befülle die Chartdaten
+      validYears.forEach(year => {
+        chartData.labels.push(year);
+        chartData.series[0].push(facetData[year]);
+      });
+
+
+      // calculate number of datapoints in chart
+      const dataPointCount = validYears.length;
+
+
       const chartOptions = {
         height: 100,
         fullWidth: true,
@@ -55,14 +66,14 @@ document.addEventListener('DOMContentLoaded', function() {
           right: 0,
           left: 0,
           top: 0,
-          bottom: -20
+          bottom: -10
         },
         low: 0,
         showPoint: false,
         showArea: true,
         lineSmooth: true,
         axisX: {
-          showLabel: false,
+          showLabel: dataPointCount < 7,
           showGrid: false
         },
         axisY: {
@@ -71,9 +82,8 @@ document.addEventListener('DOMContentLoaded', function() {
           showGrid: true
         }
       };
-      // Choose chart type based on value range
-      const valueRange = maxValue - minValue;
-      if (valueRange < 25) {
+      // Choose chart type number of dataPoints
+      if (dataPointCount < 20) {
         new BarChart(chartContainer, chartData, chartOptions);
       } else {
         new LineChart(chartContainer, chartData, chartOptions);

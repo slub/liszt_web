@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Check data attributes
         const rangeStartAttr = sliderContainer.getAttribute('data-range-start');
         const rangeEndAttr = sliderContainer.getAttribute('data-range-end');
-
+console.log(rangeStartAttr);
         // Use attributes if they are valid
         const hasValidRangeStart = rangeStartAttr &&
           rangeStartAttr !== '0' &&
