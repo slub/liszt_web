@@ -25,13 +25,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (validValues.length === 0) return;
 
         // Determine min/max values from data
-        const minValue = parseInt(validValues[0]);
-        const maxValue = parseInt(validValues[validValues.length - 1]);
+        const dataMinValue = parseInt(validValues[0]);
+        const dataMaxValue = parseInt(validValues[validValues.length - 1]);
 
         // Check data attributes
         const rangeStartAttr = sliderContainer.getAttribute('data-range-start');
         const rangeEndAttr = sliderContainer.getAttribute('data-range-end');
-console.log(rangeStartAttr);
+
         // Use attributes if they are valid
         const hasValidRangeStart = rangeStartAttr &&
           rangeStartAttr !== '0' &&
@@ -44,8 +44,12 @@ console.log(rangeStartAttr);
           !isNaN(parseInt(rangeEndAttr));
 
         // Set current values based on attributes or data
-        const currentMinValue = hasValidRangeStart ? parseInt(rangeStartAttr) : minValue;
-        const currentMaxValue = hasValidRangeEnd ? parseInt(rangeEndAttr) : maxValue;
+        const currentMinValue = hasValidRangeStart ? parseInt(rangeStartAttr) : dataMinValue;
+        const currentMaxValue = hasValidRangeEnd ? parseInt(rangeEndAttr) : dataMaxValue;
+
+        // Ensure we store both data bounds and user-selected bounds
+        const minValue = Math.min(currentMinValue, dataMinValue);
+        const maxValue = Math.max(currentMaxValue, dataMaxValue);
 
         // Select DOM elements
         const container = sliderContainer.querySelector('.filter-slider-container');
@@ -55,7 +59,7 @@ console.log(rangeStartAttr);
         const minInput = sliderContainer.querySelector('.min-range-input');
         const maxInput = sliderContainer.querySelector('.max-range-input');
 
-        // Initialize the slider
+        // Initialize  slider
         const sliderInstance = initializeRangeSlider(container, range, minHandle, maxHandle,
           minInput, maxInput, minValue, maxValue,
           currentMinValue, currentMaxValue);
@@ -66,6 +70,8 @@ console.log(rangeStartAttr);
         sliderContainer.valueRange = {
           min: minValue,
           max: maxValue,
+          dataMin: dataMinValue,
+          dataMax: dataMaxValue,
           current: {
             min: currentMinValue,
             max: currentMaxValue
@@ -76,7 +82,9 @@ console.log(rangeStartAttr);
         const rangeChangeEvent = new CustomEvent('sliderRangeChange', {
           detail: {
             minValue: currentMinValue,
-            maxValue: currentMaxValue
+            maxValue: currentMaxValue,
+            dataMinValue: dataMinValue,
+            dataMaxValue: dataMaxValue
           }
         });
         sliderContainer.dispatchEvent(rangeChangeEvent);
@@ -126,10 +134,9 @@ console.log(rangeStartAttr);
       minInput.value = currentMinValue;
       maxInput.value = currentMaxValue;
 
-      // Prüfen, ob sich die Werte vom Ursprungszustand unterscheiden
+      // check if values differ from initial
       const valuesChanged = (currentMinValue !== initialMinValue || currentMaxValue !== initialMaxValue);
 
-      // Submit-Button ein- oder ausblenden
       const filterSlider = container.closest('.filter-slider');
       const submitButton = filterSlider.querySelector('.filter-slider-submit');
 

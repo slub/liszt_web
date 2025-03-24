@@ -16,11 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!sliderContainer || !sliderContainer.facetData) return;
 
       try {
-        // Use data from the slider
+        // Use data from slider
         const facetData = sliderContainer.facetData;
         const valueRange = sliderContainer.valueRange;
 
-        // Create chart data
         createAndRenderChart(chartContainer, facetData, valueRange.current.min, valueRange.current.max);
 
         // Event listener for slider changes
@@ -34,30 +33,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Create and render chart with current data range
   function createAndRenderChart(chartContainer, facetData, minValue, maxValue) {
     try {
       const chartData = {
         labels: [],
         series: [[]]
       };
-      const validYears = Object.keys(facetData)
-        .filter(year => {
-          const yearNum = parseInt(year);
-          return yearNum >= minValue && yearNum <= maxValue;
-        })
-        .sort((a, b) => parseInt(a) - parseInt(b));
 
-      // Befülle die Chartdaten
-      validYears.forEach(year => {
+      // Generate the complete range from minValue to maxValue
+      // regardless of whether data exists
+      const allYears = [];
+      for (let year = minValue; year <= maxValue; year++) {
+        allYears.push(year.toString());
+      }
+
+      // Fill chart data for all years in range
+      allYears.forEach(year => {
         chartData.labels.push(year);
-        chartData.series[0].push(facetData[year]);
+        chartData.series[0].push(facetData[year] || 0);
       });
 
+      // Calculate number of datapoints in chart for labels
+      const dataPointCount = allYears.length;
 
-      // calculate number of datapoints in chart
-      const dataPointCount = validYears.length;
-
+      // Count datapoints with values greater than 0
+/*      let dataPointsWithValues = 0;
+      allYears.forEach(year => {
+        if (facetData[year] && facetData[year] > 0) {
+          dataPointsWithValues++;
+        }
+      });*/
 
       const chartOptions = {
         height: 100,
@@ -73,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showArea: true,
         lineSmooth: true,
         axisX: {
+          // if the total range has fewer than 7 years
           showLabel: dataPointCount < 7,
           showGrid: false
         },
@@ -82,7 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
           showGrid: true
         }
       };
-      // Choose chart type number of dataPoints
+
+      // Choose chart type based on number of dataPoints
       if (dataPointCount < 20) {
         new BarChart(chartContainer, chartData, chartOptions);
       } else {
