@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
         height: 100,
         fullWidth: true,
         chartPadding: {
-          right: 0,
+          right:-10,
           left: 0,
           top: 0,
           bottom: -10
@@ -83,9 +83,15 @@ document.addEventListener('DOMContentLoaded', function() {
           showGrid: false
         },
         axisY: {
-          offset: 0,
-          showLabel: false,
-          showGrid: true
+     //offset:20,
+          showLabel: true,
+          showGrid: true,
+          position: 'end',
+          onlyInteger: true,
+          labelInterpolationFnc: function(value) {
+            return Number.isInteger(value) ? value : null;
+          }
+
         }
       };
 

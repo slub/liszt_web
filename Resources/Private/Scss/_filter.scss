@@ -200,6 +200,15 @@
 
     }
 
+    // Chart
+    &-chart {
+
+        svg {
+            overflow: visible;
+        }
+    }
+
+
     // Slider
 
     &-slider {
