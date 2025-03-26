@@ -65,13 +65,12 @@ document.addEventListener('DOMContentLoaded', function() {
       });*/
 
       const chartOptions = {
-        height: 100,
         fullWidth: true,
         chartPadding: {
           right:-10,
           left: 0,
           top: 0,
-          bottom: -10
+          bottom: -20
         },
         low: 0,
         showPoint: false,
