@@ -117,21 +117,17 @@
                 display: none;
             }
 
-
-/*            // border top on selected fields behind a hidden field
-            li.hidden + li:not(.hidden) {
-                border-top: 1px solid var(--lz-gray);
-                padding-top: 2px;
-            }*/
-
-
             &.showMore {
                 li.hidden {
                     display: list-item;
                 }
-                li.hidden + li:not(.hidden) {
-                    border-top: none;
-                    padding-top: inherit;
+
+                &.sortByKeySlub {
+                    li:not(.hidden) + li.hidden {
+                        border-top: 1px dashed var(--lz-gray);
+                        padding-top: 10px;
+                        margin-top: 10px;
+                    }
                 }
             }
         }
