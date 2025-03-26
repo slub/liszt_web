@@ -167,10 +167,15 @@
         justify-content: space-between;
         margin-bottom: 3px;
 
+        &-count {
+            flex-shrink: 0;
+        }
+
         &-label {
             display: flex;
             flex-grow: 0;
             align-items: center;
+            padding-right: 0.5rem;
 
             &::before {
                 content: "";
