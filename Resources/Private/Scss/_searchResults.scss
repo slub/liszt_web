@@ -109,6 +109,10 @@
             @include media-breakpoint-up(sm) {
                 position: relative;
             }
+
+            h3 {
+                margin-bottom: 0;
+            }
         }
 
         &-details {
