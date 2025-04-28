@@ -3,16 +3,10 @@
     &-info {
         grid-column: 1 / -1; // Default: spans the entire width, regardless of the number of columns
 
-        &-total {
-            font-weight: 600;
+        &-buttons {
             display: flex;
             justify-content: space-between;
             align-items: center;
-
-            &-items {
-                letter-spacing: 0.01em;
-            }
-
         }
 
         &.frame {
@@ -21,6 +15,11 @@
                 margin-bottom: 0;
             }
         }
+    }
+
+    &-total-items {
+        font-weight: 600;
+        letter-spacing: 0.01em;
     }
 
 
