@@ -1,0 +1,50 @@
+.searchdetail {
+
+
+
+    &-item-icon {
+        display: block;
+        height: 34px;
+        width: 34px;
+        @include media-breakpoint-up(sm) {
+            height: 2.5rem;
+            width: 2.5rem;
+        }
+        @include media-breakpoint-up(lg) {
+            height: 3rem;
+            width: 3rem;
+        }
+
+            svg.iconpack {
+            width: auto;
+            height: 100%;
+        }
+    }
+
+    &-list {
+        margin: 0;
+        padding: 0;
+
+        > div {
+            margin-bottom: 1em;
+        }
+
+        dt {
+            display: inline;
+            font-weight: 600;
+            margin-right: 0.3rem;
+            &::after {
+                content: ":";
+            }
+        }
+
+        dd {
+           display: inline;
+            margin: 0;
+        }
+
+    }
+
+}
+
+

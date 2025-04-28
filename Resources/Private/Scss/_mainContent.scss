@@ -61,6 +61,9 @@ main {
     // margins between content elements in main
     .frame {
         margin-bottom: $mobile-design-space;
+        &-small-mb {
+            margin-bottom: 1rem;
+        }
         &-extra-mb {
             margin-bottom: calc($mobile-design-space * 2);
         }
