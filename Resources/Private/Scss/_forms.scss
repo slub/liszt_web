@@ -107,7 +107,7 @@ form {
             border-right: 1px solid currentColor;
             border-bottom: 1px solid currentColor;
             transform: rotate(45deg); /* nach unten öffnendes V */
-            margin-left: 0.5em;
+            margin-left: 0.8em;
             vertical-align: 2px;
         }
     }
@@ -146,6 +146,10 @@ form {
         background-color: transparent;
         border: 0;
 
+        &.active {
+            color: var(--lz-primary);
+            cursor: default;
+        }
 
 
         &:hover, &:focus, &:active {
