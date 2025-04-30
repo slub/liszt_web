@@ -88,3 +88,72 @@ form {
         }
     }
 }
+
+.dropdown-button {
+
+    &-toggle {
+        white-space: nowrap;
+        cursor: pointer;
+
+        &:hover, &:focus, &:active {
+            color: var(--lz-primary);
+        }
+
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 0.7em;
+            height: 0.7em;
+            border-right: 1px solid currentColor;
+            border-bottom: 1px solid currentColor;
+            transform: rotate(45deg); /* nach unten öffnendes V */
+            margin-left: 0.8em;
+            vertical-align: 2px;
+        }
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        z-index: 1000;
+        min-width: 10rem;
+        padding: 0.5rem 0;
+        color: var(--lz-font-color);
+        background-color: var(--lz-font-color-inverse);
+        border: 1px solid var(--lz-font-color);
+        text-align: left;
+        list-style: none;
+        margin: 0;
+        font-size: 0.88rem;
+
+        &.show {
+            display: block;
+        }
+    }
+
+    li a:not([href^="mailto:"])::before {
+        content: none;
+    }
+
+    &-item {
+        display: block;
+        width: 100%;
+        padding: var(--lz-form-padding-h) var(--lz-form-padding-v);
+        clear: both;
+        text-decoration: none;
+        color: var(--lz-font-color);
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
+
+        &.active {
+            color: var(--lz-primary);
+            cursor: default;
+        }
+
+
+        &:hover, &:focus, &:active {
+            color: var(--lz-primary);
+        }
+    }
+}
