@@ -1,24 +1,45 @@
 .searchdetail {
 
 
+    &-itemtype {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 0;
+        @include media-breakpoint-up(md) {
+            align-items: center;
+        }
 
-    &-item-icon {
-        display: block;
-        height: 34px;
-        width: 34px;
-        @include media-breakpoint-up(sm) {
-            height: 2.5rem;
-            width: 2.5rem;
-        }
-        @include media-breakpoint-up(lg) {
-            height: 3rem;
-            width: 3rem;
-        }
+
+        &-icon {
+            display: block;
+            height: 34px;
+            width: 34px;
+            @include media-breakpoint-up(sm) {
+                height: 2.5rem;
+                width: 2.5rem;
+            }
+            @include media-breakpoint-up(md) {
+                text-align: center;
+            }
+            @include media-breakpoint-up(lg) {
+                height: 3rem;
+                width: 3rem;
+            }
 
             svg.iconpack {
-            width: auto;
-            height: 100%;
+                width: auto;
+                height: 100%;
+            }
         }
+
+        &-title {
+            display: inline-block;
+            font-weight: 600;
+            font-size: $font-size-base;
+            font-family: $font-family-base;
+        }
+
     }
 
     &-list {
