@@ -150,28 +150,34 @@ filterToggler.forEach((button) => {
 });
 
 function toggleFilterBlock(button) {
-
   // find ul element next to button
   const ulElement = button.previousElementSibling;
 
-  ulElement.classList.toggle('showMore');
+  // Original toggle functionality (commented out)
+  // ulElement.classList.toggle('showMore');
+  // const isExpanded = ulElement.classList.contains('showMore');
+  // button.setAttribute('aria-expanded', isExpanded);
+  // button.textContent = isExpanded
+  //   ? getTranslation('liszt_common.show-less', 'Weniger anzeigen')
+  //   : getTranslation('liszt_common.show-more', 'Mehr anzeigen');
 
-  const isExpanded = ulElement.classList.contains('showMore');
-  button.setAttribute('aria-expanded', isExpanded);
+  // New behavior: just expand and hide button
+  ulElement.classList.add('showMore');
 
-  // Translation from inlineLanguageLabelFiles in 1.page.typoscript
-  button.textContent = isExpanded
-    ? getTranslation('liszt_web.show-less', 'Weniger anzeigen')
-    : getTranslation('liszt_web.show-more', 'Mehr anzeigen');
+  // Hide the button after expansion
+  button.style.display = 'none';
 
-  // set focus for keyboard navigation to first element
+  // Remove aria-expanded since button will be hidden
+  button.removeAttribute('aria-expanded');
+
+  // Set focus for keyboard navigation to first newly revealed element
   const firstNewItem = ulElement.querySelector('.hidden');
   if (firstNewItem) {
     firstNewItem.setAttribute('tabindex', '-1'); // prepare focus
     firstNewItem.focus();
   }
-
 }
+
 
 // Speculation Rules for preload Links with class .prefetch-link (for faster view transitions on news pages)
 // this is the fallback for firefox, safari. Chrome and Edge support <script type="speculationrules"> from 1.page.typoscript

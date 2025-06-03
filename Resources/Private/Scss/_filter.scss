@@ -109,7 +109,7 @@
             overflow-x: hidden;
             scrollbar-width: thin;
             padding-right: 5px;
-            margin-right: -5px;
+          //  margin-right: -5px;
             scrollbar-color: var(--lz-primary) var(--lz-light-gray);
       //      view-transition-class: filterblock;
 
@@ -273,6 +273,7 @@
                 gap: 1rem;
                 input {
                     font-size: $font-size-md;
+                    color: var(--lz-primary);
                     font-weight: 400;
                     width: 4em;
                     padding: 4px 4px 4px 4px;
@@ -303,6 +304,24 @@
 
         }
 
+
+    }
+
+    &-search {
+        &-container {
+            margin-bottom: 10px;
+        }
+        &-input {
+            font-size: $font-size-md;
+            font-weight: 400;
+            color: var(--lz-primary);
+            width: 100%;
+            padding: 4px 4px 4px 4px;
+            border: 1px solid var(--lz-font-color);
+            &::placeholder {
+                font-size: $font-size-sm;
+            }
+        }
 
     }
 
