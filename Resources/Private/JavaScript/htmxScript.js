@@ -124,3 +124,29 @@ document.addEventListener('htmx:afterSettle', function(event) {
 document.addEventListener('DOMContentLoaded', function() {
   initializeFilterSearch();
 });
+
+// Handle loading animation with translations for HTMX requests
+document.addEventListener('htmx:beforeRequest', function(evt) {
+  if (evt.detail.elt.classList.contains('filter-block-toggler')) {
+    const filterBlock = evt.detail.elt.closest('.filter-block');
+
+    // Set translated loading text
+    const loadingText = getTranslation('liszt_common.htmx_loading', 'Loading...');
+    filterBlock.setAttribute('data-loading-text', loadingText);
+    filterBlock.classList.add('htmx-request');
+  }
+});
+
+document.addEventListener('htmx:afterRequest', function(evt) {
+  if (evt.detail.elt.classList.contains('filter-block-toggler')) {
+    const filterBlock = evt.detail.elt.closest('.filter-block');
+    filterBlock.classList.remove('htmx-request');
+    filterBlock.removeAttribute('data-loading-text');
+  }
+});
+
+
+
+
+
+

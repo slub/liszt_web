@@ -154,6 +154,38 @@
                 }
             }
 
+    // htmx load animation
+      &.htmx-request {
+          position: relative;
+
+          [id^="filterblock-"] {
+              opacity: 0.4;
+              pointer-events: none;
+          }
+
+          &::after {
+              content: attr(data-loading-text);
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background: white;
+              padding: 1rem 2rem;
+              border-radius: 4px;
+           //   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+              white-space: nowrap;
+              z-index: 10;
+              opacity: 1;
+          }
+
+          // Fallback if no data-loading-text is set
+          &:not([data-loading-text])::after {
+              content: 'Loading...';
+          }
+
+      }
+
+
     }
 
     &-item {
