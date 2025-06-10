@@ -15,10 +15,6 @@
 				<source>Mehr anzeigen</source>
 			</trans-unit>
 
-			<trans-unit id="inline-labels.liszt_web.show-less">
-				<source>Weniger anzeigen</source>
-			</trans-unit>
-
 			<trans-unit id="mainMenuLabel">
 				<source>Hauptmenü</source>
 			</trans-unit>
