@@ -14,34 +14,45 @@
             <div class="team-group grid grid-3col-lg">
                 <h3>{group.groupname}</h3>
                 <div class="team-members grid-colspan-md-2">
-                    <f:for each="{group.persons}" as="member" iteration="member-iterator">
-                        <div class="team-member" id="team-member-{member.uid}">
-                            <f:if condition="{member.image}">
-                                <f:image image="{member.image.0}" loading="lazy" />
-                            </f:if>
-                            <div class="team-member-name">
-                                {member.preposeddegree} {member.firstname} {member.lastname} {member.postposeddegree}
+                    <f:if condition="{group.persons -> f:count()} == 0">
+                        <f:then>
+                            <div>
+                                <cb:translate key="noMembersMessage" name="slub/team" />
                             </div>
-                            <div class="team-member-role">
-                                {member.role}
-                            </div>
-                            <f:if condition="{member.biography}">
-                            <div class="team-member-biography collapse" id="member-biography-{group-iterator.cycle}-{member-iterator.cycle}">
-                              {member.biography -> f:format.html()}
-
-                                <f:if condition="{member.email}">
-                                    <div class="team-member-email">
-                                        <f:link.email email="{member.email}" />
+                        </f:then>
+                        <f:else>
+                            <f:for each="{group.persons}" as="member" iteration="member-iterator">
+                                <div class="team-member" id="team-member-{member.uid}">
+                                    <f:if condition="{member.image}">
+                                        <f:image image="{member.image.0}" loading="lazy" />
+                                    </f:if>
+                                    <div class="team-member-name">
+                                        {member.preposeddegree} {member.firstname} {member.lastname} {member.postposeddegree}
                                     </div>
-                                </f:if>
+                                    <div class="team-member-role">
+                                        {member.role}
+                                    </div>
+                                    <f:if condition="{member.biography}">
+                                        <div class="team-member-biography collapse" id="member-biography-{group-iterator.cycle}-{member-iterator.cycle}">
+                                            {member.biography -> f:format.html()}
 
-                            </div>
-                            <button class="team-member-biography-button collapsed" data-bs-toggle="collapse" data-bs-target="#member-biography-{group-iterator.cycle}-{member-iterator.cycle}" aria-expanded="false" aria-controls="member-biography-{group-iterator.cycle}-{member-iterator.cycle}">
-                            </button>
-                            </f:if>
+                                            <f:if condition="{member.email}">
+                                                <div class="team-member-email">
+                                                    <f:link.email email="{member.email}" />
+                                                </div>
+                                            </f:if>
 
-                        </div>
-                    </f:for>
+                                        </div>
+                                        <button class="team-member-biography-button collapsed" data-bs-toggle="collapse" data-bs-target="#member-biography-{group-iterator.cycle}-{member-iterator.cycle}" aria-expanded="false" aria-controls="member-biography-{group-iterator.cycle}-{member-iterator.cycle}">
+                                        </button>
+                                    </f:if>
+
+                                </div>
+                            </f:for>
+                        </f:else>
+
+                    </f:if>
+
                 </div>
             </div>
         </f:for>
@@ -55,7 +66,7 @@
             </div>
         </div>
 
-        <div class="team-group no-border grid grid-3col-lg">
+        <div class="team-group grid grid-3col-lg">
             <h3><cb:translate key="assistantsHeadline" name="slub/team" /></h3>
             <div class="board-members grid-colspan-md-2">
                 <f:for each="{data.assistants}" as="assistant" iteration="board-iterator">
@@ -64,6 +75,30 @@
                         {f:if(condition:assistant.to.0,then:'',else:'seit')}
                         {assistant.from.0}{f:if(condition:assistant.to.0,then:'–{assistant.to.0}')}
                     </span>
+                </f:for>
+            </div>
+        </div>
+
+        <div class="team-group no-border grid grid-3col-lg">
+            <h3><cb:translate key="formerStaffHeadline" name="slub/team" /></h3>
+            <div class="formerStaff-members grid-colspan-md-2">
+                <f:for each="{data.formerStaff}" as="formerStaff" iteration="formerStaff-iterator">
+                    <div class="formerStaff-member" id="formerStaff-member-{formerStaff.uid}">
+                        <div class="formerStaff-name">
+                            {formerStaff.name}
+                        </div>
+                        <div class="formerStaff-role">
+                            {f:if(condition:formerStaff.to.0,then:'',else:'seit')}
+                            {formerStaff.from.0}{f:if(condition:formerStaff.to.0,then:'–{formerStaff.to.0}')}:
+                            {formerStaff.role}
+                        </div>
+                        <f:if condition="{formerStaff.description}">
+                            <div class="formerStaff-description" id="formerStaff-description--{formerStaff-iterator.cycle}">
+                                {formerStaff.description -> f:format.html()}
+                            </div>
+                        </f:if>
+
+                    </div>
                 </f:for>
             </div>
         </div>

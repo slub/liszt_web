@@ -141,3 +141,30 @@
     }
 
 }
+
+.formerStaff {
+    &-member {
+        margin-bottom: 2rem;
+    }
+
+    &-name {
+        font-size: $h4-mobile-font-size;
+        line-height: 1.2;
+        margin-bottom: 0.3rem;
+        @include media-breakpoint-up(md) {
+            font-size: $h4-font-size;
+        }
+
+    }
+
+    &-role {
+        font-size: 1rem;
+        line-height: 1.2;
+        font-weight: 600;
+        letter-spacing: 0.02rem;
+        margin-bottom: 0.2rem;
+     //   margin-bottom: 0.5rem;
+
+    }
+
+}
