@@ -15,6 +15,12 @@
 			<trans-unit id="assistantsHeadline" resname="assistantsHeadline">
 				<source>Wissenschaftliche Hilfskräfte</source>
 			</trans-unit>
+			<trans-unit id="formerStaffHeadline" resname="formerStaffHeadline">
+				<source>Ehemalige Mitarbeiter</source>
+			</trans-unit>
+			<trans-unit id="noMembersMessage" resname="noMembersMessage">
+				<source>Momentan arbeiten keine Kolleg:innen an diesem Standort</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
