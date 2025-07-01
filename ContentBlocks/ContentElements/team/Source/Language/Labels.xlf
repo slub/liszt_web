@@ -19,7 +19,7 @@
 				<source>Ehemalige Mitarbeiter</source>
 			</trans-unit>
 			<trans-unit id="noMembersMessage" resname="noMembersMessage">
-				<source>Momentan arbeiten keine Kolleg:innen an diesem Standort</source>
+				<source>n.n.</source>
 			</trans-unit>
 		</body>
 	</file>
