@@ -45,6 +45,8 @@ fields:
             maxItems: 1
             label: 'von'
             items:
+              - value:
+                label:
               - value: 2022
                 label: 2022
               - value: 2023
