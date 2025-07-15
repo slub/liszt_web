@@ -19,7 +19,7 @@
 				<source>Ehemalige Mitarbeiter</source>
 			</trans-unit>
 			<trans-unit id="noMembersMessage" resname="noMembersMessage">
-				<source>n.n.</source>
+				<source>n. n.</source>
 			</trans-unit>
 		</body>
 	</file>
