@@ -61,7 +61,10 @@
             <h3><cb:translate key="boardHeadline" name="slub/team" /></h3>
             <div class="board-members grid-colspan-md-2">
                 <f:for each="{data.board}" as="boardmember" iteration="board-iterator">
-                    <span class="board-member">{boardmember.name}, {boardmember.institution}</span>
+                    <f:comment>the span tag need to be in one line because fluid insert line breaks and whitespaces</f:comment>
+                    <f:spaceless>
+                        <span class="board-member">{boardmember.name}, {boardmember.institution}{f:if(condition:'{boardmember.from.0} != \'\' && {boardmember.to.0} == \'\'',then:', seit {boardmember.from.0}')}{f:if(condition:'{boardmember.from.0} != \'\' && {boardmember.to.0} != \'\'',then:', {boardmember.from.0}–{boardmember.to.0}')}{f:if(condition:'{boardmember.from.0} == \'\' && {boardmember.to.0} != \'\'',then:', bis {boardmember.to.0}')}</span>
+                    </f:spaceless>
                 </f:for>
             </div>
         </div>
