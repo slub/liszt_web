@@ -28,20 +28,23 @@ filterToggler.forEach((button) => {
 
 });
 
-
 function toggleFilterBlock(button) {
-  // find ul element next to button
+  // Find ul element and potential "show all" button
   const ulElement = button.previousElementSibling;
+  const showAllButton = button.nextElementSibling;
 
-  // expand and hide button
+  // Expand to show items up to maxSize
   ulElement.classList.add('showMore');
-  // Hide the button after expansion
+
+  // Hide the "show more" button
   button.style.display = 'none';
 
-  // Remove aria-expanded since button will be hidden
-  button.removeAttribute('aria-expanded');
+  // Show the "show all" button ONLY if it exists and hasMoreThanMaxSize is true
+  if (showAllButton && showAllButton.classList.contains('show-all-btn')) {
+    showAllButton.style.display = 'inline-block';
+  }
 
-  // Set focus for keyboard navigation to first newly revealed element
+  // Set focus for accessibility
   const firstNewItem = ulElement.querySelector('.hidden');
   if (firstNewItem) {
     firstNewItem.setAttribute('tabindex', '-1');
