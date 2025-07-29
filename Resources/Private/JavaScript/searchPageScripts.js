@@ -85,74 +85,82 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// Enhanced detail view with paging via POST request
-window.detailViewWithPaging = function(linkElement, event) {
+// Enhanced detail view with paging via POST request (from search result list and on detail pages)
+window.detailViewNavigation = function(linkElement, event, action = null) {
   event.preventDefault();
 
-  // Get navigation context from data attribute
-  const navigationContextJson = linkElement.getAttribute('data-navigation-context');
-  console.log('Raw navigation context JSON:', navigationContextJson);
+  let searchContext = null;
+  let dataAttributeName = 'data-search-context';
 
-  let navigationContext = null;
+  // Try to get search context from data-search-context attribute first (used by DetailPageNavigation)
+  let contextJson = linkElement.getAttribute('data-search-context');
 
-  if (navigationContextJson && navigationContextJson.trim() !== '') {
+  // If not found, try data-navigation-context (used by SearchResultItem-bibliography)
+  if (!contextJson || contextJson.trim() === '') {
+    contextJson = linkElement.getAttribute('data-navigation-context');
+    dataAttributeName = 'data-navigation-context';
+  }
+
+  // Parse context if available
+  if (contextJson && contextJson.trim() !== '') {
     try {
       // Check if it contains Fluid syntax that wasn't rendered
-      if (navigationContextJson.includes('{f:format.json') || navigationContextJson.includes('navigationBase.')) {
-        console.error('Navigation context contains unrendered Fluid syntax:', navigationContextJson);
-        navigationContext = null;
+      const fluidSyntaxPatterns = ['{f:format.json', 'searchContext.', 'navigationBase.'];
+      const hasUnrenderedFluid = fluidSyntaxPatterns.some(pattern => contextJson.includes(pattern));
+
+      if (hasUnrenderedFluid) {
+        console.error(`Context contains unrendered Fluid syntax in ${dataAttributeName}:`, contextJson);
+        searchContext = null;
       } else {
-        navigationContext = JSON.parse(navigationContextJson);
-        console.log('Parsed Navigation Context:', navigationContext);
+        const parsedContext = JSON.parse(contextJson);
+
+        // Handle different context structures
+        if (dataAttributeName === 'data-navigation-context') {
+          // For SearchResultItem-bibliography: combine with window search params
+          const searchParams = window.searchParamsData || {};
+          searchContext = {
+            ...searchParams,
+            navigation: {
+              currentPosition: parsedContext.currentPosition,
+              totalResults: parsedContext.totalResults,
+              currentPage: parsedContext.currentPage,
+              itemsPerPage: parsedContext.itemsPerPage,
+              currentScore: parsedContext.currentScore,
+              currentSortValues: parsedContext.currentSortValues || []
+            }
+          };
+        } else {
+          // For DetailPageNavigation: use context as-is
+          searchContext = parsedContext;
+        }
       }
     } catch (e) {
-      console.error('Failed to parse navigation context:', e);
-      console.error('Raw content:', navigationContextJson);
+      console.error('Failed to parse context:', e);
+      console.error('Raw content:', contextJson);
     }
   }
 
-  // Get search parameters from window variable
-  let searchParams = {};
-
-  if (window.searchParamsData) {
-    searchParams = window.searchParamsData;
-    console.log('Search Params from window variable:', searchParams);
-  } else {
-    console.warn('No window.searchParamsData available');
+  // Fallback: Get search parameters from window variable if context parsing failed
+  if (!searchContext && window.searchParamsData) {
+    searchContext = window.searchParamsData;
+    console.log('Using fallback search params from window variable:', searchContext);
   }
-
-  // Create final search context
-  const finalSearchContext = navigationContext ? {
-    ...searchParams,
-    navigation: {
-      currentPosition: navigationContext.currentPosition,
-      totalResults: navigationContext.totalResults,
-      currentPage: navigationContext.currentPage,
-      itemsPerPage: navigationContext.itemsPerPage,
-      currentScore: navigationContext.currentScore,
-      currentSortValues: navigationContext.currentSortValues || []
-    }
-  } : searchParams;
-
-  console.log('Final Search Context:', finalSearchContext);
 
   // If no search context available, use normal link
-  if (Object.keys(finalSearchContext).length === 0) {
+  if (!searchContext || Object.keys(searchContext).length === 0) {
+    console.warn('No search context available, using normal link navigation');
     window.location.href = linkElement.href;
     return false;
   }
 
-  // Create POST form with search context
-  console.log('Creating POST form with URL:', linkElement.href);
-  createPostForm(linkElement.href, finalSearchContext);
+  // Add navigation action to context if provided (for prev/next navigation)
+  if (action && searchContext.navigation) {
+    searchContext.navigation.action = action;
+  }
+
+  // Create POST form with complete search context
+  createPostForm(linkElement.href, searchContext);
   return false;
-};
-
-
-
-
-window.detailNavigationWithContext = function(linkElement, event, navigationContext) {
-  return window.detailViewWithPaging(linkElement, event, navigationContext);
 };
 
 
