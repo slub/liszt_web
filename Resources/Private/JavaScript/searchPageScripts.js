@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// Enhanced detail view with paging via POST request (from search result list and on detail pages)
+// Enhanced detail view with paging via POST request (from search result list)
 window.detailViewNavigation = function(linkElement, event, action = null) {
   event.preventDefault();
 
@@ -116,7 +116,7 @@ window.detailViewNavigation = function(linkElement, event, action = null) {
 
         // Handle different context structures
         if (dataAttributeName === 'data-navigation-context') {
-          // For SearchResultItem-bibliography: combine with window search params
+          // combine with window search params
           const searchParams = window.searchParamsData || {};
           searchContext = {
             ...searchParams,

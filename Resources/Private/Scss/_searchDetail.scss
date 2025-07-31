@@ -66,44 +66,75 @@
 
     }
 
-}
+    &-navigation {
+        margin-top: 5rem;
+        margin-bottom: 1rem;
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+        "info info info"
+        "prev-area back-area next-area";
+        gap: 0.5rem;
+        @include media-breakpoint-up(lg) {
+           margin-top: 8rem;
+        }
+
+        &-info {
+            grid-area: info;
+            text-align: center;
+            font-size: $font-size-sm;
+            margin-bottom: 0;
+        }
+
+        &-buttons {
+            grid-column: 1 / -1;
+            grid-row: 2;
+            display: contents; // This allows child elements to participate in the parent grid
+            line-height: 1.2;
+
+            .prev {
+                grid-area: prev-area;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                justify-self: start; // Align to the left within the grid area
+            }
+
+            .back {
+                grid-area: back-area;
+                text-align: center;
+                justify-self: center; // Center within the grid area
+            }
+
+            .next {
+                grid-area: next-area;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                text-align: right;
+                justify-self: end;
+            }
+
+            svg.iconpack {
+                color: var(--lz-primary);
+                height: 1.5rem;
+                stroke-width: 2px;
+            }
+
+            a {
+                font-size: $font-size-md;
+                text-decoration: none;
+                color: inherit;
+                &:hover {
+                    color: var(--lz-primary);
+                }
+            }
+        }
+    }
 
 
-.detail-navigation {
-    border: 1px solid #dee2e6;
-    border-radius: 0.375rem;
-    padding: 1rem;
-    margin-bottom: 1rem;
 }
 
-.detail-navigation-info {
-    text-align: center;
-    margin-bottom: 0.75rem;
-}
-
-.detail-navigation-buttons {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-}
-
-.detail-navigation-buttons .btn {
-    flex: 1;
-    max-width: 150px;
-}
-
-.detail-navigation-back {
-    text-align: center;
-    border-top: 1px solid #dee2e6;
-    padding-top: 0.75rem;
-}
-
-.detail-nav-prev,
-.detail-nav-next {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-}
 
 
