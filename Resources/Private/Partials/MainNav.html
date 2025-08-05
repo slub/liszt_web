@@ -17,9 +17,18 @@
                                     <ul class="lev2 dropdown-menu" id="dropdown-{item.data.uid}" aria-labelledby="dropdown-btn-{item.data.uid}">
                                         <f:for each="{item.children}" as="item">
                                             <li>
-                                                <f:link.typolink parameter="{item.data.uid}" class="dropdown-item{f:if(condition: item.active, then:' active')}" title="{item.title }">
-                                                    <span class="dropdown-text">{item.title}<f:if condition="{item.current}"> <span class="visually-hidden">(current)</span></f:if></span>
-                                                </f:link.typolink>
+                                                <f:if condition="{item.current}">
+                                                    <f:then>
+                                                        <f:link.typolink parameter="{item.data.uid}" class="dropdown-item{f:if(condition: item.active, then:' active')}" additionalAttributes="{aria-current:'page'}" title="{item.title }">
+                                                            <span class="dropdown-text">{item.title}</span>
+                                                        </f:link.typolink>
+                                                    </f:then>
+                                                    <f:else>
+                                                        <f:link.typolink parameter="{item.data.uid}" class="dropdown-item{f:if(condition: item.active, then:' active')}" title="{item.title }">
+                                                            <span class="dropdown-text">{item.title}</span>
+                                                        </f:link.typolink>
+                                                    </f:else>
+                                                </f:if>
                                             </li>
                                         </f:for>
                                     </ul>
@@ -27,7 +36,14 @@
                             </f:then>
                             <f:else>
                                 <li class="root-level nav-item">
-                                    <f:link.typolink parameter="{item.data.uid}" class="nav-link{f:if(condition: item.current, then: ' nav-current')}" title="{item.title}"><span class="nav-link-text">{item.title}<f:if condition="{item.current}"> <span class="visually-hidden">(current)</span></f:if></span></f:link.typolink>
+                                    <f:if condition="{item.current}">
+                                        <f:then>
+                                            <f:link.typolink parameter="{item.data.uid}" class="nav-link nav-current" additionalAttributes="{aria-current:'page'}" title="{item.title}"><span class="nav-link-text">{item.title}</span></f:link.typolink>
+                                        </f:then>
+                                        <f:else>
+                                            <f:link.typolink parameter="{item.data.uid}" class="nav-link" title="{item.title}"><span class="nav-link-text">{item.title}</span></f:link.typolink>
+                                        </f:else>
+                                    </f:if>
                                 </li>
                             </f:else>
                         </f:if>
