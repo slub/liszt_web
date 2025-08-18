@@ -120,60 +120,6 @@ function getTranslation(key, fallback = '') {
 }
 
 
-// Toggle Facet Filters
-const filterToggler = document.querySelectorAll('.filter-block-toggler');
-
-filterToggler.forEach((button) => {
-  // event listener for each button
-  button.addEventListener('click', () => {
-
-    // view transition animation
-    // Fallback for browsers that don't support this API:
-    //  if (!document.startViewTransition) {
-    toggleFilterBlock(button);
-    //     return;
-    //  }
-
-    // With a View Transition:
-    /*    document.startViewTransition(() => {
-          console.log("startViewTransition wird ausgeführt");
-          toggleFilterBlock(button);
-        });*/
-
-  });
-
-  // initial ARIA-Setup: set aria-expanded to "false", if not already done
-  if (!button.hasAttribute('aria-expanded')) {
-    button.setAttribute('aria-expanded', 'false');
-  }
-
-});
-
-function toggleFilterBlock(button) {
-  // Find ul element and potential "show all" button
-  const ulElement = button.previousElementSibling;
-  const showAllButton = button.nextElementSibling;
-
-  // Expand to show items up to maxSize
-  ulElement.classList.add('showMore');
-
-  // Hide the "show more" button
-  button.style.display = 'none';
-
-  // Show the "show all" button ONLY if it exists and hasMoreThanMaxSize is true
-  if (showAllButton && showAllButton.classList.contains('show-all-btn')) {
-    showAllButton.style.display = 'inline-block';
-  }
-
-  // Set focus for accessibility
-  const firstNewItem = ulElement.querySelector('.hidden');
-  if (firstNewItem) {
-    firstNewItem.setAttribute('tabindex', '-1');
-    firstNewItem.focus();
-  }
-}
-
-
 // Speculation Rules for preload Links with class .prefetch-link (for faster view transitions on news pages)
 // this is the fallback for firefox, safari. Chrome and Edge support <script type="speculationrules"> from 1.page.typoscript
 // Feature-Detection für Speculation Rules
@@ -212,35 +158,6 @@ if (!supportsSpeculationRules) {
 
 
 
-// Button script to clear input in SearchBar
-document.addEventListener('DOMContentLoaded', function() {
-  const searchInput = document.getElementById('searchbar-input');
-  const clearButton = document.getElementById('searchbar-clearButton');
-  // skip if these elements are not available
-  if (!searchInput || !clearButton) {
-    return;
-  }
-
-  // show clearButton if input is not empty on pageload
-  if (searchInput.value.length > 0) {
-    clearButton.classList.add('show');
-  }
-
-  searchInput.addEventListener('input', function() {
-    if (this.value.length > 0) {
-      clearButton.classList.add('show');
-    } else {
-      clearButton.classList.remove('show');
-    }
-  });
-
-  // reset input
-  clearButton.addEventListener('click', function() {
-    searchInput.value = '';
-    clearButton.classList.remove('show');
-    searchInput.focus();
-  });
-});
 
 
 
