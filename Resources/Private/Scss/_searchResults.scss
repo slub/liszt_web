@@ -109,8 +109,7 @@
             padding-bottom: $mobile-design-space;
             padding-top: $mobile-design-space;
             position: relative;
-
-
+            scroll-margin-top: $mobile-design-space; /* scroll to position from detail page to resultlist */
 
         // last item without border bottom
             &:last-child {
@@ -126,6 +125,7 @@
                 margin-bottom: $desktop-design-space;
                 padding-bottom: $desktop-design-space;
                 margin-left: $desktop-design-space;
+                scroll-margin-top: $desktop-design-space;
             }
 
 
