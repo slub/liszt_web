@@ -110,32 +110,6 @@
     }
   }
 
-    &-disclaimer {
-        h3 {
-            font-size: $font-size-base;
-            font-weight: 600;
-            margin-top: 0;
-            font-family: $font-family-base;
-            margin-bottom: 0.4rem;
-        }
-
-        p {
-            font-size: $font-size-md;
-            font-weight: 300;
-            margin-bottom: 0;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-            font-size: inherit;
-            font-weight: inherit;
-            &:hover, :focus {
-                text-decoration: underline;
-            }
-        }
-    }
-
     &-meta {
         background-color: $lightgray;
         margin-top: $desktop-design-space;
