@@ -7,7 +7,8 @@ main {
         margin-bottom: $desktop-design-space;
     }
     @include media-breakpoint-up(xl) {
-        margin-top: calc($desktop-design-space * 2);
+        // Todo: activate this bigger margin-top if the testversion disclaimer is removed
+      //  margin-top: calc($desktop-design-space * 2);
         margin-bottom: calc($desktop-design-space + 10px);
     }
 

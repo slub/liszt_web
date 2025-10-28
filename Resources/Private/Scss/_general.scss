@@ -77,17 +77,22 @@ ul.no-list-style {
 
 .testversion-disclaimer {
 
+    &.background-light-blue {
+        padding: 1rem;
+        background-color: var(--lz-tertiary-light-blue);
+    }
+
     &-container {
         margin-top: 1rem;
 
         @include media-breakpoint-up(md) {
             margin-top: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
 
     }
 
-    h3 {
+    h3, strong {
         font-size: $font-size-base;
         font-weight: 600;
         margin-top: 0;
