@@ -75,15 +75,27 @@ ul.no-list-style {
     padding-left: 0;
 }
 
-.testversion-disclaimer {
 
+.testversion-disclaimer {
     &.background-light-blue {
         padding: 1rem;
         background-color: var(--lz-tertiary-light-blue);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     &-container {
         margin-top: 1rem;
+        overflow: hidden;
+
+        &.is-hiding {
+            opacity: 0;
+            max-height: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            transition: opacity 0.3s ease-out, max-height 0.3s ease-out, margin 0.3s ease-out;
+        }
 
         @include media-breakpoint-up(md) {
             margin-top: 2rem;
@@ -113,6 +125,20 @@ ul.no-list-style {
         font-weight: inherit;
         &:hover, :focus {
             text-decoration: underline;
+        }
+    }
+
+    &-dismiss-btn.btn {
+        background-color: transparent;
+        cursor: pointer;
+        transition: background-color 0.2s ease, color 0.2s ease;
+        margin-top: 0.75rem;
+        align-self: flex-end;
+
+        &:hover,
+        &:focus {
+            background-color: var(--lz-font-color);
+            color: var(--lz-font-color-inverse);
         }
     }
 }

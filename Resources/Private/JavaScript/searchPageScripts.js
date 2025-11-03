@@ -192,3 +192,36 @@ function addParamsToForm(form, params, prefix = '') {
     }
   }
 }
+
+
+// Disclaimer dismiss functionality (test info for bibliography)
+document.addEventListener('DOMContentLoaded', function() {
+  const dismissBtn = document.getElementById('disclaimerDismissBtn');
+  const disclaimerContainer = document.querySelector('.testversion-disclaimer-container');
+
+  if (!dismissBtn || !disclaimerContainer) {
+    return;
+  }
+
+  dismissBtn.addEventListener('click', function() {
+    try {
+      sessionStorage.setItem('lisztDisclaimerAcknowledged', 'true');
+
+      // Add hiding class for animation
+      disclaimerContainer.classList.add('is-hiding');
+
+      // Remove from DOM after animation completes
+      setTimeout(() => {
+        disclaimerContainer.style.display = 'none';
+      }, 300);
+
+    } catch (e) {
+      console.error('Failed to save disclaimer status:', e);
+      alert('Hinweis: Ihr Browser kann die Einstellung nicht speichern (möglicherweise privater Modus). Der Hinweis wird beim nächsten Seitenaufruf erneut angezeigt.');
+      disclaimerContainer.classList.add('is-hiding');
+      setTimeout(() => {
+        disclaimerContainer.style.display = 'none';
+      }, 300);
+    }
+  });
+});
