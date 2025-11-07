@@ -38,6 +38,7 @@
         }
 
         &-show {
+            grid-column: 1 / -1;
             display: none;
             margin: 0 auto 2rem auto;
             border: none;

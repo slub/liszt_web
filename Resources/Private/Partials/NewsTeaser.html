@@ -29,13 +29,13 @@ data-namespace-typo3-fluid="true">
                         <f:link.page class="read-more" pageUid="{newsEntry.uid}">{f:translate(key: 'more', extensionName: 'liszt_web')}</f:link.page>
                     </div>
                 </f:for>
+                <f:if condition="{newsRowsIteration.isLast} === FALSE">
+                    <button class="news-teaser-show collapsed" data-bs-toggle="collapse" data-bs-target="#news-{newsRowsIteration.cycle}-row" aria-expanded="false" aria-controls="news-{newsRowsIteration.cycle}-row">
+                        <i:icon iconfig="lzicon,chevron-down" preferredRenderTypes="svgSprite" additionalAttributes="{aria-hidden:'true'}" />
+                        <span>{f:translate(key: 'show-more', extensionName: 'liszt_web')}</span>
+                    </button>
+                </f:if>
             </div>
-            <f:if condition="{newsRowsIteration.isLast} === FALSE">
-               <button class="news-teaser-show collapsed" data-bs-toggle="collapse" data-bs-target="#news-{newsRowsIteration.cycle}-row" aria-expanded="false" aria-controls="news-{newsRowsIteration.cycle}-row">
-                    <i:icon iconfig="lzicon,chevron-down" preferredRenderTypes="svgSprite" additionalAttributes="{aria-hidden:'true'}" />
-                   <span>{f:translate(key: 'show-more', extensionName: 'liszt_web')}</span>
-               </button>
-            </f:if>
         </f:for>
     </div>
 </section>
