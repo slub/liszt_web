@@ -237,9 +237,49 @@
     &-chart {
         height: 120px;
         margin-top: 18px;
+        position: relative;
         svg {
             overflow: visible;
         }
+
+        &-indicator {
+            display: none;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            border-left: 1px dashed var(--lz-gray);
+            pointer-events: none;
+            z-index: 50;
+            transform: translateX(-50%);
+        }
+
+        &-tooltip {
+            display: none;
+            position: absolute;
+            background: var(--lz-primary);
+            color: white;
+            padding: 0.4em 0.6em;
+            font-size: $font-size-sm;
+            pointer-events: none;
+            z-index: 100;
+            white-space: nowrap;
+            line-height: 1;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 0;
+                height: 0;
+                border-right: 10px solid transparent;
+                border-top: 10px solid var(--lz-primary);
+            }
+        }
+
+
+
     }
 
 
