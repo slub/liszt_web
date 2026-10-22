@@ -92,7 +92,7 @@
                         </div>
                         <div class="formerStaff-role">
                             {f:if(condition:formerStaff.to.0,then:'',else:'seit')}
-                            {formerStaff.from.0}{f:if(condition:formerStaff.to.0,then:'–{formerStaff.to.0}')}:
+                            {formerStaff.from.0}{f:if(condition:'{formerStaff.to.0} && {formerStaff.to.0} != {formerStaff.from.0}',then:'–{formerStaff.to.0}')}:
                             {formerStaff.role}
                         </div>
                         <f:if condition="{formerStaff.description}">
